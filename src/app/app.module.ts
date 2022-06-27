@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login/login.component'
 import { Cadastro1Component } from './cadastro/cadastro1/cadastro1.component';
 import { Cadastro2Component } from './cadastro/cadastro2/cadastro2.component';
 import { Cadastro3Component } from './cadastro/cadastro3/cadastro3.component';
+import { VisaoGeralComponent } from './visao-geral/visao-geral/visao-geral.component';
 
 
 
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'cadastro1', component: Cadastro1Component},
   { path: 'cadastro2', component: Cadastro2Component},
   { path: 'cadastro3', component: Cadastro3Component},
-
+  { path: 'visaogeral', component: VisaoGeralComponent},
 ];
 
 @NgModule({
@@ -28,7 +29,8 @@ const routes: Routes = [
     LoginComponent,
     Cadastro1Component,
     Cadastro2Component,
-    Cadastro3Component
+    Cadastro3Component,
+    VisaoGeralComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

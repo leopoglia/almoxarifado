@@ -1,10 +1,12 @@
 * {
     margin: 0px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    color: var(--cinza);
 }
 
 body {
     min-height: 100vh;
+    background-color: var(--branco);
 }
 
 ::-webkit-scrollbar {
@@ -49,4 +51,227 @@ body {
     --grande: 25px;
     --media: 14px;
     --pequena: 12px;
+}
+
+input, textarea, select, .input{
+    background-color: var(--branco);
+}
+
+header {
+    background-color: var(--branco);
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+header .logo,
+header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo span {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+header .senaiazul {
+    height: 28px;
+}
+
+header .almoxarifado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+    padding-left: 25px;
+    border-left: 1px solid var(--cinzaclaro);
+}
+
+header .navbar {
+    margin-right: 20px;
+    cursor: pointer;
+    color: var(--azul);
+    padding: 5px 15px 5px 15px;
+    border-radius: 3px;
+}
+
+header .navbar .nome {
+    margin-right: 10px;
+}
+
+header .navbar .material-symbols-outlined {
+    color: var(--azul);
+    font-size: 35px;
+}
+
+nav {
+    width: 210px;
+    height: 100%;
+    background-color: var(--cinzaclaro3);
+    padding-left: 5px;
+    margin-top: 60px;
+    position: fixed;
+}
+
+nav dl span {
+    transition: 0.2s;
+}
+
+nav dl dd {
+    width: 100%;
+    height: 60px;
+    font-size: 14px;
+    color: var(--cinza);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--cinza);
+}
+
+nav dl dd:hover {
+    background-color: #c4c4c423;
+}
+
+nav dl a {
+    text-decoration: none;
+    color: var(--cinzaclaro1);
+}
+
+nav dl .atual {
+    box-shadow: -5px 0px 0 var(--azul);
+    
+    color: var(--cinzaclaro1);
+    font-weight: 700;
+}
+
+nav dl .atual .material-symbols-outlined {
+    color: var(--azul);
+}
+
+nav dl .atual span{
+    color: var(--azul);
+
+}
+
+nav dl .material-symbols-outlined {
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+nav dl .rodape {
+    width: 210px;
+    position: fixed;
+    bottom: 0;
+}
+
+nav dl .rodape dd {
+    border-bottom: 0;
+    border-top: 1px solid var(--cinzaclaro2);
+}
+
+
+nav .dark .botao {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 25px;
+}
+
+nav .dark .botao input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+nav .dark .bola {
+    border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--cinzaclaro2);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+nav .dark .bola:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+nav .dark input:checked+.bola {
+    background-color: var(--cinzaclaro2);
+}
+
+nav .dark input:checked+.bola:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+@media(max-width: 750px) {
+    nav .dark .bola {
+        border-radius: 0px;
+        height: 60px;
+        width: 70px;
+        margin-left: -60px;
+        margin-top: -18px;
+        background-color: transparent !important;
+    }
+
+    nav .dark .bola:before{
+        background-color: transparent !important;
+    }
+
+    nav {
+        width: 70px;
+    }
+    nav dl .rodape {
+        width: 70px;
+    }
+    nav dl .titulo {
+        font-size: 0;
+    }
+    nav dl .material-symbols-outlined {
+        margin-left: 10px;
+    }
+    header .logo .senaiazul {
+        height: 15px;
+    }
+    header .logo .almoxarifado {
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+    header .logo .almoxarifado .icone {
+        width: 20px;
+    }
+    header .navbar .nome {
+        display: none;
+    }
+}
+
+@media(max-height: 362px) {
+    nav {
+        display: none;
+    }
 }
