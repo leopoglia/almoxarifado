@@ -63,7 +63,6 @@ const routes: Routes = [
     HeaderComponent,
     ProdutoComponent,
     NavComponent,
-    ModuleComponent,
     DetalhesReservaComponent
   ],
   imports: [
