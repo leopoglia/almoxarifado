@@ -1,51 +1,42 @@
 <nav>
   <dl>
       <div>
-          <a href="../visaogeral">
-              <dd id="1">
+              <dd  class="atual" (click)="visaoGeral()">
+                
                   <span class="material-symbols-outlined">
                       inventory_2
                   </span>
                   <span class="titulo">Visão geral</span>
               </dd>
-          </a>
 
-          <a href="../inserirreserva">
-              <dd id="2">
+              <dd (click)="inserirReservas()">
                   <span class="material-symbols-outlined">
                       add_circle
                   </span>
                   <span class="titulo">Inserir reservas</span>
               </dd>
-          </a>
 
-          <a href="../reservas">
-              <dd id="3">
+              <dd (click)="reservas()">
                   <span class="material-symbols-outlined">
                       calendar_month
                   </span>
                   <span class="titulo">Reservas</span>
               </dd>
-          </a>
 
-          <a href="../cadastrar/produto">
-              <dd id="4">
+
+              <dd (click)="cadastrarProduto()">
                   <span class="material-symbols-outlined">
                       category
                   </span>
                   <span class="titulo">Cadastrar produto</span>
               </dd>
-          </a>
 
-          <a href="../cadastrar/usuario">
-              <dd id="5">
+              <dd (click)="cadastrarUsuario()">
                   <span class="material-symbols-outlined">
                       person
                   </span>
                   <span class="titulo">Cadastrar usuário</span>
               </dd>
-          </a>
-      </div>
 
       <div class="rodape">
 
@@ -59,14 +50,13 @@
               </label>
           </dd>
 
-          <a href="../login">
-              <dd>
+              <dd (click)="sair()">
                   <span class="material-symbols-outlined">
                       logout
                   </span>
                   <span class="titulo">Sair</span>
               </dd>
-          </a>
+          </div>
       </div>
   </dl>
 </nav>

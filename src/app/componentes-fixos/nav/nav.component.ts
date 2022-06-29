@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  _darkModeCheck=true;
-
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
     const html = document.querySelector('html');
@@ -52,5 +51,28 @@ export class NavComponent implements OnInit {
 
   }
 
+  visaoGeral(){
+    this.route.navigate(['/visaogeral/']);
+  }
 
+  inserirReservas(){
+    this.route.navigate(['/inserirreserva/']);
+  }
+
+  reservas(){
+    this.route.navigate(['/reservas/']);
+  }
+
+  cadastrarProduto(){
+    this.route.navigate(['/cadastrar/produto/']);
+  }
+
+  cadastrarUsuario(){
+    this.route.navigate(['/cadastrar/usuario/']);
+  }
+
+
+  sair(){
+    this.route.navigate(['']);
+  }
 }
