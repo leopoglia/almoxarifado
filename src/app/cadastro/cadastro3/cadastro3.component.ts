@@ -13,7 +13,7 @@ export class Cadastro3Component implements OnInit {
   ngOnInit() {
   }
 
-  irLogin(){
+  login(){
     this.route.navigate(['/']);
   }
 
