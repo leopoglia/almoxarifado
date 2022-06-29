@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  _darkModeCheck=true;
+
   constructor() { }
 
   ngOnInit() {
     const html = document.querySelector('html');
+    const input: HTMLInputElement = document.getElementById('mode') as HTMLInputElement;
 
     if (localStorage.getItem('mode') == 'darkmode') {
       html.classList.add('darkmode');
+      input.checked = true;
     } else {
       localStorage.setItem('mode', 'lightmode');
     }
@@ -31,11 +35,13 @@ export class NavComponent implements OnInit {
     }
   }
 
+  teste(event) {
+    console.log(event);
+  }
+
   darkmode($event) {
     const html = document.querySelector('html');
     const checkbox = document.querySelector('#mode');
-
-
 
     if (localStorage.getItem('mode') == 'lightmode') {
       localStorage.setItem('mode', 'darkmode');

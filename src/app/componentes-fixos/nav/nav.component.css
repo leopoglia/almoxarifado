@@ -103,7 +103,6 @@ nav .dark .bola:before {
     transition: .4s;
     border-radius: 50%;
 }
-
 nav .dark input:checked+.bola {
     background-color: var(--cinzaclaro2);
 }
