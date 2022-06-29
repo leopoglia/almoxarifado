@@ -16,7 +16,6 @@ import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario
 import { ProdutoComponent } from './produto/produto/produto.component';
 import { HeaderComponent } from './componentes-fixos/header/header.component';
 import { NavComponent } from './componentes-fixos/nav/nav.component';
-import { ModuleComponent } from './module/module.component';
 import { DetalhesReservaComponent } from './detalhes-reserva/detalhes-reserva/detalhes-reserva.component';
 
 
