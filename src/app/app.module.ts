@@ -17,20 +17,33 @@ import { ProdutoComponent } from './produto/produto/produto.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'cadastro/1', component: Cadastro1Component},
-  { path: 'cadastro/2', component: Cadastro2Component},
-  { path: 'cadastro/3', component: Cadastro3Component},
-  { path: 'visaogeral', component: VisaoGeralComponent},
-  { path: 'inserirreserva', component: InserirReservasComponent},
-  { path: 'reservas', component: ReservasComponent},
-  { path: 'cadastrar/produto', component: CadastrarProdutoComponent },
+  {
+    path: 'cadastro', children: [
+      { path: '1', component: Cadastro1Component },
+      { path: '2', component: Cadastro2Component },
+      { path: '3', component: Cadastro3Component }
+    ]
+  },
+  {
+    path: 'visaogeral', children: [
+      { path: '', component: VisaoGeralComponent },
+      { path: 'produto', component: ProdutoComponent }
+    ]
+  },
+  { path: 'inserirreserva', component: InserirReservasComponent },
+  { path: 'reservas', component: ReservasComponent },
+  {
+    path: 'cadastrar', children: [
+      { path: 'produto', component: CadastrarProdutoComponent },
+      { path: 'usuario', component: CadastrarUsuarioComponent }
+    ]
+  },
   { path: 'cadastrar/usuario', component: CadastrarUsuarioComponent },
-  { path: 'visaogeral/produto', component: ProdutoComponent }
 ];
 
 @NgModule({
-  exports: [ 
-    RouterModule 
+  exports: [
+    RouterModule
   ],
   declarations: [
     AppComponent,
