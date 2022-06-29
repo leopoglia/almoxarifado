@@ -4,7 +4,7 @@ import { VisaoGeralComponent } from './visao-geral/visao-geral.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [VisaoGeralComponent]
 })

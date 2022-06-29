@@ -1,0 +1,55 @@
+header {
+    background-color: var(--branco);
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+header .logo,
+header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo span {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+header .senaiazul {
+    height: 28px;
+}
+
+header .almoxarifado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+    padding-left: 25px;
+    border-left: 1px solid var(--cinzaclaro);
+}
+
+header .navbar {
+    margin-right: 20px;
+    cursor: pointer;
+    color: var(--azul);
+    padding: 5px 15px 5px 15px;
+    border-radius: 3px;
+}
+
+header .navbar .nome {
+    margin-right: 10px;
+}
+
+header .navbar .material-symbols-outlined {
+    color: var(--azul);
+    font-size: 35px;
+}
