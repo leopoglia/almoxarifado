@@ -14,6 +14,8 @@ import { ReservasComponent } from './reservas/reservas/reservas.component';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto/cadastrar-produto.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { ProdutoComponent } from './produto/produto/produto.component';
+import { HeaderComponent } from './componentes-fixos/header/header.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -56,6 +58,7 @@ const routes: Routes = [
     ReservasComponent,
     CadastrarProdutoComponent,
     CadastrarUsuarioComponent,
+    HeaderComponent,
     ProdutoComponent
   ],
   imports: [
