@@ -17,9 +17,9 @@ import { ProdutoComponent } from './produto/produto/produto.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'cadastro1', component: Cadastro1Component},
-  { path: 'cadastro2', component: Cadastro2Component},
-  { path: 'cadastro3', component: Cadastro3Component},
+  { path: 'cadastro/1', component: Cadastro1Component},
+  { path: 'cadastro/2', component: Cadastro2Component},
+  { path: 'cadastro/3', component: Cadastro3Component},
   { path: 'visaogeral', component: VisaoGeralComponent},
   { path: 'inserirreserva', component: InserirReservasComponent},
   { path: 'reservas', component: ReservasComponent},

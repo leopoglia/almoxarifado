@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   cadastrar(){
-    this.route.navigate(['/cadastro1'])
+    this.route.navigate(['/cadastro/1'])
   }
 
 }
