@@ -12,80 +12,8 @@
 
 <body>
     <app-header></app-header>
-
-    <nav>
-        <dl>
-            <div>
-                <a href="../visaogeral">
-                    <dd>
-                        <span class="material-symbols-outlined">
-                            inventory_2
-                        </span>
-                        <span class="titulo">Visão geral</span>
-                    </dd>
-                </a>
-
-                <a href="../inserirreserva">
-                    <dd>
-                        <span class="material-symbols-outlined">
-                            add_circle
-                        </span>
-                        <span class="titulo">Inserir reservas</span>
-                    </dd>
-                </a>
-
-                <a href="../reservas">
-                    <dd>
-                        <span class="material-symbols-outlined">
-                            calendar_month
-                        </span>
-                        <span class="titulo">Reservas</span>
-                    </dd>
-                </a>
-
-                <a href="../cadastrar/produto">
-                    <dd class="atual">
-                        <span class="material-symbols-outlined">
-                            category
-                        </span>
-                        <span class="titulo">Cadastrar produto</span>
-                    </dd>
-                </a>
-
-                <a href="../cadastrar/usuario">
-                    <dd>
-                        <span class="material-symbols-outlined">
-                            person
-                        </span>
-                        <span class="titulo">Cadastrar usuário</span>
-                    </dd>
-                </a>
-            </div>
-
-            <div class="rodape">
-
-                <dd class="dark">
-                    <span class="material-symbols-outlined">
-                        dark_mode
-                    </span>
-                    <label class="botao">
-                        <input id="mode" (change)="darkmode($event)" type="checkbox">
-                        <span class="bola"></span>
-                    </label>
-                </dd>
-
-                <a href="../login">
-                    <dd>
-                        <span class="material-symbols-outlined">
-                            logout
-                        </span>
-                        <span class="titulo">Sair</span>
-                    </dd>
-                </a>
-            </div>
-        </dl>
-    </nav>
-
+    <app-nav></app-nav>
+    
     <main>
 
         <div class="container">

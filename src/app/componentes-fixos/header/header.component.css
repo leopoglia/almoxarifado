@@ -53,3 +53,16 @@ header .navbar .material-symbols-outlined {
     color: var(--azul);
     font-size: 35px;
 }
+
+@media(max-width: 750px) {
+    header .logo .senaiazul {
+        height: 15px;
+    }
+    header .logo .almoxarifado {
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+    header .logo .almoxarifado .icone {
+        width: 20px;
+    }
+}

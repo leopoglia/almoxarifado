@@ -15,6 +15,7 @@ import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario/cadastrar-usuario.component';
 import { ProdutoComponent } from './produto/produto/produto.component';
 import { HeaderComponent } from './componentes-fixos/header/header.component';
+import { NavComponent } from './componentes-fixos/nav/nav.component';
 
 
 const routes: Routes = [
@@ -59,7 +60,8 @@ const routes: Routes = [
     CadastrarProdutoComponent,
     CadastrarUsuarioComponent,
     HeaderComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    NavComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
