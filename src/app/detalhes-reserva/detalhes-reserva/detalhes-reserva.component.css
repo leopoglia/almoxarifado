@@ -1,0 +1,144 @@
+main {
+    height: 100%;
+    padding-left: 205px;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+main .container {
+    padding-top: 20px;
+    height: 100%;
+    margin: 0px 100px 0px 100px;
+}
+
+main .container .cabecalho .navegacao {
+    font-size: 14px;
+}
+
+main .corpo {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+main .corpo .reserva {
+    width: 100%;
+    border: 1px solid var(--cinzaclaro2);
+    margin-bottom: 10px;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+main .corpo .reserva .titulo{
+    margin: 15px 0px 15px 15px;
+    font-size: 18px;
+}
+
+main .corpo .reserva .horario, main .corpo .reserva .pessoa{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 0 10px 15px;
+}
+
+main .corpo .reserva .detalhes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    margin: 0px 0px 10px 15px;
+}
+
+main .corpo .reserva .horario, main .corpo .reserva .reservafeita{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+main .corpo .reserva .detalhes, main .corpo .reserva .horario, main .corpo .reserva .pessoa{
+    font-size: 14px;
+    height: 24px;
+}
+
+main .corpo .reserva .produtos .produto{
+    margin-left: 15px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .corpo .reserva .produtos .produto .informacoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .corpo .reserva .produtos .produto .acoes .quantidade,
+main .corpo .reserva .produtos .produto .acoes .opcao{
+    margin: 10px !important;
+}
+
+
+main .corpo .reserva .produtos .produto .acoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .container .produtos .produto .imagem img {
+    width: 45px;
+    margin-right: 20px;
+}
+
+main .container .produtos .produto .baixa{
+    width: 165px;
+    height: 45px;
+    background-color: var(--azul);
+    border: none;
+    color: var(--branco);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+main .container .produtos .produto .baixa:hover{
+    background-color: var(--azulclaro);
+}
+
+@media(max-width: 1000px) {
+    main .corpo .reserva .produtos .produto {
+        display: grid !important;
+        height: 100px;
+    }
+}
+
+@media(max-width: 900px) {
+    main .corpo .reserva .produtos .produto {
+        height: 180px;
+    }
+
+    main .corpo .reserva .produtos .produto .acoes{
+        display: grid;
+    }
+}
+
+
+
+@media(max-width: 750px) {
+    main {
+        padding-left: 0px;
+    }
+    main .container {
+        margin: 0px 30px 0px 100px;
+    }
+
+    main .corpo .reserva .detalhes .verdetalhes .texto{
+        display: none;
+    }
+}
