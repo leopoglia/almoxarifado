@@ -10,5 +10,6 @@ export class CadastrarUsuarioComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    localStorage.setItem('atual', '5');
   }
 }

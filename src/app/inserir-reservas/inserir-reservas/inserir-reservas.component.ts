@@ -11,5 +11,6 @@ export class InserirReservasComponent implements OnInit {
 
   
   ngOnInit() {
+    localStorage.setItem('atual', '2');
   }
 }

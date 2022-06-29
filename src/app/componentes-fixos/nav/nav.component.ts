@@ -17,15 +17,25 @@ export class NavComponent implements OnInit {
     } else {
       localStorage.setItem('mode', 'lightmode');
     }
+
+    if (localStorage.getItem('atual') == '1') {
+      document.getElementById('1').classList.add('atual')
+    } else if (localStorage.getItem('atual') == '2') {
+      document.getElementById('2').classList.add('atual')
+    } else if (localStorage.getItem('atual') == '3') {
+      document.getElementById('3').classList.add('atual')
+    } else if (localStorage.getItem('atual') == '4') {
+      document.getElementById('4').classList.add('atual')
+    } else if (localStorage.getItem('atual') == '5') {
+      document.getElementById('5').classList.add('atual')
+    }
   }
 
   darkmode($event) {
-    console.log($event)
-
     const html = document.querySelector('html');
     const checkbox = document.querySelector('#mode');
 
-    
+
 
     if (localStorage.getItem('mode') == 'lightmode') {
       localStorage.setItem('mode', 'darkmode');
@@ -33,6 +43,8 @@ export class NavComponent implements OnInit {
       localStorage.setItem('mode', 'lightmode');
     }
     document.querySelector('html').classList.toggle('darkmode');
+
   }
+
 
 }

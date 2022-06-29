@@ -10,5 +10,6 @@ export class CadastrarProdutoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    localStorage.setItem('atual', '4');
   }
 }

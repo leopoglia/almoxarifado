@@ -10,5 +10,6 @@ export class ReservasComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    localStorage.setItem('atual', '3');
   }
 }
