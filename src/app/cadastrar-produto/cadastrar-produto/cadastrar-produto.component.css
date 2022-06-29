@@ -20,7 +20,6 @@ main .corpo {
     height: 100%;
     margin-top: 20px;
     margin-bottom: 50px;
-    padding-bottom: 15px;
     border-radius: 3px;
     border: 1px solid var(--cinzaclaro2);
 }
@@ -54,7 +53,7 @@ main .container .rodape button:hover {
 
 main .container .informacoes {
     margin-left: 15px;
-    width: auto;
+    width: 100%;
 }
 
 main .container .informacoes .informacoes-gerais {
@@ -110,18 +109,15 @@ main .container .informacoes .inserir-imagem .imagem {
     background-color: var(--branco);
 }
 
-main .container .informacoes .inserir-imagem .imagem  img {
+main .container .informacoes .inserir-imagem .imagem .material-symbols-outlined {
+    color: var(--cinzaclaro2);
     font-size: 80px;
-    width: 100%;
-    height: 100%;
-    border-radius: 3px;
 }
 
 main .container .informacoes .informacoes-adicionais {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
-    margin-right: 30px;
 }
 
 main .container .informacoes .informacoes-adicionais .quantidade input,
@@ -132,24 +128,106 @@ main .container .informacoes .informacoes-adicionais .classificacao select {
     border: 1px solid var(--cinzaclaro2);
     border-radius: 3px;
     outline: none;
-    width: 100%;
+    width: 75%;
 }
 
 main .container .informacoes .informacoes-adicionais .localizacao,
 main .container .informacoes .informacoes-adicionais .classificacao {
-    width: 25%;
+    width: 75%;
 }
 
+main .container .informacoes .informacoes-adicionais .localizacao select,
 main .container .informacoes .informacoes-adicionais .classificacao select {
     height: 43px;
-    -webkit-appearance: none !important;
+}
+
+main .container .informacoes .informacoes-adicionais .localizacao .fundo,
+main .container .informacoes .informacoes-adicionais .classificacao .fundo {
+    display: flex;
+}
+
+main .container .informacoes .informacoes-adicionais .localizacao .fundo .adicionar,
+main .container .informacoes .informacoes-adicionais .classificacao .fundo .adicionar {
+    height: 41px;
+    width: 43px;
+    margin-left: 5px;
+    background-color: var(--azul);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+main .container .informacoes .informacoes-adicionais .localizacao .fundo .adicionar:hover,
+main .container .informacoes .informacoes-adicionais .classificacao .fundo .adicionar:hover {
+    background-color: var(--azulclaro);
+}
+
+main .container .informacoes .informacoes-adicionais .localizacao .fundo .adicionar .material-symbols-outlined,
+main .container .informacoes .informacoes-adicionais .classificacao .fundo .adicionar .material-symbols-outlined {
+    color: var(--branco);
+}
+
+main .container .informacoes .informacoes-gerais .inserir-imagem input[type='file'] {
+    display: none
+}
+
+main .container .informacoes .informacoes-adicionais .descartavel {
+    display: grid;
+    margin-right: 30px;
+}
+
+.botao {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 25px;
+}
+
+.botao input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.bola {
+    border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--cinzaclaro2);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.bola:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.bola {
+    background-color: var(--azul);
+}
+
+input:checked+.bola:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
 @media(max-width: 1000px) {
-
-    main .container .informacoes{
-        width: 100% !important;
-    }
 
     main .container .informacoes .informacoes-gerais .nome,
     main .container .informacoes .informacoes-gerais .detalhes,
@@ -176,8 +254,8 @@ main .container .informacoes .informacoes-adicionais .classificacao select {
         display: block;
     }
 
-    main .container .informacoes .informacoes-adicionais{
-        margin-right: 0px !important;
+    main .container .informacoes .informacoes-adicionais .quantidade {
+        margin-top: 10px;
     }
 
     main .container .informacoes .informacoes-adicionais .quantidade,
@@ -201,8 +279,9 @@ main .container .informacoes .informacoes-adicionais .classificacao select {
         width: 95%;
     }
 
-    main .container .informacoes .informacoes-adicionais .localizacao input {
-        width:  auto !important;
+    main .container .informacoes .informacoes-adicionais .localizacao input,
+    main .container .informacoes .informacoes-adicionais .classificacao select {
+        width: 100% !important;
     }
 
 }

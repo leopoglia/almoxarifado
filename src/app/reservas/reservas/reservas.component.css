@@ -1,0 +1,226 @@
+main {
+    height: 100%;
+    padding-left: 205px;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+main .container {
+    padding-top: 20px;
+    height: 100%;
+    margin: 0px 100px 0px 100px;
+}
+
+main .container .cabecalho .navegacao {
+    font-size: 14px;
+}
+
+main .container .cabecalho .pesquisa {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+main .container .cabecalho .pesquisa .input {
+    width: 75%;
+    height: 25px;
+    padding: 8px;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .container .cabecalho .pesquisa .input .material-symbols-outlined {
+    margin: 0;
+}
+
+main .container .cabecalho .pesquisa .input input {
+    width: 90%;
+    height: 100%;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+}
+
+main .container .cabecalho .pesquisa .material-symbols-outlined {
+    margin: 0px 20px 0px 20px;
+    font-size: 30px;
+    color: var(--azul);
+}
+
+main .container .cabecalho .pesquisa button {
+    width: 165px;
+    height: 45px;
+    background-color: var(--azul);
+    border: none;
+    color: var(--branco);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+main .container .cabecalho .pesquisa button:hover {
+    background-color: var(--azulclaro);
+}
+
+main .corpo {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+main .corpo .reserva {
+    width: 100%;
+    border: 1px solid var(--cinzaclaro2);
+    margin-bottom: 10px;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+main .corpo a{
+    text-decoration: none;
+    color: black;
+}
+
+main .corpo .reserva .titulo{
+    margin: 15px 0px 15px 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .corpo .reserva .situacao .material-symbols-outlined{
+    margin-right: 15px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: green !important;
+}
+
+main .corpo .reserva .horario, main .corpo .reserva .pessoa{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 0 10px 15px;
+}
+
+main .corpo .reserva .detalhes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    margin: 0px 0px 10px 15px;
+}
+
+main .corpo .reserva .horario, main .corpo .reserva .reservafeita{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+main .corpo .reserva .detalhes .verdetalhes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+
+main .corpo .reserva .detalhes .verdetalhes .expandir{
+    background-color: var(--azul);
+    border-radius: 50%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+main .corpo .reserva .detalhes .verdetalhes .expandir .material-symbols-outlined{
+    font-size: 18px;
+    color: var(--branco) !important;
+}
+
+main .corpo .reserva .detalhes, main .corpo .reserva .horario, main .corpo .reserva .pessoa{
+    font-size: 14px;
+    height: 24px;
+}
+
+main .corpo .rodape {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+main .corpo .rodape .paginacao {
+    height: 100%;
+    width: 250px;
+    border-radius: 3px;
+}
+
+main .corpo .rodape .paginacao dl {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .corpo .rodape .paginacao dl dd {
+    width: 42px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+main .corpo .rodape .paginacao dl dd:hover {
+    background-color: var(--cinzaclaro3);
+}
+
+main .corpo .rodape .paginacao dl .atual {
+    background-color: var(--azul);
+    color: var(--branco);
+}
+
+main .corpo .rodape .paginacao dl .atual:hover {
+    background-color: var(--azulclaro);
+}
+
+@media(max-width: 750px) {
+    main {
+        padding-left: 0px;
+    }
+    main .container {
+        margin: 0px 30px 0px 100px;
+    }
+    main .corpo .rodape {
+        justify-content: center;
+    }
+
+    main .corpo .reserva .detalhes .verdetalhes .texto{
+        display: none;
+    }
+
+    main .container .cabecalho .pesquisa .input{
+        width: 100%;
+    }
+
+    main .container .cabecalho .pesquisa .material-symbols-outlined{
+        margin: 0px 10px 0px 10px;
+    }
+
+    main .container .cabecalho .pesquisa button{
+        display: none;
+    }
+}

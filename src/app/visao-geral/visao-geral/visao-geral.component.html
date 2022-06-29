@@ -15,7 +15,7 @@
     <header>
         <div class="logo"><img class="senaiazul" src="../../../assets/sanaiazul.png" alt="">
             <div class="almoxarifado">
-                <img class="icone" src="../src/icone.png" alt=""><span>Almoxarifado</span>
+                <img class="icone" src="../../../assets/icone.png" alt=""><span>Almoxarifado</span>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
     <nav>
         <dl>
             <div>
-                <a href="../visaogeral/index.html">
+                <a href="../visaogeral">
                     <dd class="atual">
                         <span class="material-symbols-outlined">
                             inventory_2
@@ -37,7 +37,7 @@
                     </dd>
                 </a>
 
-                <a href="../inserirreserva/index.html">
+                <a href="../inserirreserva">
                     <dd>
                         <span class="material-symbols-outlined">
                             add_circle
@@ -46,7 +46,7 @@
                     </dd>
                 </a>
 
-                <a href="../reservas/index.html">
+                <a href="../reservas">
                     <dd>
                         <span class="material-symbols-outlined">
                             calendar_month
@@ -55,7 +55,7 @@
                     </dd>
                 </a>
 
-                <a href="../criarproduto/index.html">
+                <a href="../cadastrar/produto">
                     <dd>
                         <span class="material-symbols-outlined">
                             category
@@ -64,7 +64,7 @@
                     </dd>
                 </a>
 
-                <a href="../criarusuario/index.html">
+                <a href="../cadastrar/usuario">
                     <dd>
                         <span class="material-symbols-outlined">
                             person
@@ -83,12 +83,12 @@
                         dark_mode
                     </span>
                     <label class="botao">
-                        <input id="mode" type="checkbox">
+                        <input id="mode" type="checkbox" (change)="darkmode($event)">
                         <span class="bola"></span>
                     </label>
                 </dd>
 
-                <a href="../login/index.html">
+                <a href="../login">
                     <dd>
                         <span class="material-symbols-outlined">
                             logout
@@ -125,7 +125,6 @@
             </div>
 
             <div class="corpo">
-                <a href="../produto/index.html">
                     <div class="produto">
                         <div>
                             <div class="imagem">
@@ -145,9 +144,7 @@
                             </div>
                         </div>
                     </div>
-                </a>
 
-                <a href="../produto/index.html">
                     <div class="produto">
                         <div>
                             <div class="imagem">
@@ -167,10 +164,7 @@
                             </div>
                         </div>
                     </div>
-                </a>
 
-
-                <a href="../produto/index.html">
                     <div class="produto">
                         <div>
                             <div class="imagem">
@@ -190,10 +184,7 @@
                             </div>
                         </div>
                     </div>
-                </a>
 
-
-                <a href="../produto/index.html">
                     <div class="produto">
                         <div>
                             <div class="imagem">
@@ -212,7 +203,6 @@
                             </div>
                         </div>
                     </div>
-                </a>
 
 
                 <div class="produto">
@@ -310,7 +300,5 @@
         </div>
     </main>
 </body>
-
-<script src="../src/darkmode.js"></script>
 
 </html>

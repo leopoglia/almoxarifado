@@ -1,3 +1,209 @@
-<p>
-  inserir-reservas works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <title>Visão Geral</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img class="senaiazul" src="../../../assets/sanaiazul.png" alt="">
+            <div class="almoxarifado">
+                <img class="icone" src="../../../assets/icone.png" alt=""><span>Almoxarifado</span>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <span class="nome">Leonardo</span>
+            <span class="material-symbols-outlined">account_circle</span>
+        </div>
+    </header>
+
+    <nav>
+        <dl>
+            <div>
+                <a href="../visaogeral">
+                    <dd>
+                        <span class="material-symbols-outlined">
+                            inventory_2
+                        </span>
+                        <span class="titulo">Visão geral</span>
+                    </dd>
+                </a>
+
+                <a href="../inserirreserva">
+                    <dd class="atual">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                        </span>
+                        <span class="titulo">Inserir reservas</span>
+                    </dd>
+                </a>
+
+                <a href="../reservas">
+                    <dd>
+                        <span class="material-symbols-outlined">
+                            calendar_month
+                        </span>
+                        <span class="titulo">Reservas</span>
+                    </dd>
+                </a>
+
+                <a href="../cadastrar/produto">
+                    <dd>
+                        <span class="material-symbols-outlined">
+                            category
+                        </span>
+                        <span class="titulo">Cadastrar produto</span>
+                    </dd>
+                </a>
+
+                <a href="../cadastrar/usuario">
+                    <dd>
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                        <span class="titulo">Cadastrar usuário</span>
+                    </dd>
+                </a>
+            </div>
+
+            <div class="rodape">
+
+                <dd class="dark">
+                    <span class="material-symbols-outlined">
+                        dark_mode
+                    </span>
+                    <label class="botao">
+                        <input id="mode" type="checkbox" (change)="darkmode($event)">
+                        <span class="bola"></span>
+                    </label>
+                </dd>
+
+                <a href="../login">
+                    <dd>
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                        <span class="titulo">Sair</span>
+                    </dd>
+                </a>
+            </div>
+        </dl>
+    </nav>
+
+    <main>
+
+        <div class="container">
+            <div class="cabecalho">
+                <div class="navegacao"><span>Almoxarifado / Inserir reserva</span></div>
+            </div>
+
+            <div class="corpo">
+
+                <div class="cabecalho">
+                    <div class="titulo"><span>Inserir reserva</span></div>
+
+                    <div class="pesquisa">
+
+                        <div class="input">
+                            <input type="text" placeholder="Pesquise aqui...">
+                            <span class="material-symbols-outlined">
+                            search
+                        </span>
+                        </div>
+
+                        <span class="material-symbols-outlined">
+                        filter_alt
+                    </span>
+                    </div>
+                </div>
+
+                <div class="produtos">
+                    <div class="titulo"><span>Produtos adicionados:</span></div>
+                    <div class="produto">
+                        <div class="informacoes">
+
+                            <div class="imagem">
+                                <img src="https://cdn.awsli.com.br/600x700/468/468162/produto/19414409/106e8da5c7.jpg" alt="">
+                            </div>
+                            <div class="nome">Relé</div>
+                        </div>
+
+                        <div class="acoes">
+                            <div class="quantidade">
+                                <span class="titulo">Quantidade</span>
+                                <span class="menos">-</span>
+                                <span class="numero">5</span>
+                                <span class="mais">+</span>
+                                <span class="material-symbols-outlined">delete</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <div class="informacoes">
+
+                            <div class="imagem">
+                                <img src="https://cdn.awsli.com.br/600x700/468/468162/produto/19414409/106e8da5c7.jpg" alt="">
+                            </div>
+                            <div class="nome">Relé</div>
+                        </div>
+
+                        <div class="acoes">
+                            <div class="quantidade">
+                                <span class="titulo">Quantidade</span>
+                                <span class="menos">-</span>
+                                <span class="numero">5</span>
+                                <span class="mais">+</span>
+                                <span class="material-symbols-outlined">delete</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="datas">
+                    <div class="retirada">
+                        <span class="titulo">Retirada</span>
+                        <div class="inputs">
+                            <label>
+                                <input type="date">
+                            </label>
+                            <label>
+                                <input type="time">
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="devolucao">
+                        <span class="titulo">Devolução</span>
+                        <div class="inputs">
+                            <label>
+                                <input type="date">
+                            </label>
+                            <label>
+                                <input type="time">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rodape">
+                    <button>Finalizar</button>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+</body>
+<script src="../src/darkmode.js"></script>
+
+
+</html>

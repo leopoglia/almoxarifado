@@ -1,0 +1,176 @@
+main {
+    height: 100%;
+    padding-left: 205px;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+main .container {
+    padding-top: 20px;
+    height: 100%;
+    margin: 0px 100px 0px 100px;
+}
+
+main .container .cabecalho .navegacao {
+    font-size: 14px;
+}
+
+main .corpo {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 3px;
+    border: 1px solid var(--cinzaclaro2);
+}
+
+main .corpo .titulo {
+    margin: 15px;
+}
+
+main .container .rodape {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 15px;
+    height: 50px;
+}
+
+main .container .rodape button {
+    width: 165px;
+    height: 45px;
+    background-color: var(--azul);
+    border: none;
+    color: var(--branco);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+main .container .rodape button:hover {
+    background-color: var(--azulclaro);
+}
+
+main .container .informacoes {
+    margin-left: 15px;
+    width: 100%;
+}
+
+main .container .informacoes .informacoes-gerais {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+main .container .informacoes .informacoes-gerais .nome,
+main .container .informacoes .informacoes-gerais .email,
+main .container .informacoes .informacoes-adicionais .matricula,
+main .container .informacoes .informacoes-adicionais .cargo {
+    display: grid;
+    width: 100%;
+    align-items: flex-start;
+}
+
+main .container .informacoes .informacoes-gerais .informacoes-grid {
+    display: grid;
+    margin-left: 15px;
+    margin-right: 30px;
+    width: 100%;
+}
+
+main .container .informacoes .informacoes-gerais .nome input,
+main .container .informacoes .informacoes-gerais .email input,
+main .container .informacoes .informacoes-adicionais .matricula input,
+main .container .informacoes .informacoes-adicionais .cargo select {
+    height: 25px;
+    padding: 8px;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    outline: none;
+    width: auto;
+}
+
+main .container .informacoes .informacoes-adicionais .cargo select {
+    height: 43px;
+}
+
+main .container .informacoes .informacoes-adicionais .matricula {
+    margin-right: 20px;
+}
+
+main .container .informacoes .informacoes-gerais .nome {
+    margin-top: 17px;
+}
+
+main .container .informacoes .informacoes-gerais .descricao textarea {
+    height: 122px;
+    resize: none
+}
+
+main .container .informacoes .informacoes-adicionais {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+}
+
+main .container .informacoes .inserir-imagem .imagem {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--branco);
+}
+
+main .container .informacoes .inserir-imagem .imagem .material-symbols-outlined {
+    color: var(--cinzaclaro2);
+    font-size: 80px;
+}
+
+main .container .informacoes .informacoes-gerais .inserir-imagem input[type='file'] {
+    display: none
+}
+
+@media(max-width: 1000px) {
+    main .container .informacoes .informacoes-gerais .nome,
+    main .container .informacoes .informacoes-gerais .matricula,
+    main .container .informacoes .informacoes-gerais .email,
+    main .container .informacoes .informacoes-gerais .cargo {
+        margin-top: 15px;
+        width: 95%;
+    }
+    main .container .informacoes .informacoes-gerais,
+    main .container .informacoes {
+        width: auto !important;
+    }
+    main .container .informacoes-gerais {
+        display: grid !important;
+    }
+    main .container .informacoes .informacoes-gerais .informacoes-grid {
+        margin-left: 0px;
+        width: none !important;
+    }
+    main .container .informacoes .informacoes-adicionais {
+        margin-top: 0px !important;
+        display: block !important;
+    }
+    main .container .informacoes .inserir-imagem .imagem {
+        width: 95%;
+    }
+}
+
+@media(max-width: 750px) {
+    main {
+        padding-left: 0px;
+    }
+    main .container {
+        margin: 0px 30px 0px 100px;
+    }
+
+    main .container .rodape button{
+        width: 100%;
+    }
+}
