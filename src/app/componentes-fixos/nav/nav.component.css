@@ -20,6 +20,7 @@ nav dl dd {
     align-items: center;
     justify-content: flex-start;
     color: var(--cinza);
+    cursor: pointer;
 }
 
 nav dl dd:hover {
