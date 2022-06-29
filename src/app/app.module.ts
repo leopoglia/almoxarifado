@@ -37,9 +37,8 @@ const routes: Routes = [
   },
   { path: 'inserirreserva', component: InserirReservasComponent },
   { path: 'reservas', component: ReservasComponent },
-  { path: 'detalhesreserva', component: DetalhesReservaComponent}
-  {
-    path: 'cadastrar', children: [
+  { path: 'detalhesreserva', component: DetalhesReservaComponent},
+  { path: 'cadastrar', children: [
       { path: 'produto', component: CadastrarProdutoComponent },
       { path: 'usuario', component: CadastrarUsuarioComponent }
     ]
