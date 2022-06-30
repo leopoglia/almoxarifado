@@ -24,10 +24,10 @@ import { AceitarUsuariosComponent } from './aceitar-usuarios/aceitar-usuarios/ac
 import { CabecalhoComponent } from './componentes-fixos/cabecalho/cabecalho.component';
 import { UsuarioComponent } from './aceitar-usuarios/usuario/usuario.component';
 import { FiltroComponent } from './componentes-fixos/filtro/filtro.component';
-
+import CheckLogged from './CheckLogged';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LoginComponent, canActivate: [] },
   {
     path: 'cadastro', children: [
       { path: '1', component: Cadastro1Component },
@@ -37,8 +37,8 @@ const routes: Routes = [
   },
   {
     path: 'visaogeral', children: [
-      { path: '', component: VisaoGeralComponent },
-      { path: 'produto', component: ProdutoComponent }
+      { path: '', canActivate: [CheckLogged], component: VisaoGeralComponent },
+      { path: 'produto', canActivate: [CheckLogged], component: ProdutoComponent }
     ]
   },
   { path: 'inserirreserva', component: InserirReservasComponent },
@@ -88,11 +88,7 @@ const routes: Routes = [
     RouterModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ CheckLogged ],
+  bootstrap: [ AppComponent ]
 })
-
-
-
-
 export class AppModule { }
