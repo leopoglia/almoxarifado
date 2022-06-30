@@ -10,11 +10,15 @@ export class LoginComponent implements OnInit {
 
   constructor(private route: Router) { }
 
+  usuario = '';
+  senha = '';
+
   ngOnInit() {
   }
 
   entrar(){
-    this.route.navigate(['/visaogeral'])
+    console.log("usuario: ", this.usuario, "senha: ", this.senha);
+    this.route.navigate(['/visaogeral']);
   }
 
   cadastrar(){
