@@ -1,0 +1,32 @@
+<div class="reserva" *ngFor="let reserva of reservas" (click)="link()">
+  <div class="titulo">Reserva Nº 1
+    <div class="situacao">
+      <span class="material-symbols-outlined">
+        radio_button_checked
+      </span>
+    </div>
+  </div>
+  <div class="pessoa"><span>Retirada por: </span> <span> - </span></div>
+
+  <div class="horario">
+    <div class="data"><span>Retirar em: </span><span>23/12/2022</span></div>
+     <span>às</span> 
+    <div class="hora">18:00</div>
+  </div>
+  <div class="detalhes">
+    <div class="reservafeita">
+      <div class="data"><span>Reserva feita em: </span><span>23/12/2022</span></div>
+      <span>às</span> 
+      <div class="hora">18:00</div>
+    </div>
+
+
+    <div class="verdetalhes"><span class="texto">Ver detalhes</span>
+      <div class="expandir">
+        <span class="material-symbols-outlined">
+          arrow_forward
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+main {
+    height: 100%;
+    padding-left: 205px;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+main .container {
+    height: 100%;
+}
+
+main .container .informacoes{
+    display: flex;
+}
+
+main .container .fundo-perfil{
+    height: 150px;
+    background-color: var(--azul);
+}
+
+main .container .foto-perfil{
+    margin-top: -50px;
+    margin-left: 100px;
+}
+
+main .container .foto-perfil img{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+}
+
+main .container .nome-perfil{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+main .container .detalhes-nome{
+    margin: 10px 0 0 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+main .container .detalhes-nome .material-symbols-outlined{
+    margin-left: 5px;
+    color: var(--azul);
+}
+
+@media(max-width: 750px) {
+    main {
+        padding-left: 0px;
+    }
+    main .container .rodape button {
+        width: 100%;
+    }
+
+}

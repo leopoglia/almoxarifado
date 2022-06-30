@@ -1,0 +1,76 @@
+.reserva {
+    width: 100%;
+    border: 1px solid var(--cinzaclaro2);
+    margin-bottom: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.reserva .titulo{
+    margin: 15px 0px 15px 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.reserva .situacao .material-symbols-outlined{
+    margin-right: 15px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: green !important;
+}
+.reserva .horario,.reserva .pessoa{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 0 10px 15px;
+}
+.reserva .detalhes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    margin: 0px 0px 10px 15px;
+}
+.reserva .horario,.reserva .reservafeita{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.reserva .detalhes .verdetalhes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.reserva .detalhes .verdetalhes .expandir{
+    background-color: var(--azul);
+    border-radius: 50%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+.reserva .detalhes .verdetalhes .expandir .material-symbols-outlined{
+    font-size: 18px;
+    color: var(--branco) !important;
+}
+.reserva .detalhes,.reserva .horario,.reserva .pessoa{
+    font-size: 14px;
+    height: 24px;
+}
+
+
+@media(max-width: 750px) {
+    
+.reserva .detalhes .verdetalhes .texto{
+        display: none;
+    }
+}
