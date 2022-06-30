@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
+import { FiltroComponent } from './filtro/filtro.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,7 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
     FormsModule
   ],
   exports: [HeaderComponent],
-  declarations: [HeaderComponent, NavComponent, CabecalhoComponent],
+  declarations: [HeaderComponent, NavComponent, CabecalhoComponent, FiltroComponent],
   
 })
 export class ComponentesFixosModule { }

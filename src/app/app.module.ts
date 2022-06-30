@@ -23,6 +23,7 @@ import { PerfilComponent } from './perfil/perfil/perfil.component';
 import { AceitarUsuariosComponent } from './aceitar-usuarios/aceitar-usuarios/aceitar-usuarios.component';
 import { CabecalhoComponent } from './componentes-fixos/cabecalho/cabecalho.component';
 import { UsuarioComponent } from './aceitar-usuarios/usuario/usuario.component';
+import { FiltroComponent } from './componentes-fixos/filtro/filtro.component';
 
 
 const routes: Routes = [
@@ -77,7 +78,8 @@ const routes: Routes = [
     PerfilComponent,
     AceitarUsuariosComponent,
     CabecalhoComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    FiltroComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
