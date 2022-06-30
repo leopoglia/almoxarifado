@@ -67,5 +67,6 @@ a {
 
 .aprovacao .recusar{
     border: 1px solid var(--cinzaclaro2);
+    background-color: var(--cinzaclaro3);
     color: var(--preto);
 }
