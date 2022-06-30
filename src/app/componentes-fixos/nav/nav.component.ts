@@ -31,6 +31,8 @@ export class NavComponent implements OnInit {
       document.getElementById('4').classList.add('atual')
     } else if (localStorage.getItem('atual') == '5') {
       document.getElementById('5').classList.add('atual')
+    } else if (localStorage.getItem('atual') == '6') {
+      document.getElementById('6').classList.add('atual')
     }
   }
 
@@ -47,28 +49,32 @@ export class NavComponent implements OnInit {
 
   }
 
-  visaoGeral(){
+  visaoGeral() {
     this.route.navigate(['/visaogeral/']);
   }
 
-  inserirReservas(){
+  inserirReservas() {
     this.route.navigate(['/inserirreserva/']);
   }
 
-  reservas(){
+  reservas() {
     this.route.navigate(['/reservas/']);
   }
 
-  cadastrarProduto(){
+  cadastrarProduto() {
     this.route.navigate(['/cadastrar/produto/']);
   }
 
-  cadastrarUsuario(){
+  cadastrarUsuario() {
     this.route.navigate(['/cadastrar/usuario/']);
   }
 
+  aceitarUsuarios() {
+    this.route.navigate(['/usuario/aceitar/']);
+  }
 
-  sair(){
+
+  sair() {
     this.route.navigate(['']);
   }
 }

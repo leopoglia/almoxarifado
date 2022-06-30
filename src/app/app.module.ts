@@ -20,6 +20,7 @@ import { DetalhesReservaComponent } from './detalhes-reserva/detalhes-reserva/de
 import { ItemComponent } from './visao-geral/item/item.component';
 import { ReservaComponent } from './reservas/reserva/reserva.component';
 import { PerfilComponent } from './perfil/perfil/perfil.component';
+import { AceitarUsuariosComponent } from './aceitar-usuarios/aceitar-usuarios/aceitar-usuarios.component';
 
 
 const routes: Routes = [
@@ -39,14 +40,15 @@ const routes: Routes = [
   },
   { path: 'inserirreserva', component: InserirReservasComponent },
   { path: 'reservas', component: ReservasComponent },
-  { path: 'reservas/detalhes', component: DetalhesReservaComponent},
-  { path: 'cadastrar', children: [
+  { path: 'reservas/detalhes', component: DetalhesReservaComponent },
+  {
+    path: 'cadastrar', children: [
       { path: 'produto', component: CadastrarProdutoComponent },
       { path: 'usuario', component: CadastrarUsuarioComponent }
     ]
   },
-  { path: 'cadastrar/usuario', component: CadastrarUsuarioComponent },
-  { path: 'perfil', component: PerfilComponent}
+  { path: 'usuario/aceitar', component: AceitarUsuariosComponent },
+  { path: 'perfil', component: PerfilComponent }
 ];
 
 @NgModule({
@@ -70,7 +72,8 @@ const routes: Routes = [
     DetalhesReservaComponent,
     ItemComponent,
     ReservaComponent,
-    PerfilComponent
+    PerfilComponent,
+    AceitarUsuariosComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
