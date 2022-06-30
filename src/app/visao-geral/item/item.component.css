@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+.produto:hover{
+    background-color: var(--cinzaclaro3);
+}
+
 .produto .imagem,
 .produto .informacoes .quantidade,
 .produto .informacoes .quantidade-produto {

@@ -49,6 +49,11 @@ main .container .cabecalho .pesquisa .input input {
     margin-left: 10px;
     border: none;
     outline: none;
+    background-color: transparent;
+}
+
+main .container .cabecalho .pesquisa .input:hover{
+    background-color: var(--cinzaclaro3);
 }
 
 main .container .cabecalho .pesquisa .material-symbols-outlined {
