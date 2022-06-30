@@ -21,6 +21,8 @@ import { ItemComponent } from './visao-geral/item/item.component';
 import { ReservaComponent } from './reservas/reserva/reserva.component';
 import { PerfilComponent } from './perfil/perfil/perfil.component';
 import { AceitarUsuariosComponent } from './aceitar-usuarios/aceitar-usuarios/aceitar-usuarios.component';
+import { CabecalhoComponent } from './componentes-fixos/cabecalho/cabecalho.component';
+import { UsuarioComponent } from './aceitar-usuarios/usuario/usuario.component';
 
 
 const routes: Routes = [
@@ -73,7 +75,9 @@ const routes: Routes = [
     ItemComponent,
     ReservaComponent,
     PerfilComponent,
-    AceitarUsuariosComponent
+    AceitarUsuariosComponent,
+    CabecalhoComponent,
+    UsuarioComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

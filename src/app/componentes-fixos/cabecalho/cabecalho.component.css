@@ -1,0 +1,60 @@
+
+.cabecalho .navegacao {
+    font-size: 14px;
+}
+
+.cabecalho .pesquisa {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cabecalho .pesquisa .input {
+    width: 75%;
+    height: 25px;
+    padding: 8px;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecalho .pesquisa .input .material-symbols-outlined {
+    margin: 0;
+}
+
+.cabecalho .pesquisa .input input {
+    width: 90%;
+    height: 100%;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.cabecalho .pesquisa .input:hover{
+    background-color: var(--cinzaclaro3);
+}
+
+.cabecalho .pesquisa .material-symbols-outlined {
+    margin: 0px 20px 0px 20px;
+    font-size: 30px;
+    color: var(--azul);
+}
+
+.cabecalho .pesquisa button {
+    width: 165px;
+    height: 45px;
+    background-color: var(--azul);
+    border: none;
+    color: var(--branco);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cabecalho .pesquisa button:hover {
+    background-color: var(--azulclaro);
+}
