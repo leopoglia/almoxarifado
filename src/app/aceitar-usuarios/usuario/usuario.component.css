@@ -1,6 +1,6 @@
 .usuario {
     width: 100%;
-    height: 130px;
+    height: 140px;
     border: 1px solid var(--cinzaclaro2);
     margin-bottom: 10px;
     border-radius: 3px;
@@ -16,7 +16,7 @@ a {
 }
 
 .usuario .titulo {
-    margin: 5px 0px 5px 15px;
+    margin: 0px 0px 5px 15px;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -28,14 +28,14 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 0 0 10px 15px;
+    margin: 0 0 5px 15px;
 }
 
 .usuario .email {
     display: flex;
     align-items: center;
     justify-content: space-between !important;
-    margin: 0px 0px 10px 15px;
+    margin: 0px 0px 5px 15px;
 }
 
 .usuario .email,
