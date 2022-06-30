@@ -80,65 +80,6 @@ main .corpo {
     border-radius: 3px;
 }
 
-main .corpo .produto {
-    width: 24.4%;
-    height: 300px;
-    display: inline-flex;
-    justify-content: space-between;
-    border: 1px solid var(--cinzaclaro2);
-    margin-bottom: 10px;
-    margin: 2px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-main .corpo .produto .imagem,
-main .corpo .produto .informacoes .quantidade,
-main .corpo .produto .informacoes .quantidade-produto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-main .corpo .produto .imagem {
-    height: 130px;
-}
-
-main .corpo .produto .imagem img {
-    height: 110px;
-}
-
-main .corpo .produto .informacoes {
-    margin-left: 10px;
-    height: 100px;
-}
-
-main .corpo .produto .informacoes .titulo {
-    width: 220px;
-    font-size: 18px;
-    margin-bottom: 15px;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    direction: ltr;
-}
-
-main .corpo .produto .informacoes .descricao {
-    font-size: 12px;
-    height: 75px;
-    padding-right: 10px;
-    text-align: justify;
-}
-
-main .corpo .produto .informacoes .quantidade {
-    margin-left: 10px;
-    width: 75px;
-    height: 30px;
-    border-radius: 3px;
-    border: 1px solid var(--cinzaclaro2);
-}
-
 main .corpo .rodape {
     height: 40px;
     width: 100%;
@@ -186,11 +127,6 @@ main .corpo .rodape .paginacao dl .atual:hover {
     background-color: var(--azulclaro);
 }
 
-@media(max-width: 1400px) {
-    main .corpo .produto {
-        width: 32.5%;
-    }
-}
 
 @media(max-width: 1150px) {
     main .corpo .produto {
@@ -198,15 +134,6 @@ main .corpo .rodape .paginacao dl .atual:hover {
     }
 }
 
-@media(max-width: 900px) {
-    main .corpo .produto {
-        width: 100%;
-    }
-
-    main .corpo .rodape {
-        justify-content: center;
-    }
-}
 
 @media(max-width: 750px) {
     main {

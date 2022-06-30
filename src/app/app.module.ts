@@ -17,6 +17,7 @@ import { ProdutoComponent } from './produto/produto/produto.component';
 import { HeaderComponent } from './componentes-fixos/header/header.component';
 import { NavComponent } from './componentes-fixos/nav/nav.component';
 import { DetalhesReservaComponent } from './detalhes-reserva/detalhes-reserva/detalhes-reserva.component';
+import { ItemComponent } from './visao-geral/item/item.component';
 
 
 const routes: Routes = [
@@ -63,7 +64,8 @@ const routes: Routes = [
     HeaderComponent,
     ProdutoComponent,
     NavComponent,
-    DetalhesReservaComponent
+    DetalhesReservaComponent,
+    ItemComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

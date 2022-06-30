@@ -34,10 +34,6 @@ export class NavComponent implements OnInit {
     }
   }
 
-  teste(event) {
-    console.log(event);
-  }
-
   darkmode($event) {
     const html = document.querySelector('html');
     const checkbox = document.querySelector('#mode');

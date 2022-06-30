@@ -1,0 +1,128 @@
+
+.produto {
+    width: 24.4%;
+    height: 300px;
+    display: inline-flex;
+    justify-content: space-between;
+    border: 1px solid var(--cinzaclaro2);
+    margin-bottom: 10px;
+    margin: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.produto .imagem,
+.produto .informacoes .quantidade,
+.produto .informacoes .quantidade-produto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto .imagem {
+    height: 130px;
+}
+
+.produto .imagem img {
+    height: 110px;
+}
+
+.produto .informacoes {
+    margin-left: 10px;
+    height: 100px;
+}
+
+.produto .informacoes .titulo {
+    width: 220px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+}
+
+.produto .informacoes .descricao {
+    font-size: 12px;
+    height: 75px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+.produto .informacoes .quantidade {
+    margin-left: 10px;
+    width: 75px;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid var(--cinzaclaro2);
+}
+
+.rodape {
+    height: 40px;
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.rodape .paginacao {
+    height: 100%;
+    width: 250px;
+    border-radius: 3px;
+    margin-right: 3px;
+}
+
+.rodape .paginacao dl {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rodape .paginacao dl dd {
+    width: 42px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.rodape .paginacao dl dd:hover {
+    background-color: var(--cinzaclaro3);
+}
+
+.rodape .paginacao dl .atual {
+    background-color: var(--azul);
+    color: var(--branco);
+}
+
+.rodape .paginacao dl .atual:hover {
+    background-color: var(--azulclaro);
+}
+
+@media(max-width: 1400px) {
+    .produto {
+        width: 32.5%;
+    }
+}
+
+@media(max-width: 1150px) {
+    .produto {
+        width: 48.7%;
+    }
+}
+
+@media(max-width: 900px) {
+    .produto {
+        width: 100%;
+    }
+
+    .rodape {
+        justify-content: center;
+    }
+}
