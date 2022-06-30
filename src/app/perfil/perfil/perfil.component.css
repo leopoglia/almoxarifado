@@ -47,10 +47,16 @@ main .container .detalhes-nome .material-symbols-outlined{
 }
 
 main .container .acoes{
-    height: 100px;
+    height: 400px;
     margin: 20px 100px 0px 100px;
     border-radius: 3px;
     border: 1px solid var(--cinzaclaro2);
+}
+
+main .container .acoes .nav{
+    height: 50px;
+    background-color: var(--cinzaclaro3);
+    border-bottom: 1px solid var(--cinzaclaro2);
 }
 
 @media(max-width: 750px) {
