@@ -10,6 +10,8 @@ export class PerfilComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    localStorage.setItem('atual', 'perfil')
   }
+
 
 }

@@ -46,12 +46,31 @@ main .container .detalhes-nome .material-symbols-outlined{
     color: var(--azul);
 }
 
+main .container .acoes{
+    height: 100px;
+    margin: 20px 100px 0px 100px;
+    border-radius: 3px;
+    background-color: var(--cinzaclaro3);
+}
+
 @media(max-width: 750px) {
     main {
         padding-left: 0px;
     }
     main .container .rodape button {
         width: 100%;
+    }
+
+    main .container .foto-perfil{
+        margin-left: 20px;
+    }
+
+    main .container{
+        margin-left: 70px;
+    }
+
+    main .container .acoes{
+        margin: 20px 15px 0px 15px;
     }
 
 }
