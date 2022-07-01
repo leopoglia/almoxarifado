@@ -12,4 +12,6 @@ export class FiltroComponent implements OnInit {
   ngOnInit() {
   }
 
+  classificacoes = [{nome: "Pedro"}, {nome: "João"}, {nome: "Eduarda"}, {nome: "Vytor"}, {nome: "Ester"}, {nome: "Leonardo"}]
+
 }
