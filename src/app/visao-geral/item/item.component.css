@@ -12,7 +12,7 @@
 }
 
 .produto:hover{
-    background-color: var(--cinzaclaro3);
+    background-color: var(--hover);
 }
 
 .produto .imagem,

@@ -60,7 +60,7 @@ main .corpo .rodape .paginacao dl dd {
 }
 
 main .corpo .rodape .paginacao dl dd:hover {
-    background-color: var(--cinzaclaro3);
+    background-color: var(--hover);
 }
 
 main .corpo .rodape .paginacao dl .atual {

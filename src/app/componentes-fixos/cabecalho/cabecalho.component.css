@@ -35,7 +35,7 @@
 }
 
 .cabecalho .pesquisa .input:hover{
-    background-color: var(--cinzaclaro3);
+    background-color: var(--hover);
 }
 
 .cabecalho .pesquisa .material-symbols-outlined {
@@ -70,6 +70,12 @@
 
 app-filtro{
     position: absolute;
-    margin-top: 85px;
-    right: 400px;
+    margin-top: 55px;
+    right: 420px;
+}
+
+@media(max-width: 750px){
+    app-filtro{
+        right: 320px;
+    }
 }

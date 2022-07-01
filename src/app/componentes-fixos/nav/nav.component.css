@@ -24,7 +24,7 @@ nav dl dd {
 }
 
 nav dl dd:hover {
-    background-color: #c4c4c423;
+    background-color: var(--hover);
 }
 
 nav dl a {

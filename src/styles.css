@@ -34,6 +34,7 @@ body {
     --cinzaclaro3: #E7E7E7;
     --azul: #005CAA;
     --azulclaro: #0164B3;
+    --hover: #c4c4c42f;
     --grande: 25px;
     --media: 14px;
     --pequena: 12px;
@@ -48,6 +49,7 @@ body {
     --cinzaclaro3: #0f0f0f;
     --azul: #005CAA;
     --azulclaro: #0164B3;
+    --hover: #0f0f0f;
     --grande: 25px;
     --media: 14px;
     --pequena: 12px;
