@@ -15,6 +15,10 @@ export class CabecalhoComponent implements OnInit {
   situacaofiltro = false;
 
   filtro(){
-    let 
+    if(this.situacaofiltro == true){
+      this.situacaofiltro = false;
+    }else{
+      this.situacaofiltro = true;
+    }
   }
 }
