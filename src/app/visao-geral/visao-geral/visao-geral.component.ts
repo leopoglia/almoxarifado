@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
 
 
 @Component({
@@ -8,12 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisaoGeralComponent implements OnInit {
 
-  constructor() {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
   }
 
   ngOnInit() {
     localStorage.setItem('atual', '1');
   }
-
-
 }

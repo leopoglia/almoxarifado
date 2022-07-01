@@ -39,7 +39,6 @@
 }
 
 .cabecalho .pesquisa .material-symbols-outlined {
-    margin: 0px 20px 0px 20px;
     font-size: 30px;
     color: var(--azul);
 }
@@ -57,4 +56,18 @@
 
 .cabecalho .pesquisa button:hover {
     background-color: var(--azulclaro);
+}
+
+.cabecalho .filtro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    margin: 0px 20px 0px 20px;
+}
+
+#filtro{
+    display: none;
 }
