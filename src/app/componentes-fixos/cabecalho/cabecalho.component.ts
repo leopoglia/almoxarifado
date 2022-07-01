@@ -11,4 +11,10 @@ export class CabecalhoComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  situacaofiltro = false;
+
+  filtro(){
+    let 
+  }
 }
