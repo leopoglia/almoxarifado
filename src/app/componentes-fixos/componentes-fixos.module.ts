@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { FiltroComponent } from './filtro/filtro.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { BotaoComponent } from './botao/botao.component';
 
 @NgModule({
   imports: [
@@ -14,7 +13,7 @@ import { BotaoComponent } from './botao/botao.component';
     FormsModule
   ],
   exports: [HeaderComponent],
-  declarations: [HeaderComponent, NavComponent, CabecalhoComponent, FiltroComponent, NavBarComponent, BotaoComponent],
+  declarations: [HeaderComponent, NavComponent, CabecalhoComponent, FiltroComponent, NavBarComponent],
   
 })
 export class ComponentesFixosModule { }
