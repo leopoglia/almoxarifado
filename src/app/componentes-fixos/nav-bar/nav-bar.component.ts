@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
 
   usuario = localStorage.getItem("usuario");
+  primeiroNome = this.usuario.split(" ", 1);
 
   constructor(private route: Router) { }
 
