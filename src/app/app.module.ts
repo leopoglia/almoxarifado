@@ -42,17 +42,19 @@ const routes: Routes = [
       { path: 'produto', canActivate: [CheckLogged], component: ProdutoComponent }
     ]
   },
-  { path: 'inserirreserva', component: InserirReservasComponent },
-  { path: 'reservas', component: ReservasComponent },
-  { path: 'reservas/detalhes', component: DetalhesReservaComponent },
+  { path: 'inserirreserva', canActivate: [CheckLogged], component: InserirReservasComponent },
+  { path: 'reservas', children: [
+    { path: '', canActivate: [CheckLogged], component: ReservasComponent },
+    { path: 'detalhes', canActivate: [CheckLogged], component: DetalhesReservaComponent }
+  ] },
   {
     path: 'cadastrar', children: [
-      { path: 'produto', component: CadastrarProdutoComponent },
-      { path: 'usuario', component: CadastrarUsuarioComponent }
+      { path: 'produto', canActivate: [CheckLogged], component: CadastrarProdutoComponent },
+      { path: 'usuario', canActivate: [CheckLogged], component: CadastrarUsuarioComponent }
     ]
   },
-  { path: 'usuario/aceitar', component: AceitarUsuariosComponent },
-  { path: 'perfil', component: PerfilComponent }
+  { path: 'usuario/aceitar', canActivate: [CheckLogged], component: AceitarUsuariosComponent },
+  { path: 'perfil', canActivate: [CheckLogged], component: PerfilComponent }
 ];
 
 @NgModule({
