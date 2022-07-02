@@ -86,7 +86,7 @@ nav .dark .bola {
     width: 70px;
     margin-left: -60px;
     margin-top: -18px;
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 nav .dark .bola:before {
@@ -96,7 +96,6 @@ nav .dark .bola:before {
     width: 17px;
     left: 4px;
     bottom: 4px;
-    background-color: transparent;
 }
 
 nav .dark input:checked+.bola {
@@ -114,14 +113,14 @@ nav .dark input:checked+.bola:before {
 }
 
 .bolaaberto {
-    border-radius: 34px;
+    border-radius: 20px !important;
     position: absolute;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--cinzaclaro2);
+    margin-top: -2px !important;
+    margin-left: 15px !important;
+    width: 52px !important;
+    height: 25px !important;
+    background-color: var(--cinzaclaro2) !important;
     -webkit-transition: .4s;
     transition: .4s;
 }
