@@ -1,4 +1,3 @@
-
 .cabecalho .navegacao {
     font-size: 14px;
 }
@@ -34,7 +33,7 @@
     background-color: transparent;
 }
 
-.cabecalho .pesquisa .input:hover{
+.cabecalho .pesquisa .input:hover {
     background-color: var(--hover);
 }
 
@@ -58,7 +57,7 @@
     background-color: var(--azulclaro);
 }
 
-.cabecalho .filtro{
+.cabecalho .filtro {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,14 +67,14 @@
     margin: 0px 20px 0px 20px;
 }
 
-app-filtro{
+app-filtro {
     position: absolute;
     margin-top: 55px;
     right: 420px;
 }
 
-@media(max-width: 750px){
-    app-filtro{
+@media(max-width: 750px) {
+    app-filtro {
         right: 320px;
     }
 }

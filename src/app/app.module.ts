@@ -24,8 +24,8 @@ import { AceitarUsuariosComponent } from './aceitar-usuarios/aceitar-usuarios/ac
 import { CabecalhoComponent } from './componentes-fixos/cabecalho/cabecalho.component';
 import { UsuarioComponent } from './aceitar-usuarios/usuario/usuario.component';
 import { FiltroComponent } from './componentes-fixos/filtro/filtro.component';
-import CheckLogged from './CheckLogged';
 import { NavBarComponent } from './componentes-fixos/nav-bar/nav-bar.component';
+import CheckLogged from './CheckLogged';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
@@ -82,7 +82,7 @@ const routes: Routes = [
     UsuarioComponent,
     FiltroComponent,
     NavBarComponent
-  ],
+    ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,

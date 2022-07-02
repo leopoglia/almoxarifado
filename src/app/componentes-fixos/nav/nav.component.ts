@@ -73,8 +73,25 @@ export class NavComponent implements OnInit {
     this.route.navigate(['/usuario/aceitar/']);
   }
 
-
   sair() {
     this.route.navigate(['']);
+  }
+
+  menu(){
+    let nav:any = document.querySelector("#nav");
+    nav.classList.toggle("navaberto")
+
+    let titulo:any = document.querySelectorAll("span.titulo")
+    for(let i = 0; i < 7; i++){
+      titulo[i].classList.toggle("tituloaberto")
+    }
+  
+    let bola:any = document.querySelector("dd.dark > label > span");
+    bola.classList.toggle("bolaaberto")
+
+    let icones:any = document.querySelectorAll("span.material-symbols-outlined")
+    for(let i = 0; i < 10; i++){
+      icones[i].classList.toggle("iconesaberto")
+    }
   }
 }

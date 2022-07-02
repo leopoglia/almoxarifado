@@ -1,10 +1,14 @@
 nav {
-    width: 210px;
+    width: 70px;
     height: 100%;
     background-color: var(--cinzaclaro3);
     padding-left: 5px;
     margin-top: 60px;
     position: fixed;
+}
+
+nav dl .menu:hover {
+    background-color: var(--cinzaclaro3) !important;
 }
 
 nav dl span {
@@ -34,7 +38,6 @@ nav dl a {
 
 nav dl .atual {
     box-shadow: -5px 0px 0 var(--azul);
-    
     color: var(--cinzaclaro1);
     font-weight: 700;
 }
@@ -43,15 +46,15 @@ nav dl .atual .material-symbols-outlined {
     color: var(--azul);
 }
 
-nav dl .atual span{
+nav dl .atual span {
     color: var(--azul);
-
 }
 
 nav dl .material-symbols-outlined {
     padding: 10px;
     font-size: 24px;
     font-weight: 500;
+    margin-left: 10px;
 }
 
 nav dl .rodape {
@@ -62,9 +65,7 @@ nav dl .rodape {
 
 nav dl .rodape dd {
     border-bottom: 0;
-    border-top: 1px solid var(--cinzaclaro2);
 }
-
 
 nav .dark .botao {
     position: relative;
@@ -80,6 +81,39 @@ nav .dark .botao input {
 }
 
 nav .dark .bola {
+    border-radius: 0px;
+    height: 60px;
+    width: 70px;
+    margin-left: -60px;
+    margin-top: -18px;
+    background-color: transparent !important;
+}
+
+nav .dark .bola:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: transparent;
+}
+
+nav .dark input:checked+.bola {
+    background-color: var(--cinzaclaro2);
+}
+
+nav .dark input:checked+.bola:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.navaberto {
+    width: 210px;
+}
+
+.bolaaberto {
     border-radius: 34px;
     position: absolute;
     cursor: pointer;
@@ -92,7 +126,7 @@ nav .dark .bola {
     transition: .4s;
 }
 
-nav .dark .bola:before {
+.bolaaberto:before {
     position: absolute;
     content: "";
     height: 17px;
@@ -104,14 +138,17 @@ nav .dark .bola:before {
     transition: .4s;
     border-radius: 50%;
 }
-nav .dark input:checked+.bola {
-    background-color: var(--cinzaclaro2);
+
+.titulo {
+    font-size: 0px;
 }
 
-nav .dark input:checked+.bola:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+.tituloaberto {
+    font-size: 14px;
+}
+
+.iconesaberto {
+    margin-left: 00px;
 }
 
 @media(max-width: 750px) {
@@ -123,11 +160,9 @@ nav .dark input:checked+.bola:before {
         margin-top: -18px;
         background-color: transparent !important;
     }
-
-    nav .dark .bola:before{
+    nav .dark .bola:before {
         background-color: transparent !important;
     }
-
     nav {
         width: 70px;
     }
