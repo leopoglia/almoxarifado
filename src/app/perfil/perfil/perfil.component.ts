@@ -12,7 +12,8 @@ export class PerfilComponent implements OnInit {
   constructor() { }
 
   usuario = localStorage.getItem('usuario')
-  primeiroNome = this.usuario.split(" ", 2);
+  nome = this.usuario.split(" ", 2).toString();
+  nomeSobrenome = this.nome.replace(/,/, " ");
 
   ngOnInit() {
     localStorage.setItem('atual', 'perfil')
