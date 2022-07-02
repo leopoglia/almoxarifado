@@ -25,6 +25,7 @@ import { CabecalhoComponent } from './componentes-fixos/cabecalho/cabecalho.comp
 import { UsuarioComponent } from './aceitar-usuarios/usuario/usuario.component';
 import { FiltroComponent } from './componentes-fixos/filtro/filtro.component';
 import CheckLogged from './CheckLogged';
+import { NavBarComponent } from './componentes-fixos/nav-bar/nav-bar.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
@@ -79,7 +80,8 @@ const routes: Routes = [
     AceitarUsuariosComponent,
     CabecalhoComponent,
     UsuarioComponent,
-    FiltroComponent
+    FiltroComponent,
+    NavBarComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
