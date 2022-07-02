@@ -12,6 +12,6 @@ export class VisaoGeralComponent implements OnInit {
   }
 
   ngOnInit() {
-    localStorage.setItem('atual', '1');
+
   }
 }

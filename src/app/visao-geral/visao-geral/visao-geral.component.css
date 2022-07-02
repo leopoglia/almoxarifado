@@ -1,10 +1,10 @@
-a{
+a {
     text-decoration: none;
 }
 
 main {
     height: 100%;
-    padding-left: 205px;
+    padding-left: 70px;
     padding-top: 60px;
     z-index: 2;
 }
@@ -72,13 +72,11 @@ main .corpo .rodape .paginacao dl .atual:hover {
     background-color: var(--azulclaro);
 }
 
-
 @media(max-width: 1150px) {
     main .corpo .produto {
         width: 48.7%;
     }
 }
-
 
 @media(max-width: 750px) {
     main {
@@ -87,16 +85,13 @@ main .corpo .rodape .paginacao dl .atual:hover {
     main .container {
         margin: 0px 30px 0px 100px;
     }
-
-    main .container .cabecalho .pesquisa button{
+    main .container .cabecalho .pesquisa button {
         display: none;
     }
-
-    main .container .cabecalho .pesquisa .input{
+    main .container .cabecalho .pesquisa .input {
         width: 100%;
     }
-
-    main .container .cabecalho .pesquisa .material-symbols-outlined{
+    main .container .cabecalho .pesquisa .material-symbols-outlined {
         margin: 0px 10px 0px 10px;
     }
 }

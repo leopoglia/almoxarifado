@@ -6,11 +6,16 @@ import { Router } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
+
+
 export class NavComponent implements OnInit {
+
 
   constructor(private route: Router) { }
 
+
   ngOnInit() {
+
     const html = document.querySelector('html');
     const input: HTMLInputElement = document.getElementById('mode') as HTMLInputElement;
 
@@ -35,6 +40,8 @@ export class NavComponent implements OnInit {
       document.getElementById('6').classList.add('atual')
     }
   }
+
+
 
   darkmode($event) {
     const html = document.querySelector('html');
@@ -78,6 +85,7 @@ export class NavComponent implements OnInit {
   }
 
   menu(){
+
     let nav:any = document.querySelector("#nav");
     nav.classList.toggle("navaberto")
 
@@ -93,5 +101,8 @@ export class NavComponent implements OnInit {
     for(let i = 0; i < 10; i++){
       icones[i].classList.toggle("iconesaberto")
     }
+
+    let botao:any = document.querySelector("#nav > dl > div > div > dd.dark > label")
+    botao.classList.toggle("botaoaberto")
   }
 }

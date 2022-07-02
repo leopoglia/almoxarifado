@@ -1,6 +1,6 @@
 main {
     height: 100%;
-    padding-left: 205px;
+    padding-left: 70px;
     padding-top: 60px;
     z-index: 2;
 }
@@ -30,37 +30,41 @@ main .corpo .reserva {
     transition: 0.5s;
 }
 
-main .corpo .reserva .titulo{
+main .corpo .reserva .titulo {
     margin: 15px 0px 15px 15px;
     font-size: 18px;
 }
 
-main .corpo .reserva .horario, main .corpo .reserva .pessoa{
+main .corpo .reserva .horario,
+main .corpo .reserva .pessoa {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin: 0 0 10px 15px;
 }
 
-main .corpo .reserva .detalhes{
+main .corpo .reserva .detalhes {
     display: flex;
     align-items: center;
     justify-content: space-between !important;
     margin: 0px 0px 10px 15px;
 }
 
-main .corpo .reserva .horario, main .corpo .reserva .reservafeita{
+main .corpo .reserva .horario,
+main .corpo .reserva .reservafeita {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-main .corpo .reserva .detalhes, main .corpo .reserva .horario, main .corpo .reserva .pessoa{
+main .corpo .reserva .detalhes,
+main .corpo .reserva .horario,
+main .corpo .reserva .pessoa {
     font-size: 14px;
     height: 24px;
 }
 
-main .corpo .reserva .produtos .produto{
+main .corpo .reserva .produtos .produto {
     margin-left: 15px;
     margin-bottom: 10px;
     margin-right: 15px;
@@ -73,19 +77,18 @@ main .corpo .reserva .produtos .produto{
     justify-content: space-between;
 }
 
-main .corpo .reserva .produtos .produto .informacoes{
+main .corpo .reserva .produtos .produto .informacoes {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 main .corpo .reserva .produtos .produto .acoes .quantidade,
-main .corpo .reserva .produtos .produto .acoes .opcao{
+main .corpo .reserva .produtos .produto .acoes .opcao {
     margin: 10px !important;
 }
 
-
-main .corpo .reserva .produtos .produto .acoes{
+main .corpo .reserva .produtos .produto .acoes {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -96,7 +99,7 @@ main .container .produtos .produto .imagem img {
     margin-right: 20px;
 }
 
-main .container .produtos .produto .baixa{
+main .container .produtos .produto .baixa {
     width: 165px;
     height: 45px;
     background-color: var(--azul);
@@ -107,7 +110,7 @@ main .container .produtos .produto .baixa{
     cursor: pointer;
 }
 
-main .container .produtos .produto .baixa:hover{
+main .container .produtos .produto .baixa:hover {
     background-color: var(--azulclaro);
 }
 
@@ -122,13 +125,10 @@ main .container .produtos .produto .baixa:hover{
     main .corpo .reserva .produtos .produto {
         height: 180px;
     }
-
-    main .corpo .reserva .produtos .produto .acoes{
+    main .corpo .reserva .produtos .produto .acoes {
         display: grid;
     }
 }
-
-
 
 @media(max-width: 750px) {
     main {
@@ -137,8 +137,7 @@ main .container .produtos .produto .baixa:hover{
     main .container {
         margin: 0px 30px 0px 100px;
     }
-
-    main .corpo .reserva .detalhes .verdetalhes .texto{
+    main .corpo .reserva .detalhes .verdetalhes .texto {
         display: none;
     }
 }

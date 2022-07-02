@@ -5,14 +5,15 @@ nav {
     padding-left: 5px;
     margin-top: 60px;
     position: fixed;
+    transition: 0.2s;
+}
+
+span {
+    transition: 0.2s;
 }
 
 nav dl .menu:hover {
     background-color: var(--cinzaclaro3) !important;
-}
-
-nav dl span {
-    transition: 0.2s;
 }
 
 nav dl dd {
@@ -58,8 +59,8 @@ nav dl .material-symbols-outlined {
 }
 
 nav dl .rodape {
-    width: 210px;
-    position: fixed;
+    width: 100%;
+    position: sticky;
     bottom: 0;
 }
 
@@ -68,10 +69,9 @@ nav dl .rodape dd {
 }
 
 nav .dark .botao {
-    position: relative;
-    display: inline-block;
-    width: 52px;
-    height: 25px;
+    position: absolute;
+    width: 65px;
+    height: 55px;
 }
 
 nav .dark .botao input {
@@ -109,7 +109,7 @@ nav .dark input:checked+.bola:before {
 }
 
 .navaberto {
-    width: 210px;
+    width: 210px !important;
 }
 
 .bolaaberto {
@@ -133,7 +133,6 @@ nav .dark input:checked+.bola:before {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
 }
@@ -143,11 +142,18 @@ nav .dark input:checked+.bola:before {
 }
 
 .tituloaberto {
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 .iconesaberto {
     margin-left: 00px;
+}
+
+.botaoaberto {
+    position: relative !important;
+    display: inline-block !important;
+    width: 52px !important;
+    height: 25px !important;
 }
 
 @media(max-width: 750px) {
@@ -163,10 +169,10 @@ nav .dark input:checked+.bola:before {
         background-color: transparent !important;
     }
     nav {
-        width: 70px;
+        width: 70px !important;
     }
     nav dl .rodape {
-        width: 70px;
+        width: 70px !important;
     }
     nav dl .titulo {
         font-size: 0;

@@ -1,6 +1,6 @@
 main {
     height: 100%;
-    padding-left: 205px;
+    padding-left: 70px;
     padding-top: 60px;
     z-index: 2;
 }
@@ -228,36 +228,29 @@ input:checked+.bola:before {
 }
 
 @media(max-width: 1000px) {
-
     main .container .informacoes .informacoes-gerais .nome,
     main .container .informacoes .informacoes-gerais .detalhes,
     main .container .informacoes .informacoes-gerais .descricao {
         margin-top: 15px;
         width: 95% !important;
     }
-
     main .container .informacoes .informacoes-gerais,
     main .container .informacoes {
         width: auto !important;
     }
-
     main .container .informacoes-gerais {
         display: grid !important;
     }
-
     main .container .informacoes .informacoes-gerais .informacoes-grid {
         margin-left: 0px;
         width: none !important;
     }
-
     main .container .informacoes .informacoes-adicionais {
         display: block;
     }
-
     main .container .informacoes .informacoes-adicionais .quantidade {
         margin-top: 10px;
     }
-
     main .container .informacoes .informacoes-adicionais .quantidade,
     main .container .informacoes .informacoes-adicionais .localizacao,
     main .container .informacoes .informacoes-adicionais .classificacao {
@@ -266,37 +259,29 @@ input:checked+.bola:before {
         align-items: flex-start;
         margin-top: 15px;
     }
-
     main .container .informacoes .informacoes-adicionais .descartavel {
         margin-top: 15px;
     }
-
     main .container .informacoes .informacoes-adicionais .quantidade input {
         width: auto;
     }
-
     main .container .informacoes .inserir-imagem .imagem {
         width: 95%;
     }
-
     main .container .informacoes .informacoes-adicionais .localizacao input,
     main .container .informacoes .informacoes-adicionais .classificacao select {
         width: 100% !important;
     }
-
 }
 
 @media(max-width: 750px) {
     main {
         padding-left: 0px;
     }
-
     main .container {
         margin: 0px 30px 0px 100px;
     }
-
     main .container .rodape button {
         width: 100%;
     }
-
 }

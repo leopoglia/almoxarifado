@@ -1,6 +1,6 @@
 main {
     height: 100%;
-    padding-left: 205px;
+    padding-left: 70px;
     padding-top: 60px;
     z-index: 2;
 }
@@ -9,64 +9,63 @@ main .container {
     height: 100%;
 }
 
-main .container .informacoes{
+main .container .informacoes {
     display: flex;
 }
 
-main .container .fundo-perfil{
+main .container .fundo-perfil {
     height: 150px;
     background-color: var(--azul);
 }
 
-main .container .foto-perfil{
+main .container .foto-perfil {
     margin-top: -50px;
     margin-left: 100px;
 }
 
-main .container .foto-perfil img{
+main .container .foto-perfil img {
     border-radius: 50%;
     width: 130px;
     height: 130px;
 }
 
-main .container .nome-perfil{
+main .container .nome-perfil {
     font-size: 18px;
     font-weight: 600;
 }
 
-main .container .detalhes-nome{
+main .container .detalhes-nome {
     margin: 10px 0 0 10px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
 
-main .container .detalhes-nome .material-symbols-outlined{
+main .container .detalhes-nome .material-symbols-outlined {
     margin-left: 5px;
     color: var(--azul);
 }
 
-main .container .acoes{
+main .container .acoes {
     height: 400px;
     margin: 20px 100px 0px 100px;
     border-radius: 3px;
     border: 1px solid var(--cinzaclaro2);
 }
 
-main .container .acoes .nav{
+main .container .acoes .nav {
     height: 50px;
     background-color: var(--cinzaclaro3);
     border-bottom: 1px solid var(--cinzaclaro2);
 }
 
-main .container .acoes .nav dl{
+main .container .acoes .nav dl {
     height: 100%;
     display: flex;
     align-items: center;
-
 }
 
-main .container .acoes .nav dd{
+main .container .acoes .nav dd {
     height: 100%;
     display: flex;
     align-items: center;
@@ -76,7 +75,7 @@ main .container .acoes .nav dd{
     border-bottom: 4px solid transparent;
 }
 
-main .container .acoes .nav dd:hover{
+main .container .acoes .nav dd:hover {
     background-color: #c4c4c423;
     border-bottom: 4px solid var(--azul);
 }
@@ -88,21 +87,16 @@ main .container .acoes .nav dd:hover{
     main .container .rodape button {
         width: 100%;
     }
-
-    main .container .foto-perfil{
+    main .container .foto-perfil {
         margin-left: 20px;
     }
-
-    main .container{
+    main .container {
         margin-left: 70px;
     }
-
-    main .container .acoes{
+    main .container .acoes {
         margin: 20px 30px 0px 30px;
     }
-
-    main .container .acoes .nav dd{
+    main .container .acoes .nav dd {
         font-size: 13px;
     }
-
 }
