@@ -14,4 +14,12 @@ export class FiltroComponent implements OnInit {
 
   classificacoes = [{nome: "Pedro"}, {nome: "João"}, {nome: "Eduarda"}, {nome: "Vytor"}, {nome: "Ester"}, {nome: "Leonardo"}]
 
+
+  situacaofiltro = true;
+
+  filtro() {
+    if (this.situacaofiltro == true) {
+      this.situacaofiltro = false;
+    } 
+  }
 }
