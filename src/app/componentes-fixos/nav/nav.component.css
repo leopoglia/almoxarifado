@@ -29,7 +29,12 @@ nav dl dd {
 }
 
 nav dl dd:hover {
+    box-shadow: -5px 0px 0 var(--hover);
     background-color: var(--hover);
+}
+
+nav dl .menu {
+    box-shadow: -5px 0px 0 transparent !important;
 }
 
 nav dl a {
@@ -38,7 +43,7 @@ nav dl a {
 }
 
 nav dl .atual {
-    box-shadow: -5px 0px 0 var(--azul);
+    box-shadow: -5px 0px 0 var(--azul) !important;
     color: var(--cinzaclaro1);
     font-weight: 700;
 }
@@ -60,12 +65,18 @@ nav dl .material-symbols-outlined {
 
 nav dl .rodape {
     width: 100%;
-    position: sticky;
+    position: absolute;
+    margin-bottom: 60px;
+    margin-left: -5px;
     bottom: 0;
 }
 
 nav dl .rodape dd {
     border-bottom: 0;
+}
+
+nav dl .rodape .material-symbols-outlined {
+    padding-left: 15px;
 }
 
 nav .dark .botao {
@@ -157,29 +168,6 @@ nav .dark input:checked+.bola:before {
 }
 
 @media(max-width: 750px) {
-    nav .dark .bola {
-        border-radius: 0px;
-        height: 60px;
-        width: 70px;
-        margin-left: -60px;
-        margin-top: -18px;
-        background-color: transparent !important;
-    }
-    nav .dark .bola:before {
-        background-color: transparent !important;
-    }
-    nav {
-        width: 70px !important;
-    }
-    nav dl .rodape {
-        width: 70px !important;
-    }
-    nav dl .titulo {
-        font-size: 0;
-    }
-    nav dl .material-symbols-outlined {
-        margin-left: 10px;
-    }
     header .logo .senaiazul {
         height: 15px;
     }
