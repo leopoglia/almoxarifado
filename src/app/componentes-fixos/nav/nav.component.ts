@@ -15,6 +15,9 @@ export class NavComponent implements OnInit {
 
 
   ngOnInit() {
+    if(localStorage.getItem('menu') == "abrir"){
+      this.menu();
+    }
 
     const html = document.querySelector('html');
     const input: HTMLInputElement = document.getElementById('mode') as HTMLInputElement;
@@ -85,6 +88,11 @@ export class NavComponent implements OnInit {
   }
 
   menu(){
+    if(localStorage.getItem("menu") == "aberto"){
+      localStorage.setItem("menu", "fechado")
+    }else{
+      localStorage.setItem("menu", "aberto")
+    }
 
     let nav:any = document.querySelector("#nav");
     nav.classList.toggle("navaberto")

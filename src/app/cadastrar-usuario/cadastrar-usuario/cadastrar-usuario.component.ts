@@ -11,5 +11,9 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem('atual', '5');
+
+    if(localStorage.getItem('menu') == 'aberto'){
+      localStorage.setItem('menu', 'abrir')
+    }
   }
 }

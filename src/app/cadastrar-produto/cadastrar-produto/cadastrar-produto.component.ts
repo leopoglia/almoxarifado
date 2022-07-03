@@ -11,5 +11,9 @@ export class CadastrarProdutoComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem('atual', '4');
+
+    if(localStorage.getItem('menu') == 'aberto'){
+      localStorage.setItem('menu', 'abrir')
+    }
   }
 }

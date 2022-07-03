@@ -11,6 +11,10 @@ export class AceitarUsuariosComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem('atual', '6');
+
+    if(localStorage.getItem('menu') == 'aberto'){
+      localStorage.setItem('menu', 'abrir')
+    }
   }
 
 }
