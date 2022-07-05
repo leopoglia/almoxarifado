@@ -6,11 +6,19 @@ import { Router } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
+
+
 export class NavComponent implements OnInit {
+
 
   constructor(private route: Router) { }
 
+
   ngOnInit() {
+    if(localStorage.getItem('menu') == "abrir"){
+      this.menu();
+    }
+
     const html = document.querySelector('html');
     const input: HTMLInputElement = document.getElementById('mode') as HTMLInputElement;
 
@@ -35,6 +43,8 @@ export class NavComponent implements OnInit {
       document.getElementById('6').classList.add('atual')
     }
   }
+
+
 
   darkmode($event) {
     const html = document.querySelector('html');
@@ -73,8 +83,34 @@ export class NavComponent implements OnInit {
     this.route.navigate(['/usuario/aceitar/']);
   }
 
-
   sair() {
     this.route.navigate(['']);
+  }
+
+  menu(){
+    if(localStorage.getItem("menu") == "aberto"){
+      localStorage.setItem("menu", "fechado")
+    }else{
+      localStorage.setItem("menu", "aberto")
+    }
+
+    let nav:any = document.querySelector("#nav");
+    nav.classList.toggle("navaberto")
+
+    let titulo:any = document.querySelectorAll("span.titulo")
+    for(let i = 0; i < 7; i++){
+      titulo[i].classList.toggle("tituloaberto")
+    }
+  
+    let bola:any = document.querySelector("dd.dark > label > span");
+    bola.classList.toggle("bolaaberto")
+
+    let icones:any = document.querySelectorAll("span.material-symbols-outlined")
+    for(let i = 0; i < 10; i++){
+      icones[i].classList.toggle("iconesaberto")
+    }
+
+    let botao:any = document.querySelector("#nav > dl > div > div > dd.dark > label")
+    botao.classList.toggle("botaoaberto")
   }
 }

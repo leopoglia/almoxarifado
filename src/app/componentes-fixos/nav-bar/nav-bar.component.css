@@ -1,0 +1,22 @@
+.navbar {
+    margin-right: 20px;
+    cursor: pointer;
+    color: var(--azul);
+    padding: 5px 15px 5px 15px;
+    border-radius: 3px;
+}
+
+.navbar .nome {
+    margin-right: 10px;
+}
+
+.navbar .material-symbols-outlined {
+    color: var(--azul);
+    font-size: 35px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -37,23 +37,6 @@ header .almoxarifado {
     border-left: 1px solid var(--cinzaclaro);
 }
 
-header .navbar {
-    margin-right: 20px;
-    cursor: pointer;
-    color: var(--azul);
-    padding: 5px 15px 5px 15px;
-    border-radius: 3px;
-}
-
-header .navbar .nome {
-    margin-right: 10px;
-}
-
-header .navbar .material-symbols-outlined {
-    color: var(--azul);
-    font-size: 35px;
-}
-
 @media(max-width: 750px) {
     header .logo .senaiazul {
         height: 15px;

@@ -10,6 +10,9 @@ export class ProdutoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if(localStorage.getItem('menu') == 'aberto'){
+      localStorage.setItem('menu', 'abrir')
+    }
   }
 
 }

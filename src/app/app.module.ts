@@ -24,6 +24,7 @@ import { AceitarUsuariosComponent } from './aceitar-usuarios/aceitar-usuarios/ac
 import { CabecalhoComponent } from './componentes-fixos/cabecalho/cabecalho.component';
 import { UsuarioComponent } from './aceitar-usuarios/usuario/usuario.component';
 import { FiltroComponent } from './componentes-fixos/filtro/filtro.component';
+import { NavBarComponent } from './componentes-fixos/nav-bar/nav-bar.component';
 import CheckLogged from './CheckLogged';
 
 const routes: Routes = [
@@ -41,17 +42,19 @@ const routes: Routes = [
       { path: 'produto', canActivate: [CheckLogged], component: ProdutoComponent }
     ]
   },
-  { path: 'inserirreserva', component: InserirReservasComponent },
-  { path: 'reservas', component: ReservasComponent },
-  { path: 'reservas/detalhes', component: DetalhesReservaComponent },
+  { path: 'inserirreserva', canActivate: [CheckLogged], component: InserirReservasComponent },
+  { path: 'reservas', children: [
+    { path: '', canActivate: [CheckLogged], component: ReservasComponent },
+    { path: 'detalhes', canActivate: [CheckLogged], component: DetalhesReservaComponent }
+  ] },
   {
     path: 'cadastrar', children: [
-      { path: 'produto', component: CadastrarProdutoComponent },
-      { path: 'usuario', component: CadastrarUsuarioComponent }
+      { path: 'produto', canActivate: [CheckLogged], component: CadastrarProdutoComponent },
+      { path: 'usuario', canActivate: [CheckLogged], component: CadastrarUsuarioComponent }
     ]
   },
-  { path: 'usuario/aceitar', component: AceitarUsuariosComponent },
-  { path: 'perfil', component: PerfilComponent }
+  { path: 'usuario/aceitar', canActivate: [CheckLogged], component: AceitarUsuariosComponent },
+  { path: 'perfil', canActivate: [CheckLogged], component: PerfilComponent }
 ];
 
 @NgModule({
@@ -79,8 +82,9 @@ const routes: Routes = [
     AceitarUsuariosComponent,
     CabecalhoComponent,
     UsuarioComponent,
-    FiltroComponent
-  ],
+    FiltroComponent,
+    NavBarComponent
+    ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,

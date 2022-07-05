@@ -1,36 +1,36 @@
-<div class="filtro">
-  <div class="header">
-    <span>Filtro</span>
+<div class="filtro" *ngIf="situacaofiltro">
+    <div class="header">
+        <span>Filtro</span>
 
-    <div class="acoes">
-      <p id="limpar" class="material-symbols-outlined">
-        replay
-      </p>
+        <div class="acoes">
+            <p id="limpar" class="material-symbols-outlined">
+                replay
+            </p>
 
-      <p class="material-symbols-outlined">
-        close
-      </p>
+            <p class="material-symbols-outlined" (click)="filtro()">
+                close
+            </p>
+        </div>
+
     </div>
 
-  </div>
 
-
-  <div class="filtros">
-    <div class="classificacao">
-      <div class="opcoes">
-        <div *ngFor="let index of classificacoes" class="opcao"> 
-          <label class="check">
+    <div class="filtros">
+        <div class="classificacao">
+            <div class="opcoes">
+                <div *ngFor="let index of classificacoes" class="opcao">
+                    <label class="check">
           <input type="checkbox">
           <span class="checkmark"></span>
           </label>
-          <p>{{index.nome}}</p>
-        </div>
-      </div>
+                    <p>{{index.nome}}</p>
+                </div>
+            </div>
 
-      <div class="botao">
-        <button>Confirmar</button>
-      </div>
+            <div class="botao">
+                <button>Confirmar</button>
+            </div>
+        </div>
     </div>
-  </div>
 
 </div>

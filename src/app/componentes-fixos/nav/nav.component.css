@@ -1,14 +1,19 @@
 nav {
-    width: 210px;
+    width: 70px;
     height: 100%;
     background-color: var(--cinzaclaro3);
     padding-left: 5px;
     margin-top: 60px;
     position: fixed;
+    transition: 0.2s;
 }
 
-nav dl span {
+span {
     transition: 0.2s;
+}
+
+nav dl .menu:hover {
+    background-color: var(--cinzaclaro3) !important;
 }
 
 nav dl dd {
@@ -24,7 +29,12 @@ nav dl dd {
 }
 
 nav dl dd:hover {
+    box-shadow: -5px 0px 0 var(--hover);
     background-color: var(--hover);
+}
+
+nav dl .menu {
+    box-shadow: -5px 0px 0 transparent !important;
 }
 
 nav dl a {
@@ -33,8 +43,7 @@ nav dl a {
 }
 
 nav dl .atual {
-    box-shadow: -5px 0px 0 var(--azul);
-    
+    box-shadow: -5px 0px 0 var(--azul) !important;
     color: var(--cinzaclaro1);
     font-weight: 700;
 }
@@ -43,34 +52,37 @@ nav dl .atual .material-symbols-outlined {
     color: var(--azul);
 }
 
-nav dl .atual span{
+nav dl .atual span {
     color: var(--azul);
-
 }
 
 nav dl .material-symbols-outlined {
     padding: 10px;
     font-size: 24px;
     font-weight: 500;
+    margin-left: 10px;
 }
 
 nav dl .rodape {
-    width: 210px;
-    position: fixed;
+    width: 100%;
+    position: absolute;
+    margin-bottom: 60px;
+    margin-left: -5px;
     bottom: 0;
 }
 
 nav dl .rodape dd {
     border-bottom: 0;
-    border-top: 1px solid var(--cinzaclaro2);
 }
 
+nav dl .rodape .material-symbols-outlined {
+    padding-left: 15px;
+}
 
 nav .dark .botao {
-    position: relative;
-    display: inline-block;
-    width: 52px;
-    height: 25px;
+    position: absolute;
+    width: 65px;
+    height: 55px;
 }
 
 nav .dark .botao input {
@@ -80,16 +92,12 @@ nav .dark .botao input {
 }
 
 nav .dark .bola {
-    border-radius: 34px;
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--cinzaclaro2);
-    -webkit-transition: .4s;
-    transition: .4s;
+    border-radius: 0px;
+    height: 60px;
+    width: 70px;
+    margin-left: -60px;
+    margin-top: -18px;
+    background-color: transparent;
 }
 
 nav .dark .bola:before {
@@ -99,11 +107,8 @@ nav .dark .bola:before {
     width: 17px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
 }
+
 nav .dark input:checked+.bola {
     background-color: var(--cinzaclaro2);
 }
@@ -114,32 +119,55 @@ nav .dark input:checked+.bola:before {
     transform: translateX(26px);
 }
 
+.navaberto {
+    width: 210px !important;
+}
+
+.bolaaberto {
+    border-radius: 20px !important;
+    position: absolute;
+    cursor: pointer;
+    margin-top: -2px !important;
+    margin-left: 15px !important;
+    width: 52px !important;
+    height: 25px !important;
+    background-color: var(--cinzaclaro2) !important;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.bolaaberto:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.titulo {
+    font-size: 0px;
+}
+
+.tituloaberto {
+    font-size: 14px !important;
+}
+
+.iconesaberto {
+    margin-left: 00px;
+}
+
+.botaoaberto {
+    position: relative !important;
+    display: inline-block !important;
+    width: 52px !important;
+    height: 25px !important;
+}
+
 @media(max-width: 750px) {
-    nav .dark .bola {
-        border-radius: 0px;
-        height: 60px;
-        width: 70px;
-        margin-left: -60px;
-        margin-top: -18px;
-        background-color: transparent !important;
-    }
-
-    nav .dark .bola:before{
-        background-color: transparent !important;
-    }
-
-    nav {
-        width: 70px;
-    }
-    nav dl .rodape {
-        width: 70px;
-    }
-    nav dl .titulo {
-        font-size: 0;
-    }
-    nav dl .material-symbols-outlined {
-        margin-left: 10px;
-    }
     header .logo .senaiazul {
         height: 15px;
     }

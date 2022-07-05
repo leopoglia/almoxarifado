@@ -12,5 +12,8 @@ export class InserirReservasComponent implements OnInit {
   
   ngOnInit() {
     localStorage.setItem('atual', '2');
+    if(localStorage.getItem('menu') == 'aberto'){
+      localStorage.setItem('menu', 'abrir')
+    }
   }
 }

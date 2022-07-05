@@ -1,5 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
-
+import { NavComponent } from 'src/app/componentes-fixos/nav/nav.component';
 
 @Component({
   selector: 'app-visao-geral',
@@ -13,5 +13,9 @@ export class VisaoGeralComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem('atual', '1');
+
+    if(localStorage.getItem('menu') == 'aberto'){
+      localStorage.setItem('menu', 'abrir')
+    }
   }
 }

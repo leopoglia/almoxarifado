@@ -11,5 +11,9 @@ export class ReservasComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem('atual', '3');
+
+    if(localStorage.getItem('menu') == 'aberto'){
+      localStorage.setItem('menu', 'abrir')
+    }
   }
 }

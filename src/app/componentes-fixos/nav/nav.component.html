@@ -1,69 +1,73 @@
-<nav>
-  <dl>
-      <div>
-                
-              <dd   id="1"  (click)="visaoGeral()">
-                  <span class="material-symbols-outlined">
+<nav id="nav">
+    <dl>
+        <div>
+            <dd class="menu" (click)="menu()">
+                <span class="material-symbols-outlined">
+                    menu
+                    </span>
+            </dd>
+            <dd id="1" (click)="visaoGeral()">
+                <span class="material-symbols-outlined">
                       inventory_2
                   </span>
-                  <span class="titulo">Visão geral</span>
-              </dd>
+                <span class="titulo">Visão geral</span>
+            </dd>
 
-              <dd  id="2" (click)="inserirReservas()">
-                  <span class="material-symbols-outlined">
+            <dd id="2" (click)="inserirReservas()">
+                <span class="material-symbols-outlined">
                       add_circle
                   </span>
-                  <span class="titulo">Inserir reservas</span>
-              </dd>
+                <span class="titulo">Inserir reservas</span>
+            </dd>
 
-              <dd id="3" (click)="reservas()">
-                  <span class="material-symbols-outlined">
+            <dd id="3" (click)="reservas()">
+                <span class="material-symbols-outlined">
                       calendar_month
                   </span>
-                  <span class="titulo">Reservas</span>
-              </dd>
+                <span class="titulo">Reservas</span>
+            </dd>
 
 
-              <dd id="4" (click)="cadastrarProduto()">
-                  <span class="material-symbols-outlined">
+            <dd id="4" (click)="cadastrarProduto()">
+                <span class="material-symbols-outlined">
                       category
                   </span>
-                  <span class="titulo">Cadastrar produto</span>
-              </dd>
+                <span class="titulo">Cadastrar produto</span>
+            </dd>
 
-              <dd id="5" (click)="cadastrarUsuario()">
-                  <span class="material-symbols-outlined">
+            <dd id="5" (click)="cadastrarUsuario()">
+                <span class="material-symbols-outlined">
                       person
                   </span>
-                  <span class="titulo">Cadastrar usuário</span>
-              </dd>
+                <span class="titulo">Cadastrar usuário</span>
+            </dd>
 
-              <dd id="6" (click)="aceitarUsuarios()">
+            <dd id="6" (click)="aceitarUsuarios()">
                 <span class="material-symbols-outlined">
                     check_circle
                 </span>
                 <span class="titulo">Aceitar usuários</span>
             </dd>
 
-      <div class="rodape">
+            <div class="rodape">
 
-          <dd class="dark">
-              <span class="material-symbols-outlined">
+                <dd class="dark">
+                    <span class="material-symbols-outlined">
                   dark_mode
               </span>
-              <label class="botao">
+                    <label class="botao">
                   <input id="mode" type="checkbox" (change)="darkmode($event)">
                   <span class="bola"></span>
               </label>
-          </dd>
+                </dd>
 
-              <dd (click)="sair()">
-                  <span class="material-symbols-outlined">
+                <dd (click)="sair()">
+                    <span class="material-symbols-outlined">
                       logout
                   </span>
-                  <span class="titulo">Sair</span>
-              </dd>
-          </div>
-      </div>
-  </dl>
+                    <span class="titulo">Sair</span>
+                </dd>
+            </div>
+        </div>
+    </dl>
 </nav>
