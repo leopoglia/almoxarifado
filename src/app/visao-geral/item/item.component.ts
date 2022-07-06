@@ -17,7 +17,12 @@ export class ItemComponent implements OnInit {
   }
 
 
-  lista = [1,2,3,4]
+  lista = [
+    {imagem: "https://i.imgur.com/rOhhM3b.png", nome: "Relé", descricao: "É um interruptor eletromecânico projetado por Michael Faraday na década de 1830.", quantidade: "153"},
+    {imagem: "https://i.imgur.com/rOhhM3b.png", nome: "Relé", descricao: "É um interruptor eletromecânico projetado por Michael Faraday na década de 1830.", quantidade: "153"},
+    {imagem: "https://i.imgur.com/rOhhM3b.png", nome: "Relé", descricao: "É um interruptor eletromecânico projetado por Michael Faraday na década de 1830.", quantidade: "153"},
+    {imagem: "https://i.imgur.com/rOhhM3b.png", nome: "Relé", descricao: "É um interruptor eletromecânico projetado por Michael Faraday na década de 1830.", quantidade: "153"}
+  ]
 
   item(){
     this.route.navigate(['/visaogeral/produto']);

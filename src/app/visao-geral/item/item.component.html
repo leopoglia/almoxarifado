@@ -1,18 +1,16 @@
-<div class="produto" *ngFor="let index of lista" (click)="item()">
+<div class="produto" *ngFor="let item of lista" (click)="item()">
   <div >
       <div class="imagem">
-          <img src="https://i.imgur.com/rOhhM3b.png"
+          <img  [src]="item.imagem"
               alt="">
       </div>
       <div class="informacoes">
-          <p class="titulo">Relé</p>
-          <p class="descricao">É um interruptor eletromecânico projetado por Michael Faraday na
-              década
-              de 1830.</p>
+          <p class="titulo">{{item.nome}}</p>
+          <p class="descricao">{{item.descricao}}</p>
 
           <div class="quantidade-produto">
               <p>Quantidade: </p>
-              <div class="quantidade">153</div>
+              <div class="quantidade">{{item.quantidade}}</div>
           </div>
       </div>
   </div>
