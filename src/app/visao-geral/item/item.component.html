@@ -1,4 +1,4 @@
-<div class="produto" *ngFor="let item of lista" (click)="item()">
+<div class="produto" *ngFor="let item of produtos" (click)="link(item.id)">
   <div >
       <div class="imagem">
           <img  [src]="item.imagem"

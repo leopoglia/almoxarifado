@@ -39,7 +39,7 @@ const routes: Routes = [
   {
     path: 'visaogeral', children: [
       { path: '', canActivate: [CheckLogged], component: VisaoGeralComponent },
-      { path: 'produto', canActivate: [CheckLogged], component: ProdutoComponent }
+      { path: 'produto/:id', canActivate: [CheckLogged], component: ProdutoComponent }
     ]
   },
   { path: 'inserirreserva', canActivate: [CheckLogged], component: InserirReservasComponent },
