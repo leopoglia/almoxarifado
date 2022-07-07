@@ -16,7 +16,7 @@
                 <div class="navegacao"><span>Almoxarifado / Dados gerais do produto</span></div>
             </div>
 
-            <div class="corpo">
+            <div class="corpo" *ngFor="let item of produtoCerto">
 
                 <div class="cabecalho">
                     <div class="titulo"><span>Dados gerais do produto</span></div>
@@ -30,25 +30,25 @@
                             <span>Imagem</span>
                         
                                 <div class="imagem">
-                                    <img src="https://i.imgur.com/rOhhM3b.png" alt="">
+                                    <img [src]="item.imagem" alt="">
                                 </div>
                         </div>
 
                         <div class="informacoes-grid">
                             <div class="nome">
                                 <span>Nome</span>
-                                <input type="text" placeholder="Relé" disabled>
+                                <input type="text" [placeholder]="item.nome" disabled>
                             </div>
 
 
                             <div class="descricao">
                                 <span>Características</span>
-                                <textarea placeholder="É um interruptor eletromecânico projetado por Michael Faraday na década de 1830." disabled></textarea>
+                                <textarea [placeholder]="item.detalhes" disabled></textarea>
                             </div>
 
                             <div class="detalhes">
                                 <span>Detalhes</span>
-                                <input type="text" placeholder="Grande e bonito" disabled>
+                                <input type="text" [placeholder]="item.caracteristicas" disabled>
                             </div>
 
                         </div>
@@ -57,7 +57,7 @@
                     <div class="informacoes-adicionais">
                         <div class="quantidade">
                             <span>Quantidade</span>
-                            <input type="number" placeholder="153" disabled>
+                            <input type="number" [placeholder]="item.quantidade" disabled>
                         </div>
 
                         <div class="localizacao">
@@ -84,8 +84,4 @@
         </div>
     </main>
 </body>
-
-<script src="../src/darkmode.js"></script>
-
-
 </html>
