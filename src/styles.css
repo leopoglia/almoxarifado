@@ -63,3 +63,9 @@ select,
 .input {
     background-color: var(--branco);
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

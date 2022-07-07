@@ -26,6 +26,7 @@ import { UsuarioComponent } from './aceitar-usuarios/usuario/usuario.component';
 import { FiltroComponent } from './componentes-fixos/filtro/filtro.component';
 import { NavBarComponent } from './componentes-fixos/nav-bar/nav-bar.component';
 import CheckLogged from './CheckLogged';
+import { ProdutoReservaComponent } from './inserir-reservas/produto-reserva/produto-reserva.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
@@ -83,7 +84,8 @@ const routes: Routes = [
     CabecalhoComponent,
     UsuarioComponent,
     FiltroComponent,
-    NavBarComponent
+    NavBarComponent,
+    ProdutoReservaComponent
     ],
   imports: [
     RouterModule.forRoot(routes),

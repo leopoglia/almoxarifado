@@ -16,4 +16,5 @@ export class InserirReservasComponent implements OnInit {
       localStorage.setItem('menu', 'abrir')
     }
   }
+
 }

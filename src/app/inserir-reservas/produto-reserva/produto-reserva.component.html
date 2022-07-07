@@ -1,0 +1,19 @@
+<div class="produto">
+  <div class="informacoes">
+
+      <div class="imagem">
+          <img src="https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png" alt="">
+      </div>
+      <div class="nome">Abraçadeira para poste</div>
+  </div>
+
+  <div class="acoes">
+      <div class="quantidade">
+          <span class="titulo">Quantidade</span>
+          <span class="menos" (click)="menos()">-</span>
+          <input type="number" class="numero" [(ngModel)]="quantidade">
+          <span class="mais" (click)="mais()">+</span>
+          <span class="material-symbols-outlined">delete</span>
+      </div>
+  </div>
+</div>

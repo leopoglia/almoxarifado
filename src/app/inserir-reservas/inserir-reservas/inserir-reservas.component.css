@@ -65,57 +65,12 @@ main .container .cabecalho .pesquisa .material-symbols-outlined {
     color: var(--azul);
 }
 
-main .container .produtos .produto {
-    margin-left: 15px;
-    margin-bottom: 10px;
-    width: 88.5%;
-    height: 40px;
-    padding: 8px;
-    border: 1px solid var(--cinzaclaro2);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-main .container .produtos .produto .informacoes,
-main .container .produtos .produto .acoes .quantidade {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-main .container .produtos .produto .informacoes .imagem img {
-    width: 45px;
-    margin-right: 20px;
-}
-
-main .container .produtos .produto .acoes .quantidade .menos,
-main .container .produtos .produto .acoes .quantidade .mais,
-main .container .produtos .produto .acoes .quantidade .numero,
-main .container .produtos .produto .acoes .quantidade .material-symbols-outlined {
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-}
-
-main .container .produtos .produto .acoes .quantidade .material-symbols-outlined {
-    color: var(--azul);
-}
-
-main .container .produtos .produto .acoes .quantidade .menos:hover,
-main .container .produtos .produto .acoes .quantidade .mais:hover,
-main .container .produtos .produto .acoes .quantidade .material-symbols-outlined:hover {
-    border: 1px solid var(--cinzaclaro2);
-    border-radius: 3px;
-    cursor: pointer;
-}
-
 main .container .datas {
     margin-left: 15px;
+    margin-top: 25px;
+    margin-right: 50px;
+    padding-top: 15px;
+    border-top: 1px solid var(--cinzaclaro2);
 }
 
 main .container .datas .retirada,
@@ -182,21 +137,11 @@ main .container .rodape button:hover {
 }
 
 @media(max-width: 850px) {
-    main .container .produtos .produto .acoes .titulo {
-        display: none;
-    }
+
     main .container .datas .retirada,
     main .container .datas .devolucao {
         display: grid;
         width: 100%;
-    }
-    main .container .produtos .produto {
-        display: grid !important;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        height: 90px;
-        margin-right: 20px;
     }
 }
 
@@ -204,13 +149,16 @@ main .container .rodape button:hover {
     main {
         padding-left: 0px;
     }
+
     main .container {
         margin: 0px 30px 0px 100px;
     }
+
     main .container .datas .inputs {
         display: grid;
         height: 100%;
     }
+
     main .container .datas .inputs label {
         width: 100px;
         margin-top: 10px;
