@@ -20,7 +20,6 @@ export class ProdutoComponent implements OnInit {
         this.produtoCerto[0] = this.produtos[i];
       } 
     }
-    console.log(this.idProduto);
     if(localStorage.getItem('menu') == 'aberto'){
       localStorage.setItem('menu', 'abrir')
     }
