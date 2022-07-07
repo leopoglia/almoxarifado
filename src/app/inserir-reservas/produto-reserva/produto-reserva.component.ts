@@ -15,11 +15,13 @@ export class ProdutoReservaComponent implements OnInit {
   quantidade = 0;
 
 
-  menos(){
-    this.quantidade--;
+  menos() {
+    if (this.quantidade > 0) {
+      this.quantidade--;
+    }
   }
 
-  mais(){
+  mais() {
     this.quantidade++;
   }
 
