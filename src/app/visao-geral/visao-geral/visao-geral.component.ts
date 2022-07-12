@@ -18,4 +18,7 @@ export class VisaoGeralComponent implements OnInit {
       localStorage.setItem('menu', 'abrir')
     }
   }
+
+  
+
 }

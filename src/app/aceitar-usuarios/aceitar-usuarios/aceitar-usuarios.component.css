@@ -21,6 +21,12 @@ main .corpo {
     border-radius: 3px;
 }
 
+app-modal-confirmacao{
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+}
+
 @media(max-width: 750px) {
     main {
         padding-left: 0px;
