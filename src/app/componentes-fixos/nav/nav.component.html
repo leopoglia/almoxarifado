@@ -28,21 +28,21 @@
             </dd>
 
 
-            <dd id="4" (click)="cadastrarProduto()">
+            <dd id="4" (click)="cadastrarProduto()" *ngIf="cadastrarProdutos">
                 <span class="material-symbols-outlined">
                       category
                   </span>
                 <span class="titulo">Cadastrar produto</span>
             </dd>
 
-            <dd id="5" (click)="cadastrarUsuario()">
+            <dd id="5" (click)="cadastrarUsuario()" *ngIf="cadastrarUsuarios">
                 <span class="material-symbols-outlined">
                       person
                   </span>
                 <span class="titulo">Cadastrar usuário</span>
             </dd>
 
-            <dd id="6" (click)="aceitarUsuarios()">
+            <dd id="6" (click)="aceitarUsuarios()" *ngIf="aceitarUsuario">
                 <span class="material-symbols-outlined">
                     check_circle
                 </span>

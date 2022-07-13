@@ -21,10 +21,8 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
     this.produtoService.buscarProdutos()
     .then(resultado => {
-      console.log('RESULTADO', resultado)
       this.list = resultado;
       this.produtos = this.list.list;
-      console.log(this.produtos)
 
     }).catch(erro => {
       console.log('ERRO AO BUSCAR USUÁRIOS', erro)

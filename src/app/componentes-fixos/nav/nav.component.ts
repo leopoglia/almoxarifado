@@ -14,8 +14,20 @@ export class NavComponent implements OnInit {
   constructor(private route: Router) { }
 
 
+  cadastrarProdutos = false;
+  cadastrarUsuarios = false;
+  aceitarUsuario = false;
+  situacao;
+
   ngOnInit() {
-    if(localStorage.getItem('menu') == "abrir"){
+    if (localStorage.getItem("usuario") == "Professor") {
+      this.situacao = 4;
+    } else if (localStorage.getItem("usuario") == "Atendente") {
+      this.cadastrarProdutos = true;
+      this.situacao = 5;
+    }
+
+    if (localStorage.getItem('menu') == "abrir") {
       this.menu();
     }
 
@@ -36,11 +48,17 @@ export class NavComponent implements OnInit {
     } else if (localStorage.getItem('atual') == '3') {
       document.getElementById('3').classList.add('atual')
     } else if (localStorage.getItem('atual') == '4') {
-      document.getElementById('4').classList.add('atual')
+      if (this.cadastrarProdutos == true) {
+        document.getElementById('4').classList.add('atual');
+      }
     } else if (localStorage.getItem('atual') == '5') {
-      document.getElementById('5').classList.add('atual')
+      if (this.cadastrarUsuarios != false) {
+        document.getElementById('5').classList.add('atual')
+      }
     } else if (localStorage.getItem('atual') == '6') {
+      if (this.cadastrarUsuarios != false) {
       document.getElementById('6').classList.add('atual')
+      }
     }
   }
 
@@ -87,30 +105,30 @@ export class NavComponent implements OnInit {
     this.route.navigate(['']);
   }
 
-  menu(){
-    if(localStorage.getItem("menu") == "aberto"){
+  menu() {
+    if (localStorage.getItem("menu") == "aberto") {
       localStorage.setItem("menu", "fechado")
-    }else{
+    } else {
       localStorage.setItem("menu", "aberto")
     }
 
-    let nav:any = document.querySelector("#nav");
+    let nav: any = document.querySelector("#nav");
     nav.classList.toggle("navaberto")
 
-    let titulo:any = document.querySelectorAll("span.titulo")
-    for(let i = 0; i < 7; i++){
+    let titulo: any = document.querySelectorAll("span.titulo")
+    for (let i = 0; i < this.situacao; i++) {
       titulo[i].classList.toggle("tituloaberto")
     }
-  
-    let bola:any = document.querySelector("dd.dark > label > span");
+
+    let bola: any = document.querySelector("dd.dark > label > span");
     bola.classList.toggle("bolaaberto")
 
-    let icones:any = document.querySelectorAll("span.material-symbols-outlined")
-    for(let i = 0; i < 10; i++){
+    let icones: any = document.querySelectorAll("span.material-symbols-outlined")
+    for (let i = 0; i < 10; i++) {
       icones[i].classList.toggle("iconesaberto")
     }
 
-    let botao:any = document.querySelector("#nav > dl > div > div > dd.dark > label")
+    let botao: any = document.querySelector("#nav > dl > div > div > dd.dark > label")
     botao.classList.toggle("botaoaberto")
   }
 }

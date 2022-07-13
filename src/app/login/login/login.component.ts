@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   }
 
   entrar(){
-    console.log("usuario: ", this.usuario, "senha: ", this.senha);
     localStorage.setItem('usuario', this.usuario);
     localStorage.setItem('senha', this.senha);
     this.route.navigate(['/visaogeral']);
