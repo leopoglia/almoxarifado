@@ -23,6 +23,21 @@ export class ProdutoService {
     })
   }
 
+  buscarProduto(codigo) {
+    return new Promise((resolvido, rejeitado) => {
+
+      fetch('http://localhost:3000/api/buscar_produto', {
+        method: 'POST',
+        body: JSON.stringify({codigo: codigo}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
   cadastrarProduto(nome, caracteristica, quantidade, detalhes){
     return new Promise((resolvido, rejeitado) => {
       fetch('http://localhost:3000/api/criar_produto', {

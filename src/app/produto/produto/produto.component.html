@@ -16,7 +16,7 @@
                 <div class="navegacao"><span>Almoxarifado / Dados gerais do produto</span></div>
             </div>
 
-            <div class="corpo" *ngFor="let item of produtoCerto">
+            <div class="corpo" *ngFor="let item of produtos">
 
                 <div class="cabecalho">
                     <div class="titulo"><span>Dados gerais do produto</span></div>
@@ -30,25 +30,25 @@
                             <span>Imagem</span>
                         
                                 <div class="imagem">
-                                    <img [src]="item.imagem" alt="">
+                                    <img [src]="item.IMAGEM" alt="">
                                 </div>
                         </div>
 
                         <div class="informacoes-grid">
                             <div class="nome">
                                 <span>Nome</span>
-                                <input type="text" [placeholder]="item.nome" disabled>
+                                <input type="text" [placeholder]="item.NOME" disabled>
                             </div>
 
 
                             <div class="descricao">
                                 <span>Características</span>
-                                <textarea [placeholder]="item.detalhes" disabled></textarea>
+                                <textarea [placeholder]="item.CARACTERISTICAS" disabled></textarea>
                             </div>
 
                             <div class="detalhes">
                                 <span>Detalhes</span>
-                                <input type="text" [placeholder]="item.caracteristicas" disabled>
+                                <input type="text" [placeholder]="item.DETALHES" disabled>
                             </div>
 
                         </div>
@@ -57,19 +57,19 @@
                     <div class="informacoes-adicionais">
                         <div class="quantidade">
                             <span>Quantidade</span>
-                            <input type="number" [placeholder]="item.quantidade" disabled>
+                            <input type="number" [placeholder]="item.QUANTIDADE" disabled>
                         </div>
 
                         <div class="localizacao">
                             <span>Localização</span>
-                                <input type="text" placeholder="P2C5A1" disabled>
+                                <input type="text" [placeholder]="item.LOCALIZACAO" disabled>
                         </div>
 
                         <div class="classificacao">
                             <span>Classificação</span>
                             <div class="fundo">
                                 <select name="select" disabled>
-                                    <option value="valor1">Materiais Elétricos</option>
+                                    <option value="valor1">{{item.CLASSIFICACAO}}</option>
                                 </select>
                             </div>
                         </div>

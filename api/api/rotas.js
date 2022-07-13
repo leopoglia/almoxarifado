@@ -125,6 +125,18 @@ inserirRota('/buscar_produtos', function(dados, resposta) {
     });
 });
 
+inserirRota('/buscar_produto', function(dados, resposta) {
+    console.log(dados);
+    database(`SELECT * FROM PRODUTO WHERE CODIGO = "${dados.codigo}"`).then(result => {
+        console.log('PRODUTOS BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('PRODUTOS NÃO BUSCADO')
+        resposta({ erro: 'PRODUTOS NÃO BUSCADO' })
+    });
+});
+
+
 inserirRota('/criar_produto', function(dados, resposta) {
     database(`INSERT INTO PRODUTO (
         NOME, CARACTERISTICA, QUANTIDADE, DESCARTAVEL, DETALHES, IMAGEM) VALUES
