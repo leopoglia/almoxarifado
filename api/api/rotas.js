@@ -131,7 +131,7 @@ inserirRota('/criar_produto', function(dados, resposta) {
         ("${dados.nome}", "${dados.caracteristica}", "${dados.quantidade}", "${dados.descartavel}", "${dados.detalhes}", "${dados.imagem}")
         `).then(result => {
         console.log('PRODUTO INSERIDO COM SUCESSO')
-        resposta({ message: 'USUARIO INSERIDO COM SUCESSO!' })
+        resposta({ message: 'PRODUTO INSERIDO COM SUCESSO!' })
     }).catch(erro => {
         console.log('PRODUTO NÃO INSERIDO')
         resposta({ erro: 'PRODUTO NÃO INSERIDO' })

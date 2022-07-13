@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutoService } from '../../services/produto.service';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarProdutoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private produtoService: ProdutoService) { }
+
+  nome = "";
+  caracteriscas = "";
+  quantidade = "";
+  detalhes = "";
 
   ngOnInit() {
     localStorage.setItem('atual', '4');
@@ -16,4 +22,9 @@ export class CadastrarProdutoComponent implements OnInit {
       localStorage.setItem('menu', 'abrir')
     }
   }
+
+  cadastrarProduto(){
+    this.produtoService.cadastrarProduto(this.nome, this.caracteriscas, this.quantidade, this.detalhes).then(resultado => {console.log(resultado)});
+  }
+
 }

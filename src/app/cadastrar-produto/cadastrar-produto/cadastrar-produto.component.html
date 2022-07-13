@@ -43,18 +43,18 @@
                         <div class="informacoes-grid">
                             <div class="nome">
                                 <span>Nome</span>
-                                <input type="text">
+                                <input type="text" [(ngModel)]="nome">
                             </div>
 
 
                             <div class="descricao">
                                 <span>Características</span>
-                                <textarea></textarea>
+                                <textarea [(ngModel)]="caracteristica"></textarea>
                             </div>
 
                             <div class="detalhes">
                                 <span>Detalhes</span>
-                                <input type="text">
+                                <input type="text" [(ngModel)]="detalhes">
                             </div>
 
                         </div>
@@ -63,7 +63,7 @@
                     <div class="informacoes-adicionais">
                         <div class="quantidade">
                             <span>Quantidade</span>
-                            <input type="number">
+                            <input type="number" [(ngModel)]="quantidade">
                         </div>
 
                         <div class="localizacao">
@@ -81,11 +81,11 @@
                         <div class="classificacao">
                             <span>Classificação</span>
                             <div class="fundo">
-                                <select name="select">
-                                    <option value="valor1">Materiais Elétricos</option>
-                                    <option value="valor2">Ferramenta Mecânica</option>
-                                    <option value="valor3">Componente Eltrônicos</option>
-                                    <option value="valor4">Ferramenta Manual</option>
+                                <select name="select" [(ngModel)]="classificacao">
+                                    <option value="1">Materiais Elétricos</option>
+                                    <option value="2">Ferramenta Mecânica</option>
+                                    <option value="3">Componente Eltrônicos</option>
+                                    <option value="4">Ferramenta Manual</option>
                                 </select>
                                 <div class="adicionar">
                                     <span class="material-symbols-outlined">
@@ -111,7 +111,7 @@
 
                 <div class="rodape">
 
-                    <button>Cadastrar produto</button>
+                    <button (click)="cadastrarProduto()">Cadastrar produto</button>
                 </div>
 
             </div>
