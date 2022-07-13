@@ -96,14 +96,26 @@ inserirRota('/criar_usuario', function(dados, resposta) {
         return resposta({ erro: 'É nesecessário preencher o nome!' })
     }
 
-    if (!dados.nickname) {
-        return resposta({ erro: 'É nesecessário preencher o Nickname!' })
+    if (!dados.email) {
+        return resposta({ erro: 'É nesecessário preencher o email!' })
+    }
+
+    if (!dados.senha) {
+        return resposta({ erro: 'É nesecessário preencher o senha!' })
+    }
+
+    if (!dados.cargo) {
+        return resposta({ erro: 'É nesecessário preencher o cargo!' })
+    }
+
+    if (!dados.matricula) {
+        return resposta({ erro: 'É nesecessário preencher o matricula!' })
     }
 
     database(`INSERT INTO USER (
-        NOME, NICKNAME, PASSWORD, IMG) VALUES
-        ("${dados.nome}", "${dados.nickname}", "${dados.password}", "${dados.img}")
-        `).then(result => {
+        MATRICULA, EMAIL, SENHA, CARGO, NOME) VALUES
+        ("${dados.matricula}", "${dados.email}", "${dados.senha}", "${dados.cargo}", "${dados.nome}")`)
+        .then(result => {
         console.log('USUÁRIO INSERIDO COM SUCESSO')
         resposta({ message: 'USUARIO INSERIDO COM SUCESSO!' })
     }).catch(erro => {
