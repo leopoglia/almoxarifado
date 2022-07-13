@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-cadastro3',
@@ -8,13 +10,21 @@ import { Router } from '@angular/router';
 })
 export class Cadastro3Component implements OnInit {
 
-  constructor(private route: Router) { }
+  nome = localStorage.getItem("nome");
+  senha = localStorage.getItem("senha");
+  matricula = localStorage.getItem("matricula");
+  email = localStorage.getItem("email");
+
+  constructor(private router: Router,
+    private route: ActivatedRoute, 
+    private usuarioService: UsuariosService) { }
 
   ngOnInit() {
   }
 
-  login(){
-    this.route.navigate(['/']);
+  cadastrar(){
+    this.usuarioService.criarUsuarios(this.matricula, this.email, this.senha, this.nome).then(resultado => {console.log(resultado)})
+    this.router.navigate(['/']);
   }
 
 }

@@ -10,10 +10,16 @@ export class Cadastro1Component implements OnInit {
 
   constructor(private route: Router) { }
 
+  nome = '';
+  senha = '';
+
   ngOnInit() {
+
   }
 
   cadastro2(){
+    localStorage.setItem("nome", this.nome);
+    localStorage.setItem("senha", this.senha);
     this.route.navigate(['/cadastro/2']);
   }
 

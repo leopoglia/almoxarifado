@@ -104,17 +104,14 @@ inserirRota('/criar_usuario', function(dados, resposta) {
         return resposta({ erro: 'É nesecessário preencher o senha!' })
     }
 
-    if (!dados.cargo) {
-        return resposta({ erro: 'É nesecessário preencher o cargo!' })
-    }
 
     if (!dados.matricula) {
         return resposta({ erro: 'É nesecessário preencher o matricula!' })
     }
 
-    database(`INSERT INTO USER (
-        MATRICULA, EMAIL, SENHA, CARGO, NOME) VALUES
-        ("${dados.matricula}", "${dados.email}", "${dados.senha}", "${dados.cargo}", "${dados.nome}")`)
+    database(`INSERT INTO USUARIO (
+        MATRICULA, EMAIL, SENHA, NOME) VALUES
+        ("${dados.matricula}", "${dados.email}", "${dados.senha}", "${dados.nome}")`)
         .then(result => {
         console.log('USUÁRIO INSERIDO COM SUCESSO')
         resposta({ message: 'USUARIO INSERIDO COM SUCESSO!' })
@@ -162,6 +159,15 @@ inserirRota('/criar_produto', function(dados, resposta) {
     });
 })
 
-
+inserirRota('/buscar_usuarios', function(dados, resposta) {
+    console.log(dados);
+    database(`SELECT * FROM USUARIO`).then(result => {
+        console.log('USUARIOS BUSCADO COM SUCESSO')
+        resposta({ list: result })
+    }).catch(erro => {
+        console.log('USUARIOS NÃO BUSCADO')
+        resposta({ erro: 'USUARIOS NÃO BUSCADO' })
+    });
+});
 
 //fetch('/api/buscar_usuario', {method: 'POST', body: JSON.stringify({produtoId: 1, pessoaId: 1}), headers: { 'Content-Type': 'application/json'}}).then(function(result){return result.json();}).then(function(dados){console.log(dados)}).catch(function(erro){console.log(erro);})

@@ -10,10 +10,16 @@ export class Cadastro2Component implements OnInit {
 
   constructor(private route: Router) { }
 
+  email = "";
+  matricula = "";
+
   ngOnInit() {
+
   }
 
   cadastro3(){
+    localStorage.setItem("email", this.email);
+    localStorage.setItem("matricula", this.matricula);
     this.route.navigate(['/cadastro/3']);
   }
 
