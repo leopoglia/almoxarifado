@@ -50,4 +50,19 @@ export class UsuariosService {
     })
   }
 
+  buscarUsuarioEspecifico(nome){
+    return new Promise((resolvido, rejeitado) => {
+      fetch('http://localhost:3000/api/buscar_usuario_especifico', {
+        method: 'POST',
+        body:
+        JSON.stringify({nome: nome}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
 }

@@ -74,7 +74,7 @@ inserirRota('/buscar_usuario_admin_search', function(dados, resposta) {
 });
 
 inserirRota('/buscar_usuario_especifico', function(dados, resposta) {
-    database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}"`).then(result => {
+    database(`SELECT * FROM USUARIO WHERE NOME = "${dados.nome}"`).then(result => {
         console.log('result:', result)
         resposta({ user: result[0] })
     }).catch(erro => {
