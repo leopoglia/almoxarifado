@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
 
     this.usuarioService.login(this.usuario, this.senha)
     .then(resultado => {
-      console.log(resultado)
       if(resultado.hasOwnProperty("user")){
         this.route.navigate(['visaogeral']);
       }else{
@@ -35,10 +34,7 @@ export class LoginComponent implements OnInit {
       }
     })
     .then(resolvido => {
-      console.log(resolvido);
     }).catch(erro => {
-      console.log('a')
-      console.log('ERRO AO BUSCAR USUÁRIOS', erro)
     })
 
       
