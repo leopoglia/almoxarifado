@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router,
+              private usuarioService: UsuariosService) { }
 
   usuario = '';
   senha = '';
@@ -20,19 +22,19 @@ export class LoginComponent implements OnInit {
   entrar(){
     localStorage.setItem('usuario', this.usuario);
     localStorage.setItem('senha', this.senha);
-    
 
-    if(localStorage.getItem('usuario') == 'Atendente' || localStorage.getItem('usuario') == 'Administrador'){
-    localStorage.setItem('true', 'cadastarProduto');
-    localStorage.setItem('true', 'cadastrarUsuarios');
-    localStorage.setItem('true', 'aceitarUsuario');
-    }else{
-      localStorage.setItem('false', 'cadastarProduto');
-      localStorage.setItem('false', 'cadastrarUsuarios');
-      localStorage.setItem('false', 'aceitarUsuario');
-    }
 
-    this.route.navigate(['/visaogeral']);
+    this.usuarioService.login(this.usuario, this.senha)
+    .then(resolvido => {
+      console.log('a')
+      console.log(resolvido)
+
+    }).catch(erro => {
+      console.log('a')
+      console.log('ERRO AO BUSCAR USUÁRIOS', erro)
+    })
+
+      
   }
 
   cadastrar(){

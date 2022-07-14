@@ -83,11 +83,11 @@ inserirRota('/buscar_usuario_especifico', function(dados, resposta) {
 });
 
 inserirRota('/login', function(dados, resposta) {
-    database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}" AND PASSWORD = "${dados.password}" LIMIT 1`).then(result => {
-        console.log('result:', result)
+    database(`SELECT * FROM USUARIO WHERE NOME = "${dados.nome}" AND SENHA = "${dados.senha}" LIMIT 1`).then(result => {
+        console.log('DEU CERTO:', result)
         resposta({ user: result[0] })
     }).catch(erro => {
-        resposta({ erro: 'Erro ao LOGAR o usuário!' })
+        resposta({ erro: 'ERRO AO LOGAR' })
     });
 });
 
