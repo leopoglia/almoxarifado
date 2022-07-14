@@ -47,15 +47,16 @@ main .container .detalhes-nome .material-symbols-outlined {
 }
 
 main .container .acoes {
-    height: 400px;
     margin: 20px 100px 0px 100px;
     border-radius: 3px;
-    border: 1px solid var(--cinzaclaro2);
 }
 
 main .container .acoes .nav {
     height: 50px;
+    margin-bottom: 10px;
+    border-radius: 3px;
     background-color: var(--cinzaclaro3);
+    border: 1px solid var(--cinzaclaro2);
     border-bottom: 1px solid var(--cinzaclaro2);
 }
 
@@ -77,6 +78,7 @@ main .container .acoes .nav dd {
 
 main .container .acoes .nav dd:hover {
     background-color: #c4c4c423;
+    border-radius: 3px;
     border-bottom: 4px solid var(--azul);
 }
 
