@@ -29,7 +29,7 @@
                         <div class="inserir-imagem">
                             <span>Imagem</span>
                             <label for="imagem">
-                                <input id="imagem" type="file">
+                                <input id="imagem" type="file" (change)="mudanca($event.target.files[0])">
 
                                 <div class="imagem">
 

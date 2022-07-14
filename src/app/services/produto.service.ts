@@ -37,11 +37,11 @@ export class ProdutoService {
     })
   }
 
-  cadastrarProduto(nome, caracteristica, quantidade, detalhes){
+  cadastrarProduto(nome, caracteristica, quantidade, detalhes, imagem){
     return new Promise((resolvido, rejeitado) => {
       fetch('http://localhost:3000/api/criar_produto', {
         method: 'POST',
-        body: JSON.stringify({nome: nome, caracteristicas: caracteristica, quantidade: quantidade, detalhes: detalhes}),
+        body: JSON.stringify({nome: nome, caracteristicas: caracteristica, quantidade: quantidade, detalhes: detalhes, imagem: imagem}),
         headers: {
           'Content-Type': 'application/json'
         }

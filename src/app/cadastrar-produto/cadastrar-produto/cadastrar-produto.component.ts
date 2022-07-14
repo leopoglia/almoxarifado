@@ -24,12 +24,21 @@ export class CadastrarProdutoComponent implements OnInit {
   }
 
   cadastrarProduto(){
-    this.produtoService.cadastrarProduto(this.nome, this.caracteriscas, this.quantidade, this.detalhes).then(resultado => {console.log(resultado)});
+    this.produtoService.cadastrarProduto(this.nome, this.caracteriscas, this.quantidade, this.detalhes, this.img64).then(resultado => {console.log(resultado)});
     this.nome = "";
     this.caracteriscas = "";
     this.quantidade = "";
     this.detalhes = "";
-    
+  }
+
+  img64;
+
+  mudanca(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.img64 = reader.result;    
+    };
   }
 
 }
