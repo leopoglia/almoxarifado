@@ -110,8 +110,8 @@ inserirRota('/criar_usuario', function(dados, resposta) {
     }
 
     database(`INSERT INTO USUARIO (
-        MATRICULA, EMAIL, SENHA, NOME) VALUES
-        ("${dados.matricula}", "${dados.email}", "${dados.senha}", "${dados.nome}")`)
+        MATRICULA, EMAIL, SENHA, NOME, IMAGEM) VALUES
+        ("${dados.matricula}", "${dados.email}", "${dados.senha}", "${dados.nome}", "${dados.imagem}")`)
         .then(result => {
         console.log('USUÁRIO INSERIDO COM SUCESSO')
         resposta({ message: 'USUARIO INSERIDO COM SUCESSO!' })

@@ -39,7 +39,7 @@
                         </span>
                         <span>Anexe uma foto</span>
 
-                        <input type="file" placeholder="foto">
+                        <input type="file" placeholder="imagem" name="imagem" [(ngModel)]="imagem" (change)="mudanca($event.target.files[0])">
                     </label>
 
                 </div>

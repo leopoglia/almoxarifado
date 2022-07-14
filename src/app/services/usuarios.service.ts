@@ -8,12 +8,12 @@ export class UsuariosService {
 
   constructor() { }
 
-  criarUsuarios(matricula, email, senha, nome) {
+  criarUsuarios(matricula, email, senha, nome, imagem) {
     return new Promise((resolvido, rejeitado) => {
       fetch('http://localhost:3000/api/criar_usuario', {
         method: 'POST',
         body: 
-        JSON.stringify({matricula: matricula, email: email, senha: senha, nome: nome}),
+        JSON.stringify({matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem}),
         headers: {
           'Content-Type': 'application/json'
         }

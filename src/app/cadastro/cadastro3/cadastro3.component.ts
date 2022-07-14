@@ -10,6 +10,16 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class Cadastro3Component implements OnInit {
 
+  imagem;
+
+  mudanca(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.imagem = reader.result;    
+    };
+  }
+
   nome = localStorage.getItem("nome");
   senha = localStorage.getItem("senha");
   matricula = localStorage.getItem("matricula");
@@ -23,8 +33,10 @@ export class Cadastro3Component implements OnInit {
   }
 
   cadastrar(){
-    this.usuarioService.criarUsuarios(this.matricula, this.email, this.senha, this.nome).then(resultado => {console.log(resultado)})
+    this.usuarioService.criarUsuarios(this.matricula, this.email, this.senha, this.nome, this.imagem).then(resultado => {console.log(resultado)})
     this.router.navigate(['/']);
   }
+
+
 
 }
