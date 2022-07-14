@@ -1,0 +1,39 @@
+<div class="fundo" *ngIf="situacaolocalizacao">
+  <div class="localizacao">
+    <div class="header">
+      <span>Adicionar localização</span>
+
+      <div class="acoes">
+
+        <p class="material-symbols-outlined" (click)="localizacao()">
+          close
+        </p>
+      </div>
+
+    </div>
+
+    <div class="inputs">
+
+      <input type="text" placeholder="Insira a localização">
+
+      <div class="setados">
+        <span>
+          P = PAREDE
+        </span>
+
+        <span>
+          C = CENTRO
+        </span>
+
+        <span>
+          A = ARMÁRIO
+        </span>
+      </div>
+
+
+      <div class="botao">
+        <button>Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

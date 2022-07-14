@@ -41,4 +41,13 @@ export class CadastrarProdutoComponent implements OnInit {
     };
   }
 
+  situacaolocalizacao = false;
+  localizacao(){
+    if(this.situacaolocalizacao == true){
+      this.situacaolocalizacao = false;
+    }else{
+      this.situacaolocalizacao = true;
+    }
+  }
+
 }

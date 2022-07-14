@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <app-localizacao *ngIf="situacaolocalizacao"></app-localizacao>
     <app-header></app-header>
     <app-nav></app-nav>
     
@@ -70,7 +71,7 @@
                             <span>Localização</span>
                             <div class="fundo">
                                 <input type="text">
-                                <div class="adicionar">
+                                <div class="adicionar" (click)="localizacao()">
                                     <span class="material-symbols-outlined">
                                         add
                                     </span>
