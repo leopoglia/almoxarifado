@@ -40,18 +40,13 @@ export class UsuariosService {
     return new Promise((resolvido, rejeitado) => {
       fetch('http://localhost:3000/api/login', {
         method: 'POST',
-        body:
-        JSON.stringify({nome: nome, senha: senha}),
+        body:JSON.stringify({nome: nome, senha: senha}),
         headers: {
           'Content-Type': 'application/json'
         }
       }).then(resultado => resultado.json())
-      
-        .then(resolvido => {
-            console.log(resolvido)
-          }
-        ).catch(erro => {
-        })
+        .then(resolvido)
+        .catch(rejeitado);
     })
   }
 

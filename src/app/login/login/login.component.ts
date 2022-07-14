@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.usuarioService.login(this.usuario, this.senha)
     .then(resolvido => {
       console.log('a')
-      console.log(resolvido)
+      console.log("deu boaaaaaaaaaaaaa -> " + resolvido)
 
     }).catch(erro => {
       console.log('a')
