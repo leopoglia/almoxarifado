@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { a } from '@angular/core/src/render3';
 import { Router } from '@angular/router';
 import { UsuariosService } from '../../services/usuarios.service';
 
@@ -25,10 +26,16 @@ export class LoginComponent implements OnInit {
 
 
     this.usuarioService.login(this.usuario, this.senha)
+    .then(resultado => {
+      console.log(resultado)
+      if(resultado.hasOwnProperty("user")){
+        this.route.navigate(['visaogeral']);
+      }else{
+        this.route.navigate(['/']);
+      }
+    })
     .then(resolvido => {
-      console.log('a')
-      console.log("deu boaaaaaaaaaaaaa -> " + resolvido)
-
+      console.log(resolvido);
     }).catch(erro => {
       console.log('a')
       console.log('ERRO AO BUSCAR USUÁRIOS', erro)

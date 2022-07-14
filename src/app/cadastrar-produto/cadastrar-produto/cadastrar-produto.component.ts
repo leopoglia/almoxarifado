@@ -25,6 +25,11 @@ export class CadastrarProdutoComponent implements OnInit {
 
   cadastrarProduto(){
     this.produtoService.cadastrarProduto(this.nome, this.caracteriscas, this.quantidade, this.detalhes).then(resultado => {console.log(resultado)});
+    this.nome = "";
+    this.caracteriscas = "";
+    this.quantidade = "";
+    this.detalhes = "";
+    
   }
 
 }
