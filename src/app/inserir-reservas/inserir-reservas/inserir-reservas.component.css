@@ -36,28 +36,6 @@ main .container .cabecalho .pesquisa {
     justify-content: flex-start;
 }
 
-main .container .cabecalho .pesquisa .input {
-    width: 90%;
-    height: 25px;
-    padding: 8px;
-    border: 1px solid var(--cinzaclaro2);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-main .container .cabecalho .pesquisa .input .material-symbols-outlined {
-    margin: 0;
-}
-
-main .container .cabecalho .pesquisa .input input {
-    width: 90%;
-    height: 100%;
-    margin-left: 10px;
-    border: none;
-    outline: none;
-}
 
 main .container .cabecalho .pesquisa .material-symbols-outlined {
     margin: 0px 20px 0px 20px;
