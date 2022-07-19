@@ -92,6 +92,7 @@ main .container form .inputs {
 main .container form label {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 main .container form .material-symbols-outlined {

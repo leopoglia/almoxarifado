@@ -69,3 +69,42 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.input .busca {
+    padding: 0;
+    opacity: 0;
+    position: fixed;
+    pointer-events: none;
+    overflow-y: auto;
+    background-color: var(--branco);
+    border: 1px solid var(--cinzaclaro2);
+    border-top: none;
+}
+
+.input.ativo .busca {
+    padding: 0px 0px;
+    width: 64.8%;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.busca li {
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    box-sizing: border-box;
+}
+
+.busca li {
+    cursor: pointer;
+    display: block;
+}
+
+.busca  li:hover {
+    background: var(--cinzaclaro3);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8) brightness(80%) sepia(100%) saturate(7000%) hue-rotate(210deg);
+  }

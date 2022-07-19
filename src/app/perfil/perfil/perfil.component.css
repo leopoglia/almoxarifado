@@ -52,12 +52,12 @@ main .container .acoes {
 }
 
 main .container .acoes .nav {
+    box-sizing: border-box;
     height: 50px;
     margin-bottom: 10px;
     border-radius: 3px;
     background-color: var(--cinzaclaro3);
     border: 1px solid var(--cinzaclaro2);
-    border-bottom: 1px solid var(--cinzaclaro2);
 }
 
 main .container .acoes .nav dl {
@@ -78,8 +78,7 @@ main .container .acoes .nav dd {
 
 main .container .acoes .nav dd:hover {
     background-color: #c4c4c423;
-    border-radius: 3px;
-    border-bottom: 4px solid var(--azul);
+    border-bottom: 3px solid var(--azul);
 }
 
 @media(max-width: 750px) {

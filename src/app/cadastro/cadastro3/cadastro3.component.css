@@ -157,7 +157,7 @@ main .container form .footer input:hover {
 }
 
 main .container form .footer .cadastrar {
-    margin-right: 10px;
+    margin-right: 24px;
     background-color: transparent;
     color: var(--azul);
 }

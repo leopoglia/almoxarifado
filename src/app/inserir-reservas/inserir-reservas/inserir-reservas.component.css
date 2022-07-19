@@ -36,9 +36,13 @@ main .container .cabecalho .pesquisa {
     justify-content: flex-start;
 }
 
+main .container app-input{
+    width: 80%;
+}
 
 main .container .cabecalho .pesquisa .material-symbols-outlined {
     margin: 0px 20px 0px 20px;
+    padding-left: 30px;
     font-size: 30px;
     color: var(--azul);
 }
@@ -113,6 +117,8 @@ main .container .rodape button {
 main .container .rodape button:hover {
     background-color: var(--azulclaro);
 }
+
+
 
 @media(max-width: 850px) {
 
