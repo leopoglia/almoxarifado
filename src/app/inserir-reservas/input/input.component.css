@@ -25,3 +25,30 @@
     position: relative;
     margin-left: -35px;
 }
+
+
+.input.ativo .busca {
+    max-height: 150px;
+    width: 100%;
+    max-width: 100%;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.input .busca {
+    padding: 0;
+    opacity: 0;
+    position: fixed;
+    pointer-events: none;
+    overflow-y: auto;
+    background-color: var(--branco);
+    border: 1px solid var(--cinzaclaro2);
+    border-top: none;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8) brightness(80%) sepia(100%) saturate(7000%) hue-rotate(210deg);
+  }
