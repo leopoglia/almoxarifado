@@ -11,13 +11,13 @@ export class InputComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tamanho = (document.querySelector(".input").clientWidth) + 9;
-    document.getElementById("busca").style.width = this.tamanho + 'px';
+    // this.tamanho = (document.querySelector(".input").clientWidth) + 9;
+    // document.getElementById("busca").style.width = this.tamanho + 'px';
 
-    window.onresize = function () {
-      this.tamanho = (document.querySelector(".input").clientWidth) + 9;
-      document.getElementById("busca").style.width = this.tamanho + 'px';
-    };
+    // window.onresize = function () {
+    //   this.tamanho = (document.querySelector(".input").clientWidth) + 9;
+    //   document.getElementById("busca").style.width = this.tamanho + 'px';
+    // };
   }
 
 
