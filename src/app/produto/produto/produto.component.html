@@ -20,7 +20,11 @@
 
                 <div class="cabecalho">
                     <div class="titulo"><span>Dados gerais do produto</span></div>
-
+                    <div class="editar">
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </div>
                 </div>
 
                 <div class="informacoes">
@@ -28,10 +32,10 @@
                     <div class="informacoes-gerais">
                         <div class="inserir-imagem">
                             <span>Imagem</span>
-                        
-                                <div class="imagem">
-                                    <img [src]="item.IMAGEM" alt="">
-                                </div>
+
+                            <div class="imagem">
+                                <img [src]="item.IMAGEM" alt="">
+                            </div>
                         </div>
 
                         <div class="informacoes-grid">
@@ -62,7 +66,7 @@
 
                         <div class="localizacao">
                             <span>Localização</span>
-                                <input type="text" [placeholder]="item.LOCALIZACAO" disabled>
+                            <input type="text" [placeholder]="item.LOCALIZACAO" disabled>
                         </div>
 
                         <div class="classificacao">
@@ -84,4 +88,5 @@
         </div>
     </main>
 </body>
+
 </html>

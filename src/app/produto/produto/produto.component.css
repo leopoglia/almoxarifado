@@ -11,6 +11,29 @@ main .container {
     margin: 0px 100px 0px 100px;
 }
 
+main .container .cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+main .container .cabecalho .editar{
+    width: 41px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid var(--cinzaclaro2);
+    cursor: pointer;
+}
+
+main .container .cabecalho .editar:hover{
+    background-color: var(--cinzaclaro3);
+}
+
 main .container .cabecalho .navegacao {
     font-size: 14px;
 }
