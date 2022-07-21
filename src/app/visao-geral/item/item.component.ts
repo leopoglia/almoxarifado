@@ -16,24 +16,26 @@ export class ItemComponent implements OnInit {
   constructor(
     private route: Router,
     private produtoService: ProdutoService,
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.produtoService.buscarProdutos()
-    .then(resultado => {
-      this.list = resultado;
-      this.produtos = this.list.list;
+      .then(resultado => {
+        this.list = resultado;
+        this.produtos = this.list.list;
+        this.tamanho = this.produtos.length;
+      }).catch(erro => {
+        console.log('ERRO AO BUSCAR USUÁRIOS', erro)
+      })
 
-    }).catch(erro => {
-      console.log('ERRO AO BUSCAR USUÁRIOS', erro)
-    })
+
   }
 
   list;
+  produtos;
+  tamanho;
 
-  produtos = []
-
-  link(id){
+  link(id) {
     this.route.navigate(['/visaogeral/produto/' + id]);
   }
 

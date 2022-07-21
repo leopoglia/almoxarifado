@@ -18,9 +18,7 @@ export class InputComponent implements OnInit {
       this.tamanho = (document.querySelector(".input").clientWidth) + 9;
       document.getElementById("busca").style.width = this.tamanho + 'px';
     };
-
   }
-
 
 
   tamanho;
