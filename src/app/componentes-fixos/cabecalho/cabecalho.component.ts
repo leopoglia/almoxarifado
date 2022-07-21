@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cabecalho',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
     if(localStorage.getItem('atual') == '1'){
@@ -28,5 +29,9 @@ export class CabecalhoComponent implements OnInit {
     }else{
       this.situacaofiltro = true;
     }
+  }
+
+  inserirReserva(){
+    this.route.navigate(['/inserirreserva'])
   }
 }
