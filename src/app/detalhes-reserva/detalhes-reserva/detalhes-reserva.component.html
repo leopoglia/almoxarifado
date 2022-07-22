@@ -2,74 +2,71 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-  <title>Visão Geral</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <title>Visão Geral</title>
 </head>
 
 <body>
-  <app-header></app-header>
-  <app-nav></app-nav>
+    <app-header></app-header>
+    <app-nav></app-nav>
 
-  <main>
+    <main>
 
-    <div class="container">
-      <div class="cabecalho">
-        <div class="navegacao"><span>Almoxarifado / Detalhes Reservas</span></div>
-      </div>
-
-      <div class="corpo">
-        <div class="minhasreservas">
-          <div class="reserva">
-            <div class="titulo">Reserva Nº 1</div>
-            <div class="pessoa"><span>Retirada por: </span>&nbsp<span> - </span></div>
-
-            <div class="horario">
-              <div class="data"><span>Retirar em: </span><span>23/12/2022</span></div>
-              &nbsp<span>às</span>&nbsp
-              <div class="hora">18:00</div>
-            </div>
-            <div class="detalhes">
-              <div class="reservafeita">
-                <div class="data"><span>Reserva feita em: </span><span>23/12/2022</span></div>
-                &nbsp<span>às</span>&nbsp
-                <div class="hora">18:00</div>
-              </div>
+        <div class="container">
+            <div class="cabecalho">
+                <div class="navegacao"><span>Almoxarifado / Detalhes Reservas</span></div>
             </div>
 
+            <div class="corpo">
+                <div class="minhasreservas">
+                    <div class="reserva">
+                        <div class="titulo">Reserva Nº 1</div>
+                        <div class="pessoa"><span *ngIf="permissao == true">Retirada por: Romário</span><span *ngIf="permissao == false">Retirar com: Carlinhos</span></div>
 
-            <div class="produtos">
-              <div class="titulo">Produtos:</div>
-              <div class="produto">
-                <div class="informacoes">
-                  <div class="imagem">
-                    <img src="https://cdn.awsli.com.br/600x700/468/468162/produto/19414409/106e8da5c7.jpg" alt="">
-                  </div>
-                  <div class="nome">Relé</div>
+                        <div class="horario">
+                            <div class="data"><span>Retirar em: 23/12/2022 às</span></div>
+                            <div class="hora">18:00</div>
+                        </div>
+                        <div class="detalhes">
+                            <div class="reservafeita">
+                                <div class="data"><span>Reserva feita em: 23/12/2022 às</span></div>
+                                <div class="hora">18:00</div>
+                            </div>
+                        </div>
+
+
+                        <div class="produtos">
+                            <div class="titulo">Produtos:</div>
+                            <div class="produto" *ngFor="let item of produtos">
+                                <div class="informacoes">
+                                    <div class="imagem">
+                                        <img src="https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png" alt="">
+                                    </div>
+                                    <div class="nome">Abraçadeira para poste
+                                    </div>
+                                </div>
+
+                                <div class="acoes">
+                                    <div class="quantidade">Quantidade: 100</div>
+
+                                    <div class="opcao">Descartavel</div>
+                                    <button class="baixa" *ngIf="permissao">Dar baixa</button>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
                 </div>
-
-                <div class="acoes">
-                  <div class="quantidade">Quantidade: 100</div>
-
-                  <div class="opcao">Descartavel</div>
-
-                  <button class="baixa">Dar baixa</button>
-                </div>
-
-              </div>
-
-
             </div>
-          </div>
-
         </div>
-      </div>
-    </div>
-  </main>
+    </main>
 </body>
 
 

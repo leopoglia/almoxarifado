@@ -1,0 +1,89 @@
+main {
+    height: 100%;
+    padding-left: 70px;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+.container {
+    padding-top: 20px;
+    height: 100%;
+    margin: 0px 100px 0px 100px;
+}
+
+.corpo {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 25px;
+    border-radius: 3px;
+    border: 1px solid var(--cinzaclaro2);
+    display: flex;
+}
+
+.imagem {
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+    margin-top: 25px;
+    background-color: var(--azul);
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.imagem:hover {
+    background-color: var(--azulclaro);
+}
+
+input {
+    height: 25px;
+    padding: 8px;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    outline: none;
+    width: 100%;
+}
+
+.navegacao {
+    font-size: 14px;
+}
+
+.titulo {
+    margin: 15px;
+}
+
+.inputs {
+    margin-top: 35px;
+    margin-left: 15px;
+    margin-right: 35px;
+    width: 100%;
+}
+
+.nome,
+.email,
+.senha {
+    width: 100%;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.botao {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    width: 165px;
+    height: 45px;
+    background-color: var(--azul);
+    border: none;
+    color: var(--branco);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

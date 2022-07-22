@@ -12,9 +12,13 @@ export class ReservaComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit() {
+    if(localStorage.getItem("usuario") == "Administrador" || localStorage.getItem("usuario") == "Atendente"){
+      this.permissao = true;
+    }
   }
 
-  reservas = [1, 2, 3, 4]
+  reservas = [1, 2];
+  permissao = false;
 
   link(){
     this.route.navigate(['/reservas/detalhes']);

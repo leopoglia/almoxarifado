@@ -31,26 +31,42 @@ main .corpo .titulo {
 main .container .cabecalho .pesquisa {
     margin-top: 20px;
     margin-left: 15px;
+    margin-right: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-main .container app-input{
-    width: 80%;
+main .container app-input {
+    width: 100%;
+}
+
+main .container .cabecalho .pesquisa .add {
+    width: 43px;
+    height: 43px;
+    border-radius: 5px;
+    margin-left: 20px;
+    background-color: var(--azul);
+    color: var(--branco);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+main .container .cabecalho .pesquisa .add:hover {
+    background-color: var(--azulclaro);
 }
 
 main .container .cabecalho .pesquisa .material-symbols-outlined {
-    margin: 0px 20px 0px 20px;
-    padding-left: 30px;
-    font-size: 30px;
-    color: var(--azul);
+    color: var(--branco);
 }
 
 main .container .datas {
     margin-left: 15px;
     margin-top: 25px;
-    margin-right: 50px;
+    margin-right: 15px;
     padding-top: 15px;
     border-top: 1px solid var(--cinzaclaro2);
 }
@@ -118,10 +134,7 @@ main .container .rodape button:hover {
     background-color: var(--azulclaro);
 }
 
-
-
 @media(max-width: 850px) {
-
     main .container .datas .retirada,
     main .container .datas .devolucao {
         display: grid;
@@ -133,16 +146,13 @@ main .container .rodape button:hover {
     main {
         padding-left: 0px;
     }
-
     main .container {
         margin: 0px 30px 0px 100px;
     }
-
     main .container .datas .inputs {
         display: grid;
         height: 100%;
     }
-
     main .container .datas .inputs label {
         width: 100px;
         margin-top: 10px;

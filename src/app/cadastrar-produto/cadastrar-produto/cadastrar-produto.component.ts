@@ -11,9 +11,10 @@ export class CadastrarProdutoComponent implements OnInit {
   constructor(private produtoService: ProdutoService) { }
 
   nome = "";
-  caracteriscas = "";
+  caracteristica = "";
   quantidade = "";
   detalhes = "";
+  localizacaos = "";
 
   ngOnInit() {
     localStorage.setItem('atual', '4');
@@ -24,11 +25,12 @@ export class CadastrarProdutoComponent implements OnInit {
   }
 
   cadastrarProduto(){
-    this.produtoService.cadastrarProduto(this.nome, this.caracteriscas, this.quantidade, this.detalhes, this.img64).then(resultado => {console.log(resultado)});
+    this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.detalhes, this.img64).then(resultado => {console.log(resultado)});
     this.nome = "";
-    this.caracteriscas = "";
+    this.caracteristica = "";
     this.quantidade = "";
     this.detalhes = "";
+    this.localizacaos = "";
   }
 
   img64;

@@ -26,6 +26,7 @@ nav dl dd {
     justify-content: flex-start;
     color: var(--cinza);
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 nav dl dd:hover {
@@ -149,7 +150,14 @@ nav .dark input:checked+.bola:before {
 }
 
 .titulo {
-    font-size: 0px;
+    font-size: 14px;
+    margin-left: 16px;
+    width: 120px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
 }
 
 .tituloaberto {
@@ -165,6 +173,13 @@ nav .dark input:checked+.bola:before {
     display: inline-block !important;
     width: 52px !important;
     height: 25px !important;
+}
+
+dd a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 @media(max-width: 750px) {

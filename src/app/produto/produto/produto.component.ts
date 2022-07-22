@@ -32,6 +32,13 @@ export class ProdutoComponent implements OnInit {
     }
   }
 
+  edita = false;
+
+  editar(){
+    this.edita = !this.edita;  
+  }
+  
+
   list;
   produtos;
   idParametro;

@@ -29,6 +29,7 @@ import CheckLogged from './CheckLogged';
 import { ProdutoReservaComponent } from './inserir-reservas/produto-reserva/produto-reserva.component';
 import { LocalizacaoComponent } from './cadastrar-produto/localizacao/localizacao.component';
 import { InputComponent } from './inserir-reservas/input/input.component';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario/editar-usuario.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
@@ -57,6 +58,7 @@ const routes: Routes = [
     ]
   },
   { path: 'usuario/aceitar', canActivate: [CheckLogged], component: AceitarUsuariosComponent },
+  { path: 'usuario/editar', canActivate: [CheckLogged], component: EditarUsuarioComponent },
   { path: 'perfil', canActivate: [CheckLogged], component: PerfilComponent }
 ];
 
@@ -89,7 +91,8 @@ const routes: Routes = [
     NavBarComponent,
     ProdutoReservaComponent,
     LocalizacaoComponent,
-    InputComponent
+    InputComponent,
+    EditarUsuarioComponent
     ],
   imports: [
     RouterModule.forRoot(routes),

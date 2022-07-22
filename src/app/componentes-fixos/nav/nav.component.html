@@ -6,47 +6,13 @@
                     menu
                     </span>
             </dd>
-            <dd id="1" (click)="visaoGeral()">
-                <span class="material-symbols-outlined">
-                      inventory_2
+            <dd *ngFor="let item of usuario let i = index" class="{{item.atual}}">
+                <a routerLink="{{item.link}}">
+                    <span class="material-symbols-outlined">
+                      {{item.icone}}
                   </span>
-                <span class="titulo">Visão geral</span>
-            </dd>
-
-            <dd id="2" (click)="inserirReservas()">
-                <span class="material-symbols-outlined">
-                      add_circle
-                  </span>
-                <span class="titulo">Inserir reservas</span>
-            </dd>
-
-            <dd id="3" (click)="reservas()">
-                <span class="material-symbols-outlined">
-                      calendar_month
-                  </span>
-                <span class="titulo">Reservas</span>
-            </dd>
-
-
-            <dd id="4" (click)="cadastrarProduto()">
-                <span class="material-symbols-outlined">
-                      category
-                  </span>
-                <span class="titulo">Cadastrar produto</span>
-            </dd>
-
-            <dd id="5" (click)="cadastrarUsuario()">
-                <span class="material-symbols-outlined">
-                      person
-                  </span>
-                <span class="titulo">Cadastrar usuário</span>
-            </dd>
-
-            <dd id="6" (click)="aceitarUsuarios()">
-                <span class="material-symbols-outlined">
-                    check_circle
-                </span>
-                <span class="titulo">Aceitar usuários</span>
+                    <span class="titulo">{{item.texto}}</span>
+                </a>
             </dd>
 
             <div class="rodape">

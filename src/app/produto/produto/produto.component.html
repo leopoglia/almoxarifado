@@ -21,7 +21,7 @@
                 <div class="cabecalho">
                     <div class="titulo"><span>Dados gerais do produto</span></div>
                     <div class="editar">
-                        <span class="material-symbols-outlined">
+                        <span class="material-symbols-outlined" (click)="editar()">
                             edit
                         </span>
                     </div>
@@ -41,18 +41,18 @@
                         <div class="informacoes-grid">
                             <div class="nome">
                                 <span>Nome</span>
-                                <input type="text" [placeholder]="item.NOME" disabled>
+                                <input id="name" type="text" [placeholder]="item.NOME" [disabled]="edita">
                             </div>
 
 
                             <div class="descricao">
                                 <span>Características</span>
-                                <textarea [placeholder]="item.CARACTERISTICAS" disabled></textarea>
+                                <textarea [placeholder]="item.CARACTERISTICAS" [disabled]="edita"></textarea>
                             </div>
 
                             <div class="detalhes">
                                 <span>Detalhes</span>
-                                <input type="text" [placeholder]="item.DETALHES" disabled>
+                                <input type="text" [placeholder]="item.DETALHES" [disabled]="edita">
                             </div>
 
                         </div>
@@ -61,18 +61,18 @@
                     <div class="informacoes-adicionais">
                         <div class="quantidade">
                             <span>Quantidade</span>
-                            <input type="number" [placeholder]="item.QUANTIDADE" disabled>
+                            <input type="number" [placeholder]="item.QUANTIDADE" [disabled]="edita">
                         </div>
 
                         <div class="localizacao">
                             <span>Localização</span>
-                            <input type="text" [placeholder]="item.LOCALIZACAO" disabled>
+                            <input type="text" [placeholder]="item.LOCALIZACAO" [disabled]="edita">
                         </div>
 
                         <div class="classificacao">
                             <span>Classificação</span>
                             <div class="fundo">
-                                <select name="select" disabled>
+                                <select name="select" [disabled]="edita">
                                     <option value="valor1">{{item.CLASSIFICACAO}}</option>
                                 </select>
                             </div>

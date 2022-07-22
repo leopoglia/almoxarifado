@@ -102,6 +102,7 @@ main .container .produtos .produto .imagem img {
 main .container .produtos .produto .baixa {
     width: 165px;
     height: 45px;
+    margin-left: 10px;
     background-color: var(--azul);
     border: none;
     color: var(--branco);

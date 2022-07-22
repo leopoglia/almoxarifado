@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
 
     this.usuarioService.login(this.usuario, this.senha)
     .then(resultado => {
+      console.log('s')
       if(resultado.hasOwnProperty("user")){
         this.route.navigate(['visaogeral']);
       }else{
