@@ -30,6 +30,7 @@ import { ProdutoReservaComponent } from './inserir-reservas/produto-reserva/prod
 import { LocalizacaoComponent } from './cadastrar-produto/localizacao/localizacao.component';
 import { InputComponent } from './inserir-reservas/input/input.component';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario/editar-usuario.component';
+import { AlertasComponent } from './componentes-fixos/alertas/alertas.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
@@ -92,7 +93,8 @@ const routes: Routes = [
     ProdutoReservaComponent,
     LocalizacaoComponent,
     InputComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    AlertasComponent
     ],
   imports: [
     RouterModule.forRoot(routes),
