@@ -1,81 +1,81 @@
-.filtro{
-    position: absolute;
-    z-index: 1;
-    background-color: var(--branco);
-    width: 220px;
-    height: 320px;
-    display: block;
-    justify-content: space-between;
-    border: 1px solid var(--cinzaclaro2);
-    margin-bottom: 10px;
-    margin: 2px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px var(--cinzaclaro); 
+.filtro {
+  position: absolute;
+  z-index: 1;
+  background-color: var(--branco);
+  width: 220px;
+  height: 320px;
+  display: block;
+  justify-content: space-between;
+  border: 1px solid var(--cinzaclaro2);
+  margin-bottom: 10px;
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.filtro .header{
-    height: 50px;
-    padding: 0px 15px;
-    border-bottom: 1px solid var(--cinzaclaro2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.filtro .header {
+  height: 50px;
+  padding: 0px 15px;
+  border-bottom: 1px solid var(--cinzaclaro2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.filtro .header .acoes{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-.filtro .header .acoes p{
-    margin-left: 8px;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-}
-
-#limpar{
-    font-size: 20px;
+.filtro .header .acoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
-.filtro .filtros .classificacao .titulo{
-    margin-bottom: 10px;
+
+.filtro .header .acoes p {
+  margin-left: 8px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
 }
 
-.filtro .filtros select, .filtro .filtros .localizacao input{
-    width: 100%;
-    height: 30px;
-    padding: 0px;
-    border: 1px solid var(--cinzaclaro2);
-    border-radius: 3px;
-    outline: none;
+#limpar {
+  font-size: 20px;
 }
 
-.filtro .filtros .classificacao .opcoes{
-    height: 200px;
-    overflow-y: scroll;
+
+.filtro .filtros .classificacao .titulo {
+  margin-bottom: 10px;
 }
 
-.filtro .filtros .opcao{
-    display: flex;
-    justify-content: flex-start;
-    padding: 5px 10px 5px 10px;
+.filtro .filtros select,
+.filtro .filtros .localizacao input {
+  width: 100%;
+  height: 30px;
+  padding: 0px;
+  border: 1px solid var(--cinzaclaro2);
+  border-radius: 3px;
+  outline: none;
 }
 
-.filtro .filtros .opcao:hover{
-    background-color: var(--cinzaclaro3);
+.filtro .filtros .classificacao .opcoes {
+  height: 200px;
+  overflow-y: scroll;
 }
 
-.filtro .filtros .opcao p{
-    margin-left: 10px;
+.filtro .filtros .opcao {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px 10px 5px 10px;
+}
+
+.filtro .filtros .opcao:hover {
+  background-color: var(--cinzaclaro3);
+}
+
+.filtro .filtros .opcao p {
+  margin-left: 10px;
 }
 
 
@@ -93,71 +93,71 @@
 }
 
 .check input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: var(--cinzaclaro3);
-    border-radius: 3px;
-    border: 1px solid var(--cinzaclaro2);
-    margin-top: 3px;
-  }
-  
-  .check:hover input ~ .checkmark {
-    background-color: var(--cinzaclaro);
-  }
-  
-  .check input:checked ~ .checkmark {
-    background-color: var(--azul);
-  }
-  
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  .check input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  .check .checkmark:after {
-    left: 4px;
-    top: 1px;
-    width: 5px;
-    height: 8px;
-    border: solid var(--branco);
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-
-.filtro .filtros .botao{
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-.filtro .filtros button{
-    width: 130px;
-    height: 40px;
-    background-color: var(--azul);
-    border: none;
-    color: var(--branco);
-    outline: none;
-    border-radius: 3px;
-    cursor: pointer;
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: var(--cinzaclaro3);
+  border-radius: 3px;
+  border: 1px solid var(--cinzaclaro2);
+  margin-top: 3px;
+}
+
+.check:hover input~.checkmark {
+  background-color: var(--cinzaclaro);
+}
+
+.check input:checked~.checkmark {
+  background-color: var(--azul);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check input:checked~.checkmark:after {
+  display: block;
+}
+
+.check .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 8px;
+  border: solid var(--branco);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.filtro .filtros .botao {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filtro .filtros button {
+  width: 130px;
+  height: 40px;
+  background-color: var(--azul);
+  border: none;
+  color: var(--branco);
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
