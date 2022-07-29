@@ -1,11 +1,16 @@
 .reserva {
     width: 100%;
-    height: 140px;
+    height: 80px;
     border: 1px solid var(--cinzaclaro2);
     margin-bottom: 10px;
     border-radius: 3px;
     cursor: pointer;
 }
+
+.reserva:hover{
+    background-color: var(--hover);
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -68,6 +73,9 @@ a{
     height: 24px;
 }
 
+.informacoes{
+    display: flex;
+}
 
 @media(max-width: 750px) {
     

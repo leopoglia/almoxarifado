@@ -17,7 +17,7 @@ export class ReservaComponent implements OnInit {
     }
   }
 
-  reservas = [1, 2];
+  reservas = [1, 2, 3, 4, 5];
   permissao = false;
 
   link(){

@@ -77,12 +77,12 @@ main .container form .inputs {
 main .container form label {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 main .container form .material-symbols-outlined {
     font-size: 34px;
     margin-right: 12px;
+    margin-top: 7px;
     color: var(--azul);
 }
 
