@@ -26,8 +26,8 @@
                     <a routerLink="/usuario/editar">
                         <div class="editar">
                             <span class="material-symbols-outlined">
-                        settings
-                        </span>
+                                settings
+                            </span>
                         </div>
                     </a>
 
@@ -35,20 +35,35 @@
             </div>
 
             <div class="acoes">
-                <div class="nav">
-                    <dl>
-                        <dd class="atual">Reservas realizadas</dd>
-                        <dd>Reservas abertas</dd>
-                    </dl>
+                <div class="navegacao">
                 </div>
+                <div class="corpo">
 
-                <div class="reservas">
-                    <app-reserva></app-reserva>
+
+                    <div class="inputs">
+                        <div class="nome">
+                            <span>Nome</span>
+                            <input type="text" placeholder="Professor">
+                        </div>
+
+                        <div class="email">
+                            <span>Email</span>
+                            <input type="text" placeholder="professor@edu.org.br">
+                        </div>
+
+                        <div class="senha">
+                            <span>Senha</span>
+                            <input type="password" placeholder="123">
+                        </div>
+
+                        <div class="botao">
+                            <button>Salvar Alterações</button>
+                        </div>
+                    </div>
+
+
                 </div>
-
             </div>
-
-
         </div>
     </main>
 </body>

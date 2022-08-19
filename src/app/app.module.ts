@@ -29,7 +29,6 @@ import CheckLogged from './CheckLogged';
 import { ProdutoReservaComponent } from './inserir-reservas/produto-reserva/produto-reserva.component';
 import { LocalizacaoComponent } from './cadastrar-produto/localizacao/localizacao.component';
 import { InputComponent } from './inserir-reservas/input/input.component';
-import { EditarUsuarioComponent } from './editar-usuario/editar-usuario/editar-usuario.component';
 import { AlertasComponent } from './componentes-fixos/alertas/alertas.component';
 
 const routes: Routes = [
@@ -48,10 +47,12 @@ const routes: Routes = [
     ]
   },
   { path: 'inserirreserva', canActivate: [CheckLogged], component: InserirReservasComponent },
-  { path: 'reservas', children: [
-    { path: '', canActivate: [CheckLogged], component: ReservasComponent },
-    { path: 'detalhes', canActivate: [CheckLogged], component: DetalhesReservaComponent }
-  ] },
+  {
+    path: 'reservas', children: [
+      { path: '', canActivate: [CheckLogged], component: ReservasComponent },
+      { path: 'detalhes', canActivate: [CheckLogged], component: DetalhesReservaComponent }
+    ]
+  },
   {
     path: 'cadastrar', children: [
       { path: 'produto', canActivate: [CheckLogged], component: CadastrarProdutoComponent },
@@ -59,7 +60,6 @@ const routes: Routes = [
     ]
   },
   { path: 'usuario/aceitar', canActivate: [CheckLogged], component: AceitarUsuariosComponent },
-  { path: 'usuario/editar', canActivate: [CheckLogged], component: EditarUsuarioComponent },
   { path: 'perfil', canActivate: [CheckLogged], component: PerfilComponent }
 ];
 
@@ -93,9 +93,8 @@ const routes: Routes = [
     ProdutoReservaComponent,
     LocalizacaoComponent,
     InputComponent,
-    EditarUsuarioComponent,
     AlertasComponent
-    ],
+  ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
@@ -103,7 +102,7 @@ const routes: Routes = [
     RouterModule,
     FormsModule
   ],
-  providers: [ CheckLogged ],
-  bootstrap: [ AppComponent ]
+  providers: [CheckLogged],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
