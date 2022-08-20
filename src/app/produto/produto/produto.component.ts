@@ -32,7 +32,7 @@ export class ProdutoComponent implements OnInit {
     }
   }
 
-  edita = false;
+  edita = true;
 
   editar(){
     this.edita = !this.edita;  

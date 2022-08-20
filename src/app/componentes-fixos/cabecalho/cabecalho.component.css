@@ -57,7 +57,7 @@
     background-color: var(--azulclaro);
 }
 
-.cabecalho .filtro {
+.cabecalho .filtro, .cabecalho .flexibilidade {
     display: flex;
     align-items: center;
     justify-content: center;

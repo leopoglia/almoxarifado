@@ -1,19 +1,19 @@
 <div class="produto" *ngFor="let item of produtos" (click)="link(item.CODIGO)">
-  <div >
-      <div class="imagem">
-          <img  [src]="item.IMAGEM"
-              alt="">
-      </div>
-      <div class="informacoes">
-          <p class="titulo">{{item.NOME}}</p>
-          <p class="descricao">{{item.DETALHES}}</p>
+    <div>
+        <div class="imagem">
+            <img [src]="item.IMAGEM" alt="">
+        </div>
+        <div class="informacoes">
+            <p class="titulo">{{item.NOME}}</p>
+            <p class="descricao">{{item.DETALHES}}</p>
+            <div class="quantidade-produto">
+                <p>Quantidade: </p>
+                <div class="quantidade">{{item.QUANTIDADE}}</div>
+            </div>
+        </div>
 
-          <div class="quantidade-produto">
-              <p>Quantidade: </p>
-              <div class="quantidade">{{item.QUANTIDADE}}</div>
-          </div>
-      </div>
-  </div>
+
+    </div>
 </div>
 
 <div class="erro" *ngIf="tamanho == 0"><span>Não há produtos cadastrados.</span></div>

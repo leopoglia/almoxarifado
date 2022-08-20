@@ -10,12 +10,13 @@
 
     <main>
         <div class="container">
-            <app-cabecalho></app-cabecalho>
+            <app-cabecalho (posicaoTabelas)="receberPedido($event)"></app-cabecalho>
 
             <div class="corpo">
-                    <app-item></app-item>
-                    
-             
+                <app-item *ngIf="posicao == true" posicao="true"></app-item>
+                <app-item *ngIf="posicao == false" posicao="false"></app-item>
+
+
                 <div class="rodape">
                     <div class="paginacao">
                         <dl>

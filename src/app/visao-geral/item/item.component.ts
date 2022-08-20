@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -16,7 +16,8 @@ export class ItemComponent implements OnInit {
   constructor(
     private route: Router,
     private produtoService: ProdutoService,
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.produtoService.buscarProdutos()
@@ -27,13 +28,12 @@ export class ItemComponent implements OnInit {
       }).catch(erro => {
         console.log('ERRO AO BUSCAR USUÁRIOS', erro)
       })
-
-
   }
 
   list;
   produtos;
   tamanho;
+
 
   link(id) {
     this.route.navigate(['/visaogeral/produto/' + id]);

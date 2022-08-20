@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,32 +6,47 @@ import { Router } from '@angular/router';
   templateUrl: './cabecalho.component.html',
   styleUrls: ['./cabecalho.component.css']
 })
+
 export class CabecalhoComponent implements OnInit {
 
+  
   constructor(private route: Router) { }
 
+  @Output() posicaoTabelas = new EventEmitter();
+
+
   ngOnInit() {
-    if(localStorage.getItem('atual') == '1'){
+    if (localStorage.getItem('atual') == '1') {
       this.local = 'Visão Geral';
-    }else if(localStorage.getItem('atual') == '3'){
+    } else if (localStorage.getItem('atual') == '3') {
       this.local = 'Reservas'
-    }else if(localStorage.getItem('atual') == '6'){
+    } else if (localStorage.getItem('atual') == '6') {
       this.local = 'Aceitar usuários'
     }
   }
 
+  
+
   situacaofiltro = false;
+  alteraTabela:boolean = false;
   local;
 
-  filtro(){
-    if(this.situacaofiltro == true){
+  filtro() {
+    if (this.situacaofiltro == true) {
       this.situacaofiltro = false;
-    }else{
+    } else {
       this.situacaofiltro = true;
     }
   }
 
-  inserirReserva(){
+
+  alterarTabela(){
+    this.alteraTabela = !this.alteraTabela;
+    this.posicaoTabelas.emit(this.alteraTabela);
+  }
+
+
+  inserirReserva() {
     this.route.navigate(['/inserirreserva'])
   }
 }

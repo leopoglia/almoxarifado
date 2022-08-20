@@ -168,6 +168,60 @@ main .container .informacoes .informacoes-adicionais .classificacao select {
     -webkit-appearance: none !important;
 }
 
+main .container .informacoes .informacoes-adicionais .descartavel {
+    display: grid;
+    margin-right: 30px;
+}
+
+.botao {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 25px;
+}
+
+.botao input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.bola {
+    border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--cinzaclaro2);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.bola:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.bola {
+    background-color: var(--azul);
+}
+
+input:checked+.bola:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
 @media(max-width: 1000px) {
     main .container .informacoes {
         width: 100% !important;
