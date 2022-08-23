@@ -1,5 +1,5 @@
 .produto {
-    width: 24.4%;
+    width: 19.48%;
     height: 280px;
     display: inline-flex;
     justify-content: space-around;
@@ -45,7 +45,7 @@
 
 .produto .informacoes .descricao {
     font-size: 12px;
-    height: 35px;
+    height: 47px;
     padding-right: 10px;
     overflow: hidden;
     display: inline-block;
@@ -54,13 +54,13 @@
 
 .produto .informacoes .quantidade {
     margin: 5px;
-    height: 30px;
     border-radius: 3px;
 }
 
 .produto .informacoes .quantidade-produto{
     display: flex;
     justify-content: end;
+    height: 20px;
     margin-right: 10px;
 }
 

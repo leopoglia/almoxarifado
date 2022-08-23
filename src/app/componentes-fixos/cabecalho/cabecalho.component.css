@@ -37,9 +37,15 @@
     background-color: var(--hover);
 }
 
-.cabecalho .pesquisa .material-symbols-outlined {
+.cabecalho .pesquisa .material-symbols-outlined,
+.cabecalho .pesquisa .material-symbols-rounded {
     font-size: 30px;
     color: var(--azul);
+}
+
+.cabecalho .pesquisa .material-symbols-outlined:hover,
+.cabecalho .pesquisa .material-symbols-rounded:hover {
+    color: var(--azulclaro);
 }
 
 .cabecalho .pesquisa button {
@@ -57,14 +63,24 @@
     background-color: var(--azulclaro);
 }
 
-.cabecalho .filtro, .cabecalho .flexibilidade {
+.cabecalho .filtro,
+.cabecalho .flexibilidade {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     width: 45px;
     height: 45px;
-    margin: 0px 20px 0px 20px;
+    margin: 0px 10px 0px 10px;
+}
+
+.ordernar-alfabeto span {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0px 10px 0px 10px;
+    color: var(--azul);
 }
 
 app-filtro {
@@ -77,5 +93,5 @@ app-filtro {
     app-filtro {
         right: 320px;
     }
-    
+
 }

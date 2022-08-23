@@ -1,3 +1,8 @@
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+</head>
+
 <div class="cabecalho">
     <div class="navegacao"><span>Almoxarifado / {{local}}</span></div>
 
@@ -11,9 +16,21 @@
         </div>
 
         <div class="flexibilidade" (click)="alterarTabela()">
-            <span class="material-symbols-outlined">
+            <span *ngIf="alteraTabela == false" class="material-symbols-rounded">
+                grid_view
+            </span>
+
+            <span *ngIf="alteraTabela == true" class="material-symbols-rounded">
                 table_rows
             </span>
+        </div>
+
+
+        <div class="ordernar-alfabeto">
+
+            <span>A</span>
+            <span>Z</span>
+
         </div>
 
         <div class="filtro" (click)="filtro()">
