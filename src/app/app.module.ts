@@ -18,6 +18,7 @@ import { HeaderComponent } from './componentes-fixos/header/header.component';
 import { NavComponent } from './componentes-fixos/nav/nav.component';
 import { DetalhesReservaComponent } from './detalhes-reserva/detalhes-reserva/detalhes-reserva.component';
 import { ItemComponent } from './visao-geral/item/item.component';
+import { ItemGridComponent } from './visao-geral/item-grid/item-grid.component';
 import { ReservaComponent } from './reservas/reserva/reserva.component';
 import { PerfilComponent } from './perfil/perfil/perfil.component';
 import { AceitarUsuariosComponent } from './aceitar-usuarios/aceitar-usuarios/aceitar-usuarios.component';
@@ -91,7 +92,8 @@ const routes: Routes = [
     ProdutoReservaComponent,
     LocalizacaoComponent,
     InputComponent,
-    AlertasComponent
+    AlertasComponent,
+    ItemGridComponent
     ],
   imports: [
     RouterModule.forRoot(routes),

@@ -1,0 +1,146 @@
+.produto {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: 1px solid var(--cinzaclaro2);
+    margin-bottom: 10px;
+    margin: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+.produto:hover{
+    background-color: var(--hover);
+}
+
+.produto .imagem,
+.produto .informacoes .quantidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto .imagem img {
+    height: 60px;
+}
+
+.produto .informacoes {
+    margin-left: 10px;
+    margin: 10px;
+    width: 100%;
+    display: flex;
+}
+
+.produto .informacoes .titulo {
+    width: 100%;
+    font-size: 18px;
+    height: 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+}
+
+.produto .informacoes .descricao {
+    font-size: 12px;
+    height: 30px;
+    padding-right: 10px;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+}
+
+.produto .informacoes .quantidade {
+    margin-left: 10px;
+    width: 75px;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid var(--cinzaclaro2);
+}
+
+.rodape {
+    height: 40px;
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.rodape .paginacao {
+    height: 100%;
+    width: 250px;
+    border-radius: 3px;
+    margin-right: 3px;
+}
+
+.rodape .paginacao dl {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rodape .paginacao dl dd {
+    width: 42px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.rodape .paginacao dl dd:hover {
+    background-color: var(--cinzaclaro3);
+}
+
+.rodape .paginacao dl .atual {
+    background-color: var(--azul);
+    color: var(--branco);
+}
+
+.rodape .paginacao dl .atual:hover {
+    background-color: var(--azulclaro);
+}
+
+.erro{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px;
+}
+
+@media(max-width: 1400px) {
+    .produto {
+        width: 32.5%;
+    }
+}
+
+@media(max-width: 1150px) {
+    .produto {
+        width: 48.7%;
+    }
+}
+
+@media(max-width: 900px) {
+    .produto {
+        width: 100%;
+    }
+
+    .rodape {
+        justify-content: center;
+    }
+}
