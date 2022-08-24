@@ -31,7 +31,7 @@ main .container .cabecalho .editar {
     cursor: pointer;
 }
 
-main .container .adicionar .adicionar-reserva{
+main .container .adicionar .adicionar-reserva {
     width: 165px;
     height: 45px;
     background-color: var(--azul);
@@ -39,15 +39,15 @@ main .container .adicionar .adicionar-reserva{
     color: var(--branco);
     outline: none;
     border-radius: 3px;
-    cursor: pointer; 
+    cursor: pointer;
     margin-right: 30px;
 }
 
-main .container .adicionar .adicionar-reserva:hover{
+main .container .adicionar .adicionar-reserva:hover {
     background-color: var(--azulclaro);
 }
 
-main .container .adicionar{
+main .container .adicionar {
     width: 100%;
     display: flex;
     justify-content: end;
@@ -148,7 +148,7 @@ main .container select:disabled {
 }
 
 main .container .informacoes .informacoes-gerais .nome input,
-main .container .informacoes .informacoes-gerais .detalhes input,
+main .container .anexo label,
 main .container .informacoes .informacoes-gerais .descricao textarea {
     height: 25px;
     padding: 8px;
@@ -156,6 +156,17 @@ main .container .informacoes .informacoes-gerais .descricao textarea {
     border-radius: 3px;
     outline: none;
     width: auto;
+}
+
+main .container .anexo label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    width: 100%;
+}
+
+main .container .anexo input {
+    display: none;
 }
 
 main .container .informacoes .informacoes-gerais .descricao textarea {
@@ -229,7 +240,7 @@ main .container .informacoes .classificacao select {
     height: 43px !important;
 }
 
-main .container .informacoes .quantidade{
+main .container .informacoes .quantidade {
     margin-left: 20px;
     margin-right: 20px;
     width: 50%;
@@ -246,12 +257,22 @@ main .container .informacoes .classificacao select {
     width: 100%;
 }
 
-main .container .informacoes .classificacao{
+main .container .informacoes .classificacao {
     width: 100%;
 }
 
-main .container .informacoes .informacoes-adicionais .localizacao {
-    width: 25%;
+main .container .informacoes .informacoes-adicionais .localizacao,
+main .container .informacoes .informacoes-adicionais .anexo {
+    width: 50%;
+}
+
+main .container .informacoes #anexo-ativa {
+    background-color: var(--cinzaclaro3);
+}
+
+main .container .informacoes .informacoes-adicionais .anexo {
+    margin-left: 40px;
+    margin-right: 50px;
 }
 
 main .container .informacoes .classificacao select {
@@ -276,7 +297,7 @@ main .container .informacoes .informacoes-adicionais .descartavel {
     height: 0;
 }
 
-input:disabled ~ .bola{
+input:disabled~.bola {
     cursor: not-allowed;
 }
 
