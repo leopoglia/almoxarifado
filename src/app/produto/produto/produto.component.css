@@ -254,6 +254,10 @@ main .container .informacoes .informacoes-adicionais .descartavel {
     height: 0;
 }
 
+input:disabled ~ .bola{
+    cursor: not-allowed;
+}
+
 .bola {
     border-radius: 34px;
     position: absolute;
