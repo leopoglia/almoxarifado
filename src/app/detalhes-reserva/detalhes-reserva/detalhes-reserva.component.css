@@ -22,6 +22,11 @@ main .corpo {
     padding-bottom: 50px;
 }
 
+.corpo .reserva .header-reserva{
+    display: flex;
+    justify-content: space-between;
+}
+
 main .corpo .reserva {
     width: 100%;
     border: 1px solid var(--cinzaclaro2);
@@ -100,21 +105,20 @@ main .container .produtos .produto .imagem img {
 }
 
 main .corpo .reserva div .cancelar {
-    width: 165px;
-    height: 45px;
-    background-color: var(--azul);
-    border: none;
-    color: var(--branco);
-    outline: none;
-    border-radius: 3px;
+    width: 41px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: var(--cinzaclaro3);
+    border: 1px solid var(--cinzaclaro2);
     cursor: pointer;
-    
-    margin-left: 15px;
-    margin-bottom: 8px;
+    margin: 10px;
 }
 
 main .corpo .reserva div .cancelar:hover {    
-    background-color: var(--azulclaro);
+    background-color: var(--cinzaclaro);
 }
 
 main .container .produtos .produto .baixa {

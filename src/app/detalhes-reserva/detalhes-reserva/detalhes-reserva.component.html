@@ -24,9 +24,15 @@
             <div class="corpo">
                 <div class="minhasreservas">
                     <div class="reserva">
-                        <div class="titulo">Reserva Nº 1</div>
+                        <div class="header-reserva">
+                            <div class="titulo">Reserva Nº 1</div>
+                            <div><button class="cancelar">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                    </span>
+                            </button></div>
+                        </div>
                         <div class="pessoa"><span *ngIf="permissao == true">Retirada por: Romário</span><span *ngIf="permissao == false">Retirar com: Carlinhos</span></div>
-
                         <div class="horario">
                             <div class="data"><span>Retirar em: 23/12/2022 às</span></div>
                             <div class="hora">18:00</div>
@@ -58,9 +64,6 @@
                                 </div>
 
                             </div>
-                        </div>
-                        <div>
-                            <button class="cancelar">Cancelar</button>
                         </div>
                     </div>
  
