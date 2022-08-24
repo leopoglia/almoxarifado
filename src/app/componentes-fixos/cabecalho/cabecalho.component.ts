@@ -14,7 +14,6 @@ export class CabecalhoComponent implements OnInit {
 
   @Output() posicaoTabelas = new EventEmitter();
 
-
   ngOnInit() {
     if (localStorage.getItem('atual') == '1') {
       this.local = 'Visão Geral';
@@ -30,6 +29,7 @@ export class CabecalhoComponent implements OnInit {
   situacaofiltro = false;
   alteraTabela: boolean = true;
   local;
+  urlAtual = window.location.pathname;
 
   filtro() {
     if (this.situacaofiltro == true) {

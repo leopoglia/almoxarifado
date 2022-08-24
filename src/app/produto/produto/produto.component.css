@@ -31,6 +31,29 @@ main .container .cabecalho .editar {
     cursor: pointer;
 }
 
+main .container .adicionar .adicionar-reserva{
+    width: 165px;
+    height: 45px;
+    background-color: var(--azul);
+    border: none;
+    color: var(--branco);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer; 
+    margin-right: 30px;
+}
+
+main .container .adicionar .adicionar-reserva:hover{
+    background-color: var(--azulclaro);
+}
+
+main .container .adicionar{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+}
+
 main .container .cabecalho .editar:hover {
     background-color: var(--cinzaclaro3);
 }
@@ -115,6 +138,9 @@ main .container textarea:disabled {
     background-color: var(--cinzaclaro3);
 }
 
+.checar-descartavel:disabled .bola {
+    cursor: not-allowed;
+}
 
 main .container select:disabled {
     background-color: rgb(217, 217, 217);
@@ -253,7 +279,6 @@ main .container .informacoes .informacoes-adicionais .descartavel {
 .bola {
     border-radius: 34px;
     position: absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
