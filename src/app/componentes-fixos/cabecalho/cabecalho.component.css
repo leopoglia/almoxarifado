@@ -74,13 +74,14 @@
     margin: 0px 10px 0px 10px;
 }
 
-.ordernar-alfabeto span {
+.ordernar{
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.ordernar span{
     font-weight: bold;
-    font-size: 14px;
-    margin: 0px 10px 0px 10px;
-    color: var(--azul);
 }
 
 app-filtro {
