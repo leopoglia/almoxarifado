@@ -183,6 +183,11 @@ main .container .informacoes .inserir-imagem .imagem img {
     border-radius: 3px;
 }
 
+main .container .informacoes .informacoes-gerais .informacoes-flex {
+    display: flex;
+}
+
+
 main .container .informacoes .informacoes-adicionais {
     display: flex;
     justify-content: space-between;
@@ -190,9 +195,23 @@ main .container .informacoes .informacoes-adicionais {
     margin-right: 30px;
 }
 
-main .container .informacoes .informacoes-adicionais .quantidade input,
+main .container .informacoes .classificacao select {
+    width: 100%;
+}
+
+main .container .informacoes .classificacao select {
+    height: 43px !important;
+}
+
+main .container .informacoes .quantidade{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50%;
+}
+
+main .container .informacoes .quantidade input,
 main .container .informacoes .informacoes-adicionais .localizacao input,
-main .container .informacoes .informacoes-adicionais .classificacao select {
+main .container .informacoes .classificacao select {
     height: 25px;
     padding: 8px;
     border: 1px solid var(--cinzaclaro2);
@@ -201,12 +220,15 @@ main .container .informacoes .informacoes-adicionais .classificacao select {
     width: 100%;
 }
 
-main .container .informacoes .informacoes-adicionais .localizacao,
-main .container .informacoes .informacoes-adicionais .classificacao {
+main .container .informacoes .classificacao{
+    width: 100%;
+}
+
+main .container .informacoes .informacoes-adicionais .localizacao {
     width: 25%;
 }
 
-main .container .informacoes .informacoes-adicionais .classificacao select {
+main .container .informacoes .classificacao select {
     height: 43px;
     -webkit-appearance: none !important;
 }
@@ -298,9 +320,9 @@ input:checked+.bola:before {
         margin-right: 0px !important;
     }
 
-    main .container .informacoes .informacoes-adicionais .quantidade,
+    main .container .informacoes .quantidade,
     main .container .informacoes .informacoes-adicionais .localizacao,
-    main .container .informacoes .informacoes-adicionais .classificacao {
+    main .container .informacoes .classificacao {
         display: grid;
         width: 95%;
         align-items: flex-start;
@@ -311,7 +333,7 @@ input:checked+.bola:before {
         margin-top: 15px;
     }
 
-    main .container .informacoes .informacoes-adicionais .quantidade input {
+    main .container .informacoes .quantidade input {
         width: auto;
     }
 
