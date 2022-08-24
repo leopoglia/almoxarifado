@@ -30,12 +30,26 @@
                 <div class="informacoes">
 
                     <div class="informacoes-gerais">
-                        <div class="inserir-imagem">
+                        <div  *ngIf="edita == true" class="inserir-imagem">
                             <span>Imagem</span>
 
                             <div class="imagem">
                                 <img [src]="item.IMAGEM" alt="">
                             </div>
+                        </div>
+
+                        <div *ngIf="edita == false" class="inserir-imagem">
+                            <span>Imagem</span>
+                            <label for="imagem">
+                                <input id="imagem" type="file" (change)="mudanca($event.target.files[0])">
+
+                                <div class="imagem-editar">
+
+                                    <span class="material-symbols-outlined">
+                                        add_photo_alternate
+                                    </span>
+                                </div>
+                            </label>
                         </div>
 
                         <div class="informacoes-grid">

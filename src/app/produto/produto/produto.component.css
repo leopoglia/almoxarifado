@@ -26,6 +26,7 @@ main .container .cabecalho .editar {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    background-color: var(--cinzaclaro3);
     border: 1px solid var(--cinzaclaro2);
     cursor: pointer;
 }
@@ -36,7 +37,6 @@ main .container .cabecalho .editar:hover {
 
 main .container .cabecalho .editar:focus {
     background-color: var(--cinzaclaro3);
-    border: 2px solid var(--cinzaclaro2);
 }
 
 main .container .cabecalho .navegacao {
@@ -116,7 +116,7 @@ main .container textarea:disabled {
 }
 
 
-main .container select:disabled{
+main .container select:disabled {
     background-color: rgb(217, 217, 217);
     border: 1px solid rgb(170, 170, 170) !important;
 }
@@ -137,6 +137,28 @@ main .container .informacoes .informacoes-gerais .descricao textarea {
     resize: none
 }
 
+main .container .informacoes .inserir-imagem .imagem-editar {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--branco) !important;
+}
+
+main .container .informacoes .informacoes-gerais .inserir-imagem input[type='file'] {
+    display: none
+}
+
+
+main .container .informacoes .inserir-imagem .imagem .material-symbols-outlined {
+    color: var(--cinzaclaro2);
+    font-size: 80px;
+}
+
 main .container .informacoes .inserir-imagem .imagem {
     width: 200px;
     height: 200px;
@@ -146,7 +168,12 @@ main .container .informacoes .inserir-imagem .imagem {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: var(--branco);
+    background-color: var(--cinzaclaro3);
+}
+
+main .container .informacoes .inserir-imagem .imagem-editar .material-symbols-outlined {
+    color: var(--cinzaclaro2);
+    font-size: 80px;
 }
 
 main .container .informacoes .inserir-imagem .imagem img {
