@@ -1,7 +1,7 @@
-<div class="fundo" *ngIf="situacaolocalizacao">
-  <div class="localizacao">
+<div class="fundo" *ngIf="situacao">
+  <div class="modal">
     <div class="header">
-      <span>Adicionar localização</span>
+      <span>Adicionar {{item}}</span>
 
       <div class="acoes">
 
@@ -14,7 +14,7 @@
 
     <div class="inputs">
 
-      <input type="text" placeholder="Insira a localização">
+      <input type="text" placeholder="Insira a {{item}}">
 
       <div class="setados">
         <span>

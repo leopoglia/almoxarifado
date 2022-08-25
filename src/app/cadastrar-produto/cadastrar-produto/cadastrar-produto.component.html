@@ -6,7 +6,8 @@
 </head>
 
 <body>
-    <app-localizacao *ngIf="situacaolocalizacao"></app-localizacao>
+    <app-modal-adicao *ngIf="situacaolocalizacao" item="Localização"></app-modal-adicao>
+    <app-modal-adicao *ngIf="situacaoclassificacao" item="Classificação"></app-modal-adicao>
     <app-header></app-header>
     <app-nav></app-nav>
 
@@ -65,7 +66,7 @@
                                             <option value="4">Ferramenta Manual</option>
                                         </select>
                                         <div class="adicionar">
-                                            <span class="material-symbols-outlined">
+                                            <span class="material-symbols-outlined" (click)="classificacao()">
                                                 add
                                             </span>
                                         </div>

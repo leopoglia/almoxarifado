@@ -15,13 +15,12 @@ export class InputComponent implements OnInit {
     document.getElementById("busca").style.width = this.tamanho + 'px';
 
     window.onresize = function () {
-      this.tamanho = (document.querySelector(".input").clientWidth) + 9;
-      document.getElementById("busca").style.width = this.tamanho + 'px';
+      document.getElementById("busca").style.width = ((document.querySelector(".input").clientWidth) + 9) + 'px';
     };
   }
 
 
-  tamanho;
+  tamanho: number;
   produtos = [
     { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
     { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },

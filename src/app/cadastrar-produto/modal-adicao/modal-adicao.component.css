@@ -9,7 +9,7 @@
     z-index: 2;
 }
 
-.localizacao{
+.modal{
     z-index: 1;
     background-color: var(--branco);
     width: 420px;

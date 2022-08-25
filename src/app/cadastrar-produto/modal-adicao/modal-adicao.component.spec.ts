@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocalizacaoComponent } from './localizacao.component';
+import { ModalAdicaoComponent } from './modal-adicao.component';
 
 describe('CadastrarProdutoComponent', () => {
-  let component: LocalizacaoComponent;
-  let fixture: ComponentFixture<LocalizacaoComponent>;
+  let component: ModalAdicaoComponent;
+  let fixture: ComponentFixture<ModalAdicaoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocalizacaoComponent ]
+      declarations: [ ModalAdicaoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LocalizacaoComponent);
+    fixture = TestBed.createComponent(ModalAdicaoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
