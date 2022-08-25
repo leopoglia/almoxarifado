@@ -112,7 +112,7 @@ main .container .informacoes .informacoes-gerais {
     width: 100%;
     display: flex;
     align-items: flex-start;
-}
+} 
 
 main .container .informacoes .informacoes-gerais .nome,
 main .container .informacoes .informacoes-gerais .detalhes,

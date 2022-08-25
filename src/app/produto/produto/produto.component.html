@@ -131,7 +131,8 @@
                 </div>
 
                 <div class="adicionar">
-                    <button class="adicionar-reserva">Adicionar à reserva</button>
+                    <button *ngIf="edita == false" class="adicionar-reserva">Salvar edições</button>
+                    <button *ngIf="edita" class="adicionar-reserva">Adicionar à reserva</button>
                 </div>
             </div>
         </div>
