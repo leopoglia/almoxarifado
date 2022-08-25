@@ -11,28 +11,22 @@ export class InputComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.tamanho = (document.querySelector(".input").clientWidth) + 9;
-    // document.getElementById("busca").style.width = this.tamanho + 'px';
+    this.tamanho = (document.querySelector(".input").clientWidth) + 9;
+    document.getElementById("busca").style.width = this.tamanho + 'px';
 
-    // window.onresize = function () {
-    //   this.tamanho = (document.querySelector(".input").clientWidth) + 9;
-    //   document.getElementById("busca").style.width = this.tamanho + 'px';
-    // };
+    window.onresize = function () {
+      this.tamanho = (document.querySelector(".input").clientWidth) + 9;
+      document.getElementById("busca").style.width = this.tamanho + 'px';
+    };
   }
 
 
   tamanho;
   produtos = [
-    { name: "Rele" },
-    { name: "Rele" },
-    { name: "Rele" },
-    { name: "Rele" },
-    { name: "Rele" },
-    { name: "Rele" },
-    { name: "Rele" },
-    { name: "Rele" },
-    { name: "Rele" },
-    { name: "Rele" }
+    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
+    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
+    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
+    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
   ];
 
   caixaInput: any = document.querySelector(".input");
@@ -49,7 +43,7 @@ export class InputComponent implements OnInit {
           .startsWith(dado.toLocaleLowerCase());
       });
       matrizVazia = matrizVazia.map((data, { }) => {
-        return (data = `<li>${data.name}</li>`);
+        return (data = `<li style="display: flex; align-items: center;"><img src="${data.imagem}" style="width:30px; margin-right: 10px">  ${data.name}</li>`);
       });
       document.querySelector(".input").classList.add("ativo");
       this.sugestoes(matrizVazia);
