@@ -117,10 +117,6 @@ main .corpo .reserva div .cancelar {
     margin: 10px;
 }
 
-main .corpo .reserva div .cancelar:hover {    
-    background-color: var(--cinzaclaro);
-}
-
 main .container .produtos .produto .baixa {
     width: 165px;
     height: 45px;
