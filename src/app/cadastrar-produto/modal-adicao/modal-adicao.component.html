@@ -1,11 +1,11 @@
 <div class="fundo" *ngIf="situacao">
   <div class="modal">
     <div class="header">
-      <span>Adicionar {{item}}</span>
+      <span>Adicionar {{titulo}}</span>
 
       <div class="acoes">
 
-        <p class="material-symbols-outlined" (click)="localizacao()">
+        <p class="material-symbols-outlined" (click)="fechar()">
           close
         </p>
       </div>
@@ -14,9 +14,9 @@
 
     <div class="inputs">
 
-      <input type="text" placeholder="Insira a {{item}}">
+      <input  type="text" placeholder="Insira a {{titulo}}">
 
-      <div class="setados">
+      <div *ngIf="item == 1" class="setados">
         <span>
           P = PAREDE
         </span>
