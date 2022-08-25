@@ -63,4 +63,12 @@ export class CadastrarProdutoComponent implements OnInit {
     }
   }
 
+  fechou($event){
+    if($event == 1){
+      this.localizacao();
+    }else{
+      this.classificacao();
+    }
+  }
+
 }

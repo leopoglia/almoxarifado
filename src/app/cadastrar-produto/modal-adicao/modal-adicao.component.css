@@ -13,7 +13,6 @@
     z-index: 1;
     background-color: var(--branco);
     width: 420px;
-    height: 250px;
     display: block;
     justify-content: space-between;
     border: 1px solid var(--cinzaclaro2);
@@ -87,6 +86,7 @@ button{
     outline: none;
     border-radius: 3px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .material-symbols-outlined{

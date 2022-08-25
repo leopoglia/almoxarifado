@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-modal-adicao',
@@ -9,17 +9,26 @@ export class ModalAdicaoComponent implements OnInit {
 
   constructor() { }
 
-  @Input() item: string;
+  @Input() item: number;
+  @Output() fechou = new EventEmitter();
 
 
   ngOnInit() {
+
+    if (this.item == 1) {
+      this.titulo = "Localizacao";
+    } else {
+      this.titulo = "Classificacao";
+    }
   }
 
+  titulo = "";
   situacao = true;
-  
-  localizacao() {
+
+  fechar() {
     if (this.situacao == true) {
       this.situacao = false;
-    } 
+      this.fechou.emit(this.item);
+    }
   }
 }
