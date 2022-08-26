@@ -1,26 +1,28 @@
-*{
+* {
     box-sizing: content-box;
 }
 
-.alerta{
+.alerta {
     width: 100%;
     height: 60px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     margin-bottom: 20px;
     margin-right: 20px;
     border-radius: 5px;
     display: flex;
+
 }
 
-.alerta, .infos{
+.alerta,
+.infos {
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
-.progresso{
+.progresso {
     animation: load 100s normal;
     left: 0;
     height: 60px;
@@ -29,7 +31,7 @@
     background-color: var(--azulclaro);
 }
 
-.infos{
+.infos {
     position: absolute;
     display: flex;
     align-items: center;
@@ -43,19 +45,34 @@
     right: 0;
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     color: var(--branco);
     font-size: 35px;
     margin-right: 10px;
 }
 
-span{
+span {
     color: var(--branco);
     line-height: 1;
     z-index: 1;
 }
 
-@keyframes load{
-    0%{ width: 0%;}
-    10%{ width: 100%;}
+.texto {
+    max-width: 300px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    direction: ltr;
+    font-weight: 500;
+}
+
+@keyframes load {
+    0% {
+        width: 0%;
+    }
+
+    10% {
+        width: 100%;
+    }
 }
