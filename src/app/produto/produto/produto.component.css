@@ -19,18 +19,46 @@ main .container .cabecalho {
     margin-right: 30px;
 }
 
-main .container .cabecalho .editar{
+main .container .cabecalho .editar {
     width: 41px;
     height: 41px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    background-color: var(--cinzaclaro3);
     border: 1px solid var(--cinzaclaro2);
     cursor: pointer;
 }
 
-main .container .cabecalho .editar:hover{
+main .container .adicionar .adicionar-reserva {
+    width: 165px;
+    height: 45px;
+    background-color: var(--azul);
+    border: none;
+    color: var(--branco);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+main .container .adicionar .adicionar-reserva:hover {
+    background-color: var(--azulclaro);
+}
+
+main .container .adicionar {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+}
+
+main .container .cabecalho .editar:hover {
+    background-color: var(--cinzaclaro3);
+}
+
+main .container .cabecalho .editar:focus {
     background-color: var(--cinzaclaro3);
 }
 
@@ -84,7 +112,7 @@ main .container .informacoes .informacoes-gerais {
     width: 100%;
     display: flex;
     align-items: flex-start;
-}
+} 
 
 main .container .informacoes .informacoes-gerais .nome,
 main .container .informacoes .informacoes-gerais .detalhes,
@@ -105,8 +133,22 @@ main .container .informacoes .informacoes-gerais .informacoes-grid {
     width: 100%;
 }
 
+main .container input:disabled,
+main .container textarea:disabled {
+    background-color: var(--cinzaclaro3);
+}
+
+.checar-descartavel:disabled .bola {
+    cursor: not-allowed;
+}
+
+main .container select:disabled {
+    background-color: rgb(217, 217, 217);
+    border: 1px solid rgb(170, 170, 170) !important;
+}
+
 main .container .informacoes .informacoes-gerais .nome input,
-main .container .informacoes .informacoes-gerais .detalhes input,
+main .container .anexo label,
 main .container .informacoes .informacoes-gerais .descricao textarea {
     height: 25px;
     padding: 8px;
@@ -116,9 +158,42 @@ main .container .informacoes .informacoes-gerais .descricao textarea {
     width: auto;
 }
 
+main .container .anexo label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    width: 100%;
+}
+
+main .container .anexo input {
+    display: none;
+}
+
 main .container .informacoes .informacoes-gerais .descricao textarea {
     height: 50px;
     resize: none
+}
+
+main .container .informacoes .inserir-imagem .imagem-editar {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--cinzaclaro2);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--branco) !important;
+}
+
+main .container .informacoes .informacoes-gerais .inserir-imagem input[type='file'] {
+    display: none
+}
+
+
+main .container .informacoes .inserir-imagem .imagem .material-symbols-outlined {
+    color: var(--cinzaclaro2);
+    font-size: 80px;
 }
 
 main .container .informacoes .inserir-imagem .imagem {
@@ -130,7 +205,12 @@ main .container .informacoes .inserir-imagem .imagem {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: var(--branco);
+    background-color: var(--cinzaclaro3);
+}
+
+main .container .informacoes .inserir-imagem .imagem-editar .material-symbols-outlined {
+    color: var(--cinzaclaro2);
+    font-size: 80px;
 }
 
 main .container .informacoes .inserir-imagem .imagem img {
@@ -140,6 +220,11 @@ main .container .informacoes .inserir-imagem .imagem img {
     border-radius: 3px;
 }
 
+main .container .informacoes .informacoes-gerais .informacoes-flex {
+    display: flex;
+}
+
+
 main .container .informacoes .informacoes-adicionais {
     display: flex;
     justify-content: space-between;
@@ -147,9 +232,23 @@ main .container .informacoes .informacoes-adicionais {
     margin-right: 30px;
 }
 
-main .container .informacoes .informacoes-adicionais .quantidade input,
+main .container .informacoes .classificacao select {
+    width: 100%;
+}
+
+main .container .informacoes .classificacao select {
+    height: 43px !important;
+}
+
+main .container .informacoes .quantidade {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50%;
+}
+
+main .container .informacoes .quantidade input,
 main .container .informacoes .informacoes-adicionais .localizacao input,
-main .container .informacoes .informacoes-adicionais .classificacao select {
+main .container .informacoes .classificacao select {
     height: 25px;
     padding: 8px;
     border: 1px solid var(--cinzaclaro2);
@@ -158,19 +257,31 @@ main .container .informacoes .informacoes-adicionais .classificacao select {
     width: 100%;
 }
 
-main .container .informacoes .informacoes-adicionais .localizacao,
-main .container .informacoes .informacoes-adicionais .classificacao {
-    width: 25%;
+main .container .informacoes .classificacao {
+    width: 100%;
 }
 
-main .container .informacoes .informacoes-adicionais .classificacao select {
+main .container .informacoes .informacoes-adicionais .localizacao,
+main .container .informacoes .informacoes-adicionais .anexo {
+    width: 50%;
+}
+
+main .container .informacoes #anexo-ativa {
+    background-color: var(--cinzaclaro3);
+}
+
+main .container .informacoes .informacoes-adicionais .anexo {
+    margin-left: 40px;
+    margin-right: 50px;
+}
+
+main .container .informacoes .classificacao select {
     height: 43px;
     -webkit-appearance: none !important;
 }
 
 main .container .informacoes .informacoes-adicionais .descartavel {
     display: grid;
-    margin-right: 30px;
 }
 
 .botao {
@@ -186,10 +297,13 @@ main .container .informacoes .informacoes-adicionais .descartavel {
     height: 0;
 }
 
+input:disabled~.bola {
+    cursor: not-allowed;
+}
+
 .bola {
     border-radius: 34px;
     position: absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
@@ -222,50 +336,61 @@ input:checked+.bola:before {
     transform: translateX(26px);
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1100px) {
     main .container .informacoes {
         width: 100% !important;
     }
+
     main .container .informacoes .informacoes-gerais .nome,
     main .container .informacoes .informacoes-gerais .detalhes,
     main .container .informacoes .informacoes-gerais .descricao {
         margin-top: 15px;
         width: 95% !important;
     }
+
     main .container .informacoes .informacoes-gerais,
     main .container .informacoes {
         width: auto !important;
     }
+
     main .container .informacoes-gerais {
         display: grid !important;
     }
+
     main .container .informacoes .informacoes-gerais .informacoes-grid {
         margin-left: 0px;
         width: none !important;
     }
+
     main .container .informacoes .informacoes-adicionais {
         display: block;
     }
+
     main .container .informacoes .informacoes-adicionais {
         margin-right: 0px !important;
     }
-    main .container .informacoes .informacoes-adicionais .quantidade,
+
+    main .container .informacoes .quantidade,
     main .container .informacoes .informacoes-adicionais .localizacao,
-    main .container .informacoes .informacoes-adicionais .classificacao {
+    main .container .informacoes .classificacao {
         display: grid;
         width: 95%;
         align-items: flex-start;
         margin-top: 15px;
     }
+
     main .container .informacoes .informacoes-adicionais .descartavel {
         margin-top: 15px;
     }
-    main .container .informacoes .informacoes-adicionais .quantidade input {
+
+    main .container .informacoes .quantidade input {
         width: auto;
     }
+
     main .container .informacoes .inserir-imagem .imagem {
         width: 95%;
     }
+
     main .container .informacoes .informacoes-adicionais .localizacao input {
         width: auto !important;
     }
@@ -275,9 +400,11 @@ input:checked+.bola:before {
     main {
         padding-left: 0px;
     }
+
     main .container {
         margin: 0px 30px 0px 100px;
     }
+
     main .container .rodape button {
         width: 100%;
     }

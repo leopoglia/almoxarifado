@@ -6,7 +6,8 @@
 </head>
 
 <body>
-    <app-localizacao *ngIf="situacaolocalizacao"></app-localizacao>
+    <app-modal-adicao *ngIf="situacaolocalizacao" item="1" (fechou)="fechou($event)"></app-modal-adicao>
+    <app-modal-adicao *ngIf="situacaoclassificacao" item="2" (fechou)="fechou($event)"></app-modal-adicao>
     <app-header></app-header>
     <app-nav></app-nav>
 
@@ -50,22 +51,40 @@
 
                             <div class="descricao">
                                 <span>Características</span>
-                                <textarea [(ngModel)]="caracteristica"></textarea>
+                                <textarea [(ngModel)]="detalhes"></textarea>
                             </div>
 
-                            <div class="detalhes">
-                                <span>Detalhes</span>
-                                <input type="text" [(ngModel)]="detalhes">
-                            </div>
 
+                            <div class="informacoes-flex">
+                                <div class="classificacao">
+                                    <span>Classificação</span>
+                                    <div class="fundo">
+                                        <select name="select" [(ngModel)]="classificacao">
+                                            <option value="1">Materiais Elétricos</option>
+                                            <option value="2">Ferramenta Mecânica</option>
+                                            <option value="3">Componente Eltrônicos</option>
+                                            <option value="4">Ferramenta Manual</option>
+                                        </select>
+                                        <div class="adicionar">
+                                            <span class="material-symbols-outlined" (click)="classificacao()">
+                                                add
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="quantidade">
+                                    <span>Quantidade</span>
+                                    <input type="number" [(ngModel)]="quantidade">
+                                </div>
+                            </div>
                         </div>
+
+
                     </div>
 
                     <div class="informacoes-adicionais">
-                        <div class="quantidade">
-                            <span>Quantidade</span>
-                            <input type="number" [(ngModel)]="quantidade">
-                        </div>
+
 
                         <div class="localizacao">
                             <span>Localização</span>
@@ -79,36 +98,26 @@
                             </div>
                         </div>
 
-                        <div class="classificacao">
-                            <span>Classificação</span>
-                            <div class="fundo">
-                                <select name="select" [(ngModel)]="classificacao">
-                                    <option value="1">Materiais Elétricos</option>
-                                    <option value="2">Ferramenta Mecânica</option>
-                                    <option value="3">Componente Eltrônicos</option>
-                                    <option value="4">Ferramenta Manual</option>
-                                </select>
-                                <div class="adicionar">
-                                    <span class="material-symbols-outlined">
-                                        add
-                                    </span>
-                                </div>
-                            </div>
+                        <div class="anexo">
+                            <span>Anexo</span>
+                            <label for="file">
+                                <span class="material-symbols-outlined">
+                                    attach_file
+                                </span>
+                                Adicionar anexo</label>
+                            <input type="file" id="file">
                         </div>
 
                         <div class="descartavel">
                             <span>Descartavel</span>
                             <label class="botao">
-                                <input type="checkbox">
+                                <input type="checkbox" [disabled]="edita">
                                 <span class="bola"></span>
                             </label>
                         </div>
 
                     </div>
-
-
                 </div>
-
 
                 <div class="rodape">
 

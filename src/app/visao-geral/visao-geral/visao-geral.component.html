@@ -13,8 +13,8 @@
             <app-cabecalho (posicaoTabelas)="receberPedido($event)"></app-cabecalho>
 
             <div class="corpo">
-                <app-item *ngIf="posicao == true" posicao="true"></app-item>
-                <app-item *ngIf="posicao == false" posicao="false"></app-item>
+                <app-item *ngIf="posicao == true"></app-item>
+                <app-item-grid *ngIf="posicao == false"></app-item-grid>
 
 
                 <div class="rodape">

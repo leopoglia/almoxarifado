@@ -12,8 +12,11 @@ export class FiltroComponent implements OnInit {
   ngOnInit() {
   }
 
-  classificacoes = [{nome: "Com estoque"}, {nome: "Sem estoque"}, {nome: "Descartável"}, {nome: "Materias eletricos"}, {nome: "Materias de limpeza"}]
+  classificacoesProdutos = [{nome: "Com estoque"}, {nome: "Sem estoque"}, {nome: "Descartável"}, {nome: "Materias eletricos"}, {nome: "Materias de limpeza"}]
+  classificacoesReservas = [{nome: "Descartável"}, {nome: "Materias eletricos"}, {nome: "Materias de limpeza"}, {nome: "Concluídas"}, {nome: "Canceladas"}, {nome: "Em andamento"}]
+  classificacoesUsuarios = [{nome: "Professor"}, {nome: "Assistente"}, {nome: "Atendente"}, {nome: "Aceitos"}, {nome: "Recusados"}]
 
+  urlAtual = window.location.pathname;
 
   situacaofiltro = true;
 

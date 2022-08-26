@@ -47,6 +47,16 @@
     border-top: none;
 }
 
+li{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+img{
+    width: 10px !important;
+    height: 10px !important;
+}
 
 input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator {
     cursor: pointer;

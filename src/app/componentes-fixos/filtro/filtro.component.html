@@ -17,8 +17,28 @@
 
     <div class="filtros">
         <div class="classificacao">
-            <div class="opcoes">
-                <div *ngFor="let index of classificacoes" class="opcao">
+            <div class="opcoes" *ngIf="urlAtual == '/visaogeral'">
+                <div *ngFor="let index of classificacoesProdutos" class="opcao">
+                    <label class="check">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          </label>
+                    <p>{{index.nome}}</p>
+                </div>
+            </div>
+
+            <div class="opcoes" *ngIf="urlAtual == '/reservas'">
+                <div *ngFor="let index of classificacoesReservas" class="opcao">
+                    <label class="check">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          </label>
+                    <p>{{index.nome}}</p>
+                </div>
+            </div>
+
+            <div class="opcoes" *ngIf="urlAtual == '/usuario/aceitar'">
+                <div *ngFor="let index of classificacoesUsuarios" class="opcao">
                     <label class="check">
           <input type="checkbox">
           <span class="checkmark"></span>

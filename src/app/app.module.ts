@@ -18,6 +18,7 @@ import { HeaderComponent } from './componentes-fixos/header/header.component';
 import { NavComponent } from './componentes-fixos/nav/nav.component';
 import { DetalhesReservaComponent } from './detalhes-reserva/detalhes-reserva/detalhes-reserva.component';
 import { ItemComponent } from './visao-geral/item/item.component';
+import { ItemGridComponent } from './visao-geral/item-grid/item-grid.component';
 import { ReservaComponent } from './reservas/reserva/reserva.component';
 import { PerfilComponent } from './perfil/perfil/perfil.component';
 import { AceitarUsuariosComponent } from './aceitar-usuarios/aceitar-usuarios/aceitar-usuarios.component';
@@ -27,7 +28,7 @@ import { FiltroComponent } from './componentes-fixos/filtro/filtro.component';
 import { NavBarComponent } from './componentes-fixos/nav-bar/nav-bar.component';
 import CheckLogged from './CheckLogged';
 import { ProdutoReservaComponent } from './inserir-reservas/produto-reserva/produto-reserva.component';
-import { LocalizacaoComponent } from './cadastrar-produto/localizacao/localizacao.component';
+import { ModalAdicaoComponent } from './cadastrar-produto/modal-adicao/modal-adicao.component';
 import { InputComponent } from './inserir-reservas/input/input.component';
 import { AlertasComponent } from './componentes-fixos/alertas/alertas.component';
 
@@ -89,9 +90,10 @@ const routes: Routes = [
     FiltroComponent,
     NavBarComponent,
     ProdutoReservaComponent,
-    LocalizacaoComponent,
+    ModalAdicaoComponent,
     InputComponent,
-    AlertasComponent
+    AlertasComponent,
+    ItemGridComponent
     ],
   imports: [
     RouterModule.forRoot(routes),

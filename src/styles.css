@@ -22,7 +22,7 @@ body {
     background-color: var(--cinzaclaro);
 }
 
-.material-symbols-outlined {
+.material-symbols-outlined, .material-symbols-rounded {
     user-select: none;
 }
 
@@ -34,7 +34,8 @@ body {
     --cinzaclaro2: #C4C4C4;
     --cinzaclaro3: #E7E7E7;
     --azul: #005CAA;
-    --azulclaro: #0164B3;
+    --azulclaro: #0371cc;
+    --hoverazul: #e8f0fe;
     --hover: #c4c4c456;
     --grande: 25px;
     --media: 14px;

@@ -1,13 +1,10 @@
 <div class="produto" *ngFor="let item of produtos" (click)="link(item.CODIGO)">
-    <div>
-
+    <div class="flex">
+        <div class="imagem">
+            <img [src]="item.IMAGEM" alt="">
+        </div>
         <div class="informacoes">
-            <div class="imagem">
-                <img [src]="item.IMAGEM" alt="">
-            </div>
             <p class="titulo">{{item.NOME}}</p>
-
-            <p class="descricao">{{item.DETALHES}}</p>
             <div class="quantidade-produto">
                 <div class="quantidade">{{item.QUANTIDADE}}</div>
                 <p>Unidades</p>

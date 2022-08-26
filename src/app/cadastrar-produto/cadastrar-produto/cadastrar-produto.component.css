@@ -63,7 +63,7 @@ main .container .informacoes .informacoes-gerais {
 }
 
 main .container .informacoes .informacoes-gerais .nome,
-main .container .informacoes .informacoes-gerais .detalhes,
+main .container .detalhes,
 main .container .informacoes .informacoes-gerais .descricao {
     display: grid;
     width: 100%;
@@ -81,8 +81,12 @@ main .container .informacoes .informacoes-gerais .informacoes-grid {
     width: 100%;
 }
 
+main .container .informacoes .informacoes-gerais .informacoes-flex {
+    display: flex;
+}
+
 main .container .informacoes .informacoes-gerais .nome input,
-main .container .informacoes .informacoes-gerais .detalhes input,
+main .container .anexo label,
 main .container .informacoes .informacoes-gerais .descricao textarea {
     height: 25px;
     padding: 8px;
@@ -91,6 +95,18 @@ main .container .informacoes .informacoes-gerais .descricao textarea {
     outline: none;
     width: auto;
 }
+
+main .container .anexo label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    width: 100%;
+}
+
+main .container .anexo input {
+    display: none;
+}
+
 
 main .container .informacoes .informacoes-gerais .descricao textarea {
     height: 50px;
@@ -120,34 +136,60 @@ main .container .informacoes .informacoes-adicionais {
     margin-top: 15px;
 }
 
-main .container .informacoes .informacoes-adicionais .quantidade input,
+main .container .informacoes .quantidade {
+    margin-left: 15px;
+    margin-right: 20px;
+}
+
+main .container .informacoes .quantidade input {
+    width: 100% !important;
+}
+
+main .container .informacoes .quantidade input,
 main .container .informacoes .informacoes-adicionais .localizacao input,
-main .container .informacoes .informacoes-adicionais .classificacao select {
+main .container .informacoes .classificacao select {
     height: 25px;
     padding: 8px;
     border: 1px solid var(--cinzaclaro2);
     border-radius: 3px;
     outline: none;
-    width: 75%;
+    width: 100%;
+}
+
+main .container .informacoes .classificacao select {
+    width: 100%;
+}
+
+main .container .informacoes .classificacao select {
+    height: 43px !important;
 }
 
 main .container .informacoes .informacoes-adicionais .localizacao,
-main .container .informacoes .informacoes-adicionais .classificacao {
-    width: 75%;
+main .container .informacoes .informacoes-adicionais .anexo  {
+    width: 50%;
+}
+
+main .container .informacoes .informacoes-adicionais .anexo{
+    margin-left: 15px;
+    margin-right: 50px;
+}
+
+main .container .informacoes .classificacao {
+    width: 100%;
 }
 
 main .container .informacoes .informacoes-adicionais .localizacao select,
-main .container .informacoes .informacoes-adicionais .classificacao select {
+main .container .informacoe .classificacao select {
     height: 43px;
 }
 
 main .container .informacoes .informacoes-adicionais .localizacao .fundo,
-main .container .informacoes .informacoes-adicionais .classificacao .fundo {
+main .container .informacoes .classificacao .fundo {
     display: flex;
 }
 
 main .container .informacoes .informacoes-adicionais .localizacao .fundo .adicionar,
-main .container .informacoes .informacoes-adicionais .classificacao .fundo .adicionar {
+main .container .informacoes .classificacao .fundo .adicionar {
     height: 41px;
     width: 43px;
     margin-left: 5px;
@@ -160,12 +202,12 @@ main .container .informacoes .informacoes-adicionais .classificacao .fundo .adic
 }
 
 main .container .informacoes .informacoes-adicionais .localizacao .fundo .adicionar:hover,
-main .container .informacoes .informacoes-adicionais .classificacao .fundo .adicionar:hover {
+main .container .informacoes .classificacao .fundo .adicionar:hover {
     background-color: var(--azulclaro);
 }
 
 main .container .informacoes .informacoes-adicionais .localizacao .fundo .adicionar .material-symbols-outlined,
-main .container .informacoes .informacoes-adicionais .classificacao .fundo .adicionar .material-symbols-outlined {
+main .container .informacoes .classificacao .fundo .adicionar .material-symbols-outlined {
     color: var(--branco);
 }
 
@@ -173,7 +215,7 @@ main .container .informacoes .informacoes-gerais .inserir-imagem input[type='fil
     display: none
 }
 
-main .container .informacoes .informacoes-adicionais .descartavel {
+main .container .informacoes .descartavel {
     display: grid;
     margin-right: 30px;
 }
@@ -228,48 +270,59 @@ input:checked+.bola:before {
 }
 
 @media(max-width: 1000px) {
+
     main .container .informacoes .informacoes-gerais .nome,
-    main .container .informacoes .informacoes-gerais .detalhes,
+    main .container .detalhes,
     main .container .informacoes .informacoes-gerais .descricao {
         margin-top: 15px;
         width: 95% !important;
     }
+
     main .container .informacoes .informacoes-gerais,
     main .container .informacoes {
         width: auto !important;
     }
+
     main .container .informacoes-gerais {
         display: grid !important;
     }
+
     main .container .informacoes .informacoes-gerais .informacoes-grid {
         margin-left: 0px;
         width: none !important;
     }
+
     main .container .informacoes .informacoes-adicionais {
         display: block;
     }
-    main .container .informacoes .informacoes-adicionais .quantidade {
+
+    main .container .informacoes .quantidade {
         margin-top: 10px;
     }
-    main .container .informacoes .informacoes-adicionais .quantidade,
+
+    main .container .informacoes .quantidade,
     main .container .informacoes .informacoes-adicionais .localizacao,
-    main .container .informacoes .informacoes-adicionais .classificacao {
+    main .container .informacoes .classificacao {
         display: grid;
         width: 95%;
         align-items: flex-start;
         margin-top: 15px;
     }
+
     main .container .informacoes .informacoes-adicionais .descartavel {
         margin-top: 15px;
     }
-    main .container .informacoes .informacoes-adicionais .quantidade input {
+
+    main .container .informacoes .quantidade input {
         width: auto;
     }
+
     main .container .informacoes .inserir-imagem .imagem {
         width: 95%;
     }
+
     main .container .informacoes .informacoes-adicionais .localizacao input,
-    main .container .informacoes .informacoes-adicionais .classificacao select {
+    main .container .informacoes .classificacao select {
         width: 100% !important;
     }
 }
@@ -278,9 +331,11 @@ input:checked+.bola:before {
     main {
         padding-left: 0px;
     }
+
     main .container {
         margin: 0px 30px 0px 100px;
     }
+
     main .container .rodape button {
         width: 100%;
     }

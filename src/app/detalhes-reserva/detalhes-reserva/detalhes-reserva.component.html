@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     <title>Visão Geral</title>
 </head>
 
@@ -24,9 +25,16 @@
             <div class="corpo">
                 <div class="minhasreservas">
                     <div class="reserva">
-                        <div class="titulo">Reserva Nº 1</div>
-                        <div class="pessoa"><span *ngIf="permissao == true">Retirada por: Romário</span><span *ngIf="permissao == false">Retirar com: Carlinhos</span></div>
-
+                        <div class="header-reserva">
+                            <div class="titulo">Reserva Nº 1</div>
+                            <div><button class="cancelar">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button></div>
+                        </div>
+                        <div class="pessoa"><span *ngIf="permissao == true">Professor: Romário</span><span
+                                *ngIf="permissao == false">Professor: Romário</span></div>
                         <div class="horario">
                             <div class="data"><span>Retirar em: 23/12/2022 às</span></div>
                             <div class="hora">18:00</div>
@@ -44,22 +52,22 @@
                             <div class="produto" *ngFor="let item of produtos">
                                 <div class="informacoes">
                                     <div class="imagem">
-                                        <img src="https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png" alt="">
+                                        <img src="https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png"
+                                            alt="">
                                     </div>
                                     <div class="nome">Abraçadeira para poste
                                     </div>
                                 </div>
 
                                 <div class="acoes">
-                                    <div class="quantidade">Quantidade: 100</div>
-
                                     <div class="opcao">Descartavel</div>
+
+                                    <div class="quantidade">100 Unidades</div>
+
                                     <button class="baixa" *ngIf="permissao">Dar baixa</button>
                                 </div>
 
                             </div>
-
-
                         </div>
                     </div>
 

@@ -9,11 +9,10 @@ import { Router } from '@angular/router';
 
 export class CabecalhoComponent implements OnInit {
 
-  
+
   constructor(private route: Router) { }
 
   @Output() posicaoTabelas = new EventEmitter();
-
 
   ngOnInit() {
     if (localStorage.getItem('atual') == '1') {
@@ -25,11 +24,12 @@ export class CabecalhoComponent implements OnInit {
     }
   }
 
-  
+
 
   situacaofiltro = false;
-  alteraTabela:boolean = false;
+  alteraTabela: boolean = true;
   local;
+  urlAtual = window.location.pathname;
 
   filtro() {
     if (this.situacaofiltro == true) {
@@ -40,7 +40,9 @@ export class CabecalhoComponent implements OnInit {
   }
 
 
-  alterarTabela(){
+  alterarTabela() {
+    console.log(this.alteraTabela)
+
     this.alteraTabela = !this.alteraTabela;
     this.posicaoTabelas.emit(this.alteraTabela);
   }

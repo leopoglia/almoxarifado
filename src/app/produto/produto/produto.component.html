@@ -20,17 +20,17 @@
 
                 <div class="cabecalho">
                     <div class="titulo"><span>Dados gerais do produto</span></div>
-                    <div class="editar">
+                    <button class="editar">
                         <span class="material-symbols-outlined" (click)="editar()">
                             edit
                         </span>
-                    </div>
+                    </button>
                 </div>
 
                 <div class="informacoes">
 
                     <div class="informacoes-gerais">
-                        <div class="inserir-imagem">
+                        <div *ngIf="edita == true" class="inserir-imagem">
                             <span>Imagem</span>
 
                             <div class="imagem">
@@ -38,45 +38,85 @@
                             </div>
                         </div>
 
+                        <div *ngIf="edita == false" class="inserir-imagem">
+                            <span>Imagem</span>
+                            <label for="imagem">
+                                <input id="imagem" type="file" (change)="mudanca($event.target.files[0])">
+
+                                <div class="imagem-editar">
+
+                                    <span class="material-symbols-outlined">
+                                        add_photo_alternate
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+
                         <div class="informacoes-grid">
                             <div class="nome">
                                 <span>Nome</span>
-                                <input id="name" type="text" [placeholder]="item.NOME" [disabled]="edita">
+                                <input id="name" type="text" [value]="item.NOME" [disabled]="edita">
                             </div>
 
 
                             <div class="descricao">
                                 <span>Características</span>
-                                <textarea [placeholder]="item.CARACTERISTICAS" [disabled]="edita"></textarea>
+                                <textarea [value]="item.DETALHES" [disabled]="edita"></textarea>
                             </div>
 
-                            <div class="detalhes">
-                                <span>Detalhes</span>
-                                <input type="text" [placeholder]="item.DETALHES" [disabled]="edita">
+
+                            <div class="informacoes-flex">
+                                <div class="classificacao">
+                                    <span>Classificação</span>
+                                    <div class="fundo">
+                                        <select name="select" [value]="item.LOCALIZACAO" [disabled]="edita">
+                                            <option value="1">Materiais Elétricos</option>
+                                            <option value="2">Ferramenta Mecânica</option>
+                                            <option value="3">Componente Eltrônico</option>
+                                            <option value="4">Ferramenta Manual</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="quantidade">
+                                    <span>Quantidade</span>
+                                    <input type="number" [value]="item.LOCALIZACAO" [disabled]="edita">
+                                </div>
                             </div>
 
                         </div>
                     </div>
 
                     <div class="informacoes-adicionais">
-                        <div class="quantidade">
-                            <span>Quantidade</span>
-                            <input type="number" [placeholder]="item.QUANTIDADE" [disabled]="edita">
-                        </div>
 
                         <div class="localizacao">
                             <span>Localização</span>
-                            <input type="text" [placeholder]="item.LOCALIZACAO" [disabled]="edita">
+                            <input type="text" [placeholder]="item.LOCALIZACAO" [value]="item.LOCALIZACAO"
+                                [disabled]="edita">
                         </div>
 
-                        <div class="classificacao">
-                            <span>Classificação</span>
-                            <div class="fundo">
-                                <select name="select" [disabled]="edita">
-                                    <option value="valor1">{{item.CLASSIFICACAO}}</option>
-                                </select>
-                            </div>
+                        <div *ngIf="edita" class="anexo">
+                            <span>Anexo</span>
+                            <label for="file" id="anexo-ativa">
+                                <span class="material-symbols-outlined">
+                                    attach_file
+                                </span>
+                                Abrir anexo
+                                Anexo
+                            </label>
                         </div>
+
+                        <div *ngIf="edita == false" class="anexo">
+                            <span>Anexo</span>
+                            <label for="file">
+                                <span class="material-symbols-outlined">
+                                    attach_file
+                                </span>
+                                Anexo</label>
+                            <input type="file" id="file" [disabled]="edita">
+                        </div>
+
 
                         <div class="descartavel">
                             <span>Descartavel</span>
@@ -88,11 +128,13 @@
 
                     </div>
 
-
                 </div>
 
+                <div class="adicionar">
+                    <button *ngIf="edita == false" class="adicionar-reserva">Salvar edições</button>
+                    <button *ngIf="edita" class="adicionar-reserva">Adicionar à reserva</button>
+                </div>
             </div>
-
         </div>
     </main>
 </body>

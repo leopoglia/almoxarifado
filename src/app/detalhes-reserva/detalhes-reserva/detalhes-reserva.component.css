@@ -22,6 +22,11 @@ main .corpo {
     padding-bottom: 50px;
 }
 
+.corpo .reserva .header-reserva{
+    display: flex;
+    justify-content: space-between;
+}
+
 main .corpo .reserva {
     width: 100%;
     border: 1px solid var(--cinzaclaro2);
@@ -97,6 +102,19 @@ main .corpo .reserva .produtos .produto .acoes {
 main .container .produtos .produto .imagem img {
     width: 45px;
     margin-right: 20px;
+}
+
+main .corpo .reserva div .cancelar {
+    width: 41px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: var(--cinzaclaro3);
+    border: 1px solid var(--cinzaclaro2);
+    cursor: pointer;
+    margin: 10px;
 }
 
 main .container .produtos .produto .baixa {

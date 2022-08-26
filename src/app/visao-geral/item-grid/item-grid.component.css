@@ -1,51 +1,64 @@
 .produto {
-    width: 19.48%;
-    height: 280px;
-    display: inline-flex;
-    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
     border: 1px solid var(--cinzaclaro2);
     margin-bottom: 10px;
-    margin: 2px;
+    margin: 5px 0px;
     border-radius: 3px;
     cursor: pointer;
 }
 
-.produto:hover{
+.flex {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    margin: 0 10px;
+}
+
+.produto:hover {
     background-color: var(--hover);
 }
 
 .produto .imagem,
-.produto .informacoes .quantidade,
-.produto .informacoes .quantidade-produto {
+.produto .informacoes .quantidade {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.produto .informacoes .quantidade-produto{
+    display: flex;
+    align-items: center;
+}
+
 .produto .imagem img {
-    height: 170px;
+    height: 60px;
 }
 
 .produto .informacoes {
     margin-left: 10px;
-    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .produto .informacoes .titulo {
     width: 100%;
-    font-size: 18px;
     height: 20px;
-    margin-top: 10px;
+    margin-bottom: 5px;
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
     direction: ltr;
-    font-weight: 500;
 }
 
 .produto .informacoes .descricao {
     font-size: 12px;
-    height: 47px;
+    height: 30px;
     padding-right: 10px;
     overflow: hidden;
     display: inline-block;
@@ -53,15 +66,9 @@
 }
 
 .produto .informacoes .quantidade {
-    margin: 5px;
+    margin-right: 3px;
+    height: 30px;
     border-radius: 3px;
-}
-
-.produto .informacoes .quantidade-produto{
-    display: flex;
-    justify-content: end;
-    height: 20px;
-    margin-right: 10px;
 }
 
 .rodape {
@@ -110,7 +117,7 @@
     background-color: var(--azulclaro);
 }
 
-.erro{
+.erro {
     width: 100%;
     display: flex;
     align-items: center;
