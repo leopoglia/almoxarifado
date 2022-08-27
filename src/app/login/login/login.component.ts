@@ -13,8 +13,10 @@ export class LoginComponent implements OnInit {
   constructor(private route: Router,
               private usuarioService: UsuariosService) { }
 
-  usuario = '';
-  senha = '';
+  usuario:string = '';
+  senha:string = '';
+  visualizacao:boolean = false;
+  tipoSenha:string = 'password';
 
   ngOnInit() {
     localStorage.clear();
@@ -43,5 +45,15 @@ export class LoginComponent implements OnInit {
 
   cadastrar(){
     this.route.navigate(['/cadastro/1'])
+  }
+
+  habilitarVisualizacao(){
+    this.visualizacao = !this.visualizacao;
+
+    if(this.visualizacao){
+      this.tipoSenha = 'text';
+    }else{
+      this.tipoSenha = 'password';
+    }
   }
 }

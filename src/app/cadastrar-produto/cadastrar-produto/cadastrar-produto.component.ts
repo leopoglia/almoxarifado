@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProdutoService } from '../../services/produto.service';
 
 @Component({
@@ -10,11 +10,14 @@ export class CadastrarProdutoComponent implements OnInit {
 
   constructor(private produtoService: ProdutoService) { }
 
-  nome = "";
-  caracteristica = "";
-  quantidade = "";
-  detalhes = "";
-  localizacaos = "";
+  nome:string;
+  caracteristica:string;
+  quantidade:number;
+  detalhes:string;
+  localizacaos:string;
+  situacaolocalizacao:boolean = false;
+  situacaoclassificacao:boolean = false;
+  img64;
 
   ngOnInit() {
     localStorage.setItem('atual', '4');
@@ -25,15 +28,17 @@ export class CadastrarProdutoComponent implements OnInit {
   }
 
   cadastrarProduto(){
-    this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.detalhes, this.img64).then(resultado => {console.log(resultado)});
+    // this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.detalhes, this.img64).then(resultado => {console.log(resultado)});
+
+      localStorage.setItem("alerta", "true")
+
     this.nome = "";
     this.caracteristica = "";
-    this.quantidade = "";
+    this.quantidade = null;
     this.detalhes = "";
     this.localizacaos = "";
   }
 
-  img64;
 
   mudanca(file) {
     var reader = new FileReader();
@@ -42,10 +47,6 @@ export class CadastrarProdutoComponent implements OnInit {
       this.img64 = reader.result;    
     };
   }
-
-  situacaolocalizacao = false;
-  situacaoclassificacao = false;
-
 
   localizacao(){
     if(this.situacaolocalizacao == true){
