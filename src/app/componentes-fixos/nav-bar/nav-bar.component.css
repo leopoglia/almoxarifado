@@ -27,7 +27,7 @@ img{
     justify-content: center;
 }
 
-@media(max-width: 550px){
+@media(max-width: 750px){
     .navbar .nome {
         display: none;
     }

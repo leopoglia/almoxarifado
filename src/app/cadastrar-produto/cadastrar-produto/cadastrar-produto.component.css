@@ -359,7 +359,16 @@ input:checked+.bola:before {
         width: 100%;
     }
 
-    
+
+}
+
+@media(max-width: 550){
+    main .container .informacoes .informacoes-adicionais .anexo {
+        width: 90%;
+    }
+}
+
+@media(max-width: 450px){
     main .container .informacoes .informacoes-adicionais .anexo {
         width: 88%;
     }
