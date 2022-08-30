@@ -125,22 +125,8 @@
     margin: 50px 0px;
 }
 
-@media(max-width: 1400px) {
-    .produto {
-        width: 32.5%;
-    }
-}
-
-@media(max-width: 1150px) {
-    .produto {
-        width: 48.7%;
-    }
-}
 
 @media(max-width: 900px) {
-    .produto {
-        width: 100%;
-    }
 
     .rodape {
         justify-content: center;
