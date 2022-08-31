@@ -7,46 +7,54 @@
     cursor: pointer;
 }
 
-.reserva:hover{
+.reserva:hover {
     background-color: var(--hover);
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
-.reserva .titulo{
+
+.reserva .titulo {
     margin: 8px 0px 5px 15px;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.reserva .situacao .material-symbols-outlined{
+
+.reserva .situacao .material-symbols-outlined {
     margin-right: 15px;
     width: 24px;
     height: 24px;
     border-radius: 50%;
     color: green !important;
 }
-.reserva .horario,.reserva .pessoa{
+
+.reserva .horario,
+.reserva .pessoa {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin: 0 0 5px 15px;
 }
-.reserva .detalhes{
+
+.reserva .detalhes {
     display: flex;
     align-items: center;
     justify-content: space-between !important;
     margin: 0px 0px 5px 15px;
 }
-.reserva .horario,.reserva .reservafeita{
+
+.reserva .horario,
+.reserva .reservafeita {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.reserva .detalhes .verdetalhes{
+
+.reserva .detalhes .verdetalhes {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +62,7 @@ a{
     cursor: pointer;
 }
 
-.reserva .detalhes .verdetalhes .expandir{
+.reserva .detalhes .verdetalhes .expandir {
     background-color: var(--azul);
     border-radius: 50%;
     margin-left: 10px;
@@ -64,22 +72,33 @@ a{
     width: 24px;
     height: 24px;
 }
-.reserva .detalhes .verdetalhes .expandir .material-symbols-outlined{
+
+.reserva .detalhes .verdetalhes .expandir .material-symbols-outlined {
     font-size: 18px;
     color: var(--branco) !important;
 }
-.reserva .detalhes,.reserva .horario,.reserva .pessoa{
+
+.reserva .detalhes,
+.reserva .horario,
+.reserva .pessoa {
     font-size: 14px;
     height: 24px;
 }
 
-.informacoes{
+.informacoes {
     display: flex;
 }
 
+
+@media(max-width: 855px) {
+    .informacoes span {
+        font-size: 12px;
+    }
+}
+
 @media(max-width: 750px) {
-    
-.reserva .detalhes .verdetalhes .texto{
+
+    .reserva .detalhes .verdetalhes .texto {
         display: none;
     }
 }

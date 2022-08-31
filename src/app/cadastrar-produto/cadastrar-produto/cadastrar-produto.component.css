@@ -192,6 +192,7 @@ main .container .informacoes .informacoes-adicionais .localizacao .fundo .adicio
 main .container .informacoes .classificacao .fundo .adicionar {
     height: 41px;
     width: 43px;
+    min-width: 43px;
     margin-left: 5px;
     background-color: var(--azul);
     border-radius: 3px;

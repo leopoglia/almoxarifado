@@ -14,7 +14,7 @@ export class CadastrarProdutoComponent implements OnInit {
   caracteristica:string;
   quantidade:number;
   detalhes:string;
-  localizacaos:string;
+  localizacao:string;
   situacaolocalizacao:boolean = false;
   situacaoclassificacao:boolean = false;
   img64;
@@ -37,7 +37,7 @@ export class CadastrarProdutoComponent implements OnInit {
     this.caracteristica = "";
     this.quantidade = null;
     this.detalhes = "";
-    this.localizacaos = "";
+    this.localizacao = "";
   }
 
 
@@ -49,7 +49,7 @@ export class CadastrarProdutoComponent implements OnInit {
     };
   }
 
-  localizacao(){
+  situacaoLocalizacao(){
     if(this.situacaolocalizacao == true){
       this.situacaolocalizacao = false;
     }else{
@@ -67,7 +67,7 @@ export class CadastrarProdutoComponent implements OnInit {
 
   fechou($event){
     if($event == 1){
-      this.localizacao();
+      this.situacaoLocalizacao();
     }else{
       this.classificacao();
     }

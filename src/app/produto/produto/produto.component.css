@@ -34,6 +34,7 @@ main .container .cabecalho .editar {
 main .container .adicionar .adicionar-reserva {
     width: 165px;
     height: 45px;
+    min-width: 43px;
     background-color: var(--azul);
     border: none;
     color: var(--branco);
