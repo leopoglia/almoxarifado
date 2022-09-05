@@ -61,11 +61,11 @@
     .produto .acoes .titulo {
         display: none;
     }
+
     .produto {
         display: grid !important;
         justify-content: center;
         align-items: center;
-        width: 80%;
         height: 90px;
         margin-right: 20px;
     }

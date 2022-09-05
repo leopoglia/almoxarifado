@@ -44,6 +44,7 @@ main .container app-input {
 main .container .cabecalho .pesquisa .add {
     width: 43px;
     height: 43px;
+    min-width: 43px;
     border-radius: 5px;
     margin-left: 20px;
     background-color: var(--azul);

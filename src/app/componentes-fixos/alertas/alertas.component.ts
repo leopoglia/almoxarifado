@@ -10,6 +10,11 @@ export class AlertasComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.ligado = "false";
+      localStorage.setItem("alerta", "false");
+    }, 9000);
   }
 
+  ligado = localStorage.getItem("alerta");
 }

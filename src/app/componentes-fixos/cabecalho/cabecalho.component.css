@@ -95,4 +95,8 @@ app-filtro {
         right: 320px;
     }
 
+    .cabecalho .pesquisa button {
+        display: none;
+    }
+
 }

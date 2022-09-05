@@ -41,12 +41,9 @@ export class CabecalhoComponent implements OnInit {
 
 
   alterarTabela() {
-    console.log(this.alteraTabela)
-
     this.alteraTabela = !this.alteraTabela;
     this.posicaoTabelas.emit(this.alteraTabela);
   }
-
 
   inserirReserva() {
     this.route.navigate(['/inserirreserva'])

@@ -27,96 +27,100 @@
 
                 <div class="informacoes">
 
-                    <div class="informacoes-gerais">
-                        <div class="inserir-imagem">
-                            <span>Imagem</span>
-                            <label for="imagem">
-                                <input id="imagem" type="file" (change)="mudanca($event.target.files[0])">
+                    <form>
 
-                                <div class="imagem">
+                        <div class="informacoes-gerais">
+                            <div class="inserir-imagem">
+                                <span>Imagem</span>
+                                <label for="imagem">
+                                    <input id="imagem" type="file" (change)="mudanca($event.target.files[0])">
 
-                                    <span class="material-symbols-outlined">
-                                        add_photo_alternate
-                                    </span>
+                                    <div class="imagem">
+
+                                        <span class="material-symbols-outlined">
+                                            add_photo_alternate
+                                        </span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="informacoes-grid">
+                                <div class="nome">
+                                    <span>Nome</span>
+                                    <input type="text" [(ngModel)]="nome" name="nome">
                                 </div>
-                            </label>
-                        </div>
-
-                        <div class="informacoes-grid">
-                            <div class="nome">
-                                <span>Nome</span>
-                                <input type="text" [(ngModel)]="nome">
-                            </div>
 
 
-                            <div class="descricao">
-                                <span>Características</span>
-                                <textarea [(ngModel)]="detalhes"></textarea>
-                            </div>
+                                <div class="descricao">
+                                    <span>Características</span>
+                                    <textarea [(ngModel)]="detalhes" name="detalhes"></textarea>
+                                </div>
 
 
-                            <div class="informacoes-flex">
-                                <div class="classificacao">
-                                    <span>Classificação</span>
-                                    <div class="fundo">
-                                        <select name="select" [(ngModel)]="classificacao">
-                                            <option value="1">Materiais Elétricos</option>
-                                            <option value="2">Ferramenta Mecânica</option>
-                                            <option value="3">Componente Eltrônicos</option>
-                                            <option value="4">Ferramenta Manual</option>
-                                        </select>
-                                        <div class="adicionar">
-                                            <span class="material-symbols-outlined" (click)="classificacao()">
-                                                add
-                                            </span>
+                                <div class="informacoes-flex">
+                                    <div class="classificacao">
+                                        <span>Classificação</span>
+                                        <div class="fundo">
+                                            <select name="select" [(ngModel)]="classificacao" name="classificacao">
+                                                <option value="1">Materiais Elétricos</option>
+                                                <option value="2">Ferramenta Mecânica</option>
+                                                <option value="3">Componente Eltrônicos</option>
+                                                <option value="4">Ferramenta Manual</option>
+                                            </select>
+                                            <div class="adicionar">
+                                                <span class="material-symbols-outlined" (click)="classificacao()">
+                                                    add
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="quantidade">
-                                    <span>Quantidade</span>
-                                    <input type="number" [(ngModel)]="quantidade">
+                                    <div class="quantidade">
+                                        <span>Quantidade</span>
+                                        <input type="number" [(ngModel)]="quantidade" name="quantidade">
+                                    </div>
                                 </div>
                             </div>
+
+
                         </div>
 
-
-                    </div>
-
-                    <div class="informacoes-adicionais">
+                        <div class="informacoes-adicionais">
 
 
-                        <div class="localizacao">
-                            <span>Localização</span>
-                            <div class="fundo">
-                                <input type="text" [(ngModel)]="localizacaos">
-                                <div class="adicionar" (click)="localizacao()">
+                            <div class="localizacao">
+                                <span>Localização</span>
+                                <div class="fundo">
+                                    <input type="text" [(ngModel)]="localizacao" name="localizacao">
+                                    <div class="adicionar" (click)="situacaoLocalizacao()">
+                                        <span class="material-symbols-outlined">
+                                            add
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="anexo">
+                                <span>Anexo</span>
+                                <label for="file">
                                     <span class="material-symbols-outlined">
-                                        add
+                                        attach_file
                                     </span>
-                                </div>
+                                    Adicionar anexo</label>
+                                <input type="file" id="file">
                             </div>
-                        </div>
 
-                        <div class="anexo">
-                            <span>Anexo</span>
-                            <label for="file">
-                                <span class="material-symbols-outlined">
-                                    attach_file
-                                </span>
-                                Adicionar anexo</label>
-                            <input type="file" id="file">
-                        </div>
+                            <div class="descartavel">
+                                <span>Descartavel</span>
+                                <label class="botao">
+                                    <input type="checkbox" [disabled]="edita">
+                                    <span class="bola"></span>
+                                </label>
+                            </div>
 
-                        <div class="descartavel">
-                            <span>Descartavel</span>
-                            <label class="botao">
-                                <input type="checkbox" [disabled]="edita">
-                                <span class="bola"></span>
-                            </label>
                         </div>
+                    </form>
 
-                    </div>
                 </div>
 
                 <div class="rodape">

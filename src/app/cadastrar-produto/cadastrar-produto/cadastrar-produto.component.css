@@ -165,11 +165,11 @@ main .container .informacoes .classificacao select {
 }
 
 main .container .informacoes .informacoes-adicionais .localizacao,
-main .container .informacoes .informacoes-adicionais .anexo  {
+main .container .informacoes .informacoes-adicionais .anexo {
     width: 50%;
 }
 
-main .container .informacoes .informacoes-adicionais .anexo{
+main .container .informacoes .informacoes-adicionais .anexo {
     margin-left: 15px;
     margin-right: 50px;
 }
@@ -192,6 +192,7 @@ main .container .informacoes .informacoes-adicionais .localizacao .fundo .adicio
 main .container .informacoes .classificacao .fundo .adicionar {
     height: 41px;
     width: 43px;
+    min-width: 43px;
     margin-left: 5px;
     background-color: var(--azul);
     border-radius: 3px;
@@ -287,6 +288,16 @@ input:checked+.bola:before {
         display: grid !important;
     }
 
+    main .container .informacoes .informacoes-flex {
+        width: 95%;
+        display: block !important;
+        justify-content: space-between;
+    }
+
+    main .container .informacoes .informacoes-flex .quantidade {
+        margin-left: 0px;
+    }
+
     main .container .informacoes .informacoes-gerais .informacoes-grid {
         margin-left: 0px;
         width: none !important;
@@ -300,9 +311,7 @@ input:checked+.bola:before {
         margin-top: 10px;
     }
 
-    main .container .informacoes .quantidade,
-    main .container .informacoes .informacoes-adicionais .localizacao,
-    main .container .informacoes .classificacao {
+    main .container .informacoes .informacoes-adicionais .localizacao {
         display: grid;
         width: 95%;
         align-items: flex-start;
@@ -325,6 +334,13 @@ input:checked+.bola:before {
     main .container .informacoes .classificacao select {
         width: 100% !important;
     }
+
+    main .container .informacoes .informacoes-adicionais .anexo {
+        margin-left: 0px;
+        display: block;
+        width: 92%;
+        align-items: flex-start;
+    }
 }
 
 @media(max-width: 750px) {
@@ -336,7 +352,25 @@ input:checked+.bola:before {
         margin: 0px 30px 0px 100px;
     }
 
+    main .container .informacoes .quantidade input {
+        margin-left: 0px;
+    }
+
     main .container .rodape button {
         width: 100%;
+    }
+
+
+}
+
+@media(max-width: 550){
+    main .container .informacoes .informacoes-adicionais .anexo {
+        width: 90%;
+    }
+}
+
+@media(max-width: 450px){
+    main .container .informacoes .informacoes-adicionais .anexo {
+        width: 88%;
     }
 }

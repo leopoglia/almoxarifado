@@ -6,6 +6,7 @@ nav {
     margin-top: 60px;
     position: fixed;
     transition: 0.2s;
+    z-index: 1;
 }
 
 span {
@@ -82,8 +83,9 @@ nav dl .rodape .material-symbols-outlined {
 
 nav .dark .botao {
     position: absolute;
-    width: 65px;
+    width: 100%;
     height: 55px;
+    cursor: pointer;
 }
 
 nav .dark .botao input {

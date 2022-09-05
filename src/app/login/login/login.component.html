@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-    <title>Almoxarifado</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <title>Almoxarifado</title>
 </head>
 
 <body>
 
-    <main>
-        <div class="fundoimagem">
-            <img src="../../../assets/senaibranca.png" alt="">
-        </div>
-        <div class="container">
+  <main>
+    <div class="fundoimagem">
+      <img src="../../../assets/senaibranca.png" alt="">
+    </div>
+    <div class="container">
 
-            <div class="titulo">
-                <span>Bem-vindo ao</span>
-                <h1>Almoxarifado</h1>
-            </div>
+      <div class="titulo">
+        <span>Bem-vindo ao</span>
+        <h1>Almoxarifado</h1>
+      </div>
 
-            <form>
-
-                <div class="inputs">
-                    <label>
+      <form>
+        <div class="inputs">
+          <label>
             <span class="material-symbols-outlined">
               person
             </span>
@@ -34,7 +34,7 @@
             <input type="text" placeholder="Usuário" [(ngModel)]="usuario" name="usuario">
           </label>
 
-                    <label>
+          <label>
             <div class="lock">
               <span class="material-symbols-outlined">
                 lock
@@ -43,21 +43,23 @@
             </div>
 
             <div class="senha">
-              <input type="password" placeholder="Senha" [(ngModel)]="senha" name="senha">
+              <input [type]="tipoSenha" placeholder="Senha" [(ngModel)]="senha" name="senha">
+              <span *ngIf="visualizacao == false" (click)="habilitarVisualizacao()" id="olho-aberto" class="material-symbols-outlined">visibility</span>
+              <span *ngIf="visualizacao == true" (click)="habilitarVisualizacao()"  id="olho-fechado" class="material-symbols-outlined">visibility_off</span>
               <a href="">Esqueceu a senha?</a>
             </div>
           </label>
 
-                </div>
-
-                <div class="footer">
-                    <input (click)="cadastrar()" class="cadastrar" type="button" value="Cadastrar">
-
-                    <input (click)="entrar()" type="button" value="Entrar">
-                </div>
-            </form>
         </div>
-    </main>
+
+        <div class="footer">
+          <input (click)="cadastrar()" class="cadastrar" type="button" value="Cadastrar">
+
+          <input (click)="entrar()" type="submit" value="Entrar">
+        </div>
+      </form>
+    </div>
+  </main>
 </body>
 
 </html>

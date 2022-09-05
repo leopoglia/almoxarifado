@@ -102,6 +102,15 @@ main .container form .senha a {
     text-decoration: none;
 }
 
+main .container form .senha #olho-aberto,
+main .container form .senha #olho-fechado {
+    position: absolute;
+    margin-left: 280px;
+    margin-bottom: 23px;
+    font-size: 25px;
+    color: var(--cinzaclaro);
+}
+
 main .container form .senha a:hover {
     text-decoration: underline;
 }

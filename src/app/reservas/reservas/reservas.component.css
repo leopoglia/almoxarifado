@@ -125,9 +125,7 @@ main .corpo .rodape .paginacao dl .atual:hover {
     main .container {
         margin: 0px 30px 0px 100px;
     }
-    main .corpo .rodape {
-        justify-content: center;
-    }
+
     main .corpo .reserva .detalhes .verdetalhes .texto {
         display: none;
     }
