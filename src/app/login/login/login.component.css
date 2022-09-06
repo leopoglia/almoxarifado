@@ -100,8 +100,9 @@ main .container form label label {
     margin-right: 195px;
     color: var(--cinza);
     margin-top: 10px;
-    transition: 0.3s;
+    transition: 0.5s;
     cursor: text;
+    user-select: none;
 }
 
 main .container form .senha label {
@@ -114,16 +115,17 @@ main .container form #usr:valid~label,
 main .container form #senha:valid~label,
 main .container form #senha:focus~label {
     margin-top: -8px;
-    margin-right: 208px;
+    margin-right: 205px;
     padding: 0 5px;
-    background-color: var(--branco);
+    background-color: #fff;
     font-size: 13px;
 }
+
 
 main .container form #senha:valid~label,
 main .container form #senha:focus~label {
     margin-top: -60px;
-    margin-left: 6px;
+    margin-left: 8px;
 }
 
 main .container form .senha a {

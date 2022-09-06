@@ -38,7 +38,8 @@
                             mail
                         </span>
 
-                        <input type="text" placeholder="E-mail" [(ngModel)]="email" name="email">
+                        <input type="text" id="usr" [(ngModel)]="email" name="email" required>
+                        <label for="usr">Email</label>
                     </label>
 
                     <label>
@@ -50,7 +51,8 @@
                         </div>
 
                         <div class="senha">
-                            <input type="text" placeholder="Matrícula" [(ngModel)]="matricula" name="matricula">
+                            <input type="text" id="senha" [(ngModel)]="matricula" name="matricula" required>
+                            <label for="senha">Matricula</label>
                         </div>
                     </label>
 

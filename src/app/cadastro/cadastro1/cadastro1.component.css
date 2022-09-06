@@ -158,3 +158,33 @@ main .container form .footer .cadastrar {
 main .container form .footer .cadastrar:hover {
     background-color: transparent !important;
 }
+
+
+main .container form label label {
+    position: absolute;
+    margin-right: 195px;
+    color: var(--cinza);
+    transition: 0.3s;
+    cursor: text;
+    user-select: none;
+}
+
+main .container form .senha label {
+    margin-left: 10px;
+}
+
+main .container form #usr:focus~label,
+main .container form #usr:valid~label,
+main .container form #senha:valid~label,
+main .container form #senha:focus~label {
+    margin-top: -40px;
+    margin-right: 208px;
+    padding: 0 5px;
+    background-color: var(--branco);
+    font-size: 13px;
+}
+
+main .container form #senha:valid~label,
+main .container form #senha:focus~label {
+    margin-left: 5px;
+}

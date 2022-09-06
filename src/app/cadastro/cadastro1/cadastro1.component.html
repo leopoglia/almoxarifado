@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     <title>Almoxarifado</title>
 </head>
 
@@ -33,14 +34,13 @@
 
                 <div class="inputs">
 
-
-
                     <label>
                         <span class="material-symbols-outlined">
                             person
                         </span>
 
-                        <input type="text" placeholder="Usuário" [(ngModel)]="nome" name="nome">
+                        <input type="text" id="usr" [(ngModel)]="nome" name="nome" required>
+                        <label for="usr">Usuário</label>
                     </label>
 
                     <label>
@@ -52,7 +52,8 @@
                         </div>
 
                         <div class="senha">
-                            <input type="password" placeholder="Senha" [(ngModel)]="senha" name="senha">
+                            <input type="password" id="senha" [(ngModel)]="senha" name="senha" required>
+                            <label for="senha">Senha</label>
                         </div>
                     </label>
 
@@ -62,7 +63,7 @@
                     <a href="/">
                         <input class="cadastrar" type="button" value="Já possui conta?">
                     </a>
-                        <input (click)="cadastro2()" type="button" value="Proximo">
+                    <input (click)="cadastro2()" type="button" value="Proximo">
                 </div>
 
 
