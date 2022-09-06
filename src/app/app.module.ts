@@ -48,10 +48,12 @@ const routes: Routes = [
     ]
   },
   { path: 'inserirreserva', canActivate: [CheckLogged], component: InserirReservasComponent },
-  { path: 'reservas', children: [
-    { path: '', canActivate: [CheckLogged], component: ReservasComponent },
-    { path: 'detalhes', canActivate: [CheckLogged], component: DetalhesReservaComponent }
-  ] },
+  {
+    path: 'reservas', children: [
+      { path: '', canActivate: [CheckLogged], component: ReservasComponent },
+      { path: 'detalhes', canActivate: [CheckLogged], component: DetalhesReservaComponent }
+    ]
+  },
   {
     path: 'cadastrar', children: [
       { path: 'produto', canActivate: [CheckLogged], component: CadastrarProdutoComponent },
@@ -94,7 +96,7 @@ const routes: Routes = [
     InputComponent,
     AlertasComponent,
     ItemGridComponent
-    ],
+  ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
@@ -102,7 +104,7 @@ const routes: Routes = [
     RouterModule,
     FormsModule
   ],
-  providers: [ CheckLogged ],
-  bootstrap: [ AppComponent ]
+  providers: [CheckLogged],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

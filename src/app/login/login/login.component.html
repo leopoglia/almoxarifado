@@ -31,7 +31,8 @@
               person
             </span>
 
-            <input type="text" placeholder="Usuário" [(ngModel)]="usuario" name="usuario">
+            <input type="text" id="usr" [(ngModel)]="usuario" name="usuario" required>
+            <label for="usr">Usuário</label>
           </label>
 
           <label>
@@ -43,9 +44,14 @@
             </div>
 
             <div class="senha">
-              <input [type]="tipoSenha" placeholder="Senha" [(ngModel)]="senha" name="senha">
-              <span *ngIf="visualizacao == false" (click)="habilitarVisualizacao()" id="olho-aberto" class="material-symbols-outlined">visibility</span>
-              <span *ngIf="visualizacao == true" (click)="habilitarVisualizacao()"  id="olho-fechado" class="material-symbols-outlined">visibility_off</span>
+              <input [type]="tipoSenha" id="senha" [(ngModel)]="senha" name="senha" required>
+              <label for="senha">Senha</label>
+
+
+              <span *ngIf="visualizacao == false" (click)="habilitarVisualizacao()" id="olho-aberto"
+                class="material-symbols-outlined">visibility</span>
+              <span *ngIf="visualizacao == true" (click)="habilitarVisualizacao()" id="olho-fechado"
+                class="material-symbols-outlined">visibility_off</span>
               <a href="">Esqueceu a senha?</a>
             </div>
           </label>
@@ -56,6 +62,7 @@
           <input (click)="cadastrar()" class="cadastrar" type="button" value="Cadastrar">
 
           <input (click)="entrar()" type="submit" value="Entrar">
+
         </div>
       </form>
     </div>

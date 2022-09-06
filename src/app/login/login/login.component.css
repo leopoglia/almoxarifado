@@ -95,6 +95,37 @@ main .container form label input {
     outline: none;
 }
 
+main .container form label label {
+    position: absolute;
+    margin-right: 195px;
+    color: var(--cinza);
+    margin-top: 10px;
+    transition: 0.5s;
+    cursor: text;
+}
+
+main .container form .senha label {
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+main .container form #usr:focus~label,
+main .container form #usr:valid~label,
+main .container form #senha:valid~label,
+main .container form #senha:focus~label {
+    margin-top: -8px;
+    margin-right: 208px;
+    padding: 0 5px;
+    background-color: var(--branco);
+    font-size: 13px;
+}
+
+main .container form #senha:valid~label,
+main .container form #senha:focus~label {
+    margin-top: -60px;
+    margin-left: 6px;
+}
+
 main .container form .senha a {
     font-size: 13px;
     margin-top: 3px;
