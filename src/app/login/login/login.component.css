@@ -100,7 +100,7 @@ main .container form label label {
     margin-right: 195px;
     color: var(--cinza);
     margin-top: 10px;
-    transition: 0.5s;
+    transition: 0.3s;
     cursor: text;
 }
 

@@ -20,6 +20,24 @@
     justify-content: space-between;
 }
 
+.cabecalho .pesquisa .input label {
+    position: absolute;
+    margin-left: 10px;
+    color: var(--cinza);
+    font-size: 14px;
+    transition: 0.3s;
+    cursor: text;
+}
+
+.cabecalho .pesquisa .input input:valid~label,
+.cabecalho .pesquisa .input input:focus~label {
+    margin-top: -40px;
+    margin-left: 0px;
+    padding: 0 5px;
+    background-color: var(--branco);
+    font-size: 13px;
+}
+
 .cabecalho .pesquisa .input .material-symbols-outlined {
     margin: 0;
 }
@@ -33,9 +51,9 @@
     background-color: transparent;
 }
 
-.cabecalho .pesquisa .input:hover {
+/* .cabecalho .pesquisa .input:hover {
     background-color: var(--hover);
-}
+} */
 
 .cabecalho .pesquisa .material-symbols-outlined,
 .cabecalho .pesquisa .material-symbols-rounded {
@@ -74,13 +92,13 @@
     margin: 0px 10px 0px 10px;
 }
 
-.ordernar{
+.ordernar {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.ordernar span{
+.ordernar span {
     font-weight: bold;
 }
 
