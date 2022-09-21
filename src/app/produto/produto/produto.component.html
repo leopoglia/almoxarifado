@@ -6,6 +6,8 @@
 </head>
 
 <body>
+    <app-modal-adicao *ngIf="modalQuantidade" item="3" (fechou)="fechou($event)"></app-modal-adicao>
+
     <app-header></app-header>
     <app-nav></app-nav>
 
@@ -131,7 +133,8 @@
                 </div>
 
                 <div class="adicionar">
-                    <button *ngIf="edita == false" class="adicionar-reserva">Salvar edições</button>
+                    <button *ngIf="edita == false" class="adicionar-reserva" (click)="funcaoQuantidade()">Salvar edições</button>
+
                     <button *ngIf="edita" class="adicionar-reserva">Adicionar à reserva</button>
                 </div>
             </div>
