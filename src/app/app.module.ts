@@ -31,6 +31,7 @@ import { ProdutoReservaComponent } from './inserir-reservas/produto-reserva/prod
 import { ModalAdicaoComponent } from './cadastrar-produto/modal-adicao/modal-adicao.component';
 import { InputComponent } from './inserir-reservas/input/input.component';
 import { AlertasComponent } from './componentes-fixos/alertas/alertas.component';
+import { EsqueceuASenhaComponent } from './esqueceu-a-senha/esqueceu-a-senha.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
@@ -61,7 +62,8 @@ const routes: Routes = [
     ]
   },
   { path: 'usuario/aceitar', canActivate: [CheckLogged], component: AceitarUsuariosComponent },
-  { path: 'perfil', canActivate: [CheckLogged], component: PerfilComponent }
+  { path: 'perfil', canActivate: [CheckLogged], component: PerfilComponent },
+  { path: 'esqueceu_a_senha', component: EsqueceuASenhaComponent }
 ];
 
 @NgModule({
@@ -95,7 +97,8 @@ const routes: Routes = [
     ModalAdicaoComponent,
     InputComponent,
     AlertasComponent,
-    ItemGridComponent
+    ItemGridComponent,
+    EsqueceuASenhaComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

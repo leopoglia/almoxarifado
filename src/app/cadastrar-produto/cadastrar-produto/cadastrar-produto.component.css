@@ -97,6 +97,7 @@ main .container .informacoes .informacoes-gerais .descricao textarea {
 }
 
 main .container .anexo label {
+    cursor: pointer;
     display: flex;
     align-items: center;
     margin-right: 15px;
