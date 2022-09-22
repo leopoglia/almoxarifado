@@ -1,3 +1,50 @@
-<p>
-  esqueceu-a-senha works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <title>Almoxarifado</title>
+</head>
+
+<body>
+
+  <main>
+    <div class="fundoimagem">
+      <img src="../../../assets/senaibranca.png" alt="">
+    </div>
+    <div class="container">
+
+      <div class="titulo">
+        <span>Página de</span>
+        <h1>Esqueceu a senha</h1>
+      </div>
+
+      <form>
+        <div class="inputs">
+          <label>
+            <span class="material-symbols-outlined">
+              person
+            </span>
+
+            <input type="text" id="usr" [(ngModel)]="usuario" name="usuario" required>
+            <label for="usr">E-mail</label>
+          </label>
+
+        </div>
+
+        <div class="footer">
+
+          <input (click)="entrar()" type="submit" value="Entrar">
+
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

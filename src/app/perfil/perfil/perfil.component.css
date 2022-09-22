@@ -125,7 +125,7 @@ main .container .acoes .nav dd:hover {
     height: 100%;
     margin-top: 20px;
     margin-bottom: 15px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     border-radius: 3px;
     border: 1px solid var(--cinzaclaro2);
     display: flex;
@@ -185,6 +185,7 @@ input {
     display: flex;
     justify-content: flex-end;
     margin-left: 17px;
+    margin-top: 10px;
 }
 
 button {

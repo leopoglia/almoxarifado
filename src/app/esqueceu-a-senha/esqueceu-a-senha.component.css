@@ -1,0 +1,186 @@
+body {
+    background-color: var(--azul) !important;
+    overflow: hidden;
+}
+
+body,
+main .fundoimagem,
+main .container .titulo span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main,
+main .container .titulo,
+main .container form,
+main .container form .senha {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+body .fundo {
+    position: absolute;
+    top: 0;
+    margin-top: -100px;
+    width: 100%;
+    opacity: 15%;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+main img {
+    width: 350px;
+}
+
+main .container {
+    width: 450px;
+    height: 240px;
+    background-color: var(--branco);
+    border-radius: 3px;
+}
+
+main .fundoimagem {
+    margin-bottom: 20px;
+}
+
+main .container .titulo {
+    margin-top: 20px;
+    padding-top: 20px
+}
+
+main .container .titulo span {
+    color: var(--cinza);
+}
+
+main .container h1 {
+    font-size: 25px;
+    color: var(--azul);
+}
+
+main .container form {
+    margin-top: 20px;
+}
+
+main .container form .inputs {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+main .container form label {
+    display: flex;
+    justify-content: center;
+}
+
+main .container form .material-symbols-outlined {
+    font-size: 34px;
+    margin-right: 12px;
+    margin-top: 7px;
+    color: var(--azul);
+}
+
+main .container form label input {
+    padding: 8px;
+    width: 300px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid var(--cinzaclaro2);
+    outline: none;
+}
+
+main .container form label label {
+    position: absolute;
+    margin-right: 195px;
+    color: var(--cinza);
+    margin-top: 10px;
+    transition: 0.5s;
+    cursor: text;
+    user-select: none;
+}
+
+main .container form .senha label {
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+main .container form #usr:focus~label,
+main .container form #usr:valid~label,
+main .container form #senha:valid~label,
+main .container form #senha:focus~label {
+    margin-top: -8px;
+    margin-right: 205px;
+    padding: 0 5px;
+    background-color: #fff;
+    font-size: 13px;
+}
+
+
+main .container form #senha:valid~label,
+main .container form #senha:focus~label {
+    margin-top: -60px;
+    margin-left: 8px;
+}
+
+main .container form .senha a {
+    font-size: 13px;
+    margin-top: 3px;
+    color: var(--azul);
+    text-decoration: none;
+}
+
+main .container form .senha #olho-aberto,
+main .container form .senha #olho-fechado {
+    position: absolute;
+    margin-left: 280px;
+    margin-bottom: 23px;
+    font-size: 25px;
+    color: var(--cinzaclaro);
+}
+
+main .container form .senha a:hover {
+    text-decoration: underline;
+}
+
+main .container form .lock {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+main .container form .footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .container form .footer input {
+    background-color: var(--azul);
+    color: var(--branco);
+    width: 100%;
+    height: 35px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 45px;
+}
+
+main .container form .footer input:hover {
+    background-color: var(--azulclaro);
+}
+
+main .container form .footer .cadastrar {
+    background-color: transparent;
+    color: var(--azul);
+}
+
+main .container form .footer .cadastrar:hover {
+    background-color: transparent !important;
+}
