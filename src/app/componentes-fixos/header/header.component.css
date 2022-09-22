@@ -12,6 +12,10 @@ header {
     top: 0;
 }
 
+a{
+    text-decoration: none;
+}
+
 header .logo,
 header .navbar {
     display: flex;
