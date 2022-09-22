@@ -6,8 +6,6 @@
 </head>
 
 <body>
-    <app-modal-adicao *ngIf="modalQuantidade" item="3" (fechou)="fechou($event)"></app-modal-adicao>
-
     <app-header></app-header>
     <app-nav></app-nav>
 
@@ -21,12 +19,22 @@
             <div class="corpo" *ngFor="let item of produtos">
 
                 <div class="cabecalho">
+
+
                     <div class="titulo"><span>Dados gerais do produto</span></div>
-                    <button class="editar">
-                        <span class="material-symbols-outlined" (click)="editar()">
-                            edit
-                        </span>
-                    </button>
+
+                    <div class="acoes">
+                        <button class="editar">
+                            <span class="material-symbols-outlined" (click)="mostrarHistorico()">
+                                history
+                            </span>
+                        </button>
+                        <button class="editar">
+                            <span class="material-symbols-outlined" (click)="editar()">
+                                edit
+                            </span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="informacoes">
@@ -133,8 +141,7 @@
                 </div>
 
                 <div class="adicionar">
-                    <button *ngIf="edita == false" class="adicionar-reserva" (click)="funcaoQuantidade()">Salvar edições</button>
-
+                    <button *ngIf="edita == false" class="adicionar-reserva">Salvar edições</button>
                     <button *ngIf="edita" class="adicionar-reserva">Adicionar à reserva</button>
                 </div>
             </div>

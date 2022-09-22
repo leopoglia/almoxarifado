@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ProdutoService } from 'src/app/services/produto.service';
 
-
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
@@ -35,6 +34,9 @@ export class ProdutoComponent implements OnInit {
   edita = true;
   modalQuantidade: boolean = false;
 
+  mostrarHistorico(){
+
+  }
 
   editar() {
     this.edita = !this.edita;
@@ -52,7 +54,6 @@ export class ProdutoComponent implements OnInit {
     this.funcaoQuantidade();
 
   }
-
 
   list;
   produtos;
