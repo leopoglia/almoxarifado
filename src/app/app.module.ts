@@ -63,7 +63,7 @@ const routes: Routes = [
   },
   { path: 'usuario/aceitar', canActivate: [CheckLogged], component: AceitarUsuariosComponent },
   { path: 'perfil', canActivate: [CheckLogged], component: PerfilComponent },
-  { path: 'esqueceu_a_senha', component: EsqueceuASenhaComponent }
+  { path: 'esqueceuasenha', component: EsqueceuASenhaComponent }
 ];
 
 @NgModule({
