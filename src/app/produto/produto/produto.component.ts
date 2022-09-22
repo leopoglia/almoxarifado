@@ -12,32 +12,47 @@ import { ProdutoService } from 'src/app/services/produto.service';
 export class ProdutoComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private router: Router,
     private produtoService: ProdutoService,) {
     this.idParametro = route.snapshot.paramMap.get('id');
-   }
+  }
 
   ngOnInit() {
     this.produtoService.buscarProduto(this.idParametro)
-    .then(resultado => {
-      this.list = resultado;
-      this.produtos = this.list.list;
-    }).catch(erro => {
-      console.log('ERRO AO BUSCAR USUÁRIOS', erro)
-    })
-    
-    if(localStorage.getItem('menu') == 'aberto'){
+      .then(resultado => {
+        this.list = resultado;
+        this.produtos = this.list.list;
+      }).catch(erro => {
+        console.log('ERRO AO BUSCAR USUÁRIOS', erro)
+      })
+
+    if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
     }
   }
 
   edita = true;
+  modalQuantidade: boolean = false;
 
-  editar(){
-    this.edita = !this.edita;  
+
+  editar() {
+    this.edita = !this.edita;
   }
-  
+
+  funcaoQuantidade() {
+    if (this.modalQuantidade == true) {
+      this.modalQuantidade = false;
+    } else {
+      this.modalQuantidade = true;
+    }
+  }
+
+  fechou($event) {
+    this.funcaoQuantidade();
+
+  }
+
 
   list;
   produtos;

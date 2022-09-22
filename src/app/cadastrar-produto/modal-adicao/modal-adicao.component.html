@@ -1,7 +1,7 @@
 <div class="fundo" *ngIf="situacao">
   <div class="modal">
     <div class="header">
-      <span>Adicionar {{titulo}}</span>
+      <span>{{titulo}}</span>
 
       <div class="acoes">
 
@@ -14,7 +14,7 @@
 
     <div class="inputs">
 
-      <input  type="text" placeholder="Insira a {{titulo}}">
+      <input type="text" placeholder="{{titulo}}">
 
       <div *ngIf="item == 1" class="setados">
         <span>

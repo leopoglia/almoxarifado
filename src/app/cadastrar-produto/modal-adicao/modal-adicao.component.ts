@@ -16,9 +16,11 @@ export class ModalAdicaoComponent implements OnInit {
   ngOnInit() {
 
     if (this.item == 1) {
-      this.titulo = "Localizacao";
-    } else {
-      this.titulo = "Classificacao";
+      this.titulo = "Insira a Localizacao";
+    } else if(this.item == 2) {
+      this.titulo = "Insira a Classificacao";
+    } else if(this.item == 3) {
+      this.titulo = "Inserir o motivo da edição";
     }
   }
 
