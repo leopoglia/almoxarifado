@@ -1,23 +1,36 @@
 <div class="usuario" *ngFor="let usuario of usuarios">
-  <div class="informacoes">
-    <div class="titulo">Nome usuário
+
+  <div class="flex-usuario">
+    <img class="usuario-imagem" [src]="usuario.imagem" alt="Imagem do usuário">
+    <div class="informacoes">
+      <div class="titulo">{{usuario.nome}}
+
+      </div>
+      <div class="cargo">
+        <span>Cargo: {{usuario.cargo}}</span>
+      </div>
+
+      <div class="matricula">
+        <span>Matricula: {{usuario.matricula}}</span>
+      </div>
+      <div class="email">
+        <span>Email: {{usuario.email}}</span>
+      </div>
 
     </div>
-    <div class="cargo">
-      <span>Cargo: Professor</span>
-    </div>
-
-    <div class="matricula">
-      <span>Matricula: 654635535476537</span>
-    </div>
-    <div class="email">
-      <span>Email: professor@gmail.com</span>
-    </div>
-
   </div>
 
-  <div class="aprovacao">
+  <div *ngIf="usuario.aceito == 'nao'" class="aprovacao">
     <button class="aceitar">Aceitar</button>
     <button class="recusar">Recusar</button>
   </div>
-</div> 
+
+  <div *ngIf="usuario.aceito == 'sim'" class="aprovado">
+    <p>Usuário ceito</p>
+  </div>
+ 
+
+  <div *ngIf="usuario.aceito == 'recusado'" class="reprovado">
+    <p>Usuário recusado</p>
+  </div>
+</div>

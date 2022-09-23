@@ -10,6 +10,19 @@
     justify-content: space-between;
 }
 
+.usuario .flex-usuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.usuario .usuario-imagem{
+    width: 120px;
+    min-width: 120px;
+    border-radius: 120px;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -60,6 +73,20 @@ a {
     width: 150px;
     display: grid;
 }
+
+.aprovado, .reprovado{
+    margin-right: 35px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 150px;
+}
+
+.aprovado p{
+    color: var(--azul) !important;
+}
+
 
 .aprovacao .aceitar{
     background-color: var(--azul);
