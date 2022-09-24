@@ -10,6 +10,10 @@
     justify-content: space-between;
 }
 
+.usuario:hover{
+    background-color: var(--hover);
+}
+
 .usuario .flex-usuario{
     display: flex;
     align-items: center;
