@@ -74,7 +74,7 @@ main .container .datas {
 
 main .container .datas .retirada,
 main .container .datas .devolucao {
-    width: 350px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,6 +90,7 @@ main .container .datas .titulo {
 }
 
 main .container .datas .inputs {
+    width: 100%;
     height: 40px;
     display: flex;
     align-items: center;
@@ -97,6 +98,7 @@ main .container .datas .inputs {
 }
 
 main .container .datas label {
+    width: 100%;
     border: 1px solid var(--cinzaclaro2);
     border-radius: 3px;
     padding: 5px;
@@ -135,13 +137,6 @@ main .container .rodape button:hover {
     background-color: var(--azulclaro);
 }
 
-@media(max-width: 850px) {
-    main .container .datas .retirada,
-    main .container .datas .devolucao {
-        display: grid;
-        width: 100%;
-    }
-}
 
 @media(max-width: 750px) {
     main {
@@ -150,13 +145,5 @@ main .container .rodape button:hover {
     main .container {
         margin: 0px 30px 0px 100px;
     }
-    main .container .datas .inputs {
-        display: grid;
-        height: 100%;
-    }
-    main .container .datas .inputs label {
-        width: 100px;
-        margin-top: 10px;
-        margin-left: 0px
-    }
+
 }
