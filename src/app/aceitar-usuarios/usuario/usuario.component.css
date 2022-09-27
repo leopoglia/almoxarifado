@@ -96,6 +96,10 @@ a {
     background-color: var(--azul);
 }
 
+.aprovacao .aceitar:hover{
+    background-color: var(--azulclaro);
+}
+
 .aprovacao .recusar{
     border: 1px solid var(--cinzaclaro2);
     background-color: var(--cinzaclaro3);
