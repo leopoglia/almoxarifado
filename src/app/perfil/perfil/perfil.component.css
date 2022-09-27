@@ -66,10 +66,6 @@ main .container .detalhes-nome .editar {
     cursor: pointer;
 }
 
-main .container .detalhes-nome .editar:hover span {
-    background-color: var(--hover);
-}
-
 a {
     text-decoration: none;
 }
