@@ -150,8 +150,8 @@ main .container textarea:disabled {
 }
 
 main .container select:disabled {
-    background-color: rgb(217, 217, 217);
-    border: 1px solid rgb(170, 170, 170) !important;
+    background-color: var(--cinzaclaro3);
+    opacity: 100% !important;
 }
 
 main .container .informacoes .informacoes-gerais .nome input,
