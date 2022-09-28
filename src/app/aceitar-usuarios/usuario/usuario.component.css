@@ -10,18 +10,18 @@
     justify-content: space-between;
 }
 
-.usuario:hover{
+.usuario:hover {
     background-color: var(--hover);
 }
 
-.usuario .flex-usuario{
+.usuario .flex-usuario {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 10px;
 }
 
-.usuario .usuario-imagem{
+.usuario .usuario-imagem {
     width: 120px;
     min-width: 120px;
     border-radius: 120px;
@@ -38,6 +38,11 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
 }
 
 .usuario .matricula,
@@ -62,7 +67,8 @@ a {
     height: 24px;
 }
 
-.aprovacao .aceitar, .aprovacao .recusar{
+.aprovacao .aceitar,
+.aprovacao .recusar {
     width: 120px;
     height: 45px;
     margin: 6px;
@@ -73,12 +79,13 @@ a {
     cursor: pointer;
 }
 
-.aprovacao{
+.aprovacao {
     width: 150px;
     display: grid;
 }
 
-.aprovado, .reprovado{
+.aprovado,
+.reprovado {
     margin-right: 35px;
     font-weight: 500;
     display: flex;
@@ -87,21 +94,29 @@ a {
     width: 150px;
 }
 
-.aprovado p{
+.aprovado p {
     color: var(--azul) !important;
 }
 
 
-.aprovacao .aceitar{
+.aprovacao .aceitar {
     background-color: var(--azul);
 }
 
-.aprovacao .aceitar:hover{
+.aprovacao .aceitar:hover {
     background-color: var(--azulclaro);
 }
 
-.aprovacao .recusar{
+.aprovacao .recusar {
     border: 1px solid var(--cinzaclaro2);
     background-color: var(--cinzaclaro3);
     color: var(--preto);
+}
+
+@media(max-width:620px) {
+    .usuario .usuario-imagem {
+        display: none;
+    }
+
+ 
 }
