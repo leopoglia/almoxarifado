@@ -33,8 +33,9 @@ export class ProdutoComponent implements OnInit {
 
   edita = true;
   modalQuantidade: boolean = false;
+  salvar = false;
 
-  mostrarHistorico(){
+  mostrarHistorico() {
 
   }
 
@@ -50,10 +51,18 @@ export class ProdutoComponent implements OnInit {
     }
   }
 
-  fechou($event) {
-    this.funcaoQuantidade();
 
+  salvarEdicao() {
+    this.salvar = !this.salvar;
+
+    console.log(this.edita)
   }
+
+  fechou() {
+    this.salvar = !this.salvar;
+  }
+
+
 
   list;
   produtos;

@@ -58,7 +58,7 @@
 .produto .informacoes .titulo {
     width: 100%;
     font-size: 18px;
-    height: 20px;
+    height: 22px;
     margin-top: 10px;
     display: inline-block;
     overflow: hidden;
@@ -84,7 +84,7 @@
 .produto .informacoes .quantidade-produto {
     display: flex;
     justify-content: end;
-    height: 20px;
+    height: 22px;
     margin-right: 10px;
 }
 
