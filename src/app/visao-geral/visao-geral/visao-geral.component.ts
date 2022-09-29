@@ -34,6 +34,5 @@ export class VisaoGeralComponent implements OnInit {
 
   ordernarTabela($event) {
     this.tabelaOrdenada = $event;
-    console.log($event)
   }
 }

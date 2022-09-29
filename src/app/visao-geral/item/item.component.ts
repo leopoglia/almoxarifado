@@ -38,7 +38,6 @@ export class ItemComponent implements OnInit, OnChanges {
     } else {
 
       if (changes.ordernado) {
-        console.log(this.list)
         if (this.produtos) {
           this.produtos = this.produtos.sort((a, b) => (a.NOME > b.NOME) ? 1 : ((b.NOME > a.NOME) ? -1 : 0));
         } else {
