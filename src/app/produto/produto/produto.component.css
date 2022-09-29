@@ -15,8 +15,11 @@ main .container .cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
     margin-right: 15px;
+}
+
+main .container #titulo{
+    margin-top: 10px;
 }
 
 main .container .cabecalho .editar {
@@ -71,6 +74,10 @@ main .container .cabecalho .navegacao {
 main .container .cabecalho .acoes{
     display: flex;
     align-items: center;
+}
+
+main .container .cabecalho .historico{
+    text-decoration: none;
 }
 
 main .corpo {

@@ -20,6 +20,7 @@ export class ItemGridComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.produtoService.buscarProdutos()
       .then(resultado => {
         this.list = resultado;
@@ -30,10 +31,22 @@ export class ItemGridComponent implements OnInit {
       })
   }
 
+  @Input() ordernado: boolean;
+
+  
+
+
+
+
+
+
+
+
+
+
   list;
   produtos;
   tamanho;
-
 
   link(id) {
     this.route.navigate(['/visaogeral/produto/' + id]);

@@ -22,6 +22,7 @@ export class VisaoGeralComponent implements OnInit {
 
   posicao = true;
   item: any = document.querySelector("posicao");
+  tabelaOrdenada = false;
 
   receberPedido($event) {
     this.posicao = $event;
@@ -29,5 +30,10 @@ export class VisaoGeralComponent implements OnInit {
     if(this.posicao){
 
     }
+  }
+
+  ordernarTabela($event) {
+    this.tabelaOrdenada = $event;
+    console.log($event)
   }
 }

@@ -32,6 +32,7 @@ import { ModalAdicaoComponent } from './cadastrar-produto/modal-adicao/modal-adi
 import { InputComponent } from './inserir-reservas/input/input.component';
 import { AlertasComponent } from './componentes-fixos/alertas/alertas.component';
 import { EsqueceuASenhaComponent } from './esqueceu-a-senha/esqueceu-a-senha.component';
+import { HistoricoProdutoComponent } from './historico-produto/historico-produto.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
@@ -45,7 +46,8 @@ const routes: Routes = [
   {
     path: 'visaogeral', children: [
       { path: '', canActivate: [CheckLogged], component: VisaoGeralComponent },
-      { path: 'produto/:id', canActivate: [CheckLogged], component: ProdutoComponent }
+      { path: 'produto/:id', canActivate: [CheckLogged], component: ProdutoComponent },
+      { path: 'produto/:id/historico', canActivate: [CheckLogged], component: HistoricoProdutoComponent }
     ]
   },
   { path: 'inserirreserva', canActivate: [CheckLogged], component: InserirReservasComponent },
@@ -98,7 +100,8 @@ const routes: Routes = [
     InputComponent,
     AlertasComponent,
     ItemGridComponent,
-    EsqueceuASenhaComponent
+    EsqueceuASenhaComponent,
+    HistoricoProdutoComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

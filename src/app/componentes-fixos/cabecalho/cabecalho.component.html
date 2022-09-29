@@ -16,7 +16,7 @@
             </span>
         </div>
 
-        <div class="flexibilidade" (click)="alterarTabela()">
+        <div class="flexibilidade" *ngIf="visaogeral" (click)="alterarTabela()">
             <span *ngIf="alteraTabela == false" class="material-symbols-rounded">
                 grid_view
             </span>
@@ -27,7 +27,7 @@
         </div>
 
 
-        <div class="ordernar">
+        <div class="ordernar" (click)="ordenar()">
             <span class="material-symbols-outlined">
                 swap_vert
             </span>
@@ -39,7 +39,7 @@
             </span>
         </div>
 
-        <app-filtro *ngIf="situacaofiltro"></app-filtro>
+        <app-filtro *ngIf="situacaofiltro" (fechou)="fechou($event)"></app-filtro>
 
 
         <button *ngIf="urlAtual != '/usuario/aceitar'" (click)="inserirReserva()">Inserir Reservas</button>
