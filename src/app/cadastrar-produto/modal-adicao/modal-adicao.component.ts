@@ -37,4 +37,8 @@ export class ModalAdicaoComponent implements OnInit {
       this.fechou.emit(this.item);
     }
   }
+
+  alterarSituacao($event){
+    $event.path[0].classList.toggle("situacao-atual")
+  }
 }

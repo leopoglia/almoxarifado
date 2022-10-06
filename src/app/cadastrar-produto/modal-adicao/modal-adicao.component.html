@@ -1,9 +1,13 @@
 <div class="fundo" *ngIf="situacao">
   <div class="modal">
     <div class="header">
-      <span>{{titulo}}</span>
+      <span *ngIf="item != 4">{{titulo}}</span>
 
-      <span>{{titulo2}}</span>
+      <div *ngIf="item == 4">
+        <input type="button" [value]="titulo" class="situacao-atual" (click)="alterarSituacao($event)" />
+        <input type="button" [value]="titulo2" (click)="alterarSituacao($event)"/>
+
+      </div>
 
 
       <div class="acoes">
