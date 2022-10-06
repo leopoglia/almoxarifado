@@ -3,6 +3,9 @@
     <div class="header">
       <span>{{titulo}}</span>
 
+      <span>{{titulo2}}</span>
+
+
       <div class="acoes">
 
         <p class="material-symbols-outlined" (click)="fechar()">
@@ -13,6 +16,20 @@
     </div>
 
     <div class="inputs">
+
+      <div *ngIf="item == 4" class="setados">
+        <span>
+          DEVOLVIDOS = 100
+        </span>
+
+        <span>
+          FALTA = 50
+        </span>
+
+        <span>
+          TOTAL = 150
+        </span>
+      </div>
 
       <input type="text" placeholder="{{titulo}}">
 
@@ -29,6 +46,8 @@
           A = ARMÁRIO
         </span>
       </div>
+
+
 
 
       <div class="botao">

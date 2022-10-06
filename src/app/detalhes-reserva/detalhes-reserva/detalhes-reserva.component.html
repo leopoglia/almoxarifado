@@ -12,6 +12,8 @@
 </head>
 
 <body>
+
+    <app-modal-adicao *ngIf="modaldevolucao" item="4" (fechou)="fechou($event)"></app-modal-adicao>
     <app-header></app-header>
     <app-nav></app-nav>
 
@@ -52,19 +54,27 @@
                             <div class="produto" *ngFor="let item of produtos">
                                 <div class="informacoes">
                                     <div class="imagem">
-                                        <img src="https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png"
-                                            alt="">
+                                        <img [src]="item.imagem"
+                                            alt="Imagem do produto">
                                     </div>
-                                    <div class="nome">Abraçadeira para poste
+                                    <div class="nome">{{item.nome}}
                                     </div>
                                 </div>
 
                                 <div class="acoes">
-                                    <div class="opcao">Descartavel</div>
+                                    <div class="localizacao">Localização: {{item.localizacao}}</div>
 
-                                    <div class="quantidade">100 Unidades</div>
+                                    <div class="opcao">{{item.descartavel}}</div>
 
-                                    <button class="baixa" *ngIf="permissao">Dar baixa</button>
+                                    <div class="quantidade">{{item.unidades}} Unidades</div>
+
+                                    <div *ngIf="item.baixa == false">
+                                        <button class="baixa" *ngIf="permissao" (click)="darBaixa(item)">Dar baixa</button>
+                                    </div>
+
+                                    <div *ngIf="item.baixa == true">
+                                        <button class="baixa" *ngIf="permissao" (click)="devolver(item)">Devolver</button>
+                                    </div>
                                 </div>
 
                             </div>

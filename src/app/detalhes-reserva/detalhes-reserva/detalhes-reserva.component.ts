@@ -10,17 +10,27 @@ export class DetalhesReservaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if(localStorage.getItem('menu') == 'aberto'){
+    if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
     }
 
-    if(localStorage.getItem("usuario") == "Administrador" || localStorage.getItem("usuario") == "Atendente"){
+    if (localStorage.getItem("usuario") == "Administrador" || localStorage.getItem("usuario") == "Atendente") {
       this.permissao = true;
     }
   }
 
   permissao = false;
+  modaldevolucao = false;
 
-  produtos = [1,2,3]
+  produtos = [
+    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", "nome": "Abracadeira para poste", "localizacao": "P3CEA8", "descartavel": "Descartavel", "unidades": 100, "baixa": false }]
 
+
+  darBaixa(item) {
+    item.baixa = true;
+  }
+
+  devolver() {
+    this.modaldevolucao = !this.modaldevolucao;
+  }
 }

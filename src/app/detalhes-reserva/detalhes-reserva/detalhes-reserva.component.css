@@ -89,7 +89,8 @@ main .corpo .reserva .produtos .produto .informacoes {
 }
 
 main .corpo .reserva .produtos .produto .acoes .quantidade,
-main .corpo .reserva .produtos .produto .acoes .opcao {
+main .corpo .reserva .produtos .produto .acoes .opcao,
+main .corpo .reserva .produtos .produto .acoes .localizacao {
     margin: 10px !important;
 }
 

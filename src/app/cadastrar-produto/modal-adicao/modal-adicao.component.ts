@@ -21,11 +21,15 @@ export class ModalAdicaoComponent implements OnInit {
       this.titulo = "Insira a Classificacao";
     } else if(this.item == 3) {
       this.titulo = "Inserir o motivo da edição";
+    } else if(this.item == 4){
+      this.titulo = "Quantidade da devolução"
+      this.titulo2 = "Motivo defeito"
     }
   }
 
-  titulo = "";
-  situacao = true;
+  titulo:String = "";
+  titulo2:String = "";
+  situacao:Boolean = true;
 
   fechar() {
     if (this.situacao == true) {
