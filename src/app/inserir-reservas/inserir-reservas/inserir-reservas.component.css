@@ -101,7 +101,7 @@ main .container .datas label {
     width: 100%;
     border: 1px solid var(--cinzaclaro2);
     border-radius: 3px;
-    padding: 5px;
+    padding: 5px 20px;
     margin-left: 15px;
     height: 40px;
 }
