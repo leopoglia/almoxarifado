@@ -142,8 +142,32 @@ main .container .rodape button:hover {
     main {
         padding-left: 0px;
     }
+
     main .container {
         margin: 0px 30px 0px 100px;
     }
 
+    main .container .rodape button {
+        width: 100%;
+    }
+
+    main .container .datas .titulo{
+        margin: 0px;
+    }
+
+    main .container .datas .retirada,
+    main .container .datas .devolucao {
+        display: block;
+    }
+
+    main .container .inputs{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between !important;
+    }
+
+    main .container .datas label{
+        margin-left: 0px;
+        width: 36%;
+    }
 }
