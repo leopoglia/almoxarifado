@@ -357,9 +357,21 @@ input:checked+.bola:before {
 
     main .container .informacoes .informacoes-gerais .nome,
     main .container .informacoes .informacoes-gerais .detalhes,
-    main .container .informacoes .informacoes-gerais .descricao {
+    main .container .informacoes .informacoes-gerais .descricao,
+    main .container .informacoes .informacoes-flex{
         margin-top: 15px;
         width: 95% !important;
+    }
+
+    main .container .informacoes .informacoes-adicionais{
+        width: 95%;
+    }
+
+    main .container .informacoes .informacoes-adicionais .anexo,
+    main .container .informacoes .informacoes-adicionais .anexo label{
+        margin-left: 0px;
+        margin-right: 0px !important;
+        width: auto;
     }
 
     main .container .informacoes .informacoes-gerais,
@@ -388,9 +400,10 @@ input:checked+.bola:before {
     main .container .informacoes .informacoes-adicionais .localizacao,
     main .container .informacoes .classificacao {
         display: grid;
-        width: 95%;
+        width: 100%;
         align-items: flex-start;
         margin-top: 15px;
+        margin-right: 0px;
     }
 
     main .container .informacoes .informacoes-adicionais .descartavel {
