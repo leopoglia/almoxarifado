@@ -63,7 +63,7 @@ export class NavComponent implements OnInit {
   usuario;
   administrador = [
     { icone: "inventory_2", texto: "Visão geral", link: "/visaogeral", atual: "null" },
-    { icone: "add_circle", texto: "Inserir reservas", link: "/inserirreserva", atual: "null" },
+    { icone: "add_circle", texto: "Inserir reservas", link: "/cadastrar/reserva", atual: "null" },
     { icone: "calendar_month", texto: "Reservas", link: "/reservas", atual: "null" },
     { icone: "category", texto: "Cadastrar produto", link: "/cadastrar/produto", atual: "null" },
     { icone: "person", texto: "Cadastrar usuário", link: "/cadastrar/usuario", atual: "null" },
@@ -72,14 +72,14 @@ export class NavComponent implements OnInit {
 
   atendente = [
     { icone: "inventory_2", texto: "Visão geral", link: "/visaogeral", atual: "null" },
-    { icone: "add_circle", texto: "Inserir reservas", link: "/inserirreserva", atual: "null" },
+    { icone: "add_circle", texto: "Inserir reservas", link: "/cadastrar/reserva", atual: "null" },
     { icone: "calendar_month", texto: "Reservas", link: "/reservas", atual: "null" },
     { icone: "category", texto: "Cadastrar produto", link: "/cadastrar/produto", atual: "null" },
   ]
 
   professor = [
     { icone: "inventory_2", texto: "Visão geral", link: "/visaogeral", atual: "null" },
-    { icone: "add_circle", texto: "Inserir reservas", link: "/inserirreserva", atual: "null" },
+    { icone: "add_circle", texto: "Inserir reservas", link: "/cadastrar/reserva", atual: "null" },
     { icone: "calendar_month", texto: "Reservas", link: "/reservas", atual: "null" },
   ]
 

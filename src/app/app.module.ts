@@ -51,7 +51,6 @@ const routes: Routes = [
       { path: 'produto/:id/historico', canActivate: [CheckLogged], component: HistoricoProdutoComponent }
     ]
   },
-  { path: 'inserirreserva', canActivate: [CheckLogged], component: InserirReservasComponent },
   {
     path: 'reservas', children: [
       { path: '', canActivate: [CheckLogged], component: ReservasComponent },
@@ -61,7 +60,9 @@ const routes: Routes = [
   {
     path: 'cadastrar', children: [
       { path: 'produto', canActivate: [CheckLogged], component: CadastrarProdutoComponent },
-      { path: 'usuario', canActivate: [CheckLogged], component: CadastrarUsuarioComponent }
+      { path: 'usuario', canActivate: [CheckLogged], component: CadastrarUsuarioComponent },
+      { path: 'reserva', canActivate: [CheckLogged], component: InserirReservasComponent },
+
     ]
   },
   { path: 'usuario/aceitar', canActivate: [CheckLogged], component: AceitarUsuariosComponent },

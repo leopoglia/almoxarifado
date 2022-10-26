@@ -59,8 +59,13 @@ export class CabecalhoComponent implements OnInit {
   }
 
   inserirReserva() {
-    this.route.navigate(['/inserirreserva'])
+    this.route.navigate(['/cadastrar/reserva'])
   }
+
+  inserirUsuario() {
+    this.route.navigate(['/cadastrar/usuario'])
+  }
+
 
   input($event) {
     this.inputInformacoes.emit($event.path[0].value);
