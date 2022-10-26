@@ -71,12 +71,7 @@ export class ItemComponent implements OnInit, OnChanges {
     } else {
       this.retornoItem = true;
     }
-
-
-
-
   }
-
 
   link(id) {
     this.route.navigate(['/visaogeral/produto/' + id]);

@@ -1,4 +1,4 @@
-<div class="usuario" *ngFor="let usuario of usuarios">
+<div class="usuario" *ngFor="let usuario of filter()">
 
   <div class="flex-usuario">
     <img class="usuario-imagem" [src]="usuario.imagem" alt="Imagem do usuário">
@@ -28,9 +28,11 @@
   <div *ngIf="usuario.aceito == 'sim'" class="aprovado">
     <p>Usuário aceito</p>
   </div>
- 
+
 
   <div *ngIf="usuario.aceito == 'recusado'" class="reprovado">
     <p>Usuário recusado</p>
   </div>
 </div>
+
+<div class="erro" *ngIf="retornoItem"><span>Nenhum usuário encontrado.</span></div>
