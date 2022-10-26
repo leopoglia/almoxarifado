@@ -102,7 +102,7 @@ const routes: Routes = [
     AlertasComponent,
     ItemGridComponent,
     EsqueceuASenhaComponent,
-    HistoricoProdutoComponent
+    HistoricoProdutoComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
