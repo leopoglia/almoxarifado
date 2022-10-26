@@ -1,17 +1,13 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-aceitar-usuarios',
   templateUrl: './aceitar-usuarios.component.html',
   styleUrls: ['./aceitar-usuarios.component.css']
 })
-export class AceitarUsuariosComponent implements OnInit, OnChanges {
+export class AceitarUsuariosComponent implements OnInit {
 
   buscaInput: string = '';
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(this.buscaInput)
-  }
 
   constructor() { }
 
@@ -26,6 +22,7 @@ export class AceitarUsuariosComponent implements OnInit, OnChanges {
 
   inputInformacoes($event) {
     this.buscaInput = $event;
+
   }
 
 }
