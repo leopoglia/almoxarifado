@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root'
 })
-export class UsuariosService {
+export class ReservaService {
     url: string = "localhost:8080/api"
 
     criarReserva(dataRetirada, dataDevolucao, usuario, produtos) {
