@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { a } from '@angular/core/src/render3';
 import { Router } from '@angular/router';
 import { UsuariosService } from '../../services/usuarios.service';
 
@@ -24,19 +23,25 @@ export class LoginComponent implements OnInit {
 
   entrar() {
     localStorage.setItem('usuario', this.usuario);
-    localStorage.setItem('senha', this.senha);
-
 
     this.usuarioService.login(this.usuario, this.senha)
       .then(resultado => {
-        if (resultado.hasOwnProperty("user")) {
-          this.route.navigate(['visaogeral']);
+
+        if (resultado.status != 500) {
+          localStorage.setItem('cargo', resultado.cargo)
+          localStorage.setItem('foto', resultado.imagem)
+          this.route.navigate(['/visaogeral']);
         } else {
           this.route.navigate(['/']);
         }
+
       })
       .then(resolvido => {
       }).catch(erro => {
+        console.log("erro -> " + erro);
+
+        this.route.navigate(['/']);
+
       })
 
 

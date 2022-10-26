@@ -18,7 +18,7 @@ export class PerfilComponent implements OnInit {
 
   list;
   usuarios;
-  imagem;
+  imagem = localStorage.getItem("foto");
 
   ngOnInit() {
     localStorage.setItem('atual', 'perfil')
@@ -26,13 +26,6 @@ export class PerfilComponent implements OnInit {
     if(localStorage.getItem('menu') == 'aberto'){
       localStorage.setItem('menu', 'abrir')
     }
-
-    this.usuarioService.buscarUsuarioEspecifico(this.usuario)
-    .then(resultado => {
-      this.list = resultado;
-      this.usuarios = this.list.user;
-      this.imagem = this.usuarios.IMAGEM;
-    })
 
   }
 

@@ -16,12 +16,7 @@ export class NavBarComponent implements OnInit {
     private usuarioService: UsuariosService) { }
 
   ngOnInit() {
-    this.usuarioService.buscarUsuarioEspecifico(this.usuario)
-    .then(resultado => {
-      this.list = resultado;
-      this.usuarios = this.list.user;
-      this.imagem = this.usuarios.IMAGEM;
-    })
+    
   }
 
   perfil(){
@@ -31,6 +26,6 @@ export class NavBarComponent implements OnInit {
   
   list;
   usuarios;
-  imagem;
+  imagem = localStorage.getItem("foto");
 
 }
