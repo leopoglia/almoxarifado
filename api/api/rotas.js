@@ -170,4 +170,3 @@ inserirRota('/buscar_usuarios', function(dados, resposta) {
     });
 });
 
-//fetch('/api/buscar_usuario', {method: 'POST', body: JSON.stringify({produtoId: 1, pessoaId: 1}), headers: { 'Content-Type': 'application/json'}}).then(function(result){return result.json();}).then(function(dados){console.log(dados)}).catch(function(erro){console.log(erro);})
