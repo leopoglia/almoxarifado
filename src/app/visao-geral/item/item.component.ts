@@ -18,6 +18,7 @@ export class ItemComponent implements OnInit, OnChanges {
   produtos: any;
   tamanho;
   retornoItem: boolean = false;
+  resultado: any;
 
 
   constructor(
@@ -34,10 +35,16 @@ export class ItemComponent implements OnInit, OnChanges {
     if (this.ordernado == false) {
       this.produtoService.buscarProdutos()
         .then(resultado => {
-          console.log("PRODUTOS --> " + resultado)
-          this.list = resultado;
-          this.produtos = this.list.list;
-          this.tamanho = this.produtos.length;
+          this.resultado = resultado;
+          if (this.resultado.length > 0) {
+            console.log("PRODUTOS --> " + resultado)
+            this.list = resultado;
+            this.produtos = this.list.list;
+            this.tamanho = this.produtos.length;
+            this.retornoItem = false;
+          } else {
+            this.retornoItem = true;
+          }
         }).catch(erro => {
           console.log('ERRO AO BUSCAR USUÁRIOS', erro)
         })
@@ -59,6 +66,11 @@ export class ItemComponent implements OnInit, OnChanges {
     if (this.buscar == '') {
       return this.produtos;
     }
+
+    if (this.produtos == undefined || this.produtos.length == 0) {
+      return this.produtos;
+    }
+
 
     if (this.produtos.filter((item) => {
       return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
