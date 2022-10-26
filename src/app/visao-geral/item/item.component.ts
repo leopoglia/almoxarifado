@@ -14,6 +14,13 @@ import { ProdutoService } from 'src/app/services/produto.service';
 export class ItemComponent implements OnInit, OnChanges {
 
   @Input() ordernado: boolean;
+  @Input() buscar: string;
+
+
+  list;
+  produtos;
+  tamanho;
+
 
   constructor(
     private route: Router,
@@ -46,14 +53,19 @@ export class ItemComponent implements OnInit, OnChanges {
       }
     }
 
+    if (changes.buscar) {
+      if (this.buscar != '') {
+        this.produtos = this.produtos.filter((item) => {
+          return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
+        })
 
+        console.log(this.produtos)
 
+      } else {
+        this.produtos = this.list.list;
+      }
+    }
   }
-
-
-  list;
-  produtos;
-  tamanho;
 
   link(id) {
     this.route.navigate(['/visaogeral/produto/' + id]);

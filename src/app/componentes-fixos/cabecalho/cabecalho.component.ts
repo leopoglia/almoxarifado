@@ -9,12 +9,20 @@ import { Router } from '@angular/router';
 
 export class CabecalhoComponent implements OnInit {
 
+  situacaofiltro = false;
+  alteraTabela: boolean = true;
+  ordernaTabela: boolean = false;
+  visaogeral: boolean = false;
+  local;
+  urlAtual = window.location.pathname;
 
 
   constructor(private route: Router) { }
 
   @Output() posicaoTabelas = new EventEmitter();
   @Output() ordenardarTabela = new EventEmitter();
+  @Output() inputInformacoes = new EventEmitter<string>();
+
 
 
   ngOnInit() {
@@ -28,13 +36,6 @@ export class CabecalhoComponent implements OnInit {
     }
   }
 
-  situacaofiltro = false;
-  alteraTabela: boolean = true;
-  ordernaTabela: boolean = false;
-  visaogeral: boolean = false;
-  local;
-  urlAtual = window.location.pathname;
-
   filtro() {
     if (this.situacaofiltro == true) {
       this.situacaofiltro = false;
@@ -43,7 +44,7 @@ export class CabecalhoComponent implements OnInit {
     }
   }
 
-  ordenar(){
+  ordenar() {
     this.ordernaTabela = !this.ordernaTabela;
     this.ordenardarTabela.emit(this.ordernaTabela);
   }
@@ -59,5 +60,9 @@ export class CabecalhoComponent implements OnInit {
 
   inserirReserva() {
     this.route.navigate(['/inserirreserva'])
+  }
+
+  input($event) {
+    this.inputInformacoes.emit($event.path[0].value);
   }
 }

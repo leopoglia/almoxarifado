@@ -8,6 +8,8 @@
 <body>
     <app-header></app-header>
     <app-nav></app-nav>
+    <app-alertas *ngIf="alerta" [alerta]="alertar"></app-alertas>
+
 
     <main>
 
@@ -69,7 +71,7 @@
                 </div>
 
                 <div class="rodape">
-                    <button>Finalizar</button>
+                    <button  (click)="cadastrarReserva()">Finalizar</button>
                 </div>
 
             </div>

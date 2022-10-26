@@ -10,28 +10,34 @@ export class CadastrarProdutoComponent implements OnInit {
 
   constructor(private produtoService: ProdutoService) { }
 
-  nome:string;
-  caracteristica:string;
-  quantidade:number;
-  detalhes:string;
-  localizacao:string;
-  situacaolocalizacao:boolean = false;
-  situacaoclassificacao:boolean = false;
+  nome: string;
+  caracteristica: string;
+  quantidade: number;
+  detalhes: string;
+  localizacao: string;
+  situacaolocalizacao: boolean = false;
+  situacaoclassificacao: boolean = false;
   img64;
+  alerta: boolean = false;
+  alertar = "Produto cadastrado com sucesso!";
 
   ngOnInit() {
     localStorage.setItem('atual', '4');
 
-    if(localStorage.getItem('menu') == 'aberto'){
+    if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
     }
   }
 
-  cadastrarProduto(){
+  cadastrarProduto() {
     // this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.detalhes, this.img64).then(resultado => {console.log(resultado)});
 
-      localStorage.setItem("alerta", "true")
-      location.reload();
+    this.alerta = true
+
+    setTimeout(() => {
+      this.alerta = false
+    }, 1000 * 10);
+
 
     this.nome = "";
     this.caracteristica = "";
@@ -45,30 +51,30 @@ export class CadastrarProdutoComponent implements OnInit {
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      this.img64 = reader.result;    
+      this.img64 = reader.result;
     };
   }
 
-  situacaoLocalizacao(){
-    if(this.situacaolocalizacao == true){
+  situacaoLocalizacao() {
+    if (this.situacaolocalizacao == true) {
       this.situacaolocalizacao = false;
-    }else{
+    } else {
       this.situacaolocalizacao = true;
     }
   }
 
-  classificacao(){
-    if(this.situacaoclassificacao == true){
+  classificacao() {
+    if (this.situacaoclassificacao == true) {
       this.situacaoclassificacao = false;
-    }else{
+    } else {
       this.situacaoclassificacao = true;
     }
   }
 
-  fechou($event){
-    if($event == 1){
+  fechou($event) {
+    if ($event == 1) {
       this.situacaoLocalizacao();
-    }else{
+    } else {
       this.classificacao();
     }
   }

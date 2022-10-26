@@ -17,4 +17,16 @@ export class InserirReservasComponent implements OnInit {
     }
   }
 
+  alertar = "Reserva feita com sucesso!";
+  alerta:boolean = false;
+
+
+
+  cadastrarReserva(){
+    this.alerta = true;
+
+    setTimeout(() => {
+      this.alerta = false;
+    }, 1000 * 10);
+  }
 }

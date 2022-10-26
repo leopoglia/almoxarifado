@@ -1,5 +1,4 @@
 import { Component, OnInit, ComponentFactoryResolver, Input } from '@angular/core';
-import { NavComponent } from 'src/app/componentes-fixos/nav/nav.component';
 
 @Component({
   selector: 'app-visao-geral',
@@ -8,9 +7,10 @@ import { NavComponent } from 'src/app/componentes-fixos/nav/nav.component';
 })
 export class VisaoGeralComponent implements OnInit {
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
-  }
-
+  posicao = true;
+  item: any = document.querySelector("posicao");
+  tabelaOrdenada = false;
+  buscaInput: string = '';
 
   ngOnInit() {
     localStorage.setItem('atual', '1');
@@ -20,19 +20,22 @@ export class VisaoGeralComponent implements OnInit {
     }
   }
 
-  posicao = true;
-  item: any = document.querySelector("posicao");
-  tabelaOrdenada = false;
+
 
   receberPedido($event) {
     this.posicao = $event;
 
-    if(this.posicao){
+    if (this.posicao) {
 
     }
   }
 
   ordernarTabela($event) {
     this.tabelaOrdenada = $event;
+  }
+
+  inputInformacoes($event) {
+    console.log($event);
+    this.buscaInput = $event;
   }
 }

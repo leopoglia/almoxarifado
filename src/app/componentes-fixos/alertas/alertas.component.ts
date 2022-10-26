@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-alertas',
@@ -9,12 +9,11 @@ export class AlertasComponent implements OnInit {
 
   constructor() { }
 
+  @Input() alerta;
+
   ngOnInit() {
-    setTimeout(() => {
-      this.ligado = "false";
-      localStorage.setItem("alerta", "false");
-    }, 9000);
+
   }
 
-  ligado = localStorage.getItem("alerta");
+  ligado: boolean = false;
 }

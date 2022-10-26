@@ -9,7 +9,7 @@
     <div class="pesquisa">
 
         <div class="input">
-            <input id="input" type="text" autocomplete="off" required>
+            <input id="input" type="text" autocomplete="off" (change)="input($event)" required>
             <label for="input">Pesquise aqui</label>
             <span class="material-symbols-outlined">
                 search

@@ -6,8 +6,11 @@
 </head>
 
 <body>
+    <app-alertas *ngIf="alerta" [alerta]="alertar"></app-alertas>
     <app-modal-adicao *ngIf="situacaolocalizacao" item="1" (fechou)="fechou($event)"></app-modal-adicao>
     <app-modal-adicao *ngIf="situacaoclassificacao" item="2" (fechou)="fechou($event)"></app-modal-adicao>
+
+
     <app-header></app-header>
     <app-nav></app-nav>
 

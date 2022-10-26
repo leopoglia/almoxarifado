@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalhesReservaComponent implements OnInit {
 
+  permissao = false;
+  modaldevolucao = false;
+  alerta: boolean = false;
+  alertar = "Devolvido com sucesso!";
+
   constructor() { }
 
   ngOnInit() {
@@ -19,9 +24,6 @@ export class DetalhesReservaComponent implements OnInit {
     }
   }
 
-  permissao = false;
-  modaldevolucao = false;
-
   produtos = [
     { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", "nome": "Abracadeira para poste", "localizacao": "P3CEA8", "descartavel": "Descartavel", "unidades": 100, "baixa": false }]
 
@@ -32,5 +34,6 @@ export class DetalhesReservaComponent implements OnInit {
 
   devolver() {
     this.modaldevolucao = !this.modaldevolucao;
+
   }
 }

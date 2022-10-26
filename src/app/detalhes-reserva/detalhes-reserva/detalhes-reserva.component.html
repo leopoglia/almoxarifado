@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../src/icone.png" type="image/x-icon">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-    <title>Visão Geral</title>
-</head>
-
 <body>
-
     <app-modal-adicao *ngIf="modaldevolucao" item="4" (fechou)="fechou($event)"></app-modal-adicao>
+    <app-alertas *ngIf="alerta" [alerta]="alertar"></app-alertas>
+
     <app-header></app-header>
     <app-nav></app-nav>
 
@@ -54,8 +45,7 @@
                             <div class="produto" *ngFor="let item of produtos">
                                 <div class="informacoes">
                                     <div class="imagem">
-                                        <img [src]="item.imagem"
-                                            alt="Imagem do produto">
+                                        <img [src]="item.imagem" alt="Imagem do produto">
                                     </div>
                                     <div class="nome">{{item.nome}}
                                     </div>
@@ -69,11 +59,13 @@
                                     <div class="quantidade">{{item.unidades}} Unidades</div>
 
                                     <div *ngIf="item.baixa == false">
-                                        <button class="baixa" *ngIf="permissao" (click)="darBaixa(item)">Dar baixa</button>
+                                        <button class="baixa" *ngIf="permissao" (click)="darBaixa(item)">Dar
+                                            baixa</button>
                                     </div>
 
                                     <div *ngIf="item.baixa == true">
-                                        <button class="baixa" *ngIf="permissao" (click)="devolver(item)">Devolver</button>
+                                        <button class="baixa" *ngIf="permissao"
+                                            (click)="devolver(item)">Devolver</button>
                                     </div>
                                 </div>
 

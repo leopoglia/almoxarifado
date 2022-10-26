@@ -13,6 +13,9 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class ItemGridComponent implements OnInit {
 
+  @Input() buscar: string;
+
+
   constructor(
     private route: Router,
     private produtoService: ProdutoService,

@@ -6,9 +6,12 @@
 </head>
 
 <body>
+
+    <app-alertas *ngIf="alerta" [alerta]="alertar"></app-alertas>
+
     <app-header></app-header>
     <app-nav></app-nav>
-    
+
     <main>
 
         <div class="container">
@@ -74,7 +77,7 @@
                 </div>
                 <div class="rodape">
 
-                    <button>Cadastrar usuário</button>
+                    <button (click)="cadastrarUsuario()">Cadastrar usuário</button>
                 </div>
 
             </div>
@@ -82,4 +85,5 @@
         </div>
     </main>
 </body>
+
 </html>
