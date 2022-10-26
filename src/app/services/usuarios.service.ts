@@ -61,10 +61,15 @@ export class UsuariosService {
     })
   }
 
-  login(codigo){
+  login(nome, senha){
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuarios/' + codigo, {
-        method: 'GET'
+      fetch(this.url + '/usuarios/', {
+        method: 'POST',
+        body: 
+        JSON.stringify({nome: nome, senha: senha}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }).then(resultado => resultado.json())
         .then(resolvido)
         .catch(rejeitado);
