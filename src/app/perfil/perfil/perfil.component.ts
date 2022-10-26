@@ -22,8 +22,8 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem('atual', 'perfil')
-    
-    if(localStorage.getItem('menu') == 'aberto'){
+
+    if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
     }
 

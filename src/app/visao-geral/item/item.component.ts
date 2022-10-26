@@ -34,6 +34,7 @@ export class ItemComponent implements OnInit, OnChanges {
     if (this.ordernado == false) {
       this.produtoService.buscarProdutos()
         .then(resultado => {
+          console.log("PRODUTOS --> " + resultado)
           this.list = resultado;
           this.produtos = this.list.list;
           this.tamanho = this.produtos.length;

@@ -8,12 +8,12 @@ export class ProdutoService {
 
   constructor() { }
 
-  url: string = "localhost:8080/api";
+  url: string = "http://localhost:8080/api";
 
   buscarProdutos() {
     return new Promise((resolvido, rejeitado) => {
 
-      fetch(this.url +'/produtos', {
+      fetch(this.url + '/produtos', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -46,11 +46,11 @@ export class ProdutoService {
     })
   }
 
-  cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem){
+  cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem) {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/produtos', {
         method: 'POST',
-        body: JSON.stringify({nome: nome, caracteristicas: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: imagem}),
+        body: JSON.stringify({ nome: nome, caracteristicas: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: imagem }),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -60,11 +60,11 @@ export class ProdutoService {
     })
   }
 
-  editarProduto(codigo, nome, caracteristica, quantidade, descartavel, imagem){
+  editarProduto(codigo, nome, caracteristica, quantidade, descartavel, imagem) {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/produtos/' + codigo, {
         method: 'PUT',
-        body: JSON.stringify({nome: nome, caracteristicas: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: imagem}),
+        body: JSON.stringify({ nome: nome, caracteristicas: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: imagem }),
         headers: {
           'Content-Type': 'application/json'
         }
