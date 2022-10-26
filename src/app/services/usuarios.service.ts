@@ -6,6 +6,9 @@ import { E } from '@angular/core/src/render3';
 })
 export class UsuariosService {
 
+
+  url: string = 'http://localhost:8080';
+
   constructor() { }
 
   criarUsuarios(matricula, email, senha, nome, imagem) {
