@@ -8,11 +8,13 @@ export class ProdutoService {
 
   constructor() { }
 
+  url: string = "localhost:8080/api";
+
   buscarProdutos() {
     return new Promise((resolvido, rejeitado) => {
 
-      fetch('http://localhost:3000/api/buscar_produtos', {
-        method: 'POST',
+      fetch(this.url +'/produtos', {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         }
@@ -25,23 +27,30 @@ export class ProdutoService {
   buscarProduto(codigo) {
     return new Promise((resolvido, rejeitado) => {
 
-      fetch('http://localhost:3000/api/buscar_produto', {
-        method: 'POST',
-        body: JSON.stringify({codigo: codigo}),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+      fetch(this.url + '/produtos/' + codigo, {
+        method: 'GET'
       }).then(resultado => resultado.json())
         .then(resolvido)
         .catch(rejeitado);
     })
   }
 
-  cadastrarProduto(nome, caracteristica, quantidade, detalhes, imagem){
+  deletarProduto(codigo) {
     return new Promise((resolvido, rejeitado) => {
-      fetch('http://localhost:3000/api/criar_produto', {
+
+      fetch(this.url + '/produtos/' + codigo, {
+        method: 'DELETE'
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
+  cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem){
+    return new Promise((resolvido, rejeitado) => {
+      fetch(this.url + '/produtos', {
         method: 'POST',
-        body: JSON.stringify({nome: nome, caracteristicas: caracteristica, quantidade: quantidade, detalhes: detalhes, imagem: imagem}),
+        body: JSON.stringify({nome: nome, caracteristicas: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: imagem}),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -51,4 +60,17 @@ export class ProdutoService {
     })
   }
 
+  editarProduto(codigo, nome, caracteristica, quantidade, descartavel, imagem){
+    return new Promise((resolvido, rejeitado) => {
+      fetch(this.url + '/produtos/' + codigo, {
+        method: 'PUT',
+        body: JSON.stringify({nome: nome, caracteristicas: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: imagem}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
 }

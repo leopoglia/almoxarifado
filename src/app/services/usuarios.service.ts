@@ -7,13 +7,13 @@ import { E } from '@angular/core/src/render3';
 export class UsuariosService {
 
 
-  url: string = 'http://localhost:8080';
+  url: string = 'http://localhost:8080/api';
 
   constructor() { }
 
   criarUsuarios(matricula, email, senha, nome, imagem) {
     return new Promise((resolvido, rejeitado) => {
-      fetch('http://localhost:3000/api/criar_usuario', {
+      fetch(this.url + '/usuarios', {
         method: 'POST',
         body: 
         JSON.stringify({matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem}),
@@ -28,7 +28,7 @@ export class UsuariosService {
 
   buscarUsuarios(){
     return new Promise((resolvido, rejeitado) => {
-      fetch('http://localhost:3000/api/buscar_usuarios', {
+      fetch(this.url + '/usuarios', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ export class UsuariosService {
 
   login(nome, senha){
     return new Promise((resolvido, rejeitado) => {
-      fetch('http://localhost:3000/api/login', {
+      fetch(this.url + '/usuarios', {
         method: 'POST',
         body:JSON.stringify({nome: nome, senha: senha}),
         headers: {
@@ -55,7 +55,7 @@ export class UsuariosService {
 
   buscarUsuarioEspecifico(nome){
     return new Promise((resolvido, rejeitado) => {
-      fetch('http://localhost:3000/api/buscar_usuario_especifico', {
+      fetch(this.url + '/usuarios', {
         method: 'POST',
         body:
         JSON.stringify({nome: nome}),
@@ -67,5 +67,4 @@ export class UsuariosService {
         .catch(rejeitado);
     })
   }
-
 }
