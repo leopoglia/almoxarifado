@@ -29,7 +29,7 @@ export class UsuariosService {
   buscarUsuarios(){
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuarios', {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         }
@@ -39,26 +39,12 @@ export class UsuariosService {
     })
   }
 
-  login(nome, senha){
+  buscarUsuarioEspecifico(codigo){
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuarios', {
-        method: 'POST',
-        body:JSON.stringify({nome: nome, senha: senha}),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(resultado => resultado.json())
-        .then(resolvido)
-        .catch(rejeitado);
-    })
-  }
-
-  buscarUsuarioEspecifico(nome){
-    return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuarios', {
-        method: 'POST',
+        method: 'GET',
         body:
-        JSON.stringify({nome: nome}),
+        JSON.stringify({codigo: codigo}),
         headers: {
           'Content-Type': 'application/json'
         }
