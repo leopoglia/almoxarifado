@@ -1,19 +1,14 @@
-import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
+import { Component, OnInit,  Input } from '@angular/core';
 
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.css']
 })
-export class UsuarioComponent implements OnInit, OnChanges {
+export class UsuarioComponent implements OnInit {
 
   @Input() buscar: string;
   retornoItem: boolean = false;
-
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(this.buscar)
-  }
 
   constructor() { }
 

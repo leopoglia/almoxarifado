@@ -26,8 +26,8 @@
             </span>
         </div>
 
-
-        <div class="ordernar" (click)="ordenar()">
+        
+        <div class="ordernar" *ngIf="local != 'Aceitar usuários'" (click)="ordenar()">
             <span class="material-symbols-outlined">
                 swap_vert
             </span>
