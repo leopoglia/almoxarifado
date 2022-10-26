@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, NgZone } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { ProdutoService } from 'src/app/services/produto.service';
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit, OnChanges {
 
@@ -18,13 +18,14 @@ export class ItemComponent implements OnInit, OnChanges {
 
 
   list;
-  produtos;
+  produtos: any;
   tamanho;
 
 
   constructor(
     private route: Router,
     private produtoService: ProdutoService,
+    private zone: NgZone
   ) {
   }
 
@@ -47,6 +48,8 @@ export class ItemComponent implements OnInit, OnChanges {
       if (changes.ordernado) {
         if (this.produtos) {
           this.produtos = this.produtos.sort((a, b) => (a.NOME > b.NOME) ? 1 : ((b.NOME > a.NOME) ? -1 : 0));
+
+          console.log(this.produtos);
         } else {
           this.produtos = this.list.list;
         }
@@ -55,9 +58,11 @@ export class ItemComponent implements OnInit, OnChanges {
 
     if (changes.buscar) {
       if (this.buscar != '') {
+
         this.produtos = this.produtos.filter((item) => {
           return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
         })
+
 
         console.log(this.produtos)
 
