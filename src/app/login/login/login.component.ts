@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   senha: string = '';
   visualizacao: boolean = false;
   tipoSenha: string = 'password';
+  resultado: any;
 
   ngOnInit() {
     localStorage.clear();
@@ -26,10 +27,11 @@ export class LoginComponent implements OnInit {
 
     this.usuarioService.login(this.usuario, this.senha)
       .then(resultado => {
+        this.resultado = resultado;
 
-        if (resultado.status != 500) {
-          localStorage.setItem('cargo', resultado.cargo)
-          localStorage.setItem('foto', resultado.imagem)
+        if (this.resultado.status != 500) {
+          localStorage.setItem('cargo', this.resultado.cargo)
+          localStorage.setItem('foto', this.resultado.imagem)
           this.route.navigate(['/visaogeral']);
         } else {
           this.route.navigate(['/']);
