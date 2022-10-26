@@ -53,23 +53,19 @@ export class ItemComponent implements OnInit, OnChanges {
 
   }
 
-  filter(produtos) {
+  filter() {
 
-
-    if (produtos.filter((item) => {
+    if (this.produtos.filter((item) => {
       return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
     }).length > 0) {
       this.retornoItem = false;
 
-      return  produtos.filter((item) => {
+      return this.produtos.filter((item) => {
         return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
       });
 
-
     } else {
       this.retornoItem = true;
-      console.log('NÃO ENCONTROU NENHUM ITEM');
-
     }
   }
 
