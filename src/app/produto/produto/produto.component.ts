@@ -51,6 +51,14 @@ export class ProdutoComponent implements OnInit {
     }
   }
 
+  buscarUsuario() {
+    if ((localStorage.getItem('usuario') == "Administrador") || (localStorage.getItem('usuario') == "Atendente")) {
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 
   salvarEdicao() {
     this.salvar = !this.salvar;

@@ -24,7 +24,7 @@
                     <div class="titulo"><span>Dados gerais do produto</span></div>
 
                     <div class="acoes">
-                        <a class="historico" routerLink="historico">
+                        <a *ngIf="buscarUsuario()" class="historico" routerLink="historico">
 
                             <button class="editar">
                                 <span class="material-symbols-outlined">
@@ -34,7 +34,7 @@
                         </a>
 
 
-                        <button class="editar">
+                        <button *ngIf="buscarUsuario()" class="editar">
                             <span class="material-symbols-outlined" (click)="editar()">
                                 edit
                             </span>
