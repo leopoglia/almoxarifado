@@ -5,6 +5,12 @@ main {
     z-index: 2;
 }
 
+.flex{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
 main .container {
     padding-top: 20px;
     height: 100%;
@@ -296,6 +302,10 @@ main .container .informacoes .classificacao select {
 
 main .container .informacoes .informacoes-adicionais .descartavel {
     display: grid;
+}
+
+main .icone-anexo{
+    width: 50px;
 }
 
 .botao {
