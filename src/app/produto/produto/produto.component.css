@@ -9,6 +9,7 @@ main {
     display: flex;
     align-items: center;
     margin-left: 20px;
+    margin-top: 10px;
 }
 
 main .container {
@@ -302,10 +303,6 @@ main .container .informacoes .classificacao select {
 
 main .container .informacoes .informacoes-adicionais .descartavel {
     display: grid;
-}
-
-main .icone-anexo{
-    width: 50px;
 }
 
 .botao {
