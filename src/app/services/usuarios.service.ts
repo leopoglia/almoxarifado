@@ -29,7 +29,29 @@ export class UsuariosService {
   buscarUsuarios(){
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuarios', {
-        method: 'GET',
+        method: 'GET'
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
+  buscarUsuario(codigo){
+    return new Promise((resolvido, rejeitado) => {
+      fetch(this.url + '/usuarios/' + codigo, {
+        method: 'GET'
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
+  editarUsuario(codigo, matricula, email, senha, nome, imagem) {
+    return new Promise((resolvido, rejeitado) => {
+      fetch(this.url + '/usuarios/' + codigo, {
+        method: 'POST',
+        body: 
+        JSON.stringify({matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem}),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -39,18 +61,14 @@ export class UsuariosService {
     })
   }
 
-  buscarUsuarioEspecifico(codigo){
+  login(codigo){
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuarios', {
-        method: 'GET',
-        body:
-        JSON.stringify({codigo: codigo}),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+      fetch(this.url + '/usuarios/' + codigo, {
+        method: 'GET'
       }).then(resultado => resultado.json())
         .then(resolvido)
         .catch(rejeitado);
     })
   }
+
 }
