@@ -13,7 +13,7 @@ export class UsuariosService {
 
   criarUsuarios(matricula, email, senha, nome, imagem) {
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuarios', {
+      fetch(this.url + '/usuario', {
         method: 'POST',
         body: 
         JSON.stringify({matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem}),
@@ -28,7 +28,7 @@ export class UsuariosService {
 
   buscarUsuarios(){
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuarios', {
+      fetch(this.url + '/usuario', {
         method: 'GET'
       }).then(resultado => resultado.json())
         .then(resolvido)
@@ -38,7 +38,7 @@ export class UsuariosService {
 
   buscarUsuario(codigo){
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuarios/' + codigo, {
+      fetch(this.url + '/usuario/' + codigo, {
         method: 'GET'
       }).then(resultado => resultado.json())
         .then(resolvido)
@@ -48,7 +48,7 @@ export class UsuariosService {
 
   editarUsuario(codigo, matricula, email, senha, nome, imagem) {
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuarios/' + codigo, {
+      fetch(this.url + '/usuario/' + codigo, {
         method: 'POST',
         body: 
         JSON.stringify({matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem}),
@@ -63,7 +63,7 @@ export class UsuariosService {
 
   login(nome, senha){
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuarios/', {
+      fetch(this.url + '/usuario/login', {
         method: 'POST',
         body: 
         JSON.stringify({nome: nome, senha: senha}),
