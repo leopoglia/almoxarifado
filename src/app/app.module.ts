@@ -34,6 +34,7 @@ import { AlertasComponent } from './componentes-fixos/alertas/alertas.component'
 import { EsqueceuASenhaComponent } from './esqueceu-a-senha/esqueceu-a-senha.component';
 import { HistoricoProdutoComponent } from './historico-produto/historico-produto.component';
 
+
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
   {

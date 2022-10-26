@@ -1,9 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/services/produto.service';
-
 
 
 @Component({
@@ -20,6 +17,7 @@ export class ItemComponent implements OnInit, OnChanges {
   list;
   produtos: any;
   tamanho;
+  retornoItem: boolean = false;
 
 
   constructor(
@@ -47,33 +45,37 @@ export class ItemComponent implements OnInit, OnChanges {
       if (changes.ordernado) {
         if (this.produtos) {
           this.produtos = this.produtos.sort((a, b) => (a.NOME > b.NOME) ? 1 : ((b.NOME > a.NOME) ? -1 : 0));
-
-          console.log(this.produtos);
         } else {
           this.produtos = this.list.list;
         }
       }
     }
 
-    if (changes.buscar) {
-      if (this.buscar != '') {
+  }
 
-        this.produtos = this.produtos.filter((item) => {
-          return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
-        })
-      } else {
-        this.produtos = this.list.list;
-      }
+  filter(produtos) {
+
+
+    if (produtos.filter((item) => {
+      return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
+    }).length > 0) {
+      this.retornoItem = false;
+
+      return  produtos.filter((item) => {
+        return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
+      });
+
+
+    } else {
+      this.retornoItem = true;
+      console.log('NÃO ENCONTROU NENHUM ITEM');
+
     }
   }
 
+
   link(id) {
     this.route.navigate(['/visaogeral/produto/' + id]);
-  }
-
-  trackHero(index, hero) {
-    console.log(hero);
-    return hero ? hero.id : undefined;
   }
 
 }
