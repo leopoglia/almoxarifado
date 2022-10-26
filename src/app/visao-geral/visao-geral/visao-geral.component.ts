@@ -35,7 +35,6 @@ export class VisaoGeralComponent implements OnInit {
   }
 
   inputInformacoes($event) {
-    console.log($event);
     this.buscaInput = $event;
   }
 }

@@ -55,6 +55,10 @@ export class ItemComponent implements OnInit, OnChanges {
 
   filter() {
 
+    if (this.buscar == '') {
+      return this.produtos;
+    }
+
     if (this.produtos.filter((item) => {
       return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
     }).length > 0) {
@@ -67,6 +71,10 @@ export class ItemComponent implements OnInit, OnChanges {
     } else {
       this.retornoItem = true;
     }
+
+
+
+
   }
 
 
