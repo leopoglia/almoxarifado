@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 
-export class ProdutoService {
+export class HistoricoService {
 
     constructor() { }
 
@@ -12,7 +12,7 @@ export class ProdutoService {
 
     cadastrarHistorico(motivo, data_alteracao, quantidade_alterada, produto) {
         return new Promise((resolvido, rejeitado) => {
-            fetch(this.url + '/produtos', {
+            fetch(this.url + '/historicos', {
                 method: 'POST',
                 body: JSON.stringify({ motivo: motivo, data_alteracao: data_alteracao, quantidade_alterada: quantidade_alterada, produto: {codigo: produto.codigo} }),
                 headers: {
@@ -24,10 +24,10 @@ export class ProdutoService {
         })
     }
 
-    buscarProdutos() {
+    buscarHistorico() {
         return new Promise((resolvido, rejeitado) => {
 
-            fetch(this.url + '/produtos', {
+            fetch(this.url + '/historicos', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
