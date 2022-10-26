@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class ReservaService {
-    url: string = "localhost:8080/api"
+    url: string = "http://localhost:8080/api"
 
     criarReserva(dataRetirada, dataDevolucao, usuario, produtos) {
         return new Promise((resolvido, rejeitado) => {

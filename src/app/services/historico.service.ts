@@ -8,7 +8,7 @@ export class HistoricoService {
 
     constructor() { }
 
-    url: string = "localhost:8080/api";
+    url: string = "http://localhost:8080/api";
 
     cadastrarHistorico(motivo, data_alteracao, quantidade_alterada, produto) {
         return new Promise((resolvido, rejeitado) => {
@@ -24,10 +24,24 @@ export class HistoricoService {
         })
     }
 
-    buscarHistorico() {
+    buscarHistoricos() {
         return new Promise((resolvido, rejeitado) => {
 
             fetch(this.url + '/historicos', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(resultado => resultado.json())
+                .then(resolvido)
+                .catch(rejeitado);
+        })
+    }
+
+    buscarHistorico(codigo) {
+        return new Promise((resolvido, rejeitado) => {
+
+            fetch(this.url + '/historicos' + codigo, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
