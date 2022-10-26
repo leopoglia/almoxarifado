@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, NgZone } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -25,7 +25,6 @@ export class ItemComponent implements OnInit, OnChanges {
   constructor(
     private route: Router,
     private produtoService: ProdutoService,
-    private zone: NgZone
   ) {
   }
 
@@ -62,10 +61,6 @@ export class ItemComponent implements OnInit, OnChanges {
         this.produtos = this.produtos.filter((item) => {
           return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
         })
-
-
-        console.log(this.produtos)
-
       } else {
         this.produtos = this.list.list;
       }
@@ -74,6 +69,11 @@ export class ItemComponent implements OnInit, OnChanges {
 
   link(id) {
     this.route.navigate(['/visaogeral/produto/' + id]);
+  }
+
+  trackHero(index, hero) {
+    console.log(hero);
+    return hero ? hero.id : undefined;
   }
 
 }
