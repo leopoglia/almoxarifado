@@ -71,18 +71,6 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.busca li {
-    list-style: none;
-    padding: 8px 12px;
-    display: none;
-    box-sizing: border-box;
-}
-
-.busca li {
-    cursor: pointer;
-    display: block;
-}
-
 .busca  li:hover {
     background: var(--cinzaclaro3);
 }

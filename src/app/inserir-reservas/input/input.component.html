@@ -1,11 +1,19 @@
 <div class="input">
-    <div class="put">
-        <input type="text" placeholder="Busque o produto aqui..." (keyup)="buscar($event)">
-        <span class="material-symbols-outlined">
+  <div class="put">
+    <input type="text" placeholder="Busque o produto aqui..." (keyup)="buscar($event)">
+    <span class="material-symbols-outlined">
       search
     </span>
-    </div>
-    <div class="busca" id="busca">
+  </div>
+  <div class="busca" id="busca">
 
-    </div>
+    <li *ngFor="let produto of produtos">
+      <div (click)="inserirItem(produto.codigo)">
+        <img [src]="produto.img" alt="">
+        <span>{{produto.nome}}</span>
+      </div>
+    </li>
+
+  </div>
+
 </div>

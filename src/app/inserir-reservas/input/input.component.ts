@@ -57,7 +57,7 @@ export class InputComponent implements OnInit {
           .startsWith(dado.toLocaleLowerCase());
       });
       matrizVazia = matrizVazia.map((data, { }) => {
-        return (data = `<li style="display: flex; align-items: center;"><img src="${data.imagem}" style="width:30px; margin-right: 10px">  ${data.nome}</li>`);
+        return ({ "codigo": data.codigo, "imagem": data.codigo, "nome": data.nome });
       });
       document.querySelector(".input").classList.add("ativo");
       this.sugestoes(matrizVazia);
@@ -67,14 +67,21 @@ export class InputComponent implements OnInit {
 
   };
 
+  inserirItem(codigo) {
+    console.log(codigo)
+  }
+
   sugestoes(lista) {
     let dados;
+
+    console.log(lista)
+
     if (lista.length) {
       dados = lista.join("");
     } else {
       dados = `<li>Invalido</li>`;
     }
-    document.querySelector(".busca").innerHTML = dados;
+    this.busca = dados;
   }
 
 }

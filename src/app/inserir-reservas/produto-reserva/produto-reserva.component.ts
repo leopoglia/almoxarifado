@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoReservaComponent implements OnInit {
 
+  quantidade = 0;
+
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  quantidade = 0;
-
 
   menos() {
     if (this.quantidade > 0) {
@@ -21,6 +21,7 @@ export class ProdutoReservaComponent implements OnInit {
     }
   }
 
+  
   mais() {
     this.quantidade++;
   }
