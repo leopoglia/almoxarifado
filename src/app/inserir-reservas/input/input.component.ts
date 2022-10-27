@@ -8,6 +8,13 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class InputComponent implements OnInit {
 
+  tamanho: number;
+  produtos: any;
+  retornoItem: boolean = false;
+  caixaInput: any = document.querySelector(".input");
+  input: any = document.querySelector("input")
+  busca: any = document.querySelector(".busca");
+
   constructor(
     private produtoService: ProdutoService,
   ) {
@@ -27,7 +34,6 @@ export class InputComponent implements OnInit {
 
         this.produtos = resultado;
         if (this.produtos.length > 0) {
-          this.list = resultado;
           this.produtos = resultado;
           this.tamanho = this.produtos.length;
           this.retornoItem = false;
@@ -41,25 +47,17 @@ export class InputComponent implements OnInit {
 
   }
 
-
-  tamanho: number;
-  produtos:any;
-
-  caixaInput: any = document.querySelector(".input");
-  input: any = document.querySelector("input")
-  busca: any = document.querySelector(".busca");
-
   buscar(event) {
     let dado: any = event.target.value;
     let matrizVazia = [];
     if (dado) {
       matrizVazia = this.produtos.filter((data, { }) => {
-        return data.name
+        return data.nome
           .toLocaleLowerCase()
           .startsWith(dado.toLocaleLowerCase());
       });
       matrizVazia = matrizVazia.map((data, { }) => {
-        return (data = `<li style="display: flex; align-items: center;"><img src="${data.imagem}" style="width:30px; margin-right: 10px">  ${data.name}</li>`);
+        return (data = `<li style="display: flex; align-items: center;"><img src="${data.imagem}" style="width:30px; margin-right: 10px">  ${data.nome}</li>`);
       });
       document.querySelector(".input").classList.add("ativo");
       this.sugestoes(matrizVazia);
