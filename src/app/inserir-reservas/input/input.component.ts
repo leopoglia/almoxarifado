@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProdutoService } from 'src/app/services/produto.service';
 
 @Component({
@@ -15,6 +15,8 @@ export class InputComponent implements OnInit {
   input: any = document.querySelector("input")
   busca: any = document.querySelector(".busca");
   matrizVazia: any;
+  @Output() adicionarItem = new EventEmitter<string>();
+
 
 
   constructor(
@@ -74,6 +76,8 @@ export class InputComponent implements OnInit {
 
   inserirItem(codigo) {
     console.log(codigo)
+    this.adicionarItem.emit(codigo);
+
   }
 
 

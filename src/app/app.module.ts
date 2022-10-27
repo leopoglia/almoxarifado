@@ -27,7 +27,6 @@ import { UsuarioComponent } from './aceitar-usuarios/usuario/usuario.component';
 import { FiltroComponent } from './componentes-fixos/filtro/filtro.component';
 import { NavBarComponent } from './componentes-fixos/nav-bar/nav-bar.component';
 import CheckLogged from './CheckLogged';
-import { ProdutoReservaComponent } from './inserir-reservas/produto-reserva/produto-reserva.component';
 import { ModalAdicaoComponent } from './cadastrar-produto/modal-adicao/modal-adicao.component';
 import { InputComponent } from './inserir-reservas/input/input.component';
 import { AlertasComponent } from './componentes-fixos/alertas/alertas.component';
@@ -97,7 +96,6 @@ const routes: Routes = [
     UsuarioComponent,
     FiltroComponent,
     NavBarComponent,
-    ProdutoReservaComponent,
     ModalAdicaoComponent,
     InputComponent,
     AlertasComponent,
