@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,6 +12,10 @@ export class InserirReservasComponent implements OnInit {
   alerta: boolean = false;
   produtos: any[] = [];
   quantidadeAdicionada: number = 0;
+  dataRetirada: Date;
+  dataDevolucao: Date;
+  horaRetirada: Time;
+  horaDevolucao: Time;
 
   constructor() { }
 
@@ -23,6 +28,14 @@ export class InserirReservasComponent implements OnInit {
   }
 
   cadastrarReserva() {
+
+    console.log(this.dataRetirada);
+    console.log(this.dataDevolucao);
+    console.log(this.horaRetirada);
+    console.log(this.horaDevolucao);
+
+    console.log(this.produtos)
+
     this.alerta = true;
 
     setTimeout(() => {
