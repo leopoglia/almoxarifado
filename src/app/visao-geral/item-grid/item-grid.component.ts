@@ -10,19 +10,34 @@ import { ProdutoService } from 'src/app/services/produto.service';
 export class ItemGridComponent implements OnInit, OnChanges {
 
   @Input() buscar: string;
+  @Input() ordernado: boolean;
+
   retornoItem: boolean = false;
   resultado: any;
+  produtos;
+  tamanho;
+
+  constructor(
+    private route: Router,
+    private produtoService: ProdutoService,
+  ) {
+  }
+
+  ngOnInit() {
+
+
+  }
 
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.ordernado == false) {
       this.produtoService.buscarProdutos()
         .then(resultado => {
+          console.log(resultado)
+
           this.resultado = resultado;
           if (this.resultado.length > 0) {
-            console.log("PRODUTOS --> " + resultado)
-            this.list = resultado;
-            this.produtos = this.list.list;
+            this.produtos = resultado;
             this.tamanho = this.produtos.length;
             this.retornoItem = false;
           } else {
@@ -37,13 +52,16 @@ export class ItemGridComponent implements OnInit, OnChanges {
         if (this.produtos) {
           this.produtos = this.produtos.sort((a, b) => (a.NOME > b.NOME) ? 1 : ((b.NOME > a.NOME) ? -1 : 0));
         } else {
-          this.produtos = this.list.list;
+          this.produtos = this.resultado;
         }
       }
     }
   }
 
+
   filter() {
+
+    console.log(this.produtos)
 
     if (this.buscar == '') {
       return this.produtos;
@@ -68,41 +86,6 @@ export class ItemGridComponent implements OnInit, OnChanges {
     }
   }
 
-
-  constructor(
-    private route: Router,
-    private produtoService: ProdutoService,
-  ) {
-  }
-
-  ngOnInit() {
-
-    this.produtoService.buscarProdutos()
-      .then(resultado => {
-        this.list = resultado;
-        this.produtos = this.list.list;
-        this.tamanho = this.produtos.length;
-      }).catch(erro => {
-        console.log('ERRO AO BUSCAR USUÁRIOS', erro)
-      })
-  }
-
-  @Input() ordernado: boolean;
-
-
-
-
-
-
-
-
-
-
-
-
-  list;
-  produtos;
-  tamanho;
 
   link(id) {
     this.route.navigate(['/visaogeral/produto/' + id]);

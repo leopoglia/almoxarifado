@@ -49,7 +49,7 @@
                             <span>Imagem</span>
 
                             <div class="imagem">
-                                <img [src]="item.IMAGEM" alt="">
+                                <img [src]="item.imagem" alt="">
                             </div>
                         </div>
 
@@ -70,13 +70,13 @@
                         <div class="informacoes-grid">
                             <div class="nome">
                                 <span>Nome</span>
-                                <input id="name" type="text" [value]="item.NOME" [disabled]="edita">
+                                <input id="name" type="text" [value]="item.nome" [disabled]="edita">
                             </div>
 
 
                             <div class="descricao">
                                 <span>Características</span>
-                                <textarea [value]="item.DETALHES" [disabled]="edita"></textarea>
+                                <textarea [value]="item.caracteristica" [disabled]="edita"></textarea>
                             </div>
 
 
@@ -84,7 +84,7 @@
                                 <div class="classificacao">
                                     <span>Classificação</span>
                                     <div class="fundo">
-                                        <select name="select" [value]="item.LOCALIZACAO" [disabled]="edita">
+                                        <select name="select" [value]="item.classificacao" [disabled]="edita">
                                             <option value="1">Materiais Elétricos</option>
                                             <option value="2">Ferramenta Mecânica</option>
                                             <option value="3">Componente Eltrônico</option>
@@ -96,7 +96,7 @@
 
                                 <div class="quantidade">
                                     <span>Quantidade</span>
-                                    <input type="number" [value]="item.LOCALIZACAO" [disabled]="edita">
+                                    <input type="number" [value]="item.quantidade" [disabled]="edita">
                                 </div>
                             </div>
 
@@ -107,7 +107,7 @@
 
                         <div class="localizacao">
                             <span>Localização</span>
-                            <input type="text" [placeholder]="item.LOCALIZACAO" [value]="item.LOCALIZACAO"
+                            <input type="text" [placeholder]="item.localizacao" [value]="item.localizacao"
                                 [disabled]="edita">
                         </div>
 
@@ -136,7 +136,7 @@
                         <div class="descartavel">
                             <span>Descartavel</span>
                             <label class="botao">
-                                <input type="checkbox" [disabled]="edita">
+                                <input type="checkbox" [disabled]="edita" [checked]="item.descartavel">
                                 <span class="bola"></span>
                             </label>
                         </div>

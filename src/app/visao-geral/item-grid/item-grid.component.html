@@ -1,12 +1,12 @@
-<div class="produto" *ngFor="let item of  filter()" (click)="link(item.CODIGO)">
+<div class="produto" *ngFor="let item of  filter()" (click)="link(item.codigo)">
     <div class="flex">
         <div class="imagem">
-            <img [src]="item.IMAGEM" alt="">
+            <img [src]="item.imagem" alt="">
         </div>
         <div class="informacoes">
-            <p class="titulo">{{item.NOME}}</p>
+            <p class="titulo">{{item.nome}}</p>
             <div class="quantidade-produto">
-                <div class="quantidade">{{item.QUANTIDADE}}</div>
+                <div class="quantidade">{{item.quantidade}}</div>
                 <p>Unidades</p>
             </div>
         </div>

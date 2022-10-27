@@ -10,6 +10,13 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class ProdutoComponent implements OnInit {
 
+  edita: boolean = true;
+  modalQuantidade: boolean = false;
+  salvar: boolean = false;
+  list;
+  produtos = [];
+  idParametro;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -20,10 +27,11 @@ export class ProdutoComponent implements OnInit {
   ngOnInit() {
     this.produtoService.buscarProduto(this.idParametro)
       .then(resultado => {
-        this.list = resultado;
-        this.produtos = this.list.list;
+        this.produtos.push(resultado);
+        console.log(this.produtos)
+
       }).catch(erro => {
-        console.log('ERRO AO BUSCAR USUÁRIOS', erro)
+        console.log('ERRO AO BUSCAR PRODUTO', erro)
       })
 
     if (localStorage.getItem('menu') == 'aberto') {
@@ -31,9 +39,6 @@ export class ProdutoComponent implements OnInit {
     }
   }
 
-  edita = true;
-  modalQuantidade: boolean = false;
-  salvar = false;
 
   mostrarHistorico() {
 
@@ -54,11 +59,10 @@ export class ProdutoComponent implements OnInit {
   buscarUsuario() {
     if ((localStorage.getItem('usuario') == "Administrador") || (localStorage.getItem('usuario') == "Atendente")) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
-
 
   salvarEdicao() {
     this.salvar = !this.salvar;
@@ -69,11 +73,5 @@ export class ProdutoComponent implements OnInit {
   fechou() {
     this.salvar = !this.salvar;
   }
-
-
-
-  list;
-  produtos;
-  idParametro;
 }
 
