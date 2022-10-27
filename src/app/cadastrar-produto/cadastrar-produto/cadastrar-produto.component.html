@@ -56,7 +56,7 @@
 
                                 <div class="descricao">
                                     <span>Características</span>
-                                    <textarea [(ngModel)]="detalhes" name="detalhes"></textarea>
+                                    <textarea [(ngModel)]="caracteristica" name="caracteristica"></textarea>
                                 </div>
 
 
@@ -116,7 +116,7 @@
                             <div class="descartavel">
                                 <span>Descartavel</span>
                                 <label class="botao">
-                                    <input type="checkbox" [disabled]="edita">
+                                    <input type="checkbox" (click)="descatavel($event)" [disabled]="edita">
                                     <span class="bola"></span>
                                 </label>
                             </div>

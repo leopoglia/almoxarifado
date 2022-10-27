@@ -47,6 +47,8 @@ export class ProdutoService {
   }
 
   cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem) {
+    console.log(nome, caracteristica, quantidade, descartavel, imagem)
+
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/produtos', {
         method: 'POST',

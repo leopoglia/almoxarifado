@@ -17,6 +17,7 @@ export class CadastrarProdutoComponent implements OnInit {
   localizacao: string;
   situacaolocalizacao: boolean = false;
   situacaoclassificacao: boolean = false;
+  descartavel: boolean = false;
   img64;
   alerta: boolean = false;
   alertar = "Produto cadastrado com sucesso!";
@@ -30,7 +31,12 @@ export class CadastrarProdutoComponent implements OnInit {
   }
 
   cadastrarProduto() {
-    // this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.detalhes, this.img64).then(resultado => {console.log(resultado)});
+    this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.descartavel, this.img64)
+      .then(resultado => {
+        console.log(resultado)
+      }).catch(erro => {
+        console.log('ERRO AO CADASTRAR PRODUTO', erro)
+      })
 
     this.alerta = true
 
@@ -44,6 +50,10 @@ export class CadastrarProdutoComponent implements OnInit {
     this.quantidade = null;
     this.detalhes = "";
     this.localizacao = "";
+  }
+
+  descatavel($event) {
+    this.descartavel = $event.path[0].checked;
   }
 
 

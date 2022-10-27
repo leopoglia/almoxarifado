@@ -35,11 +35,12 @@ export class ItemComponent implements OnInit, OnChanges {
     if (this.ordernado == false) {
       this.produtoService.buscarProdutos()
         .then(resultado => {
+          console.log(resultado)
+
           this.resultado = resultado;
           if (this.resultado.length > 0) {
-            console.log("PRODUTOS --> " + resultado)
             this.list = resultado;
-            this.produtos = this.list.list;
+            this.produtos = resultado;
             this.tamanho = this.produtos.length;
             this.retornoItem = false;
           } else {
@@ -58,10 +59,11 @@ export class ItemComponent implements OnInit, OnChanges {
         }
       }
     }
-
   }
 
   filter() {
+
+    console.log(this.produtos)
 
     if (this.buscar == '') {
       return this.produtos;
