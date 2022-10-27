@@ -19,7 +19,7 @@ export class DetalhesReservaComponent implements OnInit {
       localStorage.setItem('menu', 'abrir')
     }
 
-    if (localStorage.getItem("usuario") == "Administrador" || localStorage.getItem("usuario") == "Atendente") {
+    if (localStorage.getItem("cargo") == "1" || localStorage.getItem("cargo") == "2") {
       this.permissao = true;
     }
   }

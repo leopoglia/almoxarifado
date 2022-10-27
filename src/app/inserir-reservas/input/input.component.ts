@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutoService } from 'src/app/services/produto.service';
 
 @Component({
   selector: 'app-input',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private produtoService: ProdutoService,
+  ) {
   }
 
   ngOnInit() {
@@ -17,16 +20,30 @@ export class InputComponent implements OnInit {
     window.onresize = function () {
       document.getElementById("busca").style.width = ((document.querySelector(".input").clientWidth) + 9) + 'px';
     };
+
+    this.produtoService.buscarProdutos()
+      .then(resultado => {
+        console.log(resultado)
+
+        this.produtos = resultado;
+        if (this.produtos.length > 0) {
+          this.list = resultado;
+          this.produtos = resultado;
+          this.tamanho = this.produtos.length;
+          this.retornoItem = false;
+        } else {
+          this.retornoItem = true;
+        }
+      }).catch(erro => {
+        console.log('ERRO AO BUSCAR USUÁRIOS', erro)
+      })
+
+
   }
 
 
   tamanho: number;
-  produtos = [
-    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
-    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
-    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
-    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", name: "Rele" },
-  ];
+  produtos:any;
 
   caixaInput: any = document.querySelector(".input");
   input: any = document.querySelector("input")
