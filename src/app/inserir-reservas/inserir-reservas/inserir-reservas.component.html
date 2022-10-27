@@ -58,8 +58,7 @@
                             <div class="quantidade">
 
                                 <span class="menos" (click)="menos(produto)">-</span>
-                                <input type="number" class="numero" [(ngModel)]="produto.quantidadeAdicionada"
-                                    [max]="produto.quantidade">
+                                <input type="number" class="numero" [(ngModel)]="produto.quantidadeAdicionada" (change)="mudancaAdicionada(produto)">
                                 <span class="mais" (click)="mais(produto)">+</span>
                                 <span class="titulo">Un.</span>
 

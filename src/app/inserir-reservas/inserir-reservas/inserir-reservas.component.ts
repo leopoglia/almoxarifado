@@ -41,7 +41,6 @@ export class InserirReservasComponent implements OnInit {
 
     $event.quantidadeAdicionada = 0;
 
-    console.log($event)
     this.produtos.push($event);
   }
 
@@ -75,5 +74,11 @@ export class InserirReservasComponent implements OnInit {
     }
 
     produto.quantidadeAdicionada++;
+  }
+
+  mudancaAdicionada(produto) {
+    if (produto.quantidadeAdicionada > produto.quantidade) {
+      produto.quantidadeAdicionada = produto.quantidade;
+    }
   }
 }
