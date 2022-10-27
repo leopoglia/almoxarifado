@@ -10,7 +10,7 @@ export class InserirReservasComponent implements OnInit {
   alertar = "Reserva feita com sucesso!";
   alerta: boolean = false;
   produtos: any[] = [];
-  quantidade: number = 0;
+  quantidadeAdicionada: number = 0;
 
   constructor() { }
 
@@ -31,27 +31,49 @@ export class InserirReservasComponent implements OnInit {
   }
 
   adicionarItem($event) {
+
+
     for (let i = 0; i < this.produtos.length; i++) {
       if (this.produtos[i].codigo == $event.codigo) {
         return;
       }
     }
+
+    $event.quantidadeAdicionada = 0;
+
+    console.log($event)
     this.produtos.push($event);
   }
 
   removerItem($event) {
+
     if (this.produtos.length > 0) {
       this.produtos.splice($event, 1);
     }
   }
 
-  menos() {
-    if (this.quantidade > 0) {
-      this.quantidade--;
+  menos(produto) {
+    if (produto.quantidadeAdicionada == NaN || produto.quantidadeAdicionada == 0 || produto.quantidadeAdicionada == null || produto.quantidadeAdicionada == undefined) {
+      produto.quantidadeAdicionada = 0;
+    }
+
+
+
+    if (produto.quantidadeAdicionada > 0) {
+      produto.quantidadeAdicionada--;
     }
   }
 
-  mais() {
-    this.quantidade++;
+  mais(produto) {
+
+    if (produto.quantidadeAdicionada == NaN || produto.quantidadeAdicionada == 0 || produto.quantidadeAdicionada == null || produto.quantidadeAdicionada == undefined) {
+      produto.quantidadeAdicionada = 0;
+    }
+
+    if (produto.quantidadeAdicionada >= produto.quantidade) {
+      return;
+    }
+
+    produto.quantidadeAdicionada++;
   }
 }

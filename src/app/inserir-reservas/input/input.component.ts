@@ -59,7 +59,7 @@ export class InputComponent implements OnInit {
           .startsWith(dado.toLocaleLowerCase());
       });
       this.matrizVazia = this.matrizVazia.map((data, { }) => {
-        return ({ "codigo": data.codigo, "imagem": data.codigo, "nome": data.nome });
+        return ({ "codigo": data.codigo, "imagem": data.codigo, "nome": data.nome, "quantidade": data.quantidade, "caracteristica": data.caracteristica, "descartavel": data.descartavel });
       });
 
       if (this.matrizVazia.length > 0) {
@@ -74,11 +74,8 @@ export class InputComponent implements OnInit {
 
   };
 
-  inserirItem(codigo) {
-    console.log(codigo)
-    this.adicionarItem.emit(codigo);
-
+  inserirItem(produto) {
+    this.adicionarItem.emit(produto);
   }
-
 
 }
