@@ -52,7 +52,7 @@ export class ProdutoService {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/produtos', {
         method: 'POST',
-        body: JSON.stringify({ nome: nome, caracteristicas: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: imagem }),
+        body: JSON.stringify({ nome: nome, caracteristica: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: "teste" }),
         headers: {
           'Content-Type': 'application/json'
         }

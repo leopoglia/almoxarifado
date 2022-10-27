@@ -14,6 +14,8 @@ export class InputComponent implements OnInit {
   caixaInput: any = document.querySelector(".input");
   input: any = document.querySelector("input")
   busca: any = document.querySelector(".busca");
+  matrizVazia: any;
+
 
   constructor(
     private produtoService: ProdutoService,
@@ -30,7 +32,6 @@ export class InputComponent implements OnInit {
 
     this.produtoService.buscarProdutos()
       .then(resultado => {
-        console.log(resultado)
 
         this.produtos = resultado;
         if (this.produtos.length > 0) {
@@ -49,18 +50,22 @@ export class InputComponent implements OnInit {
 
   buscar(event) {
     let dado: any = event.target.value;
-    let matrizVazia = [];
     if (dado) {
-      matrizVazia = this.produtos.filter((data, { }) => {
+      this.matrizVazia = this.produtos.filter((data, { }) => {
         return data.nome
           .toLocaleLowerCase()
           .startsWith(dado.toLocaleLowerCase());
       });
-      matrizVazia = matrizVazia.map((data, { }) => {
+      this.matrizVazia = this.matrizVazia.map((data, { }) => {
         return ({ "codigo": data.codigo, "imagem": data.codigo, "nome": data.nome });
       });
-      document.querySelector(".input").classList.add("ativo");
-      this.sugestoes(matrizVazia);
+
+      if (this.matrizVazia.length > 0) {
+
+        document.querySelector(".input").classList.add("ativo");
+      } else {
+        document.querySelector(".input").classList.remove("ativo");
+      }
     } else {
       document.querySelector(".input").classList.remove("ativo");
     }
@@ -71,17 +76,5 @@ export class InputComponent implements OnInit {
     console.log(codigo)
   }
 
-  sugestoes(lista) {
-    let dados;
-
-    console.log(lista)
-
-    if (lista.length) {
-      dados = lista.join("");
-    } else {
-      dados = `<li>Invalido</li>`;
-    }
-    this.busca = dados;
-  }
 
 }

@@ -7,7 +7,7 @@
   </div>
   <div class="busca" id="busca">
 
-    <li *ngFor="let produto of produtos">
+    <li *ngFor="let produto of matrizVazia">
       <div (click)="inserirItem(produto.codigo)">
         <img [src]="produto.img" alt="">
         <span>{{produto.nome}}</span>

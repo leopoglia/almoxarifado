@@ -32,6 +32,7 @@ export class CadastrarProdutoComponent implements OnInit {
 
   cadastrarProduto() {
     this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.descartavel, this.img64)
+    
       .then(resultado => {
         console.log(resultado)
       }).catch(erro => {
