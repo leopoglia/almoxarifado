@@ -61,8 +61,6 @@ export class ItemGridComponent implements OnInit, OnChanges {
 
   filter() {
 
-    console.log(this.produtos)
-
     if (this.buscar == '') {
       return this.produtos;
     }

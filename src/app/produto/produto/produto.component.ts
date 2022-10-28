@@ -28,7 +28,6 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.buscarProduto(this.idParametro)
       .then(resultado => {
         this.produtos.push(resultado);
-        console.log(this.produtos)
 
       }).catch(erro => {
         console.log('ERRO AO BUSCAR PRODUTO', erro)

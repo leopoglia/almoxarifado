@@ -33,13 +33,6 @@ export class InserirReservasComponent implements OnInit {
 
   cadastrarReserva() {
 
-    console.log(this.dataRetirada);
-    console.log(this.dataDevolucao);
-    console.log(this.horaRetirada);
-    console.log(this.horaDevolucao);
-
-    console.log(this.produtos)
-
     this.reservaService.criarReserva(this.produtos, this.dataRetirada, this.dataDevolucao, this.horaRetirada, this.horaDevolucao, this.idUsuario)
 
     this.alerta = true;
