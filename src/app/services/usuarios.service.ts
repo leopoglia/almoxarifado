@@ -15,8 +15,8 @@ export class UsuariosService {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuario', {
         method: 'POST',
-        body: 
-        JSON.stringify({matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem}),
+        body:
+          JSON.stringify({ matricula: matricula, email: email, senha: senha, nome: nome, imagem: "1", situacao: 2, cargo: 0 }),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -26,7 +26,7 @@ export class UsuariosService {
     })
   }
 
-  buscarUsuarios(){
+  buscarUsuarios() {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuario', {
         method: 'GET'
@@ -36,7 +36,7 @@ export class UsuariosService {
     })
   }
 
-  buscarUsuario(codigo){
+  buscarUsuario(codigo) {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuario/' + codigo, {
         method: 'GET'
@@ -50,8 +50,8 @@ export class UsuariosService {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuario/' + codigo, {
         method: 'POST',
-        body: 
-        JSON.stringify({matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem}),
+        body:
+          JSON.stringify({ matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem }),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -61,12 +61,12 @@ export class UsuariosService {
     })
   }
 
-  login(nome, senha){
+  login(nome, senha) {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuario/login', {
         method: 'POST',
-        body: 
-        JSON.stringify({nome: nome, senha: senha}),
+        body:
+          JSON.stringify({ nome: nome, senha: senha }),
         headers: {
           'Content-Type': 'application/json'
         }

@@ -38,7 +38,7 @@ header .almoxarifado {
     justify-content: center;
     margin-left: 25px;
     padding-left: 25px;
-    border-left: 1px solid var(--cinzaclaro);
+    border-left: 1px solid var(--cinzaclaro2);
 }
 
 @media(max-width: 750px) {

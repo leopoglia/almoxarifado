@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
         if (this.resultado.status != 500) {
           localStorage.setItem('cargo', this.resultado.cargo)
           localStorage.setItem('foto', this.resultado.imagem)
+          localStorage.setItem('idUsuario', this.resultado.codigo)
           this.route.navigate(['/visaogeral']);
         } else {
           this.route.navigate(['/']);

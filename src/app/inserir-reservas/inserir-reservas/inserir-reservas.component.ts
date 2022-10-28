@@ -1,5 +1,6 @@
 import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ReservaService } from 'src/app/services/reserva.service';
 
 @Component({
   selector: 'app-inserir-reservas',
@@ -16,8 +17,11 @@ export class InserirReservasComponent implements OnInit {
   dataDevolucao: Date;
   horaRetirada: Time;
   horaDevolucao: Time;
+  idUsuario = parseInt(localStorage.getItem('idUsuario'));
 
-  constructor() { }
+  constructor(
+    private reservaService: ReservaService
+  ) { }
 
 
   ngOnInit() {
@@ -35,6 +39,8 @@ export class InserirReservasComponent implements OnInit {
     console.log(this.horaDevolucao);
 
     console.log(this.produtos)
+
+    this.reservaService.criarReserva(this.produtos, this.dataRetirada, this.dataDevolucao, this.horaRetirada, this.horaDevolucao, this.idUsuario)
 
     this.alerta = true;
 

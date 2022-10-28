@@ -6,12 +6,12 @@ import { Injectable } from '@angular/core';
 export class ReservaService {
     url: string = "http://localhost:8080/api"
 
-    criarReserva(dataRetirada, dataDevolucao, usuario, produtos) {
+    criarReserva(produtos, dataRetirada, dataDevolucao, horaRetirada, horaDevolucao, usuario,) {
         return new Promise((resolvido, rejeitado) => {
             fetch(this.url + '/reservas', {
                 method: 'POST',
                 body:
-                    JSON.stringify({ dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, usuario: usuario, produtos: produtos }),
+                    JSON.stringify({ dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, horaRetirada: horaRetirada, horaDevolucao: horaDevolucao, usuario: { codigo: usuario }, produtos: produtos }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
