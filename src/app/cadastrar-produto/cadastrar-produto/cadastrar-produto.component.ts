@@ -19,6 +19,7 @@ export class CadastrarProdutoComponent implements OnInit {
   situacaoclassificacao: boolean = false;
   descartavel: boolean = false;
   img64;
+  anexos;
   alerta: boolean = false;
   alertar = "Produto cadastrado com sucesso!";
 
@@ -31,7 +32,7 @@ export class CadastrarProdutoComponent implements OnInit {
   }
 
   cadastrarProduto() {
-    this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.descartavel, this.img64)
+    this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.descartavel, this.img64, this.anexos)
     
       .then(resultado => {
         console.log(resultado)
@@ -63,6 +64,14 @@ export class CadastrarProdutoComponent implements OnInit {
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.img64 = reader.result;
+    };
+  }
+
+  anexo(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.anexos = reader.result;
     };
   }
 

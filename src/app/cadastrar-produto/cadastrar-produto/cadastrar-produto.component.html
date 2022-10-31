@@ -110,7 +110,7 @@
                                         attach_file
                                     </span>
                                     Adicionar anexo</label>
-                                <input type="file" id="file">
+                                <input type="file" id="file" (change)="anexo($event.target.files[0])">
                             </div>
 
                             <div class="descartavel">

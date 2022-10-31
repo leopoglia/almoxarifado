@@ -8,7 +8,7 @@ export class LocalizacaoService {
 
   constructor() { }
 
-  url: string = "http://localhost:8080/api";
+  url: string = "http://localhost:8090/api";
 
   buscarLocalizacoes() {
     return new Promise((resolvido, rejeitado) => {

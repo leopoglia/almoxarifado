@@ -8,7 +8,7 @@ export class ProdutoService {
 
   constructor() { }
 
-  url: string = "http://localhost:8080/api";
+  url: string = "http://localhost:8090/api";
 
   buscarProdutos() {
     return new Promise((resolvido, rejeitado) => {
@@ -46,15 +46,25 @@ export class ProdutoService {
     })
   }
 
-  cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem) {
+  cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem, anexos) {
     console.log(nome, caracteristica, quantidade, descartavel, imagem)
+
+    let produto = "{nome:"+nome+", caracteristica: "+caracteristica+",quantidade: "+quantidade+",descartavel: "+descartavel+",imagem: "+imagem+",anexos: "+anexos+"}";
+
+    var dados = {
+      produto: produto,
+      imagem: imagem,
+      arquivos: anexos
+    };
+
+    console.log(dados)
 
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/produtos', {
         method: 'POST',
-        body: JSON.stringify({ nome: nome, caracteristica: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: "teste" }),
+        body: JSON.stringify(dados),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-type': 'application/x-www-form-urlencoded',
         }
       }).then(resultado => resultado.json())
         .then(resolvido)

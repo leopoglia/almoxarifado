@@ -8,7 +8,7 @@ export class HistoricoService {
 
     constructor() { }
 
-    url: string = "http://localhost:8080/api";
+    url: string = "http://localhost:8090/api";
 
     cadastrarHistorico(motivo, data_alteracao, quantidade_alterada, produto) {
         return new Promise((resolvido, rejeitado) => {

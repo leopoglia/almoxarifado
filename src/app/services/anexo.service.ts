@@ -8,7 +8,7 @@ export class AnexoService {
 
   constructor() { }
 
-  url: string = "http://localhost:8080/api";
+  url: string = "http://localhost:8090/api";
 
   Anexobuscar() {
     return new Promise((resolvido, rejeitado) => {

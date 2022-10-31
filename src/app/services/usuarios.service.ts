@@ -7,7 +7,7 @@ import { E } from '@angular/core/src/render3';
 export class UsuariosService {
 
 
-  url: string = 'http://localhost:8080/api';
+  url: string = 'http://localhost:8090/api';
 
   constructor() { }
 
@@ -66,7 +66,7 @@ export class UsuariosService {
       fetch(this.url + '/usuario/login', {
         method: 'POST',
         body:
-          JSON.stringify({ nome: nome, senha: senha }),
+          JSON.stringify({ matricula: null, nome: nome, senha: senha }),
         headers: {
           'Content-Type': 'application/json'
         }
