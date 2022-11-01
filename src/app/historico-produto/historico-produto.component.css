@@ -36,7 +36,6 @@ main .corpo {
     padding-bottom: 15px;
     border-radius: 3px;
     border: 1px solid var(--cinzaclaro2);
-    overflow: auto;
 
 }
 
@@ -44,28 +43,38 @@ main .corpo .titulo {
     margin: 15px;
 }
 
-main .corpo table {
-    width: 100%;
-    padding: 15px;
+main .corpo .tabela-historico {
+    width: auto;
+    margin: 15px;
+    overflow: auto;
 }
 
+main .corpo table {
+    border: 1px solid var(--cinzaclaro2);
+    border-bottom: none;
+    border-radius: 3px;
+}
 
 main .corpo table td,
 main .container table th {
     align-items: center;
     justify-content: center;
     height: 30px;
-    border: 1px solid var(--cinzaclaro2);
+    border-bottom: 1px solid var(--cinzaclaro2);
     padding: 8px;
-    border-radius: 3px;
 }
 
-main .corpo table tbody {
-    border: 1px solid;
+
+main .corpo table tr:nth-child(2n + 1) {
+    background: var(--cinzaclaro3)
+}
+
+main .corpo table {
+    border-collapse: separate;
+    border-spacing: 0px;
 }
 
 main .corpo table th {
-    background-color: var(--cinzaclaro3);
     font-weight: 500;
 }
 
