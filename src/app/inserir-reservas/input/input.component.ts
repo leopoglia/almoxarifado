@@ -27,6 +27,8 @@ export class InputComponent implements OnInit {
 
   ngOnInit() {
 
+
+
     if (window.location.href == "http://localhost:4200/cadastrar/reserva") {
       this.tamanho = (document.querySelector(".input").clientWidth) + 9;
       document.getElementById("busca").style.width = this.tamanho + 'px';
@@ -58,6 +60,7 @@ export class InputComponent implements OnInit {
   }
 
   buscar(event) {
+
     let dado: any = event.target.value;
     if (dado) {
       this.matrizVazia = this.produtos.filter((data, { }) => {
@@ -66,6 +69,7 @@ export class InputComponent implements OnInit {
           .startsWith(dado.toLocaleLowerCase());
       });
 
+      this.imagem = [];
 
       this.matrizVazia.forEach(element => {
         this.imagem.push(element.imagem.dados);
