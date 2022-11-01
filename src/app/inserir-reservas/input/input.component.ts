@@ -26,31 +26,34 @@ export class InputComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tamanho = (document.querySelector(".input").clientWidth) + 9;
-    document.getElementById("busca").style.width = this.tamanho + 'px';
 
-    window.onresize = function () {
-      document.getElementById("busca").style.width = ((document.querySelector(".input").clientWidth) + 9) + 'px';
-    };
+    if (window.location.href == "http://localhost:4200/cadastrar/reserva") {
+      this.tamanho = (document.querySelector(".input").clientWidth) + 9;
+      document.getElementById("busca").style.width = this.tamanho + 'px';
 
-    this.produtoService.buscarProdutos()
-      .then(resultado => {
+      window.onresize = function () {
+        document.getElementById("busca").style.width = ((document.querySelector(".input").clientWidth) + 9) + 'px';
+      };
 
-        this.produtos = resultado;
-        if (this.produtos.length > 0) {
+
+      this.produtoService.buscarProdutos()
+        .then(resultado => {
+
           this.produtos = resultado;
-          this.tamanho = this.produtos.length;
-          this.retornoItem = false;
+          if (this.produtos.length > 0) {
+            this.produtos = resultado;
+            this.tamanho = this.produtos.length;
+            this.retornoItem = false;
 
 
 
-        } else {
-          this.retornoItem = true;
-        }
-      }).catch(erro => {
-        console.log('ERRO AO BUSCAR USUÁRIOS', erro)
-      })
-
+          } else {
+            this.retornoItem = true;
+          }
+        }).catch(erro => {
+          console.log('ERRO AO BUSCAR USUÁRIOS', erro)
+        })
+    }
 
   }
 

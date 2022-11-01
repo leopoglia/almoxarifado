@@ -1,2 +1,0 @@
-require('./rotas');
-require('./database');
