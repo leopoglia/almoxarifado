@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { forEach } from '@angular/router/src/utils/collection';
 import { ProdutoService } from 'src/app/services/produto.service';
 
 
@@ -19,6 +20,7 @@ export class ItemComponent implements OnInit, OnChanges {
   tamanho;
   retornoItem: boolean = false;
   resultado: any;
+  imagem = [];
 
 
   constructor(
@@ -36,13 +38,17 @@ export class ItemComponent implements OnInit, OnChanges {
       this.produtoService.buscarProdutos()
         .then(resultado => {
           console.log(resultado)
-
           this.resultado = resultado;
           if (this.resultado.length > 0) {
             this.list = resultado;
             this.produtos = resultado;
             this.tamanho = this.produtos.length;
             this.retornoItem = false;
+
+            this.produtos.forEach(element => {
+              this.imagem.push(element.imagem.dados);
+            });
+
           } else {
             this.retornoItem = true;
           }
