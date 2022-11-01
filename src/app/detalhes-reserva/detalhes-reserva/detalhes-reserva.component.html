@@ -27,7 +27,7 @@
                                 </button></div>
                         </div>
                         <div class="pessoa"><span *ngIf="permissao == true">Professor: Romário</span>
-                            <span>*ngIf="permissao == false">Professor: Romário</span>
+                            <span *ngIf="permissao == false">Professor: Romário</span>
                         </div>
                         <div class="horario">
                             <div class="data"><span>Retirar em: {{dataRetirada}} às</span></div>
