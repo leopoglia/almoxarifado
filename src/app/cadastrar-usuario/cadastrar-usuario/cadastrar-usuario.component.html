@@ -32,7 +32,7 @@
                         <div class="inserir-imagem">
                             <span>Imagem</span>
                             <label for="imagem">
-                                <input id="imagem" type="file">
+                                <input id="imagem" type="file" (change)="enviarImagem($event.target.files[0])">
 
                                 <div class="imagem">
 
@@ -46,27 +46,27 @@
                         <div class="informacoes-grid">
                             <div class="email">
                                 <span>Email</span>
-                                <input type="text">
+                                <input type="text" [(ngModel)]="email">
                             </div>
 
                             <div class="nome">
                                 <span>Nome</span>
-                                <input type="text">
+                                <input type="text" [(ngModel)]="nome">
                             </div>
 
                             <div class="informacoes-adicionais">
                                 <div class="matricula">
                                     <span>Matricula</span>
-                                    <input type="text">
+                                    <input type="text" [(ngModel)]="matricula">
                                 </div>
 
                                 <div class="cargo">
                                     <span>Cargo</span>
-                                    <select name="select">
-                                        <option value="valor1">Professor</option>
-                                        <option value="valor2">Atendente 1</option>
-                                        <option value="valor3">Atendente 2</option>
-                                        <option value="valor4">Administrador</option>
+                                    <select name="select" (change)="mudarCargo($event)">
+                                        <option value="Professor">Professor</option>
+                                        <option value="Atendente 1">Atendente 1</option>
+                                        <option value="Atendente 2">Atendente 2</option>
+                                        <option value="Administrador">Administrador</option>
                                     </select>
                                 </div>
                             </div>

@@ -214,4 +214,10 @@ button {
     main .container .acoes .nav dd {
         font-size: 13px;
     }
+
+    main .container .detalhes-nome{
+        margin-right: 28px;
+    }
+
+
 }

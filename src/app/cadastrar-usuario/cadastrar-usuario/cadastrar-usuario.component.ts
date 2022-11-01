@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -8,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class CadastrarUsuarioComponent implements OnInit {
 
   alerta: boolean = false;
+  email: string = '';
+  nome: string = '';
+  cargo: string = '';
+  matricula: string = '';
+  imagem: any;
   alertar = "Usuário cadastrado com sucesso!";
 
-  constructor() { }
+  constructor(
+    private usuarioService: UsuariosService
+  ) { }
 
   ngOnInit() {
     localStorage.setItem('atual', '5');
@@ -21,10 +29,48 @@ export class CadastrarUsuarioComponent implements OnInit {
   }
 
   cadastrarUsuario() {
-    this.alerta = true
 
-    setTimeout(() => {
-      this.alerta = false
-    }, 1000 * 10);
+    console.log(this.nome, this.email, this.cargo, this.matricula, this.imagem);
+
+
+    if (this.nome != '' && this.email != '' && this.matricula != '' && this.imagem != null) {
+
+      if (this.cargo == '') {
+        this.cargo = 'Professor';
+      }
+
+      console.log(this.cargo)
+
+      this.usuarioService.criarUsuariosDentro(this.nome, this.email, this.matricula, this.cargo, this.imagem)
+        .then(resultado => {
+
+          this.alerta = true;
+          this.alertar = "Usuário cadastrado com sucesso!";
+          this.nome = '';
+          this.email = '';
+          this.cargo = '';
+          this.imagem = '';
+          this.matricula = '';
+        })
+
+      setTimeout(() => {
+        this.alerta = false
+      }, 1000 * 10);
+    } else {
+      this.alerta = true;
+      this.alertar = "Preencha todos os campos!";
+
+      setTimeout(() => {
+        this.alerta = false
+      }, 1000 * 10);
+    }
+  }
+
+  mudarCargo($event) {
+    this.cargo = $event.target.value;
+  }
+
+  enviarImagem(imagem) {
+    this.imagem = imagem;
   }
 }

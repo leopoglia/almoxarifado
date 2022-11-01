@@ -26,6 +26,23 @@ export class UsuariosService {
     })
   }
 
+  criarUsuariosDentro(nome, email, matricula, cargo, imagem) {
+    var formData = new FormData();
+    let usuario = { "nome": nome, "email": email, "matricula": matricula, "cargo": cargo, "senha": "Senai123", "situacao": 0 };
+    formData.append('usuario', JSON.stringify(usuario));
+    formData.append('imagem', imagem);
+
+    return new Promise((resolvido, rejeitado) => {
+      fetch(this.url + '/usuario', {
+        method: 'POST',
+        body: formData,
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
+
   buscarUsuarios() {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuario', {
