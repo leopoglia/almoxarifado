@@ -19,8 +19,20 @@ export class ReservaComponent implements OnInit {
 
 
     this.reservaService.buscarReservas().then(res => {
+
+
       this.reservas = res;
+
       console.log(this.reservas);
+
+      for (let i = 0; i < this.reservas.length; i++) {
+        this.reservas[i].dataRetirada = this.reservas[i].dataRetirada.split("T")[0];
+        this.reservas[i].dataRetirada = this.reservas[i].dataRetirada.split('-').reverse().join('/');
+        this.reservas[i].dataDevolucao = this.reservas[i].dataDevolucao.split("T")[0];
+        this.reservas[i].dataDevolucao = this.reservas[i].dataDevolucao.split('-').reverse().join('/');
+
+      }
+
     }
     )
   }
