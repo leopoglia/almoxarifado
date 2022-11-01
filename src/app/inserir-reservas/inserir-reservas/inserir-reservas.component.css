@@ -157,8 +157,16 @@ main .container .rodape button:hover {
     justify-content: center;
 }
 
+.produto .informacoes .imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .produto .informacoes .imagem img {
     width: 45px;
+    height: 45px;
+    border-radius: 3px;
     margin-right: 20px;
 }
 

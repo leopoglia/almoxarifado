@@ -18,6 +18,7 @@ export class InserirReservasComponent implements OnInit {
   horaRetirada: Time;
   horaDevolucao: Time;
   idUsuario = parseInt(localStorage.getItem('idUsuario'));
+  imagem = []
 
   constructor(
     private reservaService: ReservaService
@@ -44,16 +45,17 @@ export class InserirReservasComponent implements OnInit {
 
   adicionarItem($event) {
 
-
     for (let i = 0; i < this.produtos.length; i++) {
       if (this.produtos[i].codigo == $event.codigo) {
+
+
         return;
       }
     }
 
-    $event.quantidadeAdicionada = 0;
-
+    this.imagem.push($event.imagem.dados);
     this.produtos.push($event);
+    $event.quantidadeAdicionada = 0;
   }
 
   removerItem($event) {

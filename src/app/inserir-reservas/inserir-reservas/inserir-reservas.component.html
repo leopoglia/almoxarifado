@@ -38,11 +38,11 @@
                 <div class="produtos">
                     <div class="titulo"><span>Produtos adicionados:</span></div>
 
-                    <div class="produto" *ngFor="let produto of produtos">
+                    <div class="produto" *ngFor="let produto of produtos; let i = index">
                         <div class="informacoes">
 
                             <div class="imagem">
-                                <img [src]="produto.imagem">
+                                <img src="data:image/png;base64,{{imagem[i]}}">
                             </div>
                             <div class="nome">{{produto.nome}}</div>
 
@@ -58,7 +58,8 @@
                             <div class="quantidade">
 
                                 <span class="menos" (click)="menos(produto)">-</span>
-                                <input type="number" class="numero" [(ngModel)]="produto.quantidadeAdicionada" (change)="mudancaAdicionada(produto)">
+                                <input type="number" class="numero" [(ngModel)]="produto.quantidadeAdicionada"
+                                    (change)="mudancaAdicionada(produto)">
                                 <span class="mais" (click)="mais(produto)">+</span>
                                 <span class="titulo">Un.</span>
 

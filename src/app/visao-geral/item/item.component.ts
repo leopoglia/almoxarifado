@@ -37,7 +37,6 @@ export class ItemComponent implements OnInit, OnChanges {
     if (this.ordernado == false) {
       this.produtoService.buscarProdutos()
         .then(resultado => {
-          console.log(resultado)
           this.resultado = resultado;
           if (this.resultado.length > 0) {
             this.list = resultado;
@@ -78,12 +77,12 @@ export class ItemComponent implements OnInit, OnChanges {
 
 
     if (this.produtos.filter((item) => {
-      return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
+      return item.nome.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
     }).length > 0) {
       this.retornoItem = false;
 
       return this.produtos.filter((item) => {
-        return item.NOME.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
+        return item.nome.toLowerCase().indexOf(this.buscar.toLowerCase()) > -1;
       });
 
     } else {

@@ -16,6 +16,8 @@ export class ItemGridComponent implements OnInit, OnChanges {
   resultado: any;
   produtos;
   tamanho;
+  imagem = [];
+
 
   constructor(
     private route: Router,
@@ -40,6 +42,11 @@ export class ItemGridComponent implements OnInit, OnChanges {
             this.produtos = resultado;
             this.tamanho = this.produtos.length;
             this.retornoItem = false;
+
+            this.produtos.forEach(element => {
+              this.imagem.push(element.imagem.dados);
+            });
+
           } else {
             this.retornoItem = true;
           }

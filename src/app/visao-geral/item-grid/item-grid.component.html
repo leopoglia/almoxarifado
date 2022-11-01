@@ -1,7 +1,7 @@
-<div class="produto" *ngFor="let item of  filter()" (click)="link(item.codigo)">
+<div class="produto" *ngFor="let item of  filter(); let i= index" (click)="link(item.codigo)">
     <div class="flex">
         <div class="imagem">
-            <img [src]="item.imagem" alt="">
+            <img src="data:image/png;base64,{{imagem[i]}}" alt="">
         </div>
         <div class="informacoes">
             <p class="titulo">{{item.nome}}</p>
@@ -10,8 +10,6 @@
                 <p>Unidades</p>
             </div>
         </div>
-
-
     </div>
 </div>
 

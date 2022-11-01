@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ReservaService } from 'src/app/services/reserva.service';
 
 @Component({
   selector: 'app-reserva',
@@ -9,15 +9,23 @@ import { Router } from '@angular/router';
 })
 export class ReservaComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router,
+    private reservaService: ReservaService) { }
 
   ngOnInit() {
     if (localStorage.getItem("cargo") == "2" || localStorage.getItem("cargo") == "1") {
       this.permissao = true;
     }
+
+
+    this.reservaService.buscarReservas().then(res => {
+      this.reservas = res;
+      console.log(this.reservas);
+    }
+    )
   }
 
-  reservas = [1, 2, 3, 4, 5];
+  reservas: any;
   permissao = false;
 
   link() {

@@ -15,6 +15,7 @@ export class InputComponent implements OnInit {
   input: any = document.querySelector("input")
   busca: any = document.querySelector(".busca");
   matrizVazia: any;
+  imagem = [];
   @Output() adicionarItem = new EventEmitter<string>();
 
 
@@ -40,6 +41,9 @@ export class InputComponent implements OnInit {
           this.produtos = resultado;
           this.tamanho = this.produtos.length;
           this.retornoItem = false;
+
+
+
         } else {
           this.retornoItem = true;
         }
@@ -58,8 +62,15 @@ export class InputComponent implements OnInit {
           .toLocaleLowerCase()
           .startsWith(dado.toLocaleLowerCase());
       });
+
+
+      this.matrizVazia.forEach(element => {
+        this.imagem.push(element.imagem.dados);
+      });
+
+
       this.matrizVazia = this.matrizVazia.map((data, { }) => {
-        return ({ "codigo": data.codigo, "imagem": data.codigo, "nome": data.nome, "quantidade": data.quantidade, "caracteristica": data.caracteristica, "descartavel": data.descartavel });
+        return ({ "codigo": data.codigo, "nome": data.nome, "imagem": data.imagem, "quantidade": data.quantidade, "caracteristica": data.caracteristica, "descartavel": data.descartavel });
       });
 
       if (this.matrizVazia.length > 0) {
