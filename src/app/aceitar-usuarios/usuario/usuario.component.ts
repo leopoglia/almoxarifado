@@ -11,6 +11,7 @@ export class UsuarioComponent implements OnInit {
   @Input() buscar: string;
   retornoItem: boolean = false;
   usuarios: any = [];
+  imagem = [];
 
   constructor(
     private usuariosService: UsuariosService
@@ -20,6 +21,13 @@ export class UsuarioComponent implements OnInit {
 
     this.usuariosService.buscarUsuarios().then((resultado) => {
       this.usuarios = resultado;
+
+      console.log(this.usuarios);
+
+      for (let i = 0; i < this.usuarios.length; i++) {
+        this.usuarios[i].imagem = 'data:image/png;base64,' + this.usuarios[i].imagem.dados;
+      }
+
     }).catch((erro) => {
       console.log(erro);
     })

@@ -20,17 +20,17 @@
     </div>
   </div>
 
-  <div *ngIf="usuario.aceito == 'nao'" class="aprovacao">
+  <div *ngIf="usuario.situacao == 'ESPERANDO'" class="aprovacao">
     <button class="aceitar">Aceitar</button>
     <button class="recusar">Recusar</button>
   </div>
 
-  <div *ngIf="usuario.aceito == 'sim'" class="aprovado">
+  <div *ngIf="usuario.situacao == 'APROVADO'" class="aprovado">
     <p>Usuário aceito</p>
   </div>
 
 
-  <div *ngIf="usuario.aceito == 'recusado'" class="reprovado">
+  <div *ngIf="usuario.situacao == 'REPROVADO'" class="reprovado">
     <p>Usuário recusado</p>
   </div>
 </div>
