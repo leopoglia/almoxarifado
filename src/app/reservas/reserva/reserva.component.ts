@@ -40,8 +40,11 @@ export class ReservaComponent implements OnInit {
   reservas: any;
   permissao = false;
 
-  link() {
-    this.route.navigate(['/reservas/detalhes']);
+  link(reserva) {
+
+    console.log(reserva);
+
+    this.route.navigate(['/reservas/detalhes/' + reserva.codigo]);
   }
 
 }

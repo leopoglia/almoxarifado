@@ -29,13 +29,13 @@
                         <div class="pessoa"><span *ngIf="permissao == true">Professor: Romário</span><span
                                 *ngIf="permissao == false">Professor: Romário</span></div>
                         <div class="horario">
-                            <div class="data"><span>Retirar em: 23/12/2022 às</span></div>
-                            <div class="hora">18:00</div>
+                            <div class="data"><span>Retirar em: {{dataRetirada}} às</span></div>
+                            <div class="hora">&nbsp;{{horaRetirada}}</div>
                         </div>
                         <div class="detalhes">
                             <div class="reservafeita">
-                                <div class="data"><span>Reserva feita em: 23/12/2022 às</span></div>
-                                <div class="hora">18:00</div>
+                                <div class="data"><span>Devolução em: {{dataDevolucao}} às</span></div>
+                                <div class="hora">&nbsp;{{horaDevolucao}}</div>
                             </div>
                         </div>
 

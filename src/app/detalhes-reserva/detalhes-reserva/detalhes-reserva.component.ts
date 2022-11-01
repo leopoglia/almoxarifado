@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReservaService } from 'src/app/services/reserva.service';
 
 @Component({
   selector: 'app-detalhes-reserva',
@@ -11,10 +12,21 @@ export class DetalhesReservaComponent implements OnInit {
   modaldevolucao = false;
   alerta: boolean = false;
   alertar = "Devolvido com sucesso!";
+  reserva: any;
+  url = window.location.href.split("/")[5];
+  horaRetirada;
+  horaDevolucao;
+  dataRetirada;
+  dataDevolucao;
 
-  constructor() { }
+  constructor(
+    private reservaService: ReservaService
+  ) { }
 
   ngOnInit() {
+
+    console.log(this.url);
+
     if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
     }
@@ -22,6 +34,22 @@ export class DetalhesReservaComponent implements OnInit {
     if (localStorage.getItem("cargo") == "1" || localStorage.getItem("cargo") == "2") {
       this.permissao = true;
     }
+
+    this.reservaService.buscarReserva(this.url).then(res => {
+      this.reserva = res[0];
+
+      this.horaRetirada = this.reserva.horaRetirada;
+      this.horaDevolucao = this.reserva.horaDevolucao;
+      this.dataRetirada = this.reserva.dataRetirada.split("T")[0];
+      this.dataRetirada = this.dataRetirada.split('-').reverse().join('/');
+      this.dataDevolucao = this.reserva.dataDevolucao.split("T")[0];
+      this.dataDevolucao = this.dataDevolucao.split('-').reverse().join('/');
+
+
+      this.produtos = this.reserva.produtos;
+    })
+
+
   }
 
   produtos = [

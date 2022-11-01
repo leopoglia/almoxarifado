@@ -1,4 +1,4 @@
-<div class="reserva" *ngFor="let reserva of reservas let i = index" (click)="link()">
+<div class="reserva" *ngFor="let reserva of reservas let i = index" (click)="link(reserva)">
     <div class="titulo">Reserva Nº {{i+1}}
         <div class="situacao">
             <span class="material-symbols-outlined">

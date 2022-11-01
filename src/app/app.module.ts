@@ -53,7 +53,7 @@ const routes: Routes = [
   {
     path: 'reservas', children: [
       { path: '', canActivate: [CheckLogged], component: ReservasComponent },
-      { path: 'detalhes', canActivate: [CheckLogged], component: DetalhesReservaComponent }
+      { path: 'detalhes/:id', canActivate: [CheckLogged], component: DetalhesReservaComponent }
     ]
   },
   {
