@@ -43,7 +43,7 @@
 
                         <div class="produtos">
                             <div class="titulo">Produtos:</div>
-                            <div class="produto" *ngFor="let item of buscarProdutos();">
+                            <div class="produto" *ngFor="let item of buscarProdutos(); let i = index">
                                 <div class="informacoes">
                                     <div class="imagem">
                                         <img [src]="item.imagem" alt="Imagem do produto">

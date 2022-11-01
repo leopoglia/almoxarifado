@@ -20,6 +20,7 @@ export class DetalhesReservaComponent implements OnInit {
   dataDevolucao;
   resultado: any;
   produtos: any = [];
+  imagem = [];
 
   constructor(
     private reservaService: ReservaService,
@@ -55,7 +56,8 @@ export class DetalhesReservaComponent implements OnInit {
   buscarProdutos() {
     console.log(this.resultado)
     for (let i = 0; i < this.resultado.length; i++) {
-      this.produtos.push({ codigo: this.resultado[i].produto.codigo, descartavel: this.resultado[i].produto.descartavel,nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, baixa: this.resultado[i].baixa });
+      this.produtos.push({ codigo: this.resultado[i].produto.codigo, descartavel: this.resultado[i].produto.descartavel, nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, baixa: this.resultado[i].baixa, imagem: "data:image/png;base64," + this.resultado[i].produto.imagem.dados });
+      this.imagem.push(this.resultado[i].produto.imagem);
     }
     return this.produtos;
   }

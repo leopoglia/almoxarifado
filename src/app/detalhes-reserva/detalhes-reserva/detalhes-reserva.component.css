@@ -22,7 +22,7 @@ main .corpo {
     padding-bottom: 50px;
 }
 
-.corpo .reserva .header-reserva{
+.corpo .reserva .header-reserva {
     display: flex;
     justify-content: space-between;
 }
@@ -100,9 +100,16 @@ main .corpo .reserva .produtos .produto .acoes {
     justify-content: space-between;
 }
 
+main .container .produtos .produto .imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 main .container .produtos .produto .imagem img {
     width: 45px;
     margin-right: 20px;
+    border-radius: 3px;
 }
 
 main .corpo .reserva div .cancelar {
@@ -145,6 +152,7 @@ main .container .produtos .produto .baixa:hover {
     main .corpo .reserva .produtos .produto {
         height: 180px;
     }
+
     main .corpo .reserva .produtos .produto .acoes {
         display: grid;
     }
@@ -154,9 +162,11 @@ main .container .produtos .produto .baixa:hover {
     main {
         padding-left: 0px;
     }
+
     main .container {
         margin: 0px 30px 0px 100px;
     }
+
     main .corpo .reserva .detalhes .verdetalhes .texto {
         display: none;
     }

@@ -17,7 +17,7 @@
                 <div class="navegacao"><span>Almoxarifado / Dados gerais do produto</span></div>
             </div>
 
-            <div class="corpo" *ngFor="let item of produtos">
+            <div class="corpo" *ngFor="let item of produtos; let i = index">
 
                 <div class="cabecalho" id="titulo">
 
@@ -49,7 +49,7 @@
                             <span>Imagem</span>
 
                             <div class="imagem">
-                                <img [src]="item.imagem" alt="">
+                                <img src="data:image/png;base64,{{item.imagem.dados}}" alt="">
                             </div>
                         </div>
 

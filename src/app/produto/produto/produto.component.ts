@@ -29,6 +29,9 @@ export class ProdutoComponent implements OnInit {
       .then(resultado => {
         this.produtos.push(resultado);
 
+        console.log(this.produtos)
+        
+
       }).catch(erro => {
         console.log('ERRO AO BUSCAR PRODUTO', erro)
       })
@@ -38,10 +41,6 @@ export class ProdutoComponent implements OnInit {
     }
   }
 
-
-  mostrarHistorico() {
-
-  }
 
   editar() {
     this.edita = !this.edita;
