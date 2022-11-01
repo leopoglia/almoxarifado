@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Options } from 'selenium-webdriver';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class ProdutoService {
 
   constructor() { }
 
-  url: string = "http://localhost:8090/api";
+  url: string = "http://localhost:8080/api";
 
   buscarProdutos() {
     return new Promise((resolvido, rejeitado) => {
@@ -47,29 +48,23 @@ export class ProdutoService {
   }
 
   cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem, anexos) {
-    console.log(nome, caracteristica, quantidade, descartavel, imagem)
 
-    let produto = "{nome:"+nome+", caracteristica: "+caracteristica+",quantidade: "+quantidade+",descartavel: "+descartavel+",imagem: "+imagem+",anexos: "+anexos+"}";
+    var formData = new FormData();
+    let produto = { "nome": nome, "caracteristica": caracteristica, "quantidade": quantidade, "descartavel": descartavel };
+    formData.append('produto', JSON.stringify(produto));
+    formData.append('arquivos', anexos);
+    formData.append('imagem', imagem);
 
-    var dados = {
-      produto: produto,
-      imagem: imagem,
-      arquivos: anexos
-    };
-
-    console.log(dados)
 
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/produtos', {
         method: 'POST',
-        body: JSON.stringify(dados),
-        headers: {
-          'Content-type': 'application/x-www-form-urlencoded',
-        }
+        body: formData
       }).then(resultado => resultado.json())
         .then(resolvido)
         .catch(rejeitado);
     })
+
   }
 
   editarProduto(codigo, nome, caracteristica, quantidade, descartavel, imagem) {

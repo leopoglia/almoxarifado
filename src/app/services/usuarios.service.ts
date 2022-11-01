@@ -7,7 +7,7 @@ import { E } from '@angular/core/src/render3';
 export class UsuariosService {
 
 
-  url: string = 'http://localhost:8090/api';
+  url: string = 'http://localhost:8080/api';
 
   constructor() { }
 

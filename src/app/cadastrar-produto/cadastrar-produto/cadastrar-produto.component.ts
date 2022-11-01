@@ -33,7 +33,7 @@ export class CadastrarProdutoComponent implements OnInit {
 
   cadastrarProduto() {
     this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.descartavel, this.img64, this.anexos)
-    
+
       .then(resultado => {
         console.log(resultado)
       }).catch(erro => {
@@ -60,19 +60,11 @@ export class CadastrarProdutoComponent implements OnInit {
 
 
   mudanca(file) {
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      this.img64 = reader.result;
-    };
+    this.img64 = file;
   }
 
   anexo(file) {
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      this.anexos = reader.result;
-    };
+    this.anexos = file;
   }
 
   situacaoLocalizacao() {
