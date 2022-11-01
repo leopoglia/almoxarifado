@@ -26,8 +26,9 @@
                                     </span>
                                 </button></div>
                         </div>
-                        <div class="pessoa"><span *ngIf="permissao == true">Professor: Romário</span><span
-                                *ngIf="permissao == false">Professor: Romário</span></div>
+                        <div class="pessoa"><span *ngIf="permissao == true">Professor: Romário</span>
+                            <span>*ngIf="permissao == false">Professor: Romário</span>
+                        </div>
                         <div class="horario">
                             <div class="data"><span>Retirar em: {{dataRetirada}} às</span></div>
                             <div class="hora">&nbsp;{{horaRetirada}}</div>
@@ -56,7 +57,7 @@
 
                                     <div class="opcao">{{item.descartavel}}</div>
 
-                                    <div class="quantidade">{{item.unidades}} Unidades</div>
+                                    <div class="quantidade">{{item.quantidade}} Unidades</div>
 
                                     <div *ngIf="item.baixa == false">
                                         <button class="baixa" *ngIf="permissao" (click)="darBaixa(item)">Dar
@@ -71,7 +72,7 @@
 
                             </div>
 
-                            
+
                         </div>
                     </div>
 

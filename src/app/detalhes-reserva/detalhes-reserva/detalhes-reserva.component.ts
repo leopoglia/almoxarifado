@@ -53,8 +53,9 @@ export class DetalhesReservaComponent implements OnInit {
   }
 
   buscarProdutos() {
+    console.log(this.resultado)
     for (let i = 0; i < this.resultado.length; i++) {
-      this.produtos.push({ codigo: this.resultado[i].produto.codigo, nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, baixa: this.resultado[i].baixa });
+      this.produtos.push({ codigo: this.resultado[i].produto.codigo, descartavel: this.resultado[i].produto.descartavel,nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, baixa: this.resultado[i].baixa });
     }
     return this.produtos;
   }
