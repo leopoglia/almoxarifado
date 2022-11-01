@@ -6,12 +6,24 @@ import { Injectable } from '@angular/core';
 export class ReservaService {
     url: string = "http://localhost:8080/api"
 
-    criarReserva(produtos, dataRetirada, dataDevolucao, horaRetirada, horaDevolucao, usuario,) {
+    criarReserva(produtos, dataRetirada, dataDevolucao, horaRetirada, horaDevolucao, usuario) {
+
+        let produtoFinal = [];
+
+        console.log(produtos);
+
+        for (let i = 0; i < produtos.length; i++) {
+            produtoFinal.push({ produto: { codigo: produtos[i].codigo }, quantidade: produtos[i].quantidade });
+        }
+
+        console.log(produtoFinal);
+
+
         return new Promise((resolvido, rejeitado) => {
             fetch(this.url + '/reservas', {
                 method: 'POST',
                 body:
-                    JSON.stringify({ dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, horaRetirada: horaRetirada, horaDevolucao: horaDevolucao, usuario: { codigo: usuario }, produtos: produtos }),
+                    JSON.stringify({ dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, horaRetirada: horaRetirada, horaDevolucao: horaDevolucao, usuario: { codigo: usuario }, produtos: produtoFinal }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -24,6 +36,16 @@ export class ReservaService {
     buscarReservas() {
         return new Promise((resolvido, rejeitado) => {
             fetch(this.url + '/reservas', {
+                method: 'GET'
+            }).then(resultado => resultado.json())
+                .then(resolvido)
+                .catch(rejeitado);
+        })
+    }
+
+    buscarProdutoReserva(codigo) {
+        return new Promise((resolvido, rejeitado) => {
+            fetch(this.url + '/produtoreserva/' + codigo, {
                 method: 'GET'
             }).then(resultado => resultado.json())
                 .then(resolvido)

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ReservaService } from 'src/app/services/reserva.service';
 
 @Component({
@@ -18,14 +18,15 @@ export class DetalhesReservaComponent implements OnInit {
   horaDevolucao;
   dataRetirada;
   dataDevolucao;
+  resultado: any;
+  produtos: any = [];
 
   constructor(
-    private reservaService: ReservaService
+    private reservaService: ReservaService,
+    private changeDetection: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
-
-    console.log(this.url);
 
     if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
@@ -35,8 +36,9 @@ export class DetalhesReservaComponent implements OnInit {
       this.permissao = true;
     }
 
-    this.reservaService.buscarReserva(this.url).then(res => {
-      this.reserva = res[0];
+    this.reservaService.buscarProdutoReserva(this.url).then(res => {
+      this.reserva = res[0].reserva;
+      this.resultado = res;
 
       this.horaRetirada = this.reserva.horaRetirada;
       this.horaDevolucao = this.reserva.horaDevolucao;
@@ -48,12 +50,14 @@ export class DetalhesReservaComponent implements OnInit {
 
       this.produtos = this.reserva.produtos;
     })
-
-
   }
 
-  produtos = [
-    { imagem: "https://www.fibracem.com/wp-content/uploads/2020/11/0000_Abracadeira.0.png", "nome": "Abracadeira para poste", "localizacao": "P3CEA8", "descartavel": "Descartavel", "unidades": 100, "baixa": false }]
+  buscarProdutos() {
+    for (let i = 0; i < this.resultado.length; i++) {
+      this.produtos.push({ codigo: this.resultado[i].produto.codigo, nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, baixa: this.resultado[i].baixa });
+    }
+    return this.produtos;
+  }
 
 
   darBaixa(item) {
