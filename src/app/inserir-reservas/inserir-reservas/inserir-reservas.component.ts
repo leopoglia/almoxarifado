@@ -34,6 +34,18 @@ export class InserirReservasComponent implements OnInit {
 
   cadastrarReserva() {
 
+    console.log(this.produtos)
+
+    for (let i = 0; i < this.produtos.length; i++) {
+      if (this.produtos[i].quantidadeAdicionada == 0) {
+        return;
+      }
+    }
+
+    for (let i = 0; i < this.produtos.length; i++) {
+      this.produtos[i].quantidade = this.produtos[i].quantidadeAdicionada;
+    }
+
     this.reservaService.criarReserva(this.produtos, this.dataRetirada, this.dataDevolucao, this.horaRetirada, this.horaDevolucao, this.idUsuario)
 
     this.alerta = true;
@@ -45,6 +57,8 @@ export class InserirReservasComponent implements OnInit {
 
   adicionarItem($event) {
 
+    console.log($event);
+
     for (let i = 0; i < this.produtos.length; i++) {
       if (this.produtos[i].codigo == $event.codigo) {
         return;
@@ -54,6 +68,7 @@ export class InserirReservasComponent implements OnInit {
     this.imagem.push($event.imagem.dados);
     this.produtos.push($event);
     $event.quantidadeAdicionada = 0;
+
   }
 
   removerItem($event) {
@@ -64,11 +79,10 @@ export class InserirReservasComponent implements OnInit {
   }
 
   menos(produto) {
+
     if (produto.quantidadeAdicionada == NaN || produto.quantidadeAdicionada == 0 || produto.quantidadeAdicionada == null || produto.quantidadeAdicionada == undefined) {
       produto.quantidadeAdicionada = 0;
     }
-
-
 
     if (produto.quantidadeAdicionada > 0) {
       produto.quantidadeAdicionada--;
@@ -79,6 +93,7 @@ export class InserirReservasComponent implements OnInit {
 
     if (produto.quantidadeAdicionada == NaN || produto.quantidadeAdicionada == 0 || produto.quantidadeAdicionada == null || produto.quantidadeAdicionada == undefined) {
       produto.quantidadeAdicionada = 0;
+
     }
 
     if (produto.quantidadeAdicionada >= produto.quantidade) {
@@ -91,6 +106,7 @@ export class InserirReservasComponent implements OnInit {
   mudancaAdicionada(produto) {
     if (produto.quantidadeAdicionada > produto.quantidade) {
       produto.quantidadeAdicionada = produto.quantidade;
+
     }
   }
 }
