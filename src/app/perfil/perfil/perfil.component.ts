@@ -12,15 +12,23 @@ export class PerfilComponent implements OnInit {
 
   constructor(private usuarioService: UsuariosService) { }
 
-  usuario = localStorage.getItem('usuario')
+  usuario = localStorage.getItem('idUsuario')
   nome = this.usuario.split(" ", 2).toString();
   nomeSobrenome = this.nome.replace(/,/, " ");
-
   list;
   usuarios;
-  imagem = localStorage.getItem("foto");
+  imagem;
 
   ngOnInit() {
+    this.usuarioService.buscarUsuario(this.usuario).then((resultado) => {
+      this.usuarios = resultado;
+      this.imagem = 'data:image/png;base64,' + this.usuarios.imagem.dados;
+      console.log(this.imagem);
+    }).catch((erro) => {
+      console.log(erro);
+    })
+
+
     localStorage.setItem('atual', 'perfil')
 
     if (localStorage.getItem('menu') == 'aberto') {

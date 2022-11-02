@@ -9,23 +9,28 @@ import { UsuariosService } from '../../services/usuarios.service';
 })
 export class NavBarComponent implements OnInit {
 
-  usuario = localStorage.getItem("usuario");
+  usuario = localStorage.getItem("idUsuario");
   primeiroNome = this.usuario.split(" ", 1);
+  list;
+  imagem;
 
   constructor(private route: Router,
     private usuarioService: UsuariosService) { }
 
   ngOnInit() {
-    
+
+
+    this.usuarioService.buscarUsuario(this.usuario).then((resultado) => {
+      this.imagem = resultado;
+      this.imagem = 'data:image/png;base64,' + this.imagem.imagem.dados;
+    }).catch((erro) => {
+      console.log(erro);
+    }
+    )
   }
 
-  perfil(){
+  perfil() {
     this.route.navigate(['/perfil'])
   }
-
-  
-  list;
-  usuarios;
-  imagem = localStorage.getItem("foto");
 
 }
