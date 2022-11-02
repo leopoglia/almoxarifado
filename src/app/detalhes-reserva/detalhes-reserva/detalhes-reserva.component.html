@@ -19,12 +19,14 @@
                 <div class="minhasreservas">
                     <div class="reserva">
                         <div class="header-reserva">
-                            <div class="titulo">Reserva Nº 1</div>
-                            <div><button class="cancelar">
+                            <div class="titulo">Reserva Nº {{url}}</div>
+                            <div>
+                                <button class="cancelar" (click)="remover()">
                                     <span class="material-symbols-outlined">
                                         delete
                                     </span>
-                                </button></div>
+                                </button>
+                            </div>
                         </div>
                         <div class="pessoa"><span *ngIf="permissao == true">Professor: Romário</span>
                             <span *ngIf="permissao == false">Professor: Romário</span>
