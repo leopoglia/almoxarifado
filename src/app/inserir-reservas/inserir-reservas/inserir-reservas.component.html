@@ -38,6 +38,9 @@
                 <div class="produtos">
                     <div class="titulo"><span>Produtos adicionados:</span></div>
 
+                    <div class="erro" *ngIf="tamanhoReserva == 0"><span>Não há reservas cadastradas.</span></div>
+
+
                     <div class="produto" *ngFor="let produto of produtos; let i = index">
                         <div class="informacoes">
 
@@ -104,7 +107,10 @@
             </div>
 
         </div>
+
     </main>
 </body>
+
+
 
 </html>

@@ -22,7 +22,8 @@ body {
     background-color: var(--cinzaclaro);
 }
 
-.material-symbols-outlined, .material-symbols-rounded {
+.material-symbols-outlined,
+.material-symbols-rounded {
     user-select: none;
 }
 
@@ -71,6 +72,15 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.busca  li:hover {
+.busca li:hover {
     background: var(--cinzaclaro3);
+}
+
+
+.erro {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px;
 }

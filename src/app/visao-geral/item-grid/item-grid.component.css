@@ -119,15 +119,6 @@
     background-color: var(--azulclaro);
 }
 
-.erro {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 0px;
-}
-
-
 @media(max-width: 900px) {
 
     .rodape {

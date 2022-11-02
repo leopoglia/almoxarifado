@@ -14,9 +14,12 @@
         </div>
         <div class="detalhes">
             <div class="reservafeita">
-                <div class="data"><span>Devolução em: {{reserva.dataDevolucao}} às {{reserva.horaDevolucao}} </span></div>
+                <div class="data"><span>Devolução em: {{reserva.dataDevolucao}} às {{reserva.horaDevolucao}} </span>
+                </div>
             </div>
         </div>
 
     </div>
 </div>
+
+<div class="erro" *ngIf="tamanho == 0"><span>Não há reservas cadastradas.</span></div>

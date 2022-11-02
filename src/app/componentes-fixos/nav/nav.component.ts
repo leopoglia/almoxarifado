@@ -29,11 +29,11 @@ export class NavComponent implements OnInit {
       localStorage.setItem('mode', 'lightmode');
     }
 
-    if (localStorage.getItem('cargo') == '0') {
+    if (localStorage.getItem('cargo') == 'Professor') {
       this.usuario = this.professor;
-    } else if (localStorage.getItem('cargo') == '1') {
+    } else if (localStorage.getItem('cargo') == 'Atendente') {
       this.usuario = this.atendente;
-    } else if (localStorage.getItem('cargo') == '2') {
+    } else if (localStorage.getItem('cargo') == 'Administrador') {
       this.usuario = this.administrador;
     }
 

@@ -13,11 +13,8 @@ export class Cadastro3Component implements OnInit {
   imagem;
 
   mudanca(file) {
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      this.imagem = reader.result;    
-    };
+    this.imagem = file;
+
   }
 
   nome = localStorage.getItem("nome");
@@ -26,14 +23,14 @@ export class Cadastro3Component implements OnInit {
   email = localStorage.getItem("email");
 
   constructor(private router: Router,
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private usuarioService: UsuariosService) { }
 
   ngOnInit() {
   }
 
-  cadastrar(){
-    this.usuarioService.criarUsuarios(this.matricula, this.email, this.senha, this.nome, this.imagem).then(resultado => {console.log(resultado)})
+  cadastrar() {
+    this.usuarioService.criarUsuarios(this.matricula, this.email, this.senha, this.nome, this.imagem).then(resultado => { console.log(resultado) })
     this.router.navigate(['/']);
   }
 

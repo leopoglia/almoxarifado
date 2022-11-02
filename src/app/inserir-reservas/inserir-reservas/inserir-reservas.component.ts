@@ -18,7 +18,8 @@ export class InserirReservasComponent implements OnInit {
   horaRetirada: Time;
   horaDevolucao: Time;
   idUsuario = parseInt(localStorage.getItem('idUsuario'));
-  imagem = []
+  imagem = [];
+  tamanhoReserva = 0;
 
   constructor(
     private reservaService: ReservaService
@@ -56,6 +57,7 @@ export class InserirReservasComponent implements OnInit {
   }
 
   adicionarItem($event) {
+    this.tamanhoReserva++;
 
     for (let i = 0; i < this.produtos.length; i++) {
       if (this.produtos[i].codigo == $event.codigo) {
@@ -70,6 +72,7 @@ export class InserirReservasComponent implements OnInit {
   }
 
   removerItem($event) {
+    this.tamanhoReserva--;
 
     if (this.produtos.length > 0) {
       this.produtos.splice($event, 1);

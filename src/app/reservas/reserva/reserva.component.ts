@@ -11,6 +11,7 @@ export class ReservaComponent implements OnInit {
 
   reservas: any;
   permissao = false;
+  tamanho;
 
   constructor(private route: Router,
     private reservaService: ReservaService) { }
@@ -22,6 +23,7 @@ export class ReservaComponent implements OnInit {
 
     this.reservaService.buscarReservas().then(res => {
       this.reservas = res;
+      this.tamanho = this.reservas.length;
 
       for (let i = 0; i < this.reservas.length; i++) {
 

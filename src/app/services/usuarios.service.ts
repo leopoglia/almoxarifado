@@ -12,14 +12,16 @@ export class UsuariosService {
   constructor() { }
 
   criarUsuarios(matricula, email, senha, nome, imagem) {
+    var formData = new FormData();
+    let usuario = { "nome": nome, "email": email, "matricula": matricula, "cargo": "Professor", "senha": senha, "situacao": 2 };
+    formData.append('usuario', JSON.stringify(usuario));
+    formData.append('imagem', imagem);
+
+
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuario', {
         method: 'POST',
-        body:
-          JSON.stringify({ matricula: matricula, email: email, senha: senha, nome: nome, imagem: "1", situacao: 2, cargo: 0 }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        body: formData,
       }).then(resultado => resultado.json())
         .then(resolvido)
         .catch(rejeitado);
