@@ -18,7 +18,7 @@ export class ReservaService {
             fetch(this.url + '/reservas', {
                 method: 'POST',
                 body:
-                    JSON.stringify({ dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, horaRetirada: horaRetirada, horaDevolucao: horaDevolucao, usuario: { codigo: usuario }, produtos: produtoFinal }),
+                    JSON.stringify({ visibilidade: true, dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, horaRetirada: horaRetirada, horaDevolucao: horaDevolucao, usuario: { codigo: usuario }, produtos: produtoFinal }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -63,10 +63,20 @@ export class ReservaService {
             fetch(this.url + '/reservas', {
                 method: 'POST',
                 body:
-                    JSON.stringify({ dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, usuario: usuario, produtos: produtos }),
+                    JSON.stringify({ dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, usuario: usuario, produtos: produtos, visibilidade: true }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
+            }).then(resultado => resultado.json())
+                .then(resolvido)
+                .catch(rejeitado);
+        })
+    }
+
+    deletarReserva(codigo) {
+        return new Promise((resolvido, rejeitado) => {
+            fetch(this.url + '/reservas/' + codigo, {
+                method: 'DELETE'
             }).then(resultado => resultado.json())
                 .then(resolvido)
                 .catch(rejeitado);

@@ -74,6 +74,25 @@ export class DetalhesReservaComponent implements OnInit {
 
   devolver() {
     this.modaldevolucao = !this.modaldevolucao;
+  }
+
+  remover() {
+
+    this.reservaService.deletarReserva(this.url).then(res => {
+
+      this.alertar = "Removido com sucesso!";
+
+      this.alerta = !this.alerta;
+
+      setTimeout(() => {
+        this.alerta = !this.alerta;
+        this.alertar = "Devolvido com sucesso!";
+        window.location.href = "/reservas";
+      }, 3000);
+
+    })
+
 
   }
+
 }
