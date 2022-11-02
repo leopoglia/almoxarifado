@@ -11,7 +11,7 @@ export class ReservaService {
         let produtoFinal = [];
 
         for (let i = 0; i < produtos.length; i++) {
-            produtoFinal.push({ produto: { codigo: produtos[i].codigo }, quantidade: produtos[i].quantidade });
+            produtoFinal.push({ produto: { codigo: produtos[i].codigo }, quantidade: produtos[i].quantidade, devolvido: false });
         }
 
         return new Promise((resolvido, rejeitado) => {

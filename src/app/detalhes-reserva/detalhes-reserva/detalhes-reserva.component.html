@@ -55,16 +55,16 @@
                                 <div class="acoes">
                                     <div class="localizacao">Localização: {{item.localizacao}}</div>
 
-                                    <div class="opcao">{{item.descartavel}}</div>
+                                    <div class="opcao" *ngIf="item.descartavel">{{item.descartavel}}</div>
 
                                     <div class="quantidade">{{item.quantidade}} Unidades</div>
 
-                                    <div *ngIf="item.baixa == false">
+                                    <div *ngIf="item.devolvido == false">
                                         <button class="baixa" *ngIf="permissao" (click)="darBaixa(item)">Dar
                                             baixa</button>
                                     </div>
 
-                                    <div *ngIf="item.baixa == true">
+                                    <div *ngIf="item.devolvido == true">
                                         <button class="baixa" *ngIf="permissao"
                                             (click)="devolver(item)">Devolver</button>
                                     </div>
