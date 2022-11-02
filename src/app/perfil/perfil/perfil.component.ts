@@ -25,11 +25,9 @@ export class PerfilComponent implements OnInit {
       this.usuarios = resultado;
       this.imagem = 'data:image/png;base64,' + this.usuarios.imagem.dados;
       this.email = this.usuarios.email;
-      console.log(this.imagem);
     }).catch((erro) => {
       console.log(erro);
     })
-
 
     localStorage.setItem('atual', 'perfil')
 

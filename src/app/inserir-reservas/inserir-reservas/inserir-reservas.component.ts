@@ -57,8 +57,6 @@ export class InserirReservasComponent implements OnInit {
 
   adicionarItem($event) {
 
-    console.log($event);
-
     for (let i = 0; i < this.produtos.length; i++) {
       if (this.produtos[i].codigo == $event.codigo) {
         return;

@@ -36,7 +36,9 @@
 }
 
 .produto .imagem img {
-    height: 60px;
+    height: 45px;
+    width: 45px;
+    border-radius: 3px;
 }
 
 .produto .informacoes {
