@@ -12,7 +12,6 @@
     margin-right: 20px;
     border-radius: 5px;
     display: flex;
-
 }
 
 .alerta,
@@ -58,7 +57,7 @@ span {
 }
 
 .texto {
-    max-width: 300px;
+    max-width: 400px;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
@@ -76,7 +75,25 @@ span {
         width: 100%;
     }
 
-    20%{
+    20% {
         display: none;
     }
+}
+
+@media(max-width: 600px) {
+    .alerta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+        padding: 0px;
+        margin: 0px !important;
+    }
+
+    .infos {
+        width: 100%;
+        margin: 0px !important;
+        border-radius: 0px !important;
+    }
+
 }

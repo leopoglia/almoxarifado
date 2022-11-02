@@ -188,20 +188,27 @@ dd a {
     header .logo .senaiazul {
         height: 15px;
     }
+
     header .logo .almoxarifado {
         margin-left: 10px;
         padding-left: 10px;
     }
+
     header .logo .almoxarifado .icone {
         width: 20px;
     }
+
     header .navbar .nome {
         display: none;
     }
 }
 
-@media(max-height: 362px) {
+@media(max-height: 600px) {
+    .rodape {
+        position: relative !important;
+    }
+
     nav {
-        display: none;
+        overflow: auto !important;
     }
 }

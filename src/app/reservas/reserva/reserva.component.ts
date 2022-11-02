@@ -25,6 +25,8 @@ export class ReservaComponent implements OnInit {
       this.reservas = res;
       this.tamanho = this.reservas.length;
 
+      console.log(this.reservas)
+
       for (let i = 0; i < this.reservas.length; i++) {
 
         this.reservas[i].dataRetirada = this.reservas[i].dataRetirada.split("T")[0];

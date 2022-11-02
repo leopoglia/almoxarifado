@@ -34,11 +34,28 @@ export class InserirReservasComponent implements OnInit {
   }
 
   cadastrarReserva() {
+    if(this.produtos.length == 0){
 
-    console.log(this.produtos)
+      this.alerta = true;
+      this.alertar = "Adicione um produto na reserva."
 
+      setTimeout(() => {
+        this.alerta = false;
+      }, 1000 * 10);
+
+      return;
+
+    }
     for (let i = 0; i < this.produtos.length; i++) {
       if (this.produtos[i].quantidadeAdicionada == 0) {
+
+        this.alerta = true;
+        this.alertar = "O produto não pode estar com a quantidade 0."
+
+        setTimeout(() => {
+          this.alerta = false;
+        }, 1000 * 10);
+
         return;
       }
     }

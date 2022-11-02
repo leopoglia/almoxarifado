@@ -53,7 +53,7 @@ export class ProdutoComponent implements OnInit {
   }
 
   buscarUsuario() {
-    if ((localStorage.getItem('cargo') == "1") || (localStorage.getItem('cargo') == "2")) {
+    if ((localStorage.getItem('cargo') == "Atendente") || (localStorage.getItem('cargo') == "Administrador")) {
       return true;
     } else {
       return false;

@@ -10,14 +10,9 @@ export class ReservaService {
 
         let produtoFinal = [];
 
-        console.log(produtos);
-
         for (let i = 0; i < produtos.length; i++) {
             produtoFinal.push({ produto: { codigo: produtos[i].codigo }, quantidade: produtos[i].quantidade });
         }
-
-        console.log(produtoFinal);
-
 
         return new Promise((resolvido, rejeitado) => {
             fetch(this.url + '/reservas', {
