@@ -18,11 +18,13 @@ export class PerfilComponent implements OnInit {
   list;
   usuarios;
   imagem;
+  email;
 
   ngOnInit() {
     this.usuarioService.buscarUsuario(this.usuario).then((resultado) => {
       this.usuarios = resultado;
       this.imagem = 'data:image/png;base64,' + this.usuarios.imagem.dados;
+      this.email = this.usuarios.email;
       console.log(this.imagem);
     }).catch((erro) => {
       console.log(erro);
