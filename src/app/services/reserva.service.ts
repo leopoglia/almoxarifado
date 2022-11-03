@@ -76,14 +76,14 @@ export class ReservaService {
         })
     }
 
-    atualizarProdutoReserva(produto) {
+    atualizarProdutoReserva(produtoReserva) {
 
 
         return new Promise((resolvido, rejeitado) => {
-            fetch(this.url + '/produtoreserva/' + produto.codigo, {
+            fetch(this.url + '/produtoreserva/' + produtoReserva.codigo, {
                 method: 'PUT',
                 body:
-                    JSON.stringify({ visibilidade: 0, codigo: reserva.codigo, dataRetirada: reserva.dataRetirada, dataDevolucao: reserva.dataDevolucao, usuario: { codigo: reserva.usuario.codigo }, produtos: reserva.produtos, devolvido: reserva.devolvido, horaRetirada: reserva.horaRetirada, horaDevolucao: reserva.horaDevolucao }),
+                    JSON.stringify({ "quantidade": produtoReserva.quantidade, produto: { codigo: produtoReserva.produto.codigo }, reserva: { codigo: produtoReserva.reserva.codigo } }),
                 headers: {
                     'Content-Type': 'application/json'
                 }

@@ -56,20 +56,37 @@ export class DetalhesReservaComponent implements OnInit {
 
     if (this.resultado != undefined) {
       for (let i = 0; i < this.resultado.length; i++) {
+
         this.produtos.push({ codigo: this.resultado[i].produto.codigo, descartavel: this.resultado[i].produto.descartavel, nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, imagem: "data:image/png;base64," + this.resultado[i].produto.imagem.dados, devolvido: this.resultado[i].devolvido, localizacao: this.resultado[i].produto.localizacao });
         this.imagem.push(this.resultado[i].produto.imagem);
       }
     }
 
-    console.log(this.produtos);
     return this.produtos;
   }
 
 
   darBaixa(item) {
+    let elemento;
 
-    this.reservaService.atualizarProdutoReserva(item).then(res => {
-    }
+    this.resultado.forEach(element => {
+      if (element.produto.codigo == item.codigo) {
+        elemento = element;
+      }
+    });
+
+
+    this.reservaService.atualizarProdutoReserva(elemento).then(res => {
+      this.alerta = !this.alerta;
+      this.buscarProdutos();
+
+      setTimeout(() => {
+        this.alerta = !this.alerta;
+        this.alertar = "Devolvido com sucesso!";
+      }, 3000);
+    });
+
+    this.buscarProdutos();
 
   }
 
