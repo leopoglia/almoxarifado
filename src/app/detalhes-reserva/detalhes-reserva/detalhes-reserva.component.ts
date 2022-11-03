@@ -32,7 +32,7 @@ export class DetalhesReservaComponent implements OnInit {
       localStorage.setItem('menu', 'abrir')
     }
 
-    if (localStorage.getItem("cargo") == "1" || localStorage.getItem("cargo") == "2") {
+    if (localStorage.getItem("cargo") == "Atendente" || localStorage.getItem("cargo") == "Administrador") {
       this.permissao = true;
     }
 
@@ -60,12 +60,17 @@ export class DetalhesReservaComponent implements OnInit {
         this.imagem.push(this.resultado[i].produto.imagem);
       }
     }
+
+    console.log(this.produtos);
     return this.produtos;
   }
 
 
   darBaixa(item) {
-    item.baixa = true;
+
+    this.reservaService.atualizarProdutoReserva(item).then(res => {
+    }
+
   }
 
   devolver() {
@@ -73,8 +78,6 @@ export class DetalhesReservaComponent implements OnInit {
   }
 
   remover() {
-
-    console.log(this.reserva);
 
     this.reservaService.atualizarReserva(this.reserva).then(res => {
 

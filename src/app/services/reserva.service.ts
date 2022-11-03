@@ -76,6 +76,23 @@ export class ReservaService {
         })
     }
 
+    atualizarProdutoReserva(produto) {
+
+
+        return new Promise((resolvido, rejeitado) => {
+            fetch(this.url + '/produtoreserva/' + produto.codigo, {
+                method: 'PUT',
+                body:
+                    JSON.stringify({ visibilidade: 0, codigo: reserva.codigo, dataRetirada: reserva.dataRetirada, dataDevolucao: reserva.dataDevolucao, usuario: { codigo: reserva.usuario.codigo }, produtos: reserva.produtos, devolvido: reserva.devolvido, horaRetirada: reserva.horaRetirada, horaDevolucao: reserva.horaDevolucao }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(resultado => resultado.json())
+                .then(resolvido)
+                .catch(rejeitado);
+        })
+    }
+
     deletarReserva(codigo) {
         return new Promise((resolvido, rejeitado) => {
             fetch(this.url + '/reservas/' + codigo, {
