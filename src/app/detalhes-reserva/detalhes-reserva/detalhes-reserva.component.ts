@@ -36,6 +36,11 @@ export class DetalhesReservaComponent implements OnInit {
       this.permissao = true;
     }
 
+    this.buscarReserva();
+
+  }
+
+  buscarReserva() {
     this.reservaService.buscarProdutoReserva(this.url).then(res => {
       this.reserva = res[0].reserva;
       this.resultado = res;
@@ -82,11 +87,15 @@ export class DetalhesReservaComponent implements OnInit {
 
       setTimeout(() => {
         this.alerta = !this.alerta;
+
         this.alertar = "Devolvido com sucesso!";
       }, 3000);
+
+
+      this.buscarReserva();
+      this.buscarProdutos();
     });
 
-    this.buscarProdutos();
 
   }
 

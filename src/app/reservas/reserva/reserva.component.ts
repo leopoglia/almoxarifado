@@ -10,6 +10,7 @@ import { ReservaService } from 'src/app/services/reserva.service';
 export class ReservaComponent implements OnInit {
 
   reservas: any;
+  resultado: any;
   permissao = false;
   tamanho = 0;
 
@@ -17,19 +18,28 @@ export class ReservaComponent implements OnInit {
     private reservaService: ReservaService) { }
 
   ngOnInit() {
-    if (localStorage.getItem("cargo") == "2" || localStorage.getItem("cargo") == "1") {
+    if (localStorage.getItem("cargo") == "Administrador" || localStorage.getItem("cargo") == "Atendente") {
       this.permissao = true;
     }
 
     this.reservaService.buscarReservas().then(res => {
-      this.reservas = res;
+      this.resultado = res;
 
+
+      if (this.permissao == true) {
+
+        this.reservas = this.resultado;
+      } else {
+        this.reservas = this.resultado.filter(reserva => reserva.usuario.codigo == localStorage.getItem("idUsuario"));
+      }
 
       this.reservas.forEach(reserva => {
         if (reserva.visibilidade == true) {
           this.tamanho++;
         }
       });
+
+
 
 
       for (let i = 0; i < this.reservas.length; i++) {
