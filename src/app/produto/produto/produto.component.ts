@@ -82,5 +82,27 @@ export class ProdutoComponent implements OnInit {
   classificacao($event) {
     console.log($event)
   }
+
+  download(arquivo) {
+
+    const a = document.createElement('a');
+    document.body.appendChild(a);
+
+    console.log(arquivo.dados)
+
+    const json = JSON.stringify(arquivo.dados),
+      blob = new Blob([json], { type: arquivo.tipo }),
+      url = window.URL.createObjectURL(blob);
+
+
+    console.log(blob);
+    a.href = url;
+    a.download = arquivo.nome;
+    a.click();
+    window.URL.revokeObjectURL(url);
+
+  }
+
+
 }
 

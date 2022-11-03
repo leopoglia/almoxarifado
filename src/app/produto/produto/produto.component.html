@@ -162,9 +162,9 @@
 
                 <div class="flex">
 
-                    <div class="anexos" *ngFor="let arquivo of arquivos">
+                    <div class="anexos" *ngFor="let arquivo of arquivos" (click)="download(arquivo)" >
 
-                        <div class="imagem-anexo">
+                        <div class="imagem-anexo" download="arquivo.link">
                             <img *ngIf="arquivo.tipo == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'"
                                 class="icone-anexo" src="./assets/anexos/excel.png" alt="">
                             <img *ngIf="arquivo.tipo == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'"
