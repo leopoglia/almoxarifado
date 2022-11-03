@@ -40,8 +40,6 @@ export class DetalhesReservaComponent implements OnInit {
       this.reserva = res[0].reserva;
       this.resultado = res;
 
-      console.log(res)
-
       this.horaRetirada = this.reserva.horaRetirada;
       this.horaDevolucao = this.reserva.horaDevolucao;
       this.dataRetirada = this.reserva.dataRetirada.split("T")[0];
@@ -58,12 +56,10 @@ export class DetalhesReservaComponent implements OnInit {
 
     if (this.resultado != undefined) {
       for (let i = 0; i < this.resultado.length; i++) {
-        this.produtos.push({ codigo: this.resultado[i].produto.codigo, descartavel: this.resultado[i].produto.descartavel, nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, imagem: "data:image/png;base64," + this.resultado[i].produto.imagem.dados, devolvido: this.resultado[i].devolvido, localizacao: this.resultado.localizacao });
+        this.produtos.push({ codigo: this.resultado[i].produto.codigo, descartavel: this.resultado[i].produto.descartavel, nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, imagem: "data:image/png;base64," + this.resultado[i].produto.imagem.dados, devolvido: this.resultado[i].devolvido, localizacao: this.resultado[i].produto.localizacao });
         this.imagem.push(this.resultado[i].produto.imagem);
       }
     }
-
-    console.log(this.produtos)
     return this.produtos;
   }
 
@@ -78,7 +74,9 @@ export class DetalhesReservaComponent implements OnInit {
 
   remover() {
 
-    this.reservaService.deletarReserva(this.url).then(res => {
+    console.log(this.reserva);
+
+    this.reservaService.atualizarReserva(this.reserva).then(res => {
 
       this.alertar = "Removido com sucesso!";
 

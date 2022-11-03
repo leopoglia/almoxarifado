@@ -34,11 +34,11 @@ export class ClassificacaoService {
     })
   }
 
-  cadastrarClassificacao(localizacao) {
+  cadastrarClassificacao(classificacao) {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/classificacao', {
         method: 'POST',
-        body: JSON.stringify({ localizacao: localizacao }),
+        body: JSON.stringify({ classificacao: classificacao }),
         headers: {
           'Content-Type': 'application/json'
         }

@@ -67,5 +67,9 @@ export class ProdutoComponent implements OnInit {
   fechou() {
     this.salvar = !this.salvar;
   }
+
+  classificacao($event){
+    console.log($event)
+  }
 }
 

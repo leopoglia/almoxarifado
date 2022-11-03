@@ -58,12 +58,15 @@ export class ReservaService {
         })
     }
 
-    atualizarReserva(dataRetirada, dataDevolucao, usuario, produtos) {
+    atualizarReserva(reserva) {
+
+        console.log(reserva);
+
         return new Promise((resolvido, rejeitado) => {
-            fetch(this.url + '/reservas', {
-                method: 'POST',
+            fetch(this.url + '/reservas/' + reserva.codigo, {
+                method: 'PUT',
                 body:
-                    JSON.stringify({ dataRetirada: dataRetirada, dataDevolucao: dataDevolucao, usuario: usuario, produtos: produtos, visibilidade: true }),
+                    JSON.stringify({ visibilidade: 0, codigo: reserva.codigo, dataRetirada: reserva.dataRetirada, dataDevolucao: reserva.dataDevolucao, usuario: { codigo: reserva.usuario.codigo }, produtos: reserva.produtos, devolvido: reserva.devolvido, horaRetirada: reserva.horaRetirada, horaDevolucao: reserva.horaDevolucao }),
                 headers: {
                     'Content-Type': 'application/json'
                 }

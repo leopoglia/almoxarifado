@@ -28,7 +28,7 @@
         </span>
       </div>
 
-      <input type="text" placeholder="{{titulo}}">
+      <input type="text" [(ngModel)]="texto" placeholder="{{titulo}}">
 
       <div *ngIf="item == 1" class="setados">
         <span>
@@ -44,12 +44,11 @@
         </span>
       </div>
 
-
-
-
       <div class="botao">
-        <button>Confirmar</button>
+        <button (click)="cadastrar()">Confirmar</button>
       </div>
     </div>
   </div>
 </div>
+
+<app-alertas *ngIf="alerta" [alerta]="alertar"></app-alertas>
