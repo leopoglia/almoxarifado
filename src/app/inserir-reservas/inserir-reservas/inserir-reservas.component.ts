@@ -1,6 +1,7 @@
 import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReservaService } from 'src/app/services/reserva.service';
+import { ProdutoService } from 'src/app/services/produto.service';
 
 @Component({
   selector: 'app-inserir-reservas',
@@ -22,7 +23,8 @@ export class InserirReservasComponent implements OnInit {
   tamanhoReserva = 0;
 
   constructor(
-    private reservaService: ReservaService
+    private reservaService: ReservaService,
+    private produtoService: ProdutoService
   ) { }
 
 
@@ -34,7 +36,7 @@ export class InserirReservasComponent implements OnInit {
   }
 
   cadastrarReserva() {
-    if(this.produtos.length == 0){
+    if (this.produtos.length == 0) {
 
       this.alerta = true;
       this.alertar = "Adicione um produto na reserva."
@@ -62,9 +64,12 @@ export class InserirReservasComponent implements OnInit {
 
     for (let i = 0; i < this.produtos.length; i++) {
       this.produtos[i].quantidade = this.produtos[i].quantidadeAdicionada;
+      this.produtoService.editarProdutoQuantidade(this.produtos[i], this.produtos[i]);
     }
 
     this.reservaService.criarReserva(this.produtos, this.dataRetirada, this.dataDevolucao, this.horaRetirada, this.horaDevolucao, this.idUsuario)
+
+
 
     this.alerta = true;
 

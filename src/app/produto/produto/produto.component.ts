@@ -16,6 +16,7 @@ export class ProdutoComponent implements OnInit {
   list;
   produtos = [];
   idParametro;
+  classificacoes = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +29,12 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.buscarProduto(this.idParametro)
       .then(resultado => {
         this.produtos.push(resultado);
+        console.log(this.produtos);
 
+        this.produtos.forEach(element => {
+          this.classificacoes.push(element.classificacao);
+
+        });
 
       }).catch(erro => {
         console.log('ERRO AO BUSCAR PRODUTO', erro)
@@ -37,6 +43,7 @@ export class ProdutoComponent implements OnInit {
     if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
     }
+
   }
 
 
@@ -68,7 +75,7 @@ export class ProdutoComponent implements OnInit {
     this.salvar = !this.salvar;
   }
 
-  classificacao($event){
+  classificacao($event) {
     console.log($event)
   }
 }

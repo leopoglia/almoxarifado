@@ -50,7 +50,7 @@ export class ProdutoService {
   cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem, anexos, classificacao, localizacao) {
     console.log(classificacao, localizacao)
     var formData = new FormData();
-    let produto = { "nome": nome, "caracteristica": caracteristica, "quantidade": quantidade, "descartavel": descartavel, classificacao: { "codigo": classificacao }, localizacao: { "codigo": localizacao } };
+    let produto = { "nome": nome, "caracteristica": caracteristica, "quantidade": quantidade, "descartavel": descartavel, classificacao: { "codigo": classificacao, }, localizacao: { "codigo": localizacao } };
     formData.append('produto', JSON.stringify(produto));
     formData.append('arquivos', anexos);
     formData.append('imagem', imagem);
@@ -72,6 +72,21 @@ export class ProdutoService {
       fetch(this.url + '/produtos/' + codigo, {
         method: 'PUT',
         body: JSON.stringify({ nome: nome, caracteristicas: caracteristica, quantidade: quantidade, descartavel: descartavel, imagem: imagem }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
+  editarProdutoQuantidade(codigo, produto) {
+
+    return new Promise((resolvido, rejeitado) => {
+      fetch(this.url + '/produtos/produtoreserva/' + codigo.codigo, {
+        method: 'PUT',
+        body: JSON.stringify(produto),
         headers: {
           'Content-Type': 'application/json'
         }

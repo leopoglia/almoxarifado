@@ -84,11 +84,14 @@
                                 <div class="classificacao">
                                     <span>Classificação</span>
                                     <div class="fundo">
-                                        <select name="select" [value]="item.classificacao" [disabled]="edita">
-                                            <option value="1">Materiais Elétricos</option>
-                                            <option value="2">Ferramenta Mecânica</option>
-                                            <option value="3">Componente Eltrônico</option>
-                                            <option value="4">Ferramenta Manual</option>
+                                        <select name="select" [(ngModel)]="item.classificacao.codigo"
+                                            name="classificacao" (change)="mudarClassificacao($event.target.value)" [disabled]="edita">
+                                            <option disabled hidden selected value value="0">Selecione uma
+                                                classificação
+                                            </option>
+                                            <option *ngFor="let classificacao of classificacoes"
+                                                [value]="classificacao.codigo">{{classificacao.classificacao}}</option>
+
                                         </select>
 
                                     </div>
@@ -107,8 +110,8 @@
 
                         <div class="localizacao">
                             <span>Localização</span>
-                            <input type="text" [placeholder]="item.localizacao" [value]="item.localizacao"
-                                [disabled]="edita">
+                            <input type="text" [placeholder]="item.localizacao.localizacao"
+                                [value]="item.localizacao.localizacao" [disabled]="edita">
                         </div>
 
                         <div *ngIf="edita" class="anexo">

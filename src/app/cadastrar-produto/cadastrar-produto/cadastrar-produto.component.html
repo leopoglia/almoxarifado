@@ -70,11 +70,8 @@
                                                     classificação
                                                 </option>
                                                 <option *ngFor="let classificacao of classificacoes"
-                                                    [value]="classificacao.id">{{classificacao.classificacao}}</option>
+                                                    [value]="classificacao.codigo">{{classificacao.classificacao}}</option>
 
-                                                <option value="2">Ferramenta Mecânica</option>
-                                                <option value="3">Componente Eltrônicos</option>
-                                                <option value="4">Ferramenta Manual</option>
                                             </select>
                                             <div class="adicionar" (click)="classificacao()">
                                                 <span class="material-symbols-outlined">
