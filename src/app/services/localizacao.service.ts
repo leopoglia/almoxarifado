@@ -36,7 +36,7 @@ export class LocalizacaoService {
 
   cadastrarLocalizacao(localizacao) {
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/produtos', {
+      fetch(this.url + '/localizacao', {
         method: 'POST',
         body: JSON.stringify({ localizacao: localizacao }),
         headers: {

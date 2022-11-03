@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ClassificacaoService } from 'src/app/services/classificacao.service';
+import { LocalizacaoService } from 'src/app/services/localizacao.service';
+
 
 @Component({
   selector: 'app-modal-adicao',
@@ -9,7 +11,8 @@ import { ClassificacaoService } from 'src/app/services/classificacao.service';
 export class ModalAdicaoComponent implements OnInit {
 
   constructor(
-    private classificacaoService: ClassificacaoService
+    private classificacaoService: ClassificacaoService,
+    private localizacaoService: LocalizacaoService
   ) { }
 
   @Input() item: number;
@@ -50,10 +53,13 @@ export class ModalAdicaoComponent implements OnInit {
   }
 
   cadastrar() {
-
-    if (this.item == 2) {
+    if (this.item == 1) {
+      this.localizacaoService.cadastrarLocalizacao(this.texto).then(res => {
+        console.log(res)
+        this.fechar();
+      })
+    } else if (this.item == 2) {
       this.classificacaoService.cadastrarClassificacao(this.texto).then(res => {
-        this.alerta = true
         this.fechar();
 
       })

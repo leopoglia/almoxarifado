@@ -47,10 +47,10 @@ export class ProdutoService {
     })
   }
 
-  cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem, anexos) {
+  cadastrarProduto(nome, caracteristica, quantidade, descartavel, imagem, anexos, classificacao, localizacao) {
 
     var formData = new FormData();
-    let produto = { "nome": nome, "caracteristica": caracteristica, "quantidade": quantidade, "descartavel": descartavel };
+    let produto = { "nome": nome, "caracteristica": caracteristica, "quantidade": quantidade, "descartavel": descartavel,  };
     formData.append('produto', JSON.stringify(produto));
     formData.append('arquivos', anexos);
     formData.append('imagem', imagem);

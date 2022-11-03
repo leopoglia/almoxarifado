@@ -147,7 +147,7 @@ main .container .informacoes .quantidade input {
 }
 
 main .container .informacoes .quantidade input,
-main .container .informacoes .informacoes-adicionais .localizacao input,
+main .container .informacoes .informacoes-adicionais .localizacao select,
 main .container .informacoes .classificacao select {
     height: 25px;
     padding: 8px;
@@ -331,7 +331,7 @@ input:checked+.bola:before {
         width: 95%;
     }
 
-    main .container .informacoes .informacoes-adicionais .localizacao input,
+    main .container .informacoes .informacoes-adicionais .localizacao select,
     main .container .informacoes .classificacao select {
         width: 100% !important;
     }

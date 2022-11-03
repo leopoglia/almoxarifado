@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProdutoService } from '../../services/produto.service';
 import { ClassificacaoService } from 'src/app/services/classificacao.service';
+import { LocalizacaoService } from 'src/app/services/localizacao.service';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -10,7 +11,8 @@ import { ClassificacaoService } from 'src/app/services/classificacao.service';
 export class CadastrarProdutoComponent implements OnInit {
 
   constructor(private produtoService: ProdutoService
-    , private classificacaoService: ClassificacaoService) { }
+    , private classificacaoService: ClassificacaoService
+    , private localizacaoService: LocalizacaoService) { }
 
   nome: string;
   caracteristica: string;
@@ -21,7 +23,9 @@ export class CadastrarProdutoComponent implements OnInit {
   situacaoclassificacao: boolean = false;
   descartavel: boolean = false;
   classificacoes: any;
-  optionClassificacao: any = "0";
+  localizacoes: any;
+  optionClassificacao: string = "0";
+  optionLocalizacao: string = "0";
   img64;
   anexos;
   alerta: boolean = false;
@@ -39,10 +43,14 @@ export class CadastrarProdutoComponent implements OnInit {
       this.classificacoes = res;
     })
 
+    this.localizacaoService.buscarLocalizacoes().then(res => {
+      this.localizacoes = res;
+    })
+
   }
 
   cadastrarProduto() {
-    this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.descartavel, this.img64, this.anexos)
+    this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.descartavel, this.img64, this.anexos, this.optionClassificacao, this.optionLocalizacao)
 
       .then(resultado => {
         console.log(resultado)
