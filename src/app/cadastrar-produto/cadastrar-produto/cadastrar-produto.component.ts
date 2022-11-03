@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProdutoService } from '../../services/produto.service';
+import { ClassificacaoService } from 'src/app/services/classificacao.service';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -8,7 +9,8 @@ import { ProdutoService } from '../../services/produto.service';
 })
 export class CadastrarProdutoComponent implements OnInit {
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(private produtoService: ProdutoService
+    , private classificacaoService: ClassificacaoService) { }
 
   nome: string;
   caracteristica: string;
@@ -18,6 +20,8 @@ export class CadastrarProdutoComponent implements OnInit {
   situacaolocalizacao: boolean = false;
   situacaoclassificacao: boolean = false;
   descartavel: boolean = false;
+  classificacoes: any;
+  optionClassificacao: any = "0";
   img64;
   anexos;
   alerta: boolean = false;
@@ -29,6 +33,12 @@ export class CadastrarProdutoComponent implements OnInit {
     if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
     }
+
+    this.classificacaoService.buscarClassificacoes().then(res => {
+      console.log(res)
+      this.classificacoes = res;
+    })
+
   }
 
   cadastrarProduto() {
