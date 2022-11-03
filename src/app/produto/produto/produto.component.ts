@@ -17,6 +17,7 @@ export class ProdutoComponent implements OnInit {
   produtos = [];
   idParametro;
   classificacoes = [];
+  localizacoes = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -33,7 +34,7 @@ export class ProdutoComponent implements OnInit {
 
         this.produtos.forEach(element => {
           this.classificacoes.push(element.classificacao);
-
+          this.localizacoes.push(element.localizacao);
         });
 
       }).catch(erro => {

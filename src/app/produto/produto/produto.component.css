@@ -5,7 +5,7 @@ main {
     z-index: 2;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
     margin-left: 20px;
@@ -25,7 +25,7 @@ main .container .cabecalho {
     margin-right: 15px;
 }
 
-main .container #titulo{
+main .container #titulo {
     margin-top: 10px;
 }
 
@@ -78,12 +78,12 @@ main .container .cabecalho .navegacao {
     font-size: 14px;
 }
 
-main .container .cabecalho .acoes{
+main .container .cabecalho .acoes {
     display: flex;
     align-items: center;
 }
 
-main .container .cabecalho .historico{
+main .container .cabecalho .historico {
     text-decoration: none;
 }
 
@@ -133,7 +133,7 @@ main .container .informacoes .informacoes-gerais {
     width: 100%;
     display: flex;
     align-items: flex-start;
-} 
+}
 
 main .container .informacoes .informacoes-gerais .nome,
 main .container .informacoes .informacoes-gerais .detalhes,
@@ -268,9 +268,8 @@ main .container .informacoes .quantidade {
 }
 
 main .container .informacoes .quantidade input,
-main .container .informacoes .informacoes-adicionais .localizacao input,
+main .container .informacoes .informacoes-adicionais .localizacao select,
 main .container .informacoes .classificacao select {
-    height: 25px;
     padding: 8px;
     border: 1px solid var(--cinzaclaro2);
     border-radius: 3px;
@@ -296,9 +295,13 @@ main .container .informacoes .informacoes-adicionais .anexo {
     margin-right: 50px;
 }
 
-main .container .informacoes .classificacao select {
-    height: 43px;
-    -webkit-appearance: none !important;
+main .container .informacoes .classificacao select,
+main .container .informacoes .localizacao select {
+    height: 43px !important;
+}
+
+main .container .informacoes .quantidade input {
+    height: 25px;
 }
 
 main .container .informacoes .informacoes-adicionais .descartavel {
@@ -365,17 +368,17 @@ input:checked+.bola:before {
     main .container .informacoes .informacoes-gerais .nome,
     main .container .informacoes .informacoes-gerais .detalhes,
     main .container .informacoes .informacoes-gerais .descricao,
-    main .container .informacoes .informacoes-flex{
+    main .container .informacoes .informacoes-flex {
         margin-top: 15px;
         width: 95% !important;
     }
 
-    main .container .informacoes .informacoes-adicionais{
+    main .container .informacoes .informacoes-adicionais {
         width: 95%;
     }
 
     main .container .informacoes .informacoes-adicionais .anexo,
-    main .container .informacoes .informacoes-adicionais .anexo label{
+    main .container .informacoes .informacoes-adicionais .anexo label {
         margin-left: 0px;
         margin-right: 0px !important;
         width: auto;
@@ -425,7 +428,7 @@ input:checked+.bola:before {
         width: 95%;
     }
 
-    main .container .informacoes .informacoes-adicionais .localizacao input {
+    main .container .informacoes .informacoes-adicionais .localizacao select {
         width: auto !important;
     }
 }
