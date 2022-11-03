@@ -161,13 +161,26 @@
                 </div>
 
                 <div class="flex">
-                    <img class="icone-anexo" src="./assets/anexos/excel.png" alt="">
-                    <img class="icone-anexo" src="./assets/anexos/word.png" alt="">
-                    <img class="icone-anexo" src="./assets/anexos/zip.png" alt="">
-                    <img class="icone-anexo" src="./assets/anexos/rar.png" alt="">
-                    <img class="icone-anexo" src="./assets/anexos/pdf.png" alt="">
 
+                    <div class="anexos" *ngFor="let arquivo of arquivos">
 
+                        <div class="imagem-anexo">
+                            <img *ngIf="arquivo.tipo == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'"
+                                class="icone-anexo" src="./assets/anexos/excel.png" alt="">
+                            <img *ngIf="arquivo.tipo == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'"
+                                class="icone-anexo" src="./assets/anexos/word.png" alt="">
+                            <img *ngIf="arquivo.tipo == 'application/x-zip-compressed'" class="icone-anexo"
+                                src="./assets/anexos/zip.png" alt="">
+                            <img *ngIf="arquivo.tipo == 'application/octet-stream'" class="icone-anexo"
+                                src="./assets/anexos/rar.png" alt="">
+                            <img *ngIf="arquivo.tipo == 'application/pdf'" class="icone-anexo"
+                                src="./assets/anexos/pdf.png" alt="">
+                            <img *ngIf="arquivo.tipo == 'image/png'" class="icone-anexo" src="./assets/anexos/png.png"
+                                alt="">
+                        </div>
+
+                        {{arquivo.nome}}
+                    </div>
 
                     <div class="adicionar">
                         <button *ngIf="edita == false" class="adicionar-reserva" (click)="salvarEdicao()">Salvar

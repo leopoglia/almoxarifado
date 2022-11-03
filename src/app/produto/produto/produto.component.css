@@ -267,6 +267,18 @@ main .container .informacoes .quantidade {
     width: 50%;
 }
 
+main .container .anexos{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+main .container .anexos .imagem-anexo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 main .container .informacoes .quantidade input,
 main .container .informacoes .informacoes-adicionais .localizacao select,
 main .container .informacoes .classificacao select {
