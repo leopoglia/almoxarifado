@@ -80,6 +80,24 @@ export class UsuariosService {
     })
   }
 
+  aceitarUsuario(usuario) {
+
+    console.log(usuario);
+
+    return new Promise((resolvido, rejeitado) => {
+      fetch(this.url + '/usuario/aceitar/' + usuario.codigo, {
+        method: 'PUT',
+        body:
+          JSON.stringify({ matricula: usuario.matricula, email: usuario.email, senha: usuario.senha, nome: usuario.nome, imagem: usuario.imagem, cargo: usuario.cargo, situacao: usuario.situacao }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
   login(nome, senha) {
     return new Promise((resolvido, rejeitado) => {
       fetch(this.url + '/usuario/login', {

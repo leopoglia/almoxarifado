@@ -37,7 +37,6 @@ export class DetalhesReservaComponent implements OnInit {
     }
 
     this.buscarReserva();
-
   }
 
   buscarReserva() {

@@ -38,16 +38,23 @@ export class CadastrarProdutoComponent implements OnInit {
       localStorage.setItem('menu', 'abrir')
     }
 
+    this.buscarClassificacoes();
+    this.buscarLocalizacoes();
+  }
+
+  buscarClassificacoes() {
     this.classificacaoService.buscarClassificacoes().then(res => {
       console.log(res)
       this.classificacoes = res;
     })
+  }
 
+  buscarLocalizacoes() {
     this.localizacaoService.buscarLocalizacoes().then(res => {
       this.localizacoes = res;
     })
-
   }
+
 
   cadastrarProduto() {
     this.produtoService.cadastrarProduto(this.nome, this.caracteristica, this.quantidade, this.descartavel, this.img64, this.anexos, this.optionClassificacao, this.optionLocalizacao)
@@ -91,6 +98,7 @@ export class CadastrarProdutoComponent implements OnInit {
     } else {
       this.situacaolocalizacao = true;
     }
+    this.buscarLocalizacoes();
   }
 
   classificacao() {
@@ -99,6 +107,7 @@ export class CadastrarProdutoComponent implements OnInit {
     } else {
       this.situacaoclassificacao = true;
     }
+    this.buscarClassificacoes();
   }
 
   fechou($event) {
@@ -107,6 +116,8 @@ export class CadastrarProdutoComponent implements OnInit {
     } else {
       this.classificacao();
     }
+    this.buscarClassificacoes();
+    this.buscarLocalizacoes();
   }
 
 }

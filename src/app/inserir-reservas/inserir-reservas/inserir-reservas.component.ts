@@ -21,6 +21,8 @@ export class InserirReservasComponent implements OnInit {
   idUsuario = parseInt(localStorage.getItem('idUsuario'));
   imagem = [];
   tamanhoReserva = 0;
+  buscaProduto;
+  reservaAdicionada = JSON.parse(localStorage.getItem('reservas'));
 
   constructor(
     private reservaService: ReservaService,
@@ -33,7 +35,29 @@ export class InserirReservasComponent implements OnInit {
     if (localStorage.getItem('menu') == 'aberto') {
       localStorage.setItem('menu', 'abrir')
     }
+
+    if (localStorage.getItem('reservas') == null) {
+      localStorage.setItem('reservas', '[]');
+    }
+
+    this.buscarProdutos();
+
   }
+
+  buscarProdutos() {
+    this.produtoService.buscarProdutos().then(res => {
+      this.buscaProduto = res;
+
+      if (this.reservaAdicionada.length > 0) {
+        for (let i = 0; i < this.buscaProduto.length; i++) {
+          if (this.buscaProduto[i].codigo == this.reservaAdicionada[i].codigo) {
+            this.adicionarItem(this.buscaProduto[i]);
+          }
+        }
+      }
+    })
+  }
+
 
   cadastrarReserva() {
     if (this.produtos.length == 0) {
@@ -62,20 +86,43 @@ export class InserirReservasComponent implements OnInit {
       }
     }
 
-    for (let i = 0; i < this.produtos.length; i++) {
-      this.produtos[i].quantidade = this.produtos[i].quantidadeAdicionada;
-      this.produtoService.editarProdutoQuantidade(this.produtos[i], this.produtos[i]);
-    }
-
-    this.reservaService.criarReserva(this.produtos, this.dataRetirada, this.dataDevolucao, this.horaRetirada, this.horaDevolucao, this.idUsuario)
+    // for (let i = 0; i < this.produtos.length; i++) {
+    //   this.produtos[i].quantidade = this.produtos[i].quantidadeAdicionada;
+    //   this.produtoService.editarProdutoQuantidade(this.produtos[i], this.produtos[i]);
+    // }
 
 
+    this.reservaService.criarReserva(this.produtos, this.dataRetirada, this.dataDevolucao, this.horaRetirada, this.horaDevolucao, this.idUsuario).then(res => {
+      console.log(res);
+      this.alertas();
+    }).catch(err => {
+      console.log(err);
+    })
+  }
 
+  alertas() {
     this.alerta = true;
 
     setTimeout(() => {
       this.alerta = false;
+
+
+      this.alertas();
+      this.zerar();
+
     }, 1000 * 10);
+  }
+
+  zerar() {
+    this.produtos = [];
+    this.imagem = [];
+    this.tamanhoReserva = 0;
+    this.dataRetirada = null;
+    this.dataDevolucao = null;
+    this.horaRetirada = null;
+    this.horaDevolucao = null;
+    localStorage.setItem('reservas', '[]');
+    this.reservaAdicionada = JSON.parse(localStorage.getItem('reservas'));
   }
 
   adicionarItem($event) {
@@ -99,6 +146,10 @@ export class InserirReservasComponent implements OnInit {
     if (this.produtos.length > 0) {
       this.produtos.splice($event, 1);
     }
+
+    localStorage.setItem('reservas', '[]');
+
+
   }
 
   menos(produto) {

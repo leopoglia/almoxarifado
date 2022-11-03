@@ -27,7 +27,6 @@ export class ReservaComponent implements OnInit {
 
 
       if (this.permissao == true) {
-
         this.reservas = this.resultado;
       } else {
         this.reservas = this.resultado.filter(reserva => reserva.usuario.codigo == localStorage.getItem("idUsuario"));

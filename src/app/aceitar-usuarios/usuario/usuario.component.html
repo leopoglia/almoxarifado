@@ -21,8 +21,8 @@
   </div>
 
   <div *ngIf="usuario.situacao == 'ESPERANDO'" class="aprovacao">
-    <button class="aceitar">Aceitar</button>
-    <button class="recusar">Recusar</button>
+    <button class="aceitar" (click)="aceitarUsuario('APROVADO', usuario)">Aceitar</button>
+    <button class="recusar" (click)="aceitarUsuario('REPROVADO', usuario)">Recusar</button>
   </div>
 
   <div *ngIf="usuario.situacao == 'APROVADO'" class="aprovado">

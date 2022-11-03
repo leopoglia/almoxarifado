@@ -18,7 +18,11 @@ export class UsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.buscarUsuario();
 
+  }
+
+  buscarUsuario() {
     this.usuariosService.buscarUsuarios().then((resultado) => {
       this.usuarios = resultado;
 
@@ -35,8 +39,6 @@ export class UsuarioComponent implements OnInit {
 
 
   filter() {
-
-
     if (this.buscar == '') {
       return this.usuarios;
     }
@@ -53,5 +55,24 @@ export class UsuarioComponent implements OnInit {
     } else {
       this.retornoItem = true;
     }
+  }
+
+  aceitarUsuario(aceitacao, usuario) {
+    if (aceitacao == "APROVADO") {
+      usuario.situacao = 0;
+    } else {
+      usuario.situacao = 1;
+    }
+
+
+
+    this.usuariosService.aceitarUsuario(usuario).then((resultado) => {
+      this.buscarUsuario();
+    }).catch((erro) => {
+      console.log(erro);
+    })
+
+    this.buscarUsuario();
+
   }
 }

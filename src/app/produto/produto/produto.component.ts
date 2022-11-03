@@ -19,6 +19,7 @@ export class ProdutoComponent implements OnInit {
   classificacoes = [];
   localizacoes = [];
   arquivos = [];
+  url = (window.location.href).split('/');
 
   constructor(
     private route: ActivatedRoute,
@@ -31,13 +32,11 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.buscarProduto(this.idParametro)
       .then(resultado => {
         this.produtos.push(resultado);
-        console.log(this.produtos);
 
         this.produtos.forEach(element => {
           this.classificacoes.push(element.classificacao);
           this.localizacoes.push(element.localizacao);
           this.arquivos.push(element.arquivos);
-          console.log(this.arquivos);
         });
 
       }).catch(erro => {
@@ -100,9 +99,24 @@ export class ProdutoComponent implements OnInit {
     a.download = arquivo.nome;
     a.click();
     window.URL.revokeObjectURL(url);
-
   }
 
+  adicionarReserva() {
+    let reservas = JSON.parse(localStorage.getItem('reservas'));
 
+    if (reservas == null) {
+      reservas = [];
+    }
+
+    for (let i = 0; i < reservas.length; i++) {
+      if (reservas[i].codigo == this.url[5]) {
+        return;
+      }
+    }
+
+    reservas.push({ codigo: this.url[5] });
+
+    localStorage.setItem('reservas', JSON.stringify(reservas));
+    this.router.navigate(['/cadastrar/reserva']);
+  }
 }
-
