@@ -10,14 +10,15 @@
 
     <main>
         <div class="container">
-            <app-cabecalho (inputInformacoes)="inputInformacoes($event)" (posicaoTabelas)="receberPedido($event)"  (ordenardarTabela)="ordernarTabela($event)"></app-cabecalho>
+            <app-cabecalho (inputInformacoes)="inputInformacoes($event)" (posicaoTabelas)="receberPedido($event)"
+                (ordenardarTabela)="ordernarTabela($event)"></app-cabecalho>
 
             <div class="corpo">
                 <app-item *ngIf="posicao == true" [buscar]="buscaInput" [ordernado]="tabelaOrdenada"></app-item>
-                <app-item-grid *ngIf="posicao == false" [buscar]="buscaInput" [ordernado]="tabelaOrdenada"></app-item-grid>
+                <app-item-grid *ngIf="posicao == false" [buscar]="buscaInput" [ordernado]="tabelaOrdenada">
+                </app-item-grid>
 
-
-                <!-- <div class="rodape">
+                <div class="rodape">
                     <div class="paginacao">
                         <dl>
                             <dd class="atual">1</dd>
@@ -31,7 +32,7 @@
                             </dd>
                         </dl>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </main>

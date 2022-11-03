@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { forEach } from '@angular/router/src/utils/collection';
 import { ProdutoService } from 'src/app/services/produto.service';
 
 
@@ -20,7 +19,6 @@ export class ItemComponent implements OnInit, OnChanges {
   tamanho;
   retornoItem: boolean = false;
   resultado: any;
-  imagem = [];
 
 
   constructor(
@@ -45,7 +43,7 @@ export class ItemComponent implements OnInit, OnChanges {
             this.retornoItem = false;
 
             this.produtos.forEach(element => {
-              this.imagem.push(element.imagem.dados);
+              this.produtos.imagem = element.imagem.dados;
             });
 
           } else {
@@ -58,7 +56,7 @@ export class ItemComponent implements OnInit, OnChanges {
 
       if (changes.ordernado) {
         if (this.produtos) {
-          this.produtos = this.produtos.sort((a, b) => (a.NOME > b.NOME) ? 1 : ((b.NOME > a.NOME) ? -1 : 0));
+          this.produtos = this.produtos.sort((a, b) => (a.nome > b.nome) ? 1 : ((b.nome > a.nome) ? -1 : 0));
         } else {
           this.produtos = this.list.list;
         }

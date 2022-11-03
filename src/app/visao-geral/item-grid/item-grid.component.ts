@@ -16,7 +16,6 @@ export class ItemGridComponent implements OnInit, OnChanges {
   resultado: any;
   produtos;
   tamanho;
-  imagem = [];
 
 
   constructor(
@@ -44,7 +43,7 @@ export class ItemGridComponent implements OnInit, OnChanges {
             this.retornoItem = false;
 
             this.produtos.forEach(element => {
-              this.imagem.push(element.imagem.dados);
+              this.produtos.imagem = element.imagem.dados;
             });
 
           } else {
@@ -57,7 +56,7 @@ export class ItemGridComponent implements OnInit, OnChanges {
 
       if (changes.ordernado) {
         if (this.produtos) {
-          this.produtos = this.produtos.sort((a, b) => (a.NOME > b.NOME) ? 1 : ((b.NOME > a.NOME) ? -1 : 0));
+          this.produtos = this.produtos.sort((a, b) => (a.nome > b.nome) ? 1 : ((b.nome > a.nome) ? -1 : 0));
         } else {
           this.produtos = this.resultado;
         }
