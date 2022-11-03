@@ -237,7 +237,7 @@ main .container .informacoes .inserir-imagem .imagem-editar .material-symbols-ou
 main .container .informacoes .inserir-imagem .imagem img {
     font-size: 80px;
     max-width: 200px;
-    height: 90%;
+    max-height: 90%;
     border-radius: 3px;
 }
 

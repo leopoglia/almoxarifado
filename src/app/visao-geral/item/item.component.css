@@ -58,6 +58,7 @@
 .produto .imagem img {
     height: 100px;
     border-radius: 2px;
+    max-width: 100%;
 }
 
 .produto .informacoes .titulo {
