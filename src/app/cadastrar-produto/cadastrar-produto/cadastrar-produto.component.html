@@ -64,8 +64,7 @@
                                     <div class="classificacao">
                                         <span>Classificação</span>
                                         <div class="fundo">
-                                            <select name="select" [(ngModel)]="optionClassificacao" name="classificacao"
-                                                (change)="mudarClassificacao($event.target.value)">
+                                            <select name="select" [(ngModel)]="optionClassificacao" name="classificacao">
                                                 <option disabled hidden selected value value="0">Selecione uma
                                                     classificação
                                                 </option>
@@ -97,8 +96,7 @@
                             <div class="localizacao">
                                 <span>Localização</span>
                                 <div class="fundo">
-                                    <select name="select" [(ngModel)]="optionLocalizacao" name="classificacao"
-                                        (change)="mudarLocalizacao($event.target.value)">
+                                    <select name="select" [(ngModel)]="optionLocalizacao" name="classificacao">
                                         <option disabled hidden selected value value="0">Selecione uma localização
                                         </option>
                                         <option *ngFor="let localizacao of localizacoes" [value]="localizacao.codigo">
