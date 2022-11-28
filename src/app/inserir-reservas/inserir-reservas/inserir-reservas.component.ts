@@ -180,7 +180,6 @@ export class InserirReservasComponent implements OnInit {
   mudancaAdicionada(produto) {
     if (produto.quantidadeAdicionada > produto.quantidade) {
       produto.quantidadeAdicionada = produto.quantidade;
-
     }
   }
 }
