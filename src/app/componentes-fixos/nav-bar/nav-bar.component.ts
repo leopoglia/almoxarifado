@@ -22,6 +22,7 @@ export class NavBarComponent implements OnInit {
 
     this.usuarioService.buscarUsuario(this.usuario).then((resultado) => {
       this.imagem = resultado;
+      this.primeiroNome = this.imagem.nome.split(" ", 2).toString();
       this.imagem = 'data:image/png;base64,' + this.imagem.imagem.dados;
     }).catch((erro) => {
       console.log(erro);

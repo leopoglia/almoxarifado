@@ -13,8 +13,8 @@ export class PerfilComponent implements OnInit {
   constructor(private usuarioService: UsuariosService) { }
 
   usuario = localStorage.getItem('idUsuario')
-  nome = this.usuario.split(" ", 2).toString();
-  nomeSobrenome = this.nome.replace(/,/, " ");
+  nome = "";
+  nomeSobrenome = "";
   list;
   usuarios;
   imagem;
@@ -23,6 +23,8 @@ export class PerfilComponent implements OnInit {
   ngOnInit() {
     this.usuarioService.buscarUsuario(this.usuario).then((resultado) => {
       this.usuarios = resultado;
+      this.nome = this.usuarios.nome.split(" ", 2).toString();
+      this.nomeSobrenome = this.nome.replace(/,/, " ");
       this.imagem = 'data:image/png;base64,' + this.usuarios.imagem.dados;
       this.email = this.usuarios.email;
     }).catch((erro) => {
