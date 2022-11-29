@@ -27,7 +27,7 @@ export class CadastrarProdutoComponent implements OnInit {
   optionClassificacao: string = "0";
   optionLocalizacao: string = "0";
   img64;
-  anexos;
+  anexos = null;
   alerta: boolean = false;
   alertar = "Produto cadastrado com sucesso!";
 
