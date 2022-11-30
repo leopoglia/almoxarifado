@@ -23,6 +23,7 @@
 
 .usuario .usuario-imagem {
     width: 120px;
+    height: 120px;
     min-width: 120px;
     border-radius: 120px;
     min-height: 120px;
