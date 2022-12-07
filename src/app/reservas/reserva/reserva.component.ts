@@ -55,5 +55,4 @@ export class ReservaComponent implements OnInit {
   link(reserva) {
     this.route.navigate(['/reservas/detalhes/' + reserva.codigo]);
   }
-
 }

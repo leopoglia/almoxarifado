@@ -104,7 +104,9 @@ export class DetalhesReservaComponent implements OnInit {
 
   remover() {
 
-    this.reservaService.atualizarReserva(this.reserva).then(res => {
+    console.log(this.reserva.codigo);
+
+    this.reservaService.deletarReserva(this.reserva.codigo).then(res => {
 
       this.alertar = "Removido com sucesso!";
 
@@ -117,8 +119,6 @@ export class DetalhesReservaComponent implements OnInit {
       }, 3000);
 
     })
-
-
   }
 
 }
