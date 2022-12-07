@@ -20,8 +20,13 @@ export class PerfilComponent implements OnInit {
   imagem;
   email;
 
+  nomeEditado;
+  emailEditado;
+  senhaEditada;
+
   ngOnInit() {
     this.usuarioService.buscarUsuario(this.usuario).then((resultado) => {
+      console.log(this.usuario);
       this.usuarios = resultado;
       this.nome = this.usuarios.nome.split(" ", 2).toString();
       this.nomeSobrenome = this.nome.replace(/,/, " ");
@@ -39,5 +44,12 @@ export class PerfilComponent implements OnInit {
 
   }
 
+  salvarAlteracoes(){
+    this.usuarioService.editarUsuario(this.usuario, this.usuarios.matricula, this.emailEditado, this.senhaEditada, this.nomeEditado, this.usuarios.cargo).then((resultado) => {
+    }).catch((erro) => {
+      console.log(erro);
+    })
+    location.reload();
+  }
 
 }

@@ -65,12 +65,12 @@ export class UsuariosService {
     })
   }
 
-  editarUsuario(codigo, matricula, email, senha, nome, imagem) {
+  editarUsuario(codigo, matricula, email, senha, nome, cargo) {
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/usuario/' + codigo, {
-        method: 'POST',
+      fetch(this.url + '/usuario/editar/' + codigo, {
+        method: 'PUT',
         body:
-          JSON.stringify({ matricula: matricula, email: email, senha: senha, nome: nome, imagem: imagem }),
+          JSON.stringify({ email: email, matricula: matricula, senha: senha, nome: nome, cargo: cargo, situacao: "APROVADO" }),
         headers: {
           'Content-Type': 'application/json'
         }

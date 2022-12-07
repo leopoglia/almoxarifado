@@ -42,21 +42,21 @@
                     <div class="inputs">
                         <div class="nome">
                             <span>Nome</span>
-                            <input type="text" [placeholder]="nome">
+                            <input type="text" [placeholder]="nome" [(ngModel)]="nomeEditado">
                         </div>
 
                         <div class="email">
                             <span>Email</span>
-                            <input type="text" [placeholder]="email">
+                            <input type="text" [placeholder]="email" [(ngModel)]="emailEditado">
                         </div>
 
                         <div class="senha">
                             <span>Senha</span>
-                            <input type="password" placeholder="******">
+                            <input type="password" placeholder="******" [(ngModel)]="senhaEditada">
                         </div>
 
                         <div class="botao">
-                            <button>Salvar Alterações</button>
+                            <button (click)="salvarAlteracoes()">Salvar Alterações</button>
                         </div>
                     </div>
 
