@@ -2,7 +2,7 @@
 <html lang="en">
 
 <body>
-    <app-modal-adicao *ngIf="modaldevolucao" item="4" itemDevolucao="{{itemDevolucao}}"
+    <app-modal-adicao *ngIf="modaldevolucao" item="4" itemDevolucao="{{itemDevolucao}}" itemAntigo="{{produtoAntigo}}"
         (fechou)="fechou($event)"></app-modal-adicao>
     <app-alertas *ngIf="alerta" [alerta]="alertar"></app-alertas>
 

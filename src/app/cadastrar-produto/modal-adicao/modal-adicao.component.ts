@@ -19,6 +19,7 @@ export class ModalAdicaoComponent implements OnInit {
 
   @Input() item: number;
   @Input() itemDevolucao: any;
+  @Input() itemAntigo: any;
   @Output() fechou = new EventEmitter();
 
   titulo: String = "";
@@ -67,14 +68,29 @@ export class ModalAdicaoComponent implements OnInit {
 
       })
     } else if (this.item == 4) {
-      const produto = JSON.parse(this.itemDevolucao);
-      produto.quantidade = produto.quantidade + parseInt(this.texto);
 
-      this.produtoService.editarProdutoQuantidade(produto.codigo, produto).then(res => {
-        console.log(res)
+
+      this.produtoService.buscarProduto(this.itemDevolucao.codigo).then(res => {
+
+        const produto = JSON.parse(this.itemDevolucao);
+        const produtoAntigo = JSON.parse(this.itemAntigo);
+        console.log("QUANTIDADE ATUAL -> ", produto, "QUANTIDADE ANTERIOR -> ", produtoAntigo)
+
+
+        produto.quantidade = produto.quantidade + parseInt(this.texto);
+
+        if (parseInt(this.texto) <= produtoAntigo.quantidade) {
+          this.produtoService.editarProdutoQuantidade(produto.codigo, produto).then(res => {
+            console.log(res)
+          })
+
+          this.fechar();
+        } else {
+          alert("Quantidade invalida")
+        }
       })
 
-      this.fechar();
+
     }
   }
 }

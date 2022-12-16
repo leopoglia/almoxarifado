@@ -23,6 +23,7 @@ export class DetalhesReservaComponent implements OnInit {
   produtos: any = [];
   imagem = [];
   itemDevolucao: any;
+  produtoAntigo: any;
 
   constructor(
     private reservaService: ReservaService,
@@ -121,6 +122,7 @@ export class DetalhesReservaComponent implements OnInit {
     this.produtoService.buscarProduto(item.codigo).then(res => {
       let produto: any = res;
       this.itemDevolucao = JSON.stringify(produto);
+      this.produtoAntigo = JSON.stringify(item);
       this.modaldevolucao = !this.modaldevolucao;
     })
 
