@@ -86,11 +86,6 @@ export class InserirReservasComponent implements OnInit {
       }
     }
 
-    // for (let i = 0; i < this.produtos.length; i++) {
-    //   this.produtos[i].quantidade = this.produtos[i].quantidadeAdicionada;
-    //   this.produtoService.editarProdutoQuantidade(this.produtos[i], this.produtos[i]);
-    // }
-
 
     this.reservaService.criarReserva(this.produtos, this.dataRetirada, this.dataDevolucao, this.horaRetirada, this.horaDevolucao, this.idUsuario).then(res => {
       console.log(res);

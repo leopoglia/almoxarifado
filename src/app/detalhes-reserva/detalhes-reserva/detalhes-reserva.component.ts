@@ -1,3 +1,4 @@
+import { ProdutoService } from './../../services/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { ReservaService } from 'src/app/services/reserva.service';
 
@@ -21,9 +22,11 @@ export class DetalhesReservaComponent implements OnInit {
   resultado: any;
   produtos: any = [];
   imagem = [];
+  itemDevolucao: any;
 
   constructor(
     private reservaService: ReservaService,
+    private produtoService: ProdutoService
   ) { }
 
   ngOnInit() {
@@ -60,7 +63,6 @@ export class DetalhesReservaComponent implements OnInit {
 
     if (this.resultado != undefined) {
       for (let i = 0; i < this.resultado.length; i++) {
-
         this.produtos.push({ codigo: this.resultado[i].produto.codigo, descartavel: this.resultado[i].produto.descartavel, nome: this.resultado[i].produto.nome, quantidade: this.resultado[i].quantidade, imagem: "data:image/png;base64," + this.resultado[i].produto.imagem.dados, devolvido: this.resultado[i].devolvido, localizacao: this.resultado[i].produto.localizacao });
         this.imagem.push(this.resultado[i].produto.imagem);
       }
@@ -71,6 +73,22 @@ export class DetalhesReservaComponent implements OnInit {
 
 
   darBaixa(item) {
+
+    this.produtoService.buscarProduto(item.codigo).then(res => {
+      let produto: any = res;
+      let quantidade = produto.quantidade - item.quantidade;
+      produto.quantidade = quantidade;
+
+
+      this.produtoService.editarProdutoQuantidade(item.codigo, produto).then(res => {
+        console.log(res);
+      })
+    }).catch(err => {
+      console.log("erro -> ", err);
+    })
+
+
+
     let elemento;
 
     this.resultado.forEach(element => {
@@ -98,13 +116,18 @@ export class DetalhesReservaComponent implements OnInit {
 
   }
 
-  devolver() {
-    this.modaldevolucao = !this.modaldevolucao;
+  devolver(item) {
+
+    this.produtoService.buscarProduto(item.codigo).then(res => {
+      let produto: any = res;
+      this.itemDevolucao = JSON.stringify(produto);
+      this.modaldevolucao = !this.modaldevolucao;
+    })
+
+
   }
 
   remover() {
-
-    console.log(this.reserva.codigo);
 
     this.reservaService.deletarReserva(this.reserva.codigo).then(res => {
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ClassificacaoService } from 'src/app/services/classificacao.service';
 import { LocalizacaoService } from 'src/app/services/localizacao.service';
+import { ProdutoService } from 'src/app/services/produto.service';
 
 
 @Component({
@@ -12,16 +13,18 @@ export class ModalAdicaoComponent implements OnInit {
 
   constructor(
     private classificacaoService: ClassificacaoService,
-    private localizacaoService: LocalizacaoService
+    private localizacaoService: LocalizacaoService,
+    private produtoService: ProdutoService
   ) { }
 
   @Input() item: number;
+  @Input() itemDevolucao: any;
   @Output() fechou = new EventEmitter();
 
   titulo: String = "";
   titulo2: String = "";
   situacao: Boolean = true;
-  texto: String = "";
+  texto: any = "";
   alerta: boolean = false;
   alertar = "Classificação cadastrado com sucesso!";
 
@@ -63,6 +66,15 @@ export class ModalAdicaoComponent implements OnInit {
         this.fechar();
 
       })
+    } else if (this.item == 4) {
+      const produto = JSON.parse(this.itemDevolucao);
+      produto.quantidade = produto.quantidade + parseInt(this.texto);
+
+      this.produtoService.editarProdutoQuantidade(produto.codigo, produto).then(res => {
+        console.log(res)
+      })
+
+      this.fechar();
     }
   }
 }

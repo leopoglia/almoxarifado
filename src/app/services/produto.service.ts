@@ -87,7 +87,7 @@ export class ProdutoService {
   editarProdutoQuantidade(codigo, produto) {
 
     return new Promise((resolvido, rejeitado) => {
-      fetch(this.url + '/produtos/produtoreserva/' + codigo.codigo, {
+      fetch(this.url + '/produtos/' + codigo, {
         method: 'PUT',
         body: JSON.stringify(produto),
         headers: {
