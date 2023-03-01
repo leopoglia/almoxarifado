@@ -28,7 +28,7 @@ main .corpo {
 main .corpo .rodape {
     height: 40px;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
